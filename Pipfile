@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+Cython = ">=0.29.36"
+numpy = ">=1.17.0"
+matplotlib = ">=2.2.4"
+pandas = ">=0.24.2"
+openpyxl = ">=3.0.3"
+cec2013lsgo = ">=2.2"
+
+[dev-packages]
+ipython = ">=8.14.0"
+jupyterlab = ">=4.0.3"
