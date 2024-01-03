@@ -9,7 +9,7 @@ numpy = ">=1.17.0"
 matplotlib = ">=2.2.4"
 pandas = ">=0.24.2"
 openpyxl = ">=3.0.3"
-cec2013lsgo = ">=2.2"
+#cec2013lsgo = ">=2.2"
 
 [dev-packages]
 ipython = ">=8.14.0"

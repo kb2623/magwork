@@ -342,7 +342,7 @@ class DifferentialEvolution(OptimizationAlgorithm):
         })
         return d
 
-    def run_iteration(self, task, population, population_fitness, best_x, best_fitness, iters, **params):
+    def run_iteration(self, task, pop, fpop, xb, fxb, iters, **params):
         r"""Core function of Differential Evolution algorithm.
 
         Args:
@@ -368,16 +368,16 @@ class DifferentialEvolution(OptimizationAlgorithm):
             * :func:`niapy.algorithms.basic.DifferentialEvolution.post_selection`
 
         """
-        for i in range(len(population)):
-            xn = task.repair(self.strategy(population, i, self.differential_weight, self.crossover_probability, self.rng, x_b=best_x), rng=self.rng)
+        for i in range(len(pop)):
+            xn = task.repair(self.strategy(pop, i, self.differential_weight, self.crossover_probability, self.rng, x_b=xb), rng=self.rng)
             fn = task.eval(xn)
-            if fn < population_fitness[i]: 
-                population[i] = xn
-                population_fitness[i] = fn
-                if best_x < best_fitness:
-                    best_x = np.copy(xn)
-                    best_fitness = fn
-        return population, population_fitness, best_x, best_fitness, {}
+            if fn < fpop[i]: 
+                pop[i] = xn
+                fpop[i] = fn
+                if fn < fxb:
+                    xb = np.copy(xn)
+                    fxb = fn
+        return pop, fpop, xb, fxb, {}
 
 
 class DynNpDifferentialEvolution(DifferentialEvolution):
