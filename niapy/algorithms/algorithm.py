@@ -95,8 +95,8 @@ class Algorithm:
             * :func:`niapy.algorithms.Algorithm.set_parameters`
 
         """
+        self.set_parameters(individual_type=individual_type, *args, **kwargs)
         self.rng = default_rng(seed)
-        self.individual_type = individual_type
         self.exception = None
 
     def set_parameters(self, individual_type=None, *args, **kwargs):
@@ -249,7 +249,7 @@ class OptimizationAlgorithm(Algorithm):
 
     """
 
-    def __init__(self, population_size, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         r"""Initialize algorithm and create name for an algorithm.
 
         Args:
@@ -261,10 +261,6 @@ class OptimizationAlgorithm(Algorithm):
 
         """
         super().__init__(*args, **kwargs)
-        self.population_size = population_size
-        self.initialization_function = default_numpy_init
-        breakpoint()
-        self.set_parameters(*args, **kwargs)
 
     def set_parameters(self, population_size=1, initialization_function=default_numpy_init, *args, **kwargs):
         r"""Set the parameters/arguments of the algorithm.
@@ -396,7 +392,7 @@ class OptimizationAlgorithm(Algorithm):
         if task.stopping_condition():
             yield xb, fxb
         while True:
-            pop, fpop, xb, fxb, params = self.run_iteration(task=task, pop=pop, fpop=fpop, xb=xb, fxb=fxb, iters=iters, **params)
+            pop, fpop, xb, fxb, params = self.run_iteration(task=task, population=pop, population_fitness=fpop, best_x=xb, best_fitness=fxb, iters=iters, **params)
             iters += 1
             yield xb, fxb
 

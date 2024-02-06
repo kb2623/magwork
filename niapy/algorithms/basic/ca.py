@@ -208,7 +208,7 @@ class CamelAlgorithm(OptimizationAlgorithm):
             * :func:`niapy.algorithms.Algorithm.__init__`
 
         """
-        super().__init__(population_size=population_size, individual_type=kwargs.pop('individual_type', Camel),
+        super().__init__(population_size, individual_type=kwargs.pop('individual_type', Camel),
                          initialization_function=kwargs.pop('initialization_function', self.init_pop), *args, **kwargs)
         self.burden_factor = burden_factor
         self.death_rate = death_rate
@@ -236,7 +236,6 @@ class CamelAlgorithm(OptimizationAlgorithm):
             * :func:`niapy.algorithms.Algorithm.set_parameters`
 
         """
-        kwargs.pop('individual_type', None)
         super().set_parameters(population_size=population_size, individual_type=Camel,
                                initialization_function=kwargs.pop('initialization_function', self.init_pop), **kwargs)
         self.burden_factor = burden_factor
@@ -334,7 +333,7 @@ class CamelAlgorithm(OptimizationAlgorithm):
         else:
             return camel.next()
 
-    def run_iteration(self, task, pop, fpop, xb, fxb, **params):
+    def run_iteration(self, task, population, population_fitness, best_x, best_fitness, **params):
         r"""Core function of Camel Algorithm.
 
         Args:
@@ -354,9 +353,9 @@ class CamelAlgorithm(OptimizationAlgorithm):
                 5. Additional arguments
 
         """
-        new_caravan = objects_to_array([self.walk(c, xb, task) for c in pop])
+        new_caravan = objects_to_array([self.walk(c, best_x, task) for c in population])
         new_caravan = objects_to_array([self.oasis(c) for c in new_caravan])
         new_caravan = objects_to_array([self.life_cycle(c, task) for c in new_caravan])
         new_caravan_fitness = np.asarray([c.f for c in new_caravan])
-        xb, fxb = self.get_best(new_caravan, new_caravan_fitness, xb, fxb)
-        return new_caravan, new_caravan_fitness, xb, fxb, {}
+        best_x, best_fitness = self.get_best(new_caravan, new_caravan_fitness, best_x, best_fitness)
+        return new_caravan, new_caravan_fitness, best_x, best_fitness, {}
