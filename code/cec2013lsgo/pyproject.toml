@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cec2013lsgo"
+version = "2.0"
+dependencies = [
+  "cython>=3.0.0",
+  "numpy",
+]
+requires-python = ">=3.12"
+authors = [
+  {name = "Daniel Molina", email = "dmolina@decsai.ugr.es"},
+  {name = "Klemen Berkovic", email = "klemen.berkovic@student.um.si"},
+]
+maintainers = [
+  {name = "Daniel Molina", email = "dmolina@decsai.ugr.es"}
+]
+description = "Package for benchmark for the Real Large Scale Global Optimization session on IEEE Congress on Evolutionary Computation CEC\'2013',"
+readme = "README.md"
+license = {text = "GPL V3"}
+keywords = ["c++", "optimization", "benchmarks", "CEC2013", "Large Scale Global Optimization"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+]
+
+[project.urls]
+Homepage = "https://github.com/dmolina/cec2013lsgo"
+Repository = "https://github.com/dmolina/cec2013lsgo.git"

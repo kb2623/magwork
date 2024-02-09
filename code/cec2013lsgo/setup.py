@@ -44,25 +44,9 @@ class PyTest(TestCommand):
 
 
 setup(
-    name='cec2013lsgo',
-    version='2.0',
-    author='Daniel Molina',
-    author_email='dmolina@decsai.ugr.es',
-    maintainer='Daniel Molina',
-    description='Package for benchmark for the Real \
-    Large Scale Global Optimization session on IEEE \
-    Congress on Evolutionary Computation CEC\'2013',
-    long_description=open('README.rst').read(),
-    license='GPL V3',
-    url='https://github.com/dmolina/cec2013lsgo',
-    packages=['cec2013lsgo'],
-    install_requires=['cython', 'numpy'],
+    cmdclass={'build_ext': build_ext, 'test': PyTest},
     ext_modules=cythonize(cec2013lsgo),
+    packages=['cec2013lsgo'],
     package_data={'cec2013lsgo': ['cdatafiles/*.txt']},
     tests_require=['pytest'],
-    cmdclass={'build_ext': build_ext, 'test': PyTest},
-    classifiers=[
-        'Development Status :: 5 - Production/Stable',
-        'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
-    ]
 )
