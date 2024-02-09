@@ -4,15 +4,18 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-Cython = ">=0.29.36"
-numpy = ">=1.17.0"
-matplotlib = ">=2.2.4"
-pandas = ">=0.24.2"
-openpyxl = ">=3.0.3"
-cec2013lsgo = ">=2.2"
+setuptools = ">=69.0.3"
+Cython = ">=3.0.8"
+numpy = ">=1.26.4"
+matplotlib = ">=3.8.2"
+pandas = ">=2.2.0"
+openpyxl = ">=3.1.2"
 
 [dev-packages]
-ipython = ">=8.14.0"
-jupyterlab = ">=4.0.3"
+ipython = ">=8.21.0"
+jupyterlab = ">=4.1.0"
 ipympl = ">=0.9.3"
 PyLaTeX = ">=1.4.2"
+
+[requires]
+python_version = ">=3.12"
