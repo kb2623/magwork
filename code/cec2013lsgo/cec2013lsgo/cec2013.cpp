@@ -4,13 +4,14 @@
 {
     "distutils": {
         "depends": [
-            "cec2013lsgo/eval_func.h"
+            "src/cec2013lsgo/eval_func.h"
         ],
         "extra_compile_args": [
-            "-std=c++11 -O3"
+            "-std=c++11",
+            "-O3"
         ],
         "include_dirs": [
-            "cec2013lsgo"
+            "src/cec2013lsgo"
         ],
         "language": "c++",
         "libraries": [
@@ -18,24 +19,24 @@
         ],
         "name": "cec2013lsgo.cec2013",
         "sources": [
-            "cec2013lsgo/cec2013.pyx",
-            "cec2013lsgo/eval_func.cpp",
-            "cec2013lsgo/Benchmarks.cpp",
-            "cec2013lsgo/F1.cpp",
-            "cec2013lsgo/F2.cpp",
-            "cec2013lsgo/F3.cpp",
-            "cec2013lsgo/F4.cpp",
-            "cec2013lsgo/F5.cpp",
-            "cec2013lsgo/F6.cpp",
-            "cec2013lsgo/F7.cpp",
-            "cec2013lsgo/F8.cpp",
-            "cec2013lsgo/F9.cpp",
-            "cec2013lsgo/F10.cpp",
-            "cec2013lsgo/F11.cpp",
-            "cec2013lsgo/F12.cpp",
-            "cec2013lsgo/F13.cpp",
-            "cec2013lsgo/F14.cpp",
-            "cec2013lsgo/F15.cpp"
+            "src/cec2013lsgo/cec2013.pyx",
+            "src/cec2013lsgo/eval_func.cpp",
+            "src/cec2013lsgo/Benchmarks.cpp",
+            "src/cec2013lsgo/F1.cpp",
+            "src/cec2013lsgo/F2.cpp",
+            "src/cec2013lsgo/F3.cpp",
+            "src/cec2013lsgo/F4.cpp",
+            "src/cec2013lsgo/F5.cpp",
+            "src/cec2013lsgo/F6.cpp",
+            "src/cec2013lsgo/F7.cpp",
+            "src/cec2013lsgo/F8.cpp",
+            "src/cec2013lsgo/F9.cpp",
+            "src/cec2013lsgo/F10.cpp",
+            "src/cec2013lsgo/F11.cpp",
+            "src/cec2013lsgo/F12.cpp",
+            "src/cec2013lsgo/F13.cpp",
+            "src/cec2013lsgo/F14.cpp",
+            "src/cec2013lsgo/F15.cpp"
         ]
     },
     "module_name": "cec2013lsgo.cec2013"
@@ -1507,7 +1508,7 @@ static const char *__pyx_filename;
 /* #### Code section: filename_table ### */
 
 static const char *__pyx_f[] = {
-  "cec2013lsgo/cec2013.pyx",
+  "src/cec2013lsgo/cec2013.pyx",
   "<stringsource>",
 };
 /* #### Code section: utility_code_proto_before_types ### */
@@ -2986,7 +2987,6 @@ static const char __pyx_k_Cannot_index_with_type[] = "Cannot index with type '";
 static const char __pyx_k_MemoryView_of_r_object[] = "<MemoryView of %r object>";
 static const char __pyx_k_pyx_unpickle_Benchmark[] = "__pyx_unpickle_Benchmark";
 static const char __pyx_k_MemoryView_of_r_at_0x_x[] = "<MemoryView of %r at 0x%x>";
-static const char __pyx_k_cec2013lsgo_cec2013_pyx[] = "cec2013lsgo/cec2013.pyx";
 static const char __pyx_k_contiguous_and_indirect[] = "<contiguous and indirect>";
 static const char __pyx_k_Benchmark___reduce_cython[] = "Benchmark.__reduce_cython__";
 static const char __pyx_k_Dimension_d_is_not_direct[] = "Dimension %d is not direct";
@@ -2995,6 +2995,7 @@ static const char __pyx_k_Benchmark___setstate_cython[] = "Benchmark.__setstate_
 static const char __pyx_k_Benchmark_get_num_functions[] = "Benchmark.get_num_functions";
 static const char __pyx_k_Step_may_not_be_zero_axis_d[] = "Step may not be zero (axis %d)";
 static const char __pyx_k_itemsize_0_for_cython_array[] = "itemsize <= 0 for cython.array";
+static const char __pyx_k_src_cec2013lsgo_cec2013_pyx[] = "src/cec2013lsgo/cec2013.pyx";
 static const char __pyx_k_unable_to_allocate_array_data[] = "unable to allocate array data.";
 static const char __pyx_k_strided_and_direct_or_indirect[] = "<strided and direct or indirect>";
 static const char __pyx_k_All_dimensions_preceding_dimensi[] = "All dimensions preceding dimension %d must be indexed and not sliced";
@@ -3180,7 +3181,6 @@ typedef struct {
   PyObject *__pyx_n_s_cec2013_test_func;
   PyObject *__pyx_n_s_cec2013lsgo;
   PyObject *__pyx_n_s_cec2013lsgo_cec2013;
-  PyObject *__pyx_kp_s_cec2013lsgo_cec2013_pyx;
   PyObject *__pyx_n_s_class;
   PyObject *__pyx_n_s_class_getitem;
   PyObject *__pyx_n_s_cline_in_traceback;
@@ -3262,6 +3262,7 @@ typedef struct {
   PyObject *__pyx_n_s_size;
   PyObject *__pyx_n_s_sol;
   PyObject *__pyx_n_s_spec;
+  PyObject *__pyx_kp_s_src_cec2013lsgo_cec2013_pyx;
   PyObject *__pyx_n_s_start;
   PyObject *__pyx_n_s_state;
   PyObject *__pyx_n_s_step;
@@ -3441,7 +3442,6 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_cec2013_test_func);
   Py_CLEAR(clear_module_state->__pyx_n_s_cec2013lsgo);
   Py_CLEAR(clear_module_state->__pyx_n_s_cec2013lsgo_cec2013);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_cec2013lsgo_cec2013_pyx);
   Py_CLEAR(clear_module_state->__pyx_n_s_class);
   Py_CLEAR(clear_module_state->__pyx_n_s_class_getitem);
   Py_CLEAR(clear_module_state->__pyx_n_s_cline_in_traceback);
@@ -3523,6 +3523,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_size);
   Py_CLEAR(clear_module_state->__pyx_n_s_sol);
   Py_CLEAR(clear_module_state->__pyx_n_s_spec);
+  Py_CLEAR(clear_module_state->__pyx_kp_s_src_cec2013lsgo_cec2013_pyx);
   Py_CLEAR(clear_module_state->__pyx_n_s_start);
   Py_CLEAR(clear_module_state->__pyx_n_s_state);
   Py_CLEAR(clear_module_state->__pyx_n_s_step);
@@ -3680,7 +3681,6 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_cec2013_test_func);
   Py_VISIT(traverse_module_state->__pyx_n_s_cec2013lsgo);
   Py_VISIT(traverse_module_state->__pyx_n_s_cec2013lsgo_cec2013);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_cec2013lsgo_cec2013_pyx);
   Py_VISIT(traverse_module_state->__pyx_n_s_class);
   Py_VISIT(traverse_module_state->__pyx_n_s_class_getitem);
   Py_VISIT(traverse_module_state->__pyx_n_s_cline_in_traceback);
@@ -3762,6 +3762,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_size);
   Py_VISIT(traverse_module_state->__pyx_n_s_sol);
   Py_VISIT(traverse_module_state->__pyx_n_s_spec);
+  Py_VISIT(traverse_module_state->__pyx_kp_s_src_cec2013lsgo_cec2013_pyx);
   Py_VISIT(traverse_module_state->__pyx_n_s_start);
   Py_VISIT(traverse_module_state->__pyx_n_s_state);
   Py_VISIT(traverse_module_state->__pyx_n_s_step);
@@ -3939,7 +3940,6 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_cec2013_test_func __pyx_mstate_global->__pyx_n_s_cec2013_test_func
 #define __pyx_n_s_cec2013lsgo __pyx_mstate_global->__pyx_n_s_cec2013lsgo
 #define __pyx_n_s_cec2013lsgo_cec2013 __pyx_mstate_global->__pyx_n_s_cec2013lsgo_cec2013
-#define __pyx_kp_s_cec2013lsgo_cec2013_pyx __pyx_mstate_global->__pyx_kp_s_cec2013lsgo_cec2013_pyx
 #define __pyx_n_s_class __pyx_mstate_global->__pyx_n_s_class
 #define __pyx_n_s_class_getitem __pyx_mstate_global->__pyx_n_s_class_getitem
 #define __pyx_n_s_cline_in_traceback __pyx_mstate_global->__pyx_n_s_cline_in_traceback
@@ -4021,6 +4021,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_size __pyx_mstate_global->__pyx_n_s_size
 #define __pyx_n_s_sol __pyx_mstate_global->__pyx_n_s_sol
 #define __pyx_n_s_spec __pyx_mstate_global->__pyx_n_s_spec
+#define __pyx_kp_s_src_cec2013lsgo_cec2013_pyx __pyx_mstate_global->__pyx_kp_s_src_cec2013lsgo_cec2013_pyx
 #define __pyx_n_s_start __pyx_mstate_global->__pyx_n_s_start
 #define __pyx_n_s_state __pyx_mstate_global->__pyx_n_s_state
 #define __pyx_n_s_step __pyx_mstate_global->__pyx_n_s_step
@@ -21255,7 +21256,6 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_cec2013_test_func, __pyx_k_cec2013_test_func, sizeof(__pyx_k_cec2013_test_func), 0, 0, 1, 1},
     {&__pyx_n_s_cec2013lsgo, __pyx_k_cec2013lsgo, sizeof(__pyx_k_cec2013lsgo), 0, 0, 1, 1},
     {&__pyx_n_s_cec2013lsgo_cec2013, __pyx_k_cec2013lsgo_cec2013, sizeof(__pyx_k_cec2013lsgo_cec2013), 0, 0, 1, 1},
-    {&__pyx_kp_s_cec2013lsgo_cec2013_pyx, __pyx_k_cec2013lsgo_cec2013_pyx, sizeof(__pyx_k_cec2013lsgo_cec2013_pyx), 0, 0, 1, 0},
     {&__pyx_n_s_class, __pyx_k_class, sizeof(__pyx_k_class), 0, 0, 1, 1},
     {&__pyx_n_s_class_getitem, __pyx_k_class_getitem, sizeof(__pyx_k_class_getitem), 0, 0, 1, 1},
     {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
@@ -21337,6 +21337,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_size, __pyx_k_size, sizeof(__pyx_k_size), 0, 0, 1, 1},
     {&__pyx_n_s_sol, __pyx_k_sol, sizeof(__pyx_k_sol), 0, 0, 1, 1},
     {&__pyx_n_s_spec, __pyx_k_spec, sizeof(__pyx_k_spec), 0, 0, 1, 1},
+    {&__pyx_kp_s_src_cec2013lsgo_cec2013_pyx, __pyx_k_src_cec2013lsgo_cec2013_pyx, sizeof(__pyx_k_src_cec2013lsgo_cec2013_pyx), 0, 0, 1, 0},
     {&__pyx_n_s_start, __pyx_k_start, sizeof(__pyx_k_start), 0, 0, 1, 1},
     {&__pyx_n_s_state, __pyx_k_state, sizeof(__pyx_k_state), 0, 0, 1, 1},
     {&__pyx_n_s_step, __pyx_k_step, sizeof(__pyx_k_step), 0, 0, 1, 1},
@@ -21559,7 +21560,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__22 = PyTuple_Pack(1, __pyx_n_s_x); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__22);
   __Pyx_GIVEREF(__pyx_tuple__22);
-  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cec2013lsgo_cec2013_pyx, __pyx_n_s_b, 19, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_cec2013lsgo_cec2013_pyx, __pyx_n_s_b, 19, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(0, 19, __pyx_L1_error)
 
   /* "cec2013lsgo/cec2013.pyx":23
  * else:
@@ -21568,7 +21569,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         return codecs.latin_1_encode(x)[0]
  * 
  */
-  __pyx_codeobj__24 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cec2013lsgo_cec2013_pyx, __pyx_n_s_b, 23, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__24)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_codeobj__24 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_cec2013lsgo_cec2013_pyx, __pyx_n_s_b, 23, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__24)) __PYX_ERR(0, 23, __pyx_L1_error)
 
   /* "cec2013lsgo/cec2013.pyx":26
  *         return codecs.latin_1_encode(x)[0]
@@ -21580,7 +21581,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__25 = PyTuple_Pack(5, __pyx_n_s_x, __pyx_n_s_dim, __pyx_n_s_fitness, __pyx_n_s_sol, __pyx_n_s_i); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__25);
   __Pyx_GIVEREF(__pyx_tuple__25);
-  __pyx_codeobj__26 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cec2013lsgo_cec2013_pyx, __pyx_n_s_cec2013_test_func, 26, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__26)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_codeobj__26 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_cec2013lsgo_cec2013_pyx, __pyx_n_s_cec2013_test_func, 26, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__26)) __PYX_ERR(0, 26, __pyx_L1_error)
 
   /* "cec2013lsgo/cec2013.pyx":46
  * 
@@ -21592,7 +21593,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__27 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_fun); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__27);
   __Pyx_GIVEREF(__pyx_tuple__27);
-  __pyx_codeobj__28 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cec2013lsgo_cec2013_pyx, __pyx_n_s_get_info, 46, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__28)) __PYX_ERR(0, 46, __pyx_L1_error)
+  __pyx_codeobj__28 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_cec2013lsgo_cec2013_pyx, __pyx_n_s_get_info, 46, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__28)) __PYX_ERR(0, 46, __pyx_L1_error)
 
   /* "cec2013lsgo/cec2013.pyx":65
  *                 'best': optimum, 'dimension': 1000}
@@ -21604,7 +21605,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__29 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(0, 65, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__29);
   __Pyx_GIVEREF(__pyx_tuple__29);
-  __pyx_codeobj__30 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__29, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cec2013lsgo_cec2013_pyx, __pyx_n_s_get_num_functions, 65, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__30)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_codeobj__30 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__29, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_cec2013lsgo_cec2013_pyx, __pyx_n_s_get_num_functions, 65, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__30)) __PYX_ERR(0, 65, __pyx_L1_error)
 
   /* "cec2013lsgo/cec2013.pyx":68
  *         return 15
@@ -21613,7 +21614,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         free_func()
  * 
  */
-  __pyx_codeobj__31 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__29, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cec2013lsgo_cec2013_pyx, __pyx_n_s_dealloc, 68, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__31)) __PYX_ERR(0, 68, __pyx_L1_error)
+  __pyx_codeobj__31 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__29, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_cec2013lsgo_cec2013_pyx, __pyx_n_s_dealloc, 68, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__31)) __PYX_ERR(0, 68, __pyx_L1_error)
 
   /* "cec2013lsgo/cec2013.pyx":71
  *         free_func()
@@ -21622,7 +21623,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         next_run()
  * 
  */
-  __pyx_codeobj__32 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__29, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cec2013lsgo_cec2013_pyx, __pyx_n_s_next_run, 71, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__32)) __PYX_ERR(0, 71, __pyx_L1_error)
+  __pyx_codeobj__32 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__29, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_cec2013lsgo_cec2013_pyx, __pyx_n_s_next_run, 71, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__32)) __PYX_ERR(0, 71, __pyx_L1_error)
 
   /* "cec2013lsgo/cec2013.pyx":74
  *         next_run()
@@ -21631,7 +21632,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Evaluate the solution
  */
-  __pyx_codeobj__33 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cec2013lsgo_cec2013_pyx, __pyx_n_s_get_function, 74, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__33)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __pyx_codeobj__33 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_cec2013lsgo_cec2013_pyx, __pyx_n_s_get_function, 74, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__33)) __PYX_ERR(0, 74, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<

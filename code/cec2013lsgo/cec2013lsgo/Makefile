@@ -16,7 +16,7 @@ demo: 	$(OBJECTS) demo.o
 demo2:  $(OBJECTS2) demo2.o
 	$(CC) $(CXXFLAGS) -o demo2 $(OBJECTS2) demo2.o
 
-demo.o: demo.cpp Header.h  Benchmarks.h \
+demo.o: demo.cpp Benchmarks.h \
 F1.h F2.h F3.h F4.h F5.h F6.h F7.h F8.h F9.h F10.h\
 F11.h F12.h F13.h F14.h F15.h 
 	$(CC) $(CXXFLAGS) -c demo.cpp 
