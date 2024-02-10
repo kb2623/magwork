@@ -1,0 +1,10 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+build = ">=1.0.3"
+setuptools = ">=69.0.3"
+Cython = ">=3.0.8"
+
