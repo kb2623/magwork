@@ -71,8 +71,8 @@ cdef class Benchmark:
         for i in range(4, 12): file_load('cdatafiles', 'F%d-w.txt' % i)
         for i in range(13, 15): file_load('cdatafiles', 'F%d-w.txt' % i)
         # Load s
-        for i in range(4, 12): file_load('cdatafiles', 'F%d-w.txt' % i)
-        for i in range(13, 15): file_load('cdatafiles', 'F%d-w.txt' % i)
+        for i in range(4, 12): file_load('cdatafiles', 'F%d-s.txt' % i)
+        for i in range(13, 15): file_load('cdatafiles', 'F%d-s.txt' % i)
         # Load R25
         for i in range(4, 12): file_load('cdatafiles', 'F%d-R25.txt' % i)
         for i in range(13, 15): file_load('cdatafiles', 'F%d-R25.txt' % i)
