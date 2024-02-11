@@ -60,28 +60,33 @@ def file_load(data_dir: str, file_name: str):
 
 
 cdef class Benchmark:
-    def __init__(self):
-        os.makedirs('cdatafiles', exist_ok=True)
+    cdef public str input_data_dir
+
+    def __init__(self, input_data_dir: str = 'inputdata'):
+        # Set input data dir
+        self.input_data_dir = input_data_dir
+        # Create input data dir
+        os.makedirs(self.input_data_dir, exist_ok=True)
         # Load xopt
-        for i in range(1, 16): file_load('cdatafiles', 'F%d-xopt.txt' % i)
+        for i in range(1, 16): file_load(self.input_data_dir, 'F%d-xopt.txt' % i)
         # Load p
-        for i in range(4, 12): file_load('cdatafiles', 'F%d-p.txt' % i)
-        for i in range(13, 15): file_load('cdatafiles', 'F%d-p.txt' % i)
+        for i in range(4, 12): file_load(self.input_data_dir, 'F%d-p.txt' % i)
+        for i in range(13, 15): file_load(self.input_data_dir, 'F%d-p.txt' % i)
         # Load w
-        for i in range(4, 12): file_load('cdatafiles', 'F%d-w.txt' % i)
-        for i in range(13, 15): file_load('cdatafiles', 'F%d-w.txt' % i)
+        for i in range(4, 12): file_load(self.input_data_dir, 'F%d-w.txt' % i)
+        for i in range(13, 15): file_load(self.input_data_dir, 'F%d-w.txt' % i)
         # Load s
-        for i in range(4, 12): file_load('cdatafiles', 'F%d-s.txt' % i)
-        for i in range(13, 15): file_load('cdatafiles', 'F%d-s.txt' % i)
+        for i in range(4, 12): file_load(self.input_data_dir, 'F%d-s.txt' % i)
+        for i in range(13, 15): file_load(self.input_data_dir, 'F%d-s.txt' % i)
         # Load R25
-        for i in range(4, 12): file_load('cdatafiles', 'F%d-R25.txt' % i)
-        for i in range(13, 15): file_load('cdatafiles', 'F%d-R25.txt' % i)
+        for i in range(4, 12): file_load(self.input_data_dir, 'F%d-R25.txt' % i)
+        for i in range(13, 15): file_load(self.input_data_dir, 'F%d-R25.txt' % i)
         # Load R50
-        for i in range(4, 12): file_load('cdatafiles', 'F%d-R50.txt' % i)
-        for i in range(13, 15): file_load('cdatafiles', 'F%d-R50.txt' % i)
+        for i in range(4, 12): file_load(self.input_data_dir, 'F%d-R50.txt' % i)
+        for i in range(13, 15): file_load(self.input_data_dir, 'F%d-R50.txt' % i)
         # Load R100
-        for i in range(4, 12): file_load('cdatafiles', 'F%d-R100.txt' % i)
-        for i in range(13, 15): file_load('cdatafiles', 'F%d-R100.txt' % i)
+        for i in range(4, 12): file_load(self.input_data_dir, 'F%d-R100.txt' % i)
+        for i in range(13, 15): file_load(self.input_data_dir, 'F%d-R100.txt' % i)
         
     cpdef get_info(self, int fun):
         r"""Return the lower bound of the function.
@@ -120,7 +125,7 @@ cdef class Benchmark:
             fun (int): Optimization fucntion number.
         """
         set_func(fun)
-        cdef bytes dir_name = ('%s/cdatafiles' % os.getcwd()).encode()
+        cdef bytes dir_name = ('%s/%s' % (os.getcwd(), self.input_data_dir)).encode()
         set_data_dir(dir_name)
         return _cec2013_test_func
     
