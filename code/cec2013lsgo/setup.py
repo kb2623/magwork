@@ -1,6 +1,7 @@
 import sys
 
 from setuptools import (
+    find_packages,
     Extension,
     setup
 )
@@ -30,5 +31,6 @@ cec2013lsgo = Extension(
 
 setup(
     ext_modules=[cec2013lsgo],
+    packages=find_packages(),
     package_data={'cec2013lsgo': ['cdatafiles/*.txt', '*.h']},
 )
