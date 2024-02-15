@@ -13,7 +13,7 @@ cec2013lsgo = {file = "../cec2013lsgo/dist/cec2013lsgo-2.0-cp312-cp312-linux_x86
 
 [dev-packages]
 ipython = ">=8.21.0"
-jupyterlab = ">=4.1.0"
+jupyterlab = ">=4.1.1"
 ipympl = ">=0.9.3"
 PyLaTeX = ">=1.4.2"
 
