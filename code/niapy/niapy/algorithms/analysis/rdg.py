@@ -20,7 +20,8 @@ __all__ = [
     'RecursiveDifferentialGroupingV2',
     'RecursiveDifferentialGroupingV3',
     'EfficientRecursiveDifferentialGrouping',
-    'ThreeLevelRecursiveDifferentialGrouping'
+    'ThreeLevelRecursiveDifferentialGrouping',
+    'ThreeStagesLevelRecursiveDifferentialGrouping'
 ]
 
 
@@ -51,33 +52,33 @@ class RecursiveDifferentialGrouping(AnalysisAlgorithm):
 
     Attributes:
         alpha (float): Multiplier for epsilon.
-        n (int): Numbner of solutions for determening the epsilon parameter.
+        k (int): Numbner of solutions for determening the epsilon parameter.
     """
     Name = ['RecursiveDifferentialGrouping', 'RDG']
 
-    def __init__(self, alpha=None, n=None, *args, **kwargs):
+    def __init__(self, alpha=None, k=None, *args, **kwargs):
         r"""Initialize RecursiveDifferentialGrouping.
 
         Args:
             alpha (Optional[float]): Multiplier for epsilon.
-            n (Optional[int]): Numbner of solutions for determening the epsilon parameter.
+            k (Optional[int]): Numbner of solutions for determening the epsilon parameter.
             args (list): Additional list parameters.
             kwargs (dict): Additional keyword parametes.
         """
-        super().__init__(alpha=alpha, n=n, *args, **kwargs)
+        super().__init__(alpha=alpha, k=n, *args, **kwargs)
 
-    def set_parameters(self, alpha=None, n=None, *args, **kwargs):
+    def set_parameters(self, alpha=None, k=None, *args, **kwargs):
         r"""Set the algorithm parameters/arguments.
 
         Args:
             alpha (Optional[float]): TODO.
-            n (Optional[int]): Number of starting population.
+            k (Optional[int]): Number of starting population.
             args (list): Additional list parameters.
             kwargs (dict): Additional keyword parametes.
         """
         super().set_parameters(**kwargs)
-        self.alpha = alpha if alpha else sys.float_info.epsilon
-        self.n = n if n else 50
+        self.alpha = alpha if alpha else 1e-12
+        self.k = k if k else 10
 
     def get_parameters(self):
         r"""Get parameter values for the algorithm.
@@ -88,7 +89,7 @@ class RecursiveDifferentialGrouping(AnalysisAlgorithm):
         d = super().get_parameters()
         d.update({
             'alpha': self.alpha,
-            'n': self.n
+            'k': self.k
         })
         return d
 
@@ -164,7 +165,7 @@ class RecursiveDifferentialGrouping(AnalysisAlgorithm):
         Returns:
             list[Union[list, list[int]]]:
         """
-        _, fpop = default_numpy_init(task, self.n, self.rng)
+        _, fpop = default_numpy_init(task, self.k, self.rng)
         seps, allgroups = [], []
         epsilon = np.min(np.abs(fpop)) * self.alpha
         sub1, sub2 = [0], [i + 1 for i in range(task.dimension - 1)]
@@ -314,7 +315,7 @@ class RecursiveDifferentialGroupingV3(RecursiveDifferentialGroupingV2):
             dict[str, any]: Key-value.
         """
         d = super().get_parameters()
-        d.pop('n', None)
+        d.pop('k', None)
         d.update({
             'eps_n': self.eps_n,
             'eps_s': self.eps_s
@@ -334,7 +335,7 @@ class RecursiveDifferentialGroupingV3(RecursiveDifferentialGroupingV2):
         return r"""Sun Y, Li X, Erst A, Omidvar, M N. Decomposition for Large-scale Optimization Problems with Overlapping Components. In 2019 IEEE Congress on Evolutionary Computation (CEC), pp. 326-333. IEEE, 2019."""
 
     def run(self, task, *args, **kwargs):
-        r"""Core function of HillClimbAlgorithm algorithm.
+        r"""Core function of RecursiveDifferentialGroupingV3 algorithm.
 
         Args:
             task (Task): Optimization task.
@@ -443,7 +444,7 @@ class EfficientRecursiveDifferentialGrouping(RecursiveDifferentialGroupingV2):
             dict[str, any]: Key-value.
         """
         d = super().get_parameters()
-        d.pop('n', None)
+        d.pop('k', None)
         return d
 
     def interact(self, task, p1, p2, sub1, sub2, y):
@@ -491,7 +492,7 @@ class EfficientRecursiveDifferentialGrouping(RecursiveDifferentialGroupingV2):
         return sub1_n, y
 
     def run(self, task, *args, **kwargs):
-        r"""Core function of HillClimbAlgorithm algorithm.
+        r"""Core function of EfficientRecursiveDifferentialGrouping algorithm.
 
         Args:
             task (Task): Optimization task.
@@ -530,7 +531,7 @@ class EfficientRecursiveDifferentialGrouping(RecursiveDifferentialGroupingV2):
         return allgroups
 
 
-class ThreeLevelRecursiveDifferentialGrouping(AnalysisAlgorithm):
+class ThreeLevelRecursiveDifferentialGrouping(RecursiveDifferentialGrouping):
     r"""Implementation of three-level recursive differential grouping.
 
     Algorithm:
@@ -554,50 +555,14 @@ class ThreeLevelRecursiveDifferentialGrouping(AnalysisAlgorithm):
     See Also:
         * :class:`niapy.algorithms.Algorithm`
         * :class:`niapy.algorithms.AnalysisAlgorithm`
+        * :class:`niapy.algorithms.RecursiveDifferentialGrouping`
 
     Attributes:
         alpha (float): Multiplier for epsilon.
         k (int): Numbner of solutions for determening the epsilon parameter.
     """
     Name = ['ThreeLevelRecursiveDifferentialGrouping', 'TRDG']
-
-    def __init__(self, alpha=None, k=None, *args, **kwargs):
-        r"""Initialize RecursiveDifferentialGrouping.
-
-        Args:
-            alpha (Optional[float]): Multiplier for epsilon.
-            n (Optional[int]): Numbner of solutions for determening the epsilon parameter.
-            args (list): Additional list parameters.
-            kwargs (dict): Additional keyword parametes.
-        """
-        super().__init__(alpha=alpha, k=k, *args, **kwargs)
-
-    def set_parameters(self, alpha=None, k=None, *args, **kwargs):
-        r"""Set the algorithm parameters/arguments.
-
-        Args:
-            alpha (Optional[float]): TODO.
-            k (Optional[int]): Number of starting population.
-            args (list): Additional list parameters.
-            kwargs (dict): Additional keyword parametes.
-        """
-        super().set_parameters(**kwargs)
-        self.alpha = alpha if alpha else sys.float_info.epsilon
-        self.k = k if k else 50
-
-    def get_parameters(self):
-        r"""Get parameter values for the algorithm.
-
-        Returns:
-            dict[str, any]: Key-value.
-        """
-        d = super().get_parameters()
-        d.update({
-            'alpha': self.alpha,
-            'k': self.k
-        })
-        return d
-
+    
     @staticmethod
     def info():
         r"""Get basic information about the algorithm.
@@ -647,7 +612,7 @@ class ThreeLevelRecursiveDifferentialGrouping(AnalysisAlgorithm):
             d_1_2 (float): TODO.
 
         Returns:
-            bool: TODO.
+            list[int]: TODO.
         """
         sub1_n = list(sub1)
         if self.interact(task, sub1, sub2, epsilon, p1, p2, d_1_2):
@@ -668,7 +633,7 @@ class ThreeLevelRecursiveDifferentialGrouping(AnalysisAlgorithm):
         return sub1_n
 
     def run(self, task, *args, **kwargs):
-        r"""Core function of RecursiveDifferentialGrouping algorithm.
+        r"""Core function of ThreeLevelRecursiveDifferentialGrouping algorithm.
 
         Args:
             task (Task): Optimization task.
@@ -705,4 +670,69 @@ class ThreeLevelRecursiveDifferentialGrouping(AnalysisAlgorithm):
                 elif np.size(sub1) == 1:
                     seps.append(sub1[0])
         for e in seps: allgroups.append([e])
+        return allgroups
+
+
+class ThreeStagesLevelRecursiveDifferentialGrouping(RecursiveDifferentialGrouping):
+    r"""Implementation of three stages recursive differential grouping.
+
+    Algorithm:
+        ThreeStagesLevelRecursiveDifferentialGrouping
+
+    Date:
+        2024
+
+    Authors:
+        Klemen Berkovic
+
+    License:
+        MIT
+
+    Reference URL:
+        https://ieeexplore.ieee.org/document/10268417
+
+    Reference paper:
+        L. Zheng, G. Xu and W. Chen, "Three Stages Recursive Differential Grouping for Large-Scale Global Optimization," in IEEE Access, vol. 11, pp. 109734-109746, 2023, doi: 10.1109/ACCESS.2023.3321068. keywords: {Optimization;Computational efficiency;Linear programming;Search problems;Sun;Perturbation methods;Complexity theory;Cooperative co-evolution (CC);fully separable;large-scale global optimization (LSGO);recursive differential grouping}, 
+
+    See Also:
+        * :class:`niapy.algorithms.Algorithm`
+        * :class:`niapy.algorithms.AnalysisAlgorithm`
+        * :class:`niapy.algorithms.RecursiveDifferentialGrouping`
+
+    Attributes:
+        alpha (float): Multiplier for epsilon.
+        k (int): Numbner of solutions for determening the epsilon parameter.
+    """
+    Name = ['ThreeStagesLevelRecursiveDifferentialGrouping', 'TSRDG']
+    
+    @staticmethod
+    def info():
+        r"""Get basic information about the algorithm.
+
+        Returns:
+            str: Basic information.
+
+        See Also:
+            :func:`niapy.algorithms.algorithm.Algorithm.info`
+        """
+        return r"""L. Zheng, G. Xu and W. Chen, "Three Stages Recursive Differential Grouping for Large-Scale Global Optimization," in IEEE Access, vol. 11, pp. 109734-109746, 2023, doi: 10.1109/ACCESS.2023.3321068. keywords: {Optimization;Computational efficiency;Linear programming;Search problems;Sun;Perturbation methods;Complexity theory;Cooperative co-evolution (CC);fully separable;large-scale global optimization (LSGO);recursive differential grouping}, """
+
+    def run(self, task, *args, **kwargs):
+        r"""Core function of ThreeStagesLevelRecursiveDifferentialGrouping algorithm.
+
+        Args:
+            task (Task): Optimization task.
+            args (list): Additional list parameters.
+            kwargs (dict): Additional keyword parametes.
+
+        Returns:
+            list[Union[list, list[int]]]:
+        """
+        _, fpop = default_numpy_init(task, np.floor(self.k / 4).astype(int), self.rng)
+        epsilon = np.min(np.abs(fpop)) * self.alpha
+        seps, allgroups = [], []
+        sub1, sub2 = [0], [i + 1 for i in range(task.dimension - 1)]
+        p1 = np.copy(task.lower)
+        p1f = task.eval(p1)
+        # TODO implement the algorithm
         return allgroups
