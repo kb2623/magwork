@@ -5,7 +5,8 @@ from niapy.algorithms.analysis.rdg import (
     RecursiveDifferentialGrouping,
     RecursiveDifferentialGroupingV2,
     RecursiveDifferentialGroupingV3,
-    EfficientRecursiveDifferentialGrouping
+    EfficientRecursiveDifferentialGrouping,
+    ThreeLevelRecursiveDifferentialGrouping
 )
 from niapy.algorithms.analysis.dg import DifferentialGrouping
 from niapy.algorithms.analysis.ddg import DualDifferentialGrouping
@@ -17,6 +18,7 @@ __all__ = [
     'RecursiveDifferentialGroupingV2',
     'RecursiveDifferentialGroupingV3',
     'EfficientRecursiveDifferentialGrouping',
+    'ThreeLevelRecursiveDifferentialGrouping',
     'DifferentialGrouping',
     'DualDifferentialGrouping',
     'GlobalDifferentialGrouping',
