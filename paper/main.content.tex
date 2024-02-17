@@ -1,0 +1,215 @@
+\chapter{Uvod}\label{cahp:uvod}
+S problemi velikih dimenzij sem med drugim srečujemo na različnih področjih, kot so telekomunikacije, logistika, strojništvo, itd.
+Ti problemi zahtevajo iskanje optimalnih rešitev v obsežnem iskalnem prostoru, kjer ima problem veliko število odločitvenih spremenljivk.
+Pri takih problemih tradicionalni optimizacijski algoritmi, kot so to metode, ki temeljijo na gradientu, kvadratno programiranje in linerano programiranje, se soočajo s težavami.
+Inteligenca rojev (ang. \textit{Swarm inteligence} (SI)) se je pojavila, kot obetaven pristop za reševanje problemov velikih dimenzij zaradi svoje zmožnosti učinkovitega raziskovanja prostora, obvladovanja šumnih in ne-konveksnih objektivnih funkcij, ter obvladovanja velikega števila parametrov objektivne funkcije.
+
+Inteligenca rojev se nanaša na kolektivno vedenje decentraliziranih, samoorganiziranjih sistemov, sestavljenih iz več agentov, ki sodelujejo med seboj in v okolju, da bi dosegli skupni clij.
+Agenti v sistemih SI so lahko umetni ali naravni, komunicirajo in usklajujejo pa se po preprostih lokalnih pravilih.
+Vedenje teh agentov se zgleduje po vedenju družbenih žuželk, kot so mravlje, čebele in termiti, ki v svojih kolonijah kažejo izjemne sposobnosti reševanja problemov.
+
+Eden najbolj priljubljenih SI algoritmov za reševanje problemov velikih dimenzij je algoritem roja delcev (ang. \textit{Particle Swarm Optimization} (PSO))~\cite{alg:pso}.
+PSO algoritem sta prvič predlagala Ebarhart in Kennedy leta 1995 in je od takrat pridobil široko pozornost zaradi svoje preprostosti, robustnosti in učinkovitosti.
+PSO algoritem deluje tako, da simulira vedenje skupine delcev, ki se premikajo v iskalnem prostoru, da bi našli optimalno rešitev.
+Vsak delec predstavlja kandidatno rešitev problema, njegovo gibanje pa je odvisno od njegove lastne hitrosti in najboljše rešitve, ki jo je skupina delcev doslej našla.
+
+Druga SI algoritma, ki je sta lahko uporabljen za optimizacijo velikih dimenzij sta algoritem optimizacije kolonije mravelj (ang. \textit{Ant Colony Optimization} (ACO))~\cite{alg:aco} pri iskanju hrane in algoritem umetne čebelje kolonije (ang. \textit{Artificial Bee Colony} (ABC))~\cite{alg:abc}, ki posnema vedenje iskanja hrane čebel.
+ACO algoritem deluje tako, da zgradi graf rešitve, ki predstavlja prostor iskanja, mravlje se premikajo po tem grafu, kjer preiskujejo prostor in iščejo nove boljše rešitve problema.
+ABC algoritem zaposluje skupino čebel, ki iščejo iskalni prostor za vire hrane, pri čemer vsaka čebela predstavlja kandidatno rešitev problema.
+
+Glavna prednost uporabe SI algoritmov za optimizacijo problemov velikih dimenzij je njihova sposobnost obvladovanja kompleksnosti in velike dimenzionalnosti iskalnega prostora.
+Tradicionalni optimizacijski algoritmi se soočajo s težavami pri reševanju takih problemov zaradi visokih računskih stroškov in prisotnosti večih lokalnih optimumov.
+Nasprotno pa SI algoritmi uporabljajo preporsta lokalna pravila za učinkovito raziskovanje iskalnega prostora in so odpornejši na lokalne optimume, v katerih lahko obtičijo mnogi tradicionalni algoritmi.
+
+Uporabo SI algoritmov za optimizacijo problemov velikih dimenzij, lahko opazimo na mnogih področjih, kot so strojništvo, finance in logistika.
+V strojništvu so bili SI algoritmi uporabljeni za optimizacijo kompleksnih sistemov, kot so letala, turbine in motorji.
+V finačništvu so bili SI algoritmi uporabljeni za optimizacijo portfelja in obvladovanje tvegan podjetji.
+V logistiki so bili SI algoritmi uporabljeni za optimizacijo usmerjanja vozil, upravljanja s skladiščem in optimizacije dobavne verige.
+SI algoritmi so se izkazali za zelo učinkovite in njihov uspeh je spodbudil nadaljnje raziskave razvoja novih in izboljšanih algoritmov.
+
+Kljub prednostim SI algoritmov imajo tudi ti algoritmi nekatere omejitve, kot so počasna stopnja konvergence, potreba po velikem številu ovrednotenj cenitvene funkcije in občutljivosti na nastavitve parametrov algoritma.
+Za premagovanje teh omejitev so raziskovali predlagali več modifikacij in hibridizacij SI algoritmov, kot je hibridizacija z lokalnimi iskalnimi metodami, operatorji mutacije in hibridizacija z drugimi optimizacijskimi algoritmi.
+
+V zadnjih letih so raziskovalci uvedli koncept diferencialnega združevanja in koevolucije kot nove strategije za izboljšanje učinkovitosti optimizacijskih algoritmov za reševanje problemov velikih dimenzij.
+Cilj teh strategij je izboljšati proces iskanja z razdelitvijo optimizacijskega problema na manjše podprobleme in sočasno uporabo optimizacijskih algoritmov za optimizacijo vsakega podproblema.
+Podproblemi se nato uskladijo z diferencialnim združevanjem in koevoluciskimi mehanizmi, na način da vodijo celoten proces iskanja k boljšim rešitvam.
+
+Koevolucija je tehnika, ki podpira reševanje hkraten razvoj večih populacij, ki rešujejo svoj podproblem.
+Podproblemi medsebojno delujejo in vplivajo na razvoj drug drugega, ter ustvarjajo dinamično in konkurenčno okolje.
+Koevolucija spodbuja raziskovanje različnih regij iskalnega prostora in spodbuja izmenjavo informacij med podproblemi.
+Ta kooperativna interakcija med podproblemi lahko vodi do odkritja boljših rešitev in izboljšanja konvergentnih lastnosti.
+
+Kombinacija diferencialnega združevanja in koevelucije za hribidizacijo optimizacijskih algoritmov je pokazala obetavne rezultate pri reševanju problemov velikih dimenzij.
+Te strategije izkoriščajo prednosti obeh tehnik, kar omogoča učinkovito raziskovanje in izkoriščanje iskalnega prostora.
+Z razčlenitvijo problema na manjše podprobleme in uporabo optimizacijskih algoritmov postane proces iskanja bolj osredotočen in učinkovit.
+
+Motivacija za to diplomsko delo izhaja iz potrebe po obravnavanju naraščajočega povpraševanja po učinkovitih in uspešnih rešitvah problemov velikih dimenzij.
+S pojavom vele podatkov (ang. \textit{Big Data}) in vse večjo kompleksnostjo sodobnih sistemov, tradicionalne optimizacijske tehnike ne zadoščajo za pravočasno zagoravljanje optimalnih rešitve.
+PSO algoritmi ponujajo obetavno alternativo za reševanje teh zahtevnih problemov, vendar so potrebne nadaljnje raziskav, da bi v celoti razumeli njihove zmogljivosti in omejitve.
+
+V tem diplomskem delu želimo raziskati učinkovitost kovelucijskega hibridnega PSO algoritma z rekurzivnimi diferencialnimi metodami grupiranja za reševanje problemov velikih dimenzij.
+Raziskali bomo, kako lahko te strategije izboljšajo delovanje PSO algoritmov.
+Z obsežnim eksperimentiranjem in primerjalno analizo bomo ovrednotili delovanje predlaganega algoritma v primerjavi z obstoječimi hibridnimi PSO algoritmi.
+S preučevanjem njegove hitrosti konvergence, kakovosti rešitev in robustnosti želimo zagotoviti vpogled v potencialne prednosti in omejitve novega hibridnega algoritma v kontekstu problemov velikih dimenzij.
+Z vključitvijo konceptov diferencialnega grupiranja in koevolucije v hibridne PSO algoritme pričakujemo, da bomo premagali nekatere omejitve in izzive, ki jih predstavljajo optimizacijski problemi velikih dimenzij.
+Te strategije imajo potencial za izboljšanje zmožnosti raziskovanja in izkoriščanja optimizacijskih algoritmov,  kar vodi do učinkovitejših in uspešnejših rešitev.
+Preiskava teh tehnik v kontekstu problemov veliki dimenzij je ključnega pomena za napredek na področju optimizacijskih algoritmov iz zagotavljanja praktičnih rešitev za aplikacije v resničnem svetu.
+
+Prispevki tega diplomskega dela naj bi vključevali:
+\begin{enumerate}
+    \item Obsežen pregled literature o PSO algoritmih, vključno zz analizo prednosti in omejitev različnih PSO algoritmov.
+    \item Vrednotenje delovanja različnih PSO algoritmov na problemih velikih dimenzij, ki vključujejo multimudalne funkcije, popolnoma odvedljive funkcije, delno aditivno odvedljive funkcije, funkcije s prekrivajočimi komponentami in ne-odvedljive funkcije.
+    \item Raziskovanje vpliva različnih uporabljenih metod hibridizacije PSO algoritma na problemih velikih dimenzij.
+    \item Priporočila za izbiro in nastavitve hibridiziranih PSO algoritmov za probleme velikih dimenzij, ki temeljijo na rezultatih naših poskusov.
+\end{enumerate}
+
+Preostanek tega diplomskega dela je organiziran na naslednji način.
+V \ref{chap:obsojeca.dela}. poglavju ponujamo pregled literature o optimizacijskih algoritmih inteligence rojev za optimizacijo problemov velikih dimenzij.
+To poglavje vključuje podrobno razpravo o prednostih in omejitvah različnih optimizacijskih algoritmov inteligence rojev, algoritmov grupiranja komponent, ki bazirajo na razlikah vpliva komponent, ter koevolucijskih algoritmih za reševanje problemov velikih dimenzij.
+V \ref{chap:algo}. poglavju opisujemo novo hibidizacijo PSO algoritma, ki uporablja koevolucijo in grupiranje komponent za probleme velikih dimenzij.
+To poglavje vključuje razpravo o uporabljenih metodah za modifikacijo hibridnega PSO algoritma, ter omejitvah novega hibridnega algoritma.
+Poglavje vsebuje tudi priporočila za izbiro, nastavitev parametrov in omejitve hibridnih PSO algoritmov za probleme velikih dimenzij.
+V \ref{chap:exp}. poglavju posredujemo rezultate naših poskusov in razpravljamo o uspešnosti različnih hibridnih PSO algoritmih na problemih velikih dimenzij.
+To poglavje vključuje podrobno analizo vpliva različnih parametrov hibridnih PSO algoritmov.
+Na koncu \ref{chap:end}. poglavju podajamo povzetek naših ugotovitev, zaključkom in predlogi za prihodnje raziskave na tem področju. Verjamemo, da bo ta diplomska naloga zagotovila dragocen vpogled v uporabo SI algoritmov za optimizacijo problemov velikih dimenzij in prispevala k razvoju učinkovitejših in uspešnejših optimizacijskih tehnik.
+
+\chapter{Pregled obstoječih del}\label{chap:obsojeca.dela}
+
+% TODO
+
+\section{Optimizacijski algoritmi in inteligenca rojev}
+
+% TODO
+
+\section{Roj delcev}
+
+% TODO
+
+\section{Ko-evolucija}
+
+% TODO
+
+\section{Diferencialne metode grupiranja}
+
+% TODO
+
+\begin{algorithm}
+    \KwIn{$f$, $\mathbf{ub}$, $\mathbf{lb}$, $\epsilon_n$}
+    \SetKwFunction{Inter}{Interact}
+    \SetKwFunction{app}{Append}
+    \SetKwFunction{len}{Len}
+    \SetKwFunction{del}{Del}
+
+    $\mathbf{a}$, $\mathbf{b}$, $\mathbf{x_1}$, $\mathbf{s}$, $\mathbf{x_{l,l}}$, $y_{l,l}$ \gets~ [], [], [1], [1], $\mathbf{lb}$, $f(\mathbf{lb})$\;
+    $\mathbf{x_2}$ \gets~ [\lFor*{$i=2$ \KwTo \len{$\mathbf{lb}$}}{$i$}]\;
+
+    \While{$\mathbf{\mathbf{s}}$ \textbf{not} empty}{
+	$\mathbf{s}$ \gets~ []\;
+	$\mathbf{x_1^*}$ \gets~  \Inter{$f$, $\mathbf{lb}$, $\mathbf{ub}$, $\mathbf{x_1}$, $\mathbf{x_2}$, $\mathbf{x_{l,l}}$, $y_{l,l}$, $\mathbf{s}$}\;
+	\eIf{\len{$\mathbf{x_1^*}$} < $\epsilon_n$ \textbf{and} \len{$\mathbf{x_1^*}$} $\neq$ \len{$\mathbf{x_1}$}}{
+		$\mathbf{x_1}$, $\mathbf{x_2}$ = $\mathbf{x_1^*}$, $\mathbf{s}$\;
+		\lIf{\len{$\mathbf{s}$} $=$ $0$}{\app{$\mathbf{b}$, $\mathbf{x_1}$} and \textbf{break}}        
+	}{
+	   \leIf{\len{$\mathbf{x_1^*}$} $=$ $1$}{\app{$\mathbf{a}$, $\mathbf{x_1^*}$}}{\app{$\mathbf{b}$, $\mathbf{x_1^*}$}}
+	   \uIf{\len{$\mathbf{s}$} $>$ $1$}{
+		$\mathbf{x_1}$ \gets~ [$\mathbf{s}$[0]]\;
+		\del{$\mathbf{s}$, $\mathbf{s}$[0]}\;
+		$\mathbf{x_2}$ \gets~ $\mathbf{s}$\;
+	   }    
+	   \lElseIf{\len{$\mathbf{s}$} $=$ $1$}{\app{$\mathbf{a}$, $\mathbf{x_1}$} and \textbf{break}}
+	}
+    }
+    \Return{$\mathbf{a}$, $\mathbf{b}$}\;
+
+    \caption{\textbf{RDG3 algorithm for decomposition of overlapping problems in separable groups.}}
+    \label{pcode:rdg3}
+\end{algorithm}
+
+
+\begin{algorithm}
+	\KwIn{$f$, $\mathbf{lb}$, $\mathbf{ub}$, $\mathbf{x_1}$, $\mathbf{x_2}$, $\mathbf{x_{l,l}}$, $y_{l,l}$, $\mathbf{s}$}
+	\SetKwFunction{Inter}{Interact}
+	\SetKwFunction{app}{Append}
+	\SetKwFunction{len}{Len}
+	\SetKwFunction{del}{Del}
+
+	$\mathbf{x_{u,l}}$, $\mathbf{x_{l,m}}$, $\mathbf{x_{u,m}}$  \gets~ $\mathbf{x_{l,l}}$, $\mathbf{x_{l,l}}$, $\mathbf{x_{l,l}}$\;
+	$\mathbf{x_{u,l}}[\mathbf{x_1}]$ \gets~$\mathbf{x_{u,m}}[\mathbf{x_1}]$ \gets~ $\mathbf{ub}[\mathbf{x_1}]$\;
+	$\mathbf{x_{l,m}}[\mathbf{x_2}]$ \gets~ $\mathbf{x_{u,m}}[\mathbf{x_2}]$ \gets~ $(\mathbf{ub}[\mathbf{x_2}] + \mathbf{lb}[\mathbf{x_2}]) / 2$\;
+	$y_{u,l}$, $y_{l,m}$, $y_{u,m}$ \gets~ $f(\mathbf{x_{u,l}})$, $f(\mathbf{x_{l,m}})$, $f(\mathbf{x_{u,m}})$\;
+	$\delta_1$, $\delta_2$ \gets~ $y_{l,l} - y_{u,l}$, $y_{l,m} - y_{u,m}$\;
+	\uIf{$|\delta_1 - \delta_2| > \gamma(|y_{l,l}| + |y_{u,l}| + |y_{l,m}| + |y_{u,m}|)$}{
+		\lIf{\len{$\mathbf{x_2}$} $=$ 1}{$\mathbf{x_1}$ \gets~ $\mathbf{x_1} \cup \mathbf{x_2}$}
+            \Else{
+			$\mathbf{g_1}$, $\mathbf{g_2}$ \gets~ Divide $\mathbf{x_2}$ into equally-sized two groups\;
+			$\mathbf{x_1}$ \gets~ \Inter{$f$, $\mathbf{lb}$, $\mathbf{ub}$, $\mathbf{x_1}$, $\mathbf{g_2}$, $\mathbf{x_{l,l}}$, $y_{l,l}$, $\mathbf{s}$} $\cup$ \Inter{$f$, $\mathbf{lb}$, $\mathbf{ub}$, $\mathbf{x_1}$, $\mathbf{g_1}$, $\mathbf{x_{l,l}}$, $y_{l,l}$, $\mathbf{s}$}\;
+		}
+	}
+    \lElse{\app{$\mathbf{s}$, $\mathbf{x_2}$}}
+	\Return{$\mathbf{x_1}$}\;
+
+	\caption{\textbf{Interact function~\cite{alg:rdg3} used by Algorithm~\ref{pcode:rdg3}.}}
+	\label{pcode:interact}
+\end{algorithm}
+
+\section{Omejitve sorodnih del}
+
+% TODO
+
+\chapter{Koevolucijski algoritem rojev delcev}\label{chap:algo}
+
+% TODO
+
+\begin{algorithm}
+	\KwIn{$f$, $\mathbf{lb}$, $\mathbf{ub}$}
+	\SetKwFunction{run}{RunGeneration}
+	\SetKwFunction{Decom}{Decomposition}
+	\SetKwFunction{appbetter}{Update}
+
+	$\mathbf{g}$ \gets~ \Decom{$f$, $\mathbf{ub}$, $\mathbf{lb}$}\;
+	$\mathbf{a}$ \gets~ [\lForEach*{$g$ in $\mathbf{g}$}{Initialize algorithm $a$ with starting population based on group $g$}]\;
+        $\mathbf{X^*}$, $\mathbf{y}^*$ \gets~ Get best individuals and fitness values from initialized populations for each algorithm\;\label{pcode:ccalgo:get_bests}
+	$\mathbf{x^*}$, $y^*$ \gets~ Get best individual and fitness value from $\mathbf{X^*}$\;
+	\While{$\neg$ stopping condition meet}{
+		\ForEach{$i$, $a$ in $\mathbf{a}$}{
+			$\mathbf{x_n^*}$, $y_n^*$ \gets~ \run{$a$}\;\label{pcode:ccalgo:run_gen}
+			\If{$y_n^* < \mathbf{y^*}[i]$}{\label{pcode:ccalgo:best_check}
+				$\mathbf{X^*}[i]$, $\mathbf{y^*}[i]$ \gets~ $\mathbf{x_n^*}$, $y_n^*$\;\label{pcode:ccalgo:construct_best}
+				\lIf{$y_n^* < y^*$}{$\mathbf{x^*}$, $y^*$ \gets~ $\mathbf{x_n^*}$, $y_n^*$}
+			}
+		}
+        \If{Any group found new best individual}{\label{pcode:ccalgo:new_best_fond_start}
+		      \lForEach{$g$ in $\mathbf{g}$}{$\mathbf{x_n}[g]$ \gets~ $\mathbf{X^*}[g]$}
+		      $y_n$ \gets~ $f(\mathbf{x_n})$\;
+		      \lIf{$y_n < y^*$}{$\mathbf{x^*}$, $y^*$ = $\mathbf{x_n}$, $y_n$}
+        }\label{pcode:ccalgo:new_best_fond_end}
+	}
+	\Return{$\mathbf{x^*}$, $y^*$}\;
+
+	\caption{\textbf{Our implementation of CC algorithm.}}
+	\label{pcode:ccalgo}
+\end{algorithm}
+
+\chapter{Eksperiment}\label{chap:exp}
+
+% TODO
+
+\section{Primerjava uporabe metod RDG}
+
+% TODO
+
+\subsection{Analiza rezultatov}
+
+% TODO
+
+\section{Primerjava PSO algoritmov z metodami RDG}
+
+% TODO
+
+\subsection{Analiza rezultatov}
+
+% TODO
+
+\chapter{Zaključek}\label{chap:end}
+
+% TODO

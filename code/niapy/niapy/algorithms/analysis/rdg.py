@@ -65,7 +65,7 @@ class RecursiveDifferentialGrouping(AnalysisAlgorithm):
             args (list): Additional list parameters.
             kwargs (dict): Additional keyword parametes.
         """
-        super().__init__(alpha=alpha, k=n, *args, **kwargs)
+        super().__init__(alpha=alpha, k=k, *args, **kwargs)
 
     def set_parameters(self, alpha=None, k=None, *args, **kwargs):
         r"""Set the algorithm parameters/arguments.

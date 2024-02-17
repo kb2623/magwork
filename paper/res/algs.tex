@@ -1,0 +1,57 @@
+\begin{algorithm}
+	\SetAlgoLined
+	\KwIn{$f$, $\mathbf{lb}$, $\mathbf{ub}$, $\mathbf{x_1}$, $\mathbf{x_2}$, $\mathbf{x_{l,l}}$, $y_{l,l}$, $\mathbf{s}$}
+	\SetKwFunction{Inter}{Interact}
+	\SetKwFunction{app}{Append}
+	\SetKwFunction{len}{Len}
+	\SetKwFunction{del}{Del}
+
+	$\mathbf{x_{u,l}}$, $\mathbf{x_{l,m}}$, $\mathbf{x_{u,m}}$  \gets~ $\mathbf{x_{l,l}}$, $\mathbf{x_{l,l}}$, $\mathbf{x_{l,l}}$\;
+	$\mathbf{x_{u,l}}[\mathbf{x_1}]$ \gets~$\mathbf{x_{u,m}}[\mathbf{x_1}]$ \gets~ $\mathbf{ub}[\mathbf{x_1}]$\;
+	$\mathbf{x_{l,m}}[\mathbf{x_2}]$ \gets~ $\mathbf{x_{u,m}}[\mathbf{x_2}]$ \gets~ $(\mathbf{ub}[\mathbf{x_2}] + \mathbf{lb}[\mathbf{x_2}]) / 2$\;
+	$y_{u,l}$, $y_{l,m}$, $y_{u,m}$ \gets~ $f(\mathbf{x_{u,l}})$, $f(\mathbf{x_{l,m}})$, $f(\mathbf{x_{u,m}})$\;
+	$\delta_1$, $\delta_2$ \gets~ $y_{l,l} - y_{u,l}$, $y_{l,m} - y_{u,m}$\;
+	\eIf{$|\delta_1 - \delta_2| > \gamma(|y_{l,l}| + |y_{u,l}| + |y_{l,m}| + |y_{u,m}|)$}{
+		\eIf{\len{$\mathbf{x_2}$} $=$ 1}{
+            $\mathbf{x_1}$ \gets~ $\mathbf{x_1} \cup \mathbf{x_2}$
+        }{
+			$\mathbf{g_1}$, $\mathbf{g_2}$ \gets~ Divide $\mathbf{x_2}$ into equally-sized two groups\;
+			$\mathbf{x_1}$ \gets~ \Inter{$f$, $\mathbf{lb}$, $\mathbf{ub}$, $\mathbf{x_1}$, $\mathbf{g_2}$, $\mathbf{x_{l,l}}$, $y_{l,l}$, $\mathbf{s}$} $\cup$ \Inter{$f$, $\mathbf{lb}$, $\mathbf{ub}$, $\mathbf{x_1}$, $\mathbf{g_1}$, $\mathbf{x_{l,l}}$, $y_{l,l}$, $\mathbf{s}$}\;
+		}
+	}{
+        \app{$\mathbf{s}$, $\mathbf{x_2}$}
+    }
+	\Return{$\mathbf{x_1}$}\;
+
+	\caption{\textbf{Interact function~\cite{alg:rdg3} used by Algorithm~\ref{pcode:rdg3}.}}
+	\label{pcode:interact}
+\end{algorithm}
+
+\begin{algorithm}
+	\SetAlgoLined
+	\KwIn{$f$, $\mathbf{lb}$, $\mathbf{ub}$, $\mathbf{x_1}$, $\mathbf{x_2}$, $\mathbf{x_{l,l}}$, $y_{l,l}$, $\mathbf{s}$}
+	\SetKwFunction{Inter}{Interact}
+	\SetKwFunction{app}{Append}
+	\SetKwFunction{len}{Len}
+	\SetKwFunction{del}{Del}
+
+	$\mathbf{x_{u,l}}$, $\mathbf{x_{l,m}}$, $\mathbf{x_{u,m}}$  \gets~ $\mathbf{x_{l,l}}$, $\mathbf{x_{l,l}}$, $\mathbf{x_{l,l}}$\;
+	$\mathbf{x_{u,l}}[\mathbf{x_1}]$ \gets~$\mathbf{x_{u,m}}[\mathbf{x_1}]$ \gets~ $\mathbf{ub}[\mathbf{x_1}]$\;
+	$\mathbf{x_{l,m}}[\mathbf{x_2}]$ \gets~ $\mathbf{x_{u,m}}[\mathbf{x_2}]$ \gets~ $(\mathbf{ub}[\mathbf{x_2}] + \mathbf{lb}[\mathbf{x_2}]) / 2$\;
+	$y_{u,l}$, $y_{l,m}$, $y_{u,m}$ \gets~ $f(\mathbf{x_{u,l}})$, $f(\mathbf{x_{l,m}})$, $f(\mathbf{x_{u,m}})$\;
+	$\delta_1$, $\delta_2$ \gets~ $y_{l,l} - y_{u,l}$, $y_{l,m} - y_{u,m}$\;
+	\eIf{$|\delta_1 - \delta_2| > \gamma(|y_{l,l}| + |y_{u,l}| + |y_{l,m}| + |y_{u,m}|)$}{
+		\eIf{\len{$\mathbf{x_2}$} $=$ 1}{
+            $\mathbf{x_1}$ \gets~ $\mathbf{x_1} \cup \mathbf{x_2}$
+        }{
+			$\mathbf{g_1}$, $\mathbf{g_2}$ \gets~ Divide $\mathbf{x_2}$ into equally-sized two groups\;
+			$\mathbf{x_1}$ \gets~ \Inter{$f$, $\mathbf{lb}$, $\mathbf{ub}$, $\mathbf{x_1}$, $\mathbf{g_2}$, $\mathbf{x_{l,l}}$, $y_{l,l}$, $\mathbf{s}$} $\cup$ \Inter{$f$, $\mathbf{lb}$, $\mathbf{ub}$, $\mathbf{x_1}$, $\mathbf{g_1}$, $\mathbf{x_{l,l}}$, $y_{l,l}$, $\mathbf{s}$}\;
+		}
+	}{
+        \app{$\mathbf{s}$, $\mathbf{x_2}$}
+    }
+	\Return{$\mathbf{x_1}$}\;
+
+	\caption{\textbf{Interact function~\cite{alg:rdg3} used by Algorithm~\ref{pcode:rdg3}.}}
+	\label{pcode:interact}
+\end{algorithm}
