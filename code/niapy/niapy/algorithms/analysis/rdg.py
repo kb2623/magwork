@@ -21,7 +21,6 @@ __all__ = [
     'RecursiveDifferentialGroupingV3',
     'EfficientRecursiveDifferentialGrouping',
     'ThreeLevelRecursiveDifferentialGrouping',
-    'ThreeStagesLevelRecursiveDifferentialGrouping'
 ]
 
 
@@ -117,42 +116,42 @@ class RecursiveDifferentialGrouping(AnalysisAlgorithm):
         """
         return args[0]
 
-    def interact(self, task, a, af, epsilon, sub1, sub2, xremain):
+    def interact(self, task, a, af, epsilon, S1, S2, X_r):
         r"""Method for detecting interactions between componentes.
-        
+
         Args:
             task (Task): Optimization task.
             a (numpy.ndarray): Solution with all components set to minium of optimization space.
             af (float): Fitness value of solution `a`.
-            epsilon (float): TODO.
-            sub1 (list[int]): TODO.
-            sub2 (list[int]): TODO.
-            xremain (list[int]): TODO.
+            epsilon (float): Parameter for determening the interaction between components.
+            S1 (list[int]): First set of components indexes to test for interaction.
+            S2 (list[int]): Second set of components indexes to test for interaction.
+            X_r (list[int]): Remaining components for determening the interactions.
 
         Returns:
             list[int]: TODO.
         """
         b, c, d = np.copy(a), np.copy(a), np.copy(a)
-        b[sub1] = d[sub1] = task.upper[sub1]
+        b[S1] = d[S1] = task.upper[S1]
         bf = task.eval(b)
         d1 = af - bf
-        c[sub2] = d[sub2] = task.lower[sub2] + (task.upper[sub2] - task.lower[sub2]) / 2
+        c[S2] = d[S2] = task.lower[S2] + (task.upper[S2] - task.lower[S2]) / 2
         cf, df = task.eval(c), task.eval(d)
         d2 = cf - df
-        sub1_n = list(sub1)
+        S = list(S1)
         if np.abs(d1 - d2) > self.gamma(task, epsilon, af, bf, cf, df):
-            if np.size(sub2) == 1:
-                sub1_n = np.union1d(sub1, sub2).tolist()
+            if np.size(S2) == 1:
+                S = np.union1d(S1, S2).tolist()
             else:
-                k = int(np.floor(np.size(sub2) / 2))
-                sub2_1 = [e for e in sub2[:k]]
-                sub2_2 = [e for e in sub2[k:]]
-                sub1_1 = self.interact(task, a, af, epsilon, sub1, sub2_1, xremain)
-                sub1_2 = self.interact(task, a, af, epsilon, sub1, sub2_2, xremain)
-                sub1_n = np.union1d(sub1_1, sub1_2).tolist()
+                k = int(np.floor(np.size(S2) / 2))
+                S2_1 = [e for e in S2[:k]]
+                S2_2 = [e for e in S2[k:]]
+                S1_1 = self.interact(task, a, af, epsilon, S1, S2_1, X_r)
+                S1_2 = self.interact(task, a, af, epsilon, S1, S2_2, X_r)
+                S = np.union1d(S1_1, S1_2).tolist()
         else:
-            xremain.extend(sub2)
-        return sub1_n
+            X_r.extend(S2)
+        return S
 
     def run(self, task, *args, **kwargs):
         r"""Core function of RecursiveDifferentialGrouping algorithm.
@@ -163,35 +162,35 @@ class RecursiveDifferentialGrouping(AnalysisAlgorithm):
             kwargs (dict): Additional keyword parametes.
 
         Returns:
-            list[Union[list, list[int]]]:
+            list[list[int]]:
         """
         _, fpop = default_numpy_init(task, self.k, self.rng)
         seps, allgroups = [], []
         epsilon = np.min(np.abs(fpop)) * self.alpha
-        sub1, sub2 = [0], [i + 1 for i in range(task.dimension - 1)]
-        xremain = [0]
+        S1, S2 = [0], [i + 1 for i in range(task.dimension - 1)]
+        X_r = [0]
         p1 = np.copy(task.lower)
         p1f = task.eval(p1)
-        while len(xremain) > 0:
-            xremain = []
-            sub1_a = self.interact(task, p1, p1f, epsilon, sub1, sub2, xremain)
-            if np.size(sub1_a) == np.size(sub1):
-                if np.size(sub1) == 1:
-                    seps.extend(sub1)
+        while X_r:
+            X_r = []
+            S1_a = self.interact(task, p1, p1f, epsilon, S1, S2, X_r)
+            if np.size(S1_a) == np.size(S1):
+                if np.size(S1) == 1:
+                    seps.extend(S1)
                 else:
-                    allgroups.append(sub1)
-                if np.size(xremain) > 1:
-                    sub1 = xremain[:1]
-                    xremain = xremain[1:]
-                    sub2 = xremain
+                    allgroups.append(S1)
+                if np.size(X_r) > 1:
+                    S1 = X_r[:1]
+                    X_r = X_r[1:]
+                    S2 = list(X_r)
                 else:
-                    seps.append(xremain[0])
+                    seps.append(X_r[0])
                     break
             else:
-                sub1 = sub1_a
-                sub2 = xremain
-                if (np.size(xremain) == 0):
-                    allgroups.append(sub1)
+                S1 = S1_a
+                S2 = X_r
+                if (np.size(X_r) == 0):
+                    allgroups.append(S1)
                     break
         for e in seps: allgroups.append([e])
         return allgroups
@@ -343,33 +342,33 @@ class RecursiveDifferentialGroupingV3(RecursiveDifferentialGroupingV2):
             kwargs (dict): Additional keyword parametes.
 
         Returns:
-            list[Union[int, list[int]]]: Groups.
+            list[list[int]]: Groups.
         """
         seps, allgroups = [], []
-        sub1, sub2 = [0], [i + 1 for i in range(task.dimension - 1)]
-        xremain = [0]
+        S1, S2 = [0], [i + 1 for i in range(task.dimension - 1)]
+        X_r = [0]
         p1 = np.copy(task.lower)
         p1f = task.eval(p1)
-        while len(xremain) > 0:
-            xremain = []
-            sub1_a = self.interact(task, p1, p1f, 0, sub1, sub2, xremain)
-            if np.size(sub1_a) != np.size(sub1) and np.size(sub1_a) < self.eps_n:
-                sub1 = sub1_a
-                sub2 = xremain
-                if np.size(xremain) == 0:
-                    allgroups.append(sub1)
+        while X_r:
+            X_r = []
+            S1_a = self.interact(task, p1, p1f, 0, S1, S2, X_r)
+            if np.size(S1_a) != np.size(S1) and np.size(S1_a) < self.eps_n:
+                S1 = S1_a
+                S2 = X_r
+                if np.size(X_r) == 0:
+                    allgroups.append(S1)
                     break
             else:
-                if np.size(sub1_a) == 1:
-                    seps.extend(sub1_a)
+                if np.size(S1_a) == 1:
+                    seps.extend(S1_a)
                 else:
-                    allgroups.append(sub1_a)
-                if np.size(xremain) > 1:
-                    sub1 = [xremain[0]]
-                    del xremain[0]
-                    sub2 = xremain
-                elif np.size(xremain) == 1:
-                    seps.append(xremain[0])
+                    allgroups.append(S1_a)
+                if np.size(X_r) > 1:
+                    S1 = X_r[:1]
+                    X_r = X_r[1:]
+                    S2 = list(X_r)
+                elif np.size(X_r) == 1:
+                    seps.append(X_r[0])
                     break
         while len(seps) > self.eps_s:
             allgroups.append(seps[:self.eps_s])
@@ -397,7 +396,7 @@ class EfficientRecursiveDifferentialGrouping(RecursiveDifferentialGroupingV2):
         https://ieeexplore.ieee.org/document/9141328/
 
     Reference paper:
-        M. Yang, A. Zhou, C. Li and X. Yao, "An Efficient Recursive Differential Grouping for Large-Scale Continuous Problems," in IEEE Transactions on Evolutionary Computation, vol. 25, no. 1, pp. 159-171, Feb. 2021, doi: 10.1109/TEVC.2020.3009390. keywords: {Optimization;Computational efficiency;Geology;Computer science;Electronic mail;Computational complexity;Automation;Cooperative co-evolution (CC);decomposition;large-scale global optimization}, 
+        M. Yang, A. Zhou, C. Li and X. Yao, "An Efficient Recursive Differential Grouping for Large-Scale Continuous Problems," in IEEE Transactions on Evolutionary Computation, vol. 25, no. 1, pp. 159-171, Feb. 2021, doi: 10.1109/TEVC.2020.3009390. keywords: {Optimization;Computational efficiency;Geology;Computer science;Electronic mail;Computational complexity;Automation;Cooperative co-evolution (CC);decomposition;large-scale global optimization},
 
     See Also:
         * :class:`niapy.algorithms.Algorithm`
@@ -447,49 +446,49 @@ class EfficientRecursiveDifferentialGrouping(RecursiveDifferentialGroupingV2):
         d.pop('k', None)
         return d
 
-    def interact(self, task, p1, p2, sub1, sub2, y):
+    def interact(self, task, p1, p2, S1, S2, y):
         r"""Method for detecting interactions between componentes.
-        
+
         Args:
             task (Task): Optimization task.
             p1 (numpy.ndarray): Solution with all components set to minium of optimization space.
-            p2 (numpy.ndarray): Solution with all components set to minium of optimization space.
-            sub1 (list[int]): Set of componets indexes.
-            sub2 (list[int]): Set of componets indexes.
-            y (list[int]): TODO.
+            p2 (numpy.ndarray): Solution with some components set to minium and some set to maxium of optimization space.
+            S1 (list[int]): First set of components indexes to test for interaction.
+            S2 (list[int]): Second set of components indexes to test for interaction.
+            y (list[int]): Fitness values for given points `p1` and `p2`.
 
         Returns:
             tuple[list[int], list[int]]:
                 1. List of components indexes.
                 2. Four funciton values.
         """
-        non_sep, sub1_n = True, list(sub1)
+        non_sep, S = True, list(S1)
         if None in y:
             p3, p4 = np.copy(p1), np.copy(p2)
-            p3[sub2] = (task.upper[sub2] + task.lower[sub2]) / 2 
-            p4[sub2] = (task.upper[sub2] + task.lower[sub2]) / 2
+            p3[S2] = (task.upper[S2] + task.lower[S2]) / 2
+            p4[S2] = (task.upper[S2] + task.lower[S2]) / 2
             p3f, p4f = task.eval(p3), task.eval(p4)
             y[2], y[3] = -p3f, p4f
             epsilon = self.gamma(task, 0, *y)
             if np.abs(np.sum(y)) <= epsilon:
                 non_sep = False
         if non_sep:
-            if np.size(sub2) == 1:
-                sub1_n = np.union1d(sub1, sub2).tolist()
+            if np.size(S2) == 1:
+                S = np.union1d(S1, S2).tolist()
             else:
-                k = np.floor(np.size(sub2) / 2).astype(int)
-                sub2_1, sub2_2 = sub2[:k], sub2[k:]
-                sub1_1, yn = self.interact(task, p1, p2, sub1, sub2_1, [y[0], y[1], None, None])
+                k = np.floor(np.size(S2) / 2).astype(int)
+                S2_1, S2_2 = S2[:k], S2[k:]
+                S1_1, yn = self.interact(task, p1, p2, S1, S2_1, [y[0], y[1], None, None])
                 d = np.sum(y) - np.sum(yn)
                 if d != 0:
-                    if np.size(sub1_1) == np.size(sub1):
-                        sub1_2, _ = self.interact(task, p1, p2, sub1, sub2_2, y)
+                    if np.size(S1_1) == np.size(S1):
+                        S1_2, _ = self.interact(task, p1, p2, S1, S2_2, y)
                     else:
-                        sub1_2, _ = self.interact(task, p1, p2, sub1, sub2_2, [y[0], y[1], None, None])
-                    sub1_n = np.union1d(sub1_1, sub1_2).tolist()
+                        S1_2, _ = self.interact(task, p1, p2, S1, S2_2, [y[0], y[1], None, None])
+                    S = np.union1d(S1_1, S1_2).tolist()
                 else:
-                    sub1_n = sub1_1
-        return sub1_n, y
+                    S = S1_1
+        return S, y
 
     def run(self, task, *args, **kwargs):
         r"""Core function of EfficientRecursiveDifferentialGrouping algorithm.
@@ -500,32 +499,32 @@ class EfficientRecursiveDifferentialGrouping(RecursiveDifferentialGroupingV2):
             kwargs (dict): Additional keyword parametes.
 
         Returns:
-            list[Union[int, list[int]]]: Groups.
+            list[list[int]]: Groups.
         """
         seps, allgroups = [], []
-        sub1, sub2 = [0], [i + 1 for i in range(task.dimension - 1)]
+        S1, S2 = [0], [i + 1 for i in range(task.dimension - 1)]
         p1 = np.copy(task.lower)
         p1f = task.eval(p1)
-        while sub2:
+        while S2:
             p2 = np.copy(p1)
-            p2[sub1] = task.upper[sub1]
+            p2[S1] = task.upper[S1]
             p2f = task.eval(p2)
-            sub1_a, _ = self.interact(task, p1, p2, sub1, sub2, [p1f, -p2f, None, None])
-            if np.size(sub1_a) == np.size(sub1):
-                if np.size(sub1) == 1:
-                    seps.append(sub1[0])
+            S1_a, _ = self.interact(task, p1, p2, S1, S2, [p1f, -p2f, None, None])
+            if np.size(S1_a) == np.size(S1):
+                if np.size(S1) == 1:
+                    seps.append(S1[0])
                 else:
-                    allgroups.append(sub1)
-                sub1 = [sub2[0]]
-                sub2 = sub2[1:]
+                    allgroups.append(S1)
+                S1 = [S2[0]]
+                S2 = S2[1:]
             else:
-                sub1 = sub1_a
-                sub2 = [x for x in sub2 if x not in sub1]
-            if not sub2:
-                if np.size(sub1) > 1:
-                    allgroups.append(sub1)
-                elif np.size(sub1) == 1:
-                    seps.append(sub1[0])
+                S1 = S1_a
+                S2 = [x for x in S2 if x not in S1]
+            if not S2:
+                if np.size(S1) > 1:
+                    allgroups.append(S1)
+                elif np.size(S1) == 1:
+                    seps.append(S1[0])
         for e in seps:
             allgroups.append([e])
         return allgroups
@@ -562,7 +561,7 @@ class ThreeLevelRecursiveDifferentialGrouping(RecursiveDifferentialGrouping):
         k (int): Numbner of solutions for determening the epsilon parameter.
     """
     Name = ['ThreeLevelRecursiveDifferentialGrouping', 'TRDG']
-    
+
     @staticmethod
     def info():
         r"""Get basic information about the algorithm.
@@ -575,13 +574,13 @@ class ThreeLevelRecursiveDifferentialGrouping(RecursiveDifferentialGrouping):
         """
         return r"""H. -B. Xu, F. Li and H. Shen, "A Three-Level Recursive Differential Grouping Method for Large-Scale Continuous Optimization," in IEEE Access, vol. 8, pp. 141946-141957, 2020, doi: 10.1109/ACCESS.2020.3013661. keywords: {Optimization;Iron;Sociology;Covariance matrices;Linear programming;Power electronics;Large-scale continuous optimization;cooperative co-evolution (CC);differential grouping;trichotomy method}"""
 
-    def interact(self, task, sub1, sub2, epsilon, p1, p2, d_1_2):
+    def interact(self, task, S1, S2, epsilon, p1, p2, d_1_2):
         r"""Method for detecting interactions between componentes.
-        
+
         Args:
             task (Task): Optimization task.
-            sub1 (list[int]): Set of componets indexes.
-            sub2 (list[int]): Set of componets indexes.
+            S1 (list[int]): Set of componets indexes.
+            S2 (list[int]): Set of componets indexes.
             epsilon (float): Value for determening the interaction.
             p1 (numpy.nadarray): Solution with all components set to minium of optimization space.
             p2 (numpy.nadarray): TODO.
@@ -591,21 +590,21 @@ class ThreeLevelRecursiveDifferentialGrouping(RecursiveDifferentialGrouping):
             bool: TODO.
         """
         p3, p4 = np.copy(p1), np.copy(p2)
-        p3[sub2] = (task.upper[sub2] + task.lower[sub2]) / 2 
-        p4[sub2] = (task.upper[sub2] + task.lower[sub2]) / 2
+        p3[S2] = (task.upper[S2] + task.lower[S2]) / 2
+        p4[S2] = (task.upper[S2] + task.lower[S2]) / 2
         p3f, p4f = task.eval(p3), task.eval(p4)
         if np.abs(d_1_2 - (p3f - p4f)) > epsilon:
             return True
         else:
             return False
 
-    def group(self, task, sub1, sub2, epsilon, p1, p2, d_1_2):
+    def group(self, task, S1, S2, epsilon, p1, p2, d_1_2):
         r"""Method for detecting interactions between componentes.
-        
+
         Args:
             task (Task): Optimization task.
-            sub1 (list[int]): Set of componets indexes.
-            sub2 (list[int]): Set of componets indexes.
+            S1 (list[int]): Set of componets indexes.
+            S2 (list[int]): Set of componets indexes.
             epsilon (float): Value for determening the interaction.
             p1 (numpy.nadarray): Solution with all components set to minium of optimization space.
             p2 (numpy.nadarray): Solution with components set to minium of optimization space and some set to maximum of the search space.
@@ -614,23 +613,23 @@ class ThreeLevelRecursiveDifferentialGrouping(RecursiveDifferentialGrouping):
         Returns:
             list[int]: TODO.
         """
-        sub1_n = list(sub1)
-        if self.interact(task, sub1, sub2, epsilon, p1, p2, d_1_2):
-            if np.size(sub2) == 1:
-                sub1_n = np.union1d(sub1, sub2).tolist()
-            elif np.size(sub2) == 2:
-                sub2_1, sub2_2 = sub2[:1], sub2[1:]
-                sub1_1 = self.group(task, sub1, sub2_1, epsilon, p1, p2, d_1_2)
-                sub1_2 = self.group(task, sub1, sub2_2, epsilon, p1, p2, d_1_2)
-                sub1_n = np.union1d(sub1_1, sub1_2).tolist()
+        S = list(S1)
+        if self.interact(task, S1, S2, epsilon, p1, p2, d_1_2):
+            if np.size(S2) == 1:
+                S = np.union1d(S1, S2).tolist()
+            elif np.size(S2) == 2:
+                S2_1, S2_2 = S2[:1], S2[1:]
+                S1_1 = self.group(task, S1, S2_1, epsilon, p1, p2, d_1_2)
+                S1_2 = self.group(task, S1, S2_2, epsilon, p1, p2, d_1_2)
+                S = np.union1d(S1_1, S1_2).tolist()
             else:
-                k = np.floor(np.size(sub2) / 3).astype(int)
-                sub2_1, sub2_2, sub2_3 = sub2[:k], sub2[k:k * 2], sub2[k * 2:]
-                sub1_1 = self.group(task, sub1, sub2_1, epsilon, p1, p2, d_1_2)
-                sub1_2 = self.group(task, sub1, sub2_2, epsilon, p1, p2, d_1_2)
-                sub1_3 = self.group(task, sub1, sub2_3, epsilon, p1, p2, d_1_2)
-                sub1_n = reduce(np.union1d, (sub1_1, sub1_2, sub1_3)).tolist()
-        return sub1_n
+                k = np.floor(np.size(S2) / 3).astype(int)
+                S2_1, S2_2, S2_3 = S2[:k], S2[k:k * 2], S2[k * 2:]
+                S1_1 = self.group(task, S1, S2_1, epsilon, p1, p2, d_1_2)
+                S1_2 = self.group(task, S1, S2_2, epsilon, p1, p2, d_1_2)
+                S1_3 = self.group(task, S1, S2_3, epsilon, p1, p2, d_1_2)
+                S = reduce(np.union1d, (S1_1, S1_2, S1_3)).tolist()
+        return S
 
     def run(self, task, *args, **kwargs):
         r"""Core function of ThreeLevelRecursiveDifferentialGrouping algorithm.
@@ -641,98 +640,33 @@ class ThreeLevelRecursiveDifferentialGrouping(RecursiveDifferentialGrouping):
             kwargs (dict): Additional keyword parametes.
 
         Returns:
-            list[Union[list, list[int]]]:
+            list[list[int]]:
         """
         _, fpop = default_numpy_init(task, np.floor(self.k / 4).astype(int), self.rng)
         epsilon = np.min(np.abs(fpop)) * self.alpha
         seps, allgroups = [], []
-        sub1, sub2 = [0], [i + 1 for i in range(task.dimension - 1)]
+        S1, S2 = [0], [i + 1 for i in range(task.dimension - 1)]
         p1 = np.copy(task.lower)
         p1f = task.eval(p1)
-        while sub2:
+        while S2:
             p2 = np.copy(p1)
-            p2[sub1] = task.upper[sub1]
+            p2[S1] = task.upper[S1]
             p2f = task.eval(p2)
-            sub1_a = self.group(task, sub1, sub2, epsilon, p1, p2, (p1f - p2f))
-            if np.size(sub1_a) == np.size(sub1):
-                if np.size(sub1) == 1:
-                    seps.append(sub1[0])
+            S1_a = self.group(task, S1, S2, epsilon, p1, p2, (p1f - p2f))
+            if np.size(S1_a) == np.size(S1):
+                if np.size(S1) == 1:
+                    seps.append(S1[0])
                 else:
-                    allgroups.append(sub1)
-                sub1 = [sub2[0]]
-                sub2 = sub2[1:]
+                    allgroups.append(S1)
+                S1 = [S2[0]]
+                S2 = S2[1:]
             else:
-                sub1 = sub1_a
-                sub2 = [x for x in sub2 if x not in sub1]
-            if not sub2:
-                if np.size(sub1) > 1:
-                    allgroups.append(sub1)
-                elif np.size(sub1) == 1:
-                    seps.append(sub1[0])
+                S1 = S1_a
+                S2 = [x for x in S2 if x not in S1]
+            if not S2:
+                if np.size(S1) > 1:
+                    allgroups.append(S1)
+                elif np.size(S1) == 1:
+                    seps.append(S1[0])
         for e in seps: allgroups.append([e])
-        return allgroups
-
-
-class ThreeStagesLevelRecursiveDifferentialGrouping(RecursiveDifferentialGrouping):
-    r"""Implementation of three stages recursive differential grouping.
-
-    Algorithm:
-        ThreeStagesLevelRecursiveDifferentialGrouping
-
-    Date:
-        2024
-
-    Authors:
-        Klemen Berkovic
-
-    License:
-        MIT
-
-    Reference URL:
-        https://ieeexplore.ieee.org/document/10268417
-
-    Reference paper:
-        L. Zheng, G. Xu and W. Chen, "Three Stages Recursive Differential Grouping for Large-Scale Global Optimization," in IEEE Access, vol. 11, pp. 109734-109746, 2023, doi: 10.1109/ACCESS.2023.3321068. keywords: {Optimization;Computational efficiency;Linear programming;Search problems;Sun;Perturbation methods;Complexity theory;Cooperative co-evolution (CC);fully separable;large-scale global optimization (LSGO);recursive differential grouping}, 
-
-    See Also:
-        * :class:`niapy.algorithms.Algorithm`
-        * :class:`niapy.algorithms.AnalysisAlgorithm`
-        * :class:`niapy.algorithms.RecursiveDifferentialGrouping`
-
-    Attributes:
-        alpha (float): Multiplier for epsilon.
-        k (int): Numbner of solutions for determening the epsilon parameter.
-    """
-    Name = ['ThreeStagesLevelRecursiveDifferentialGrouping', 'TSRDG']
-    
-    @staticmethod
-    def info():
-        r"""Get basic information about the algorithm.
-
-        Returns:
-            str: Basic information.
-
-        See Also:
-            :func:`niapy.algorithms.algorithm.Algorithm.info`
-        """
-        return r"""L. Zheng, G. Xu and W. Chen, "Three Stages Recursive Differential Grouping for Large-Scale Global Optimization," in IEEE Access, vol. 11, pp. 109734-109746, 2023, doi: 10.1109/ACCESS.2023.3321068. keywords: {Optimization;Computational efficiency;Linear programming;Search problems;Sun;Perturbation methods;Complexity theory;Cooperative co-evolution (CC);fully separable;large-scale global optimization (LSGO);recursive differential grouping}, """
-
-    def run(self, task, *args, **kwargs):
-        r"""Core function of ThreeStagesLevelRecursiveDifferentialGrouping algorithm.
-
-        Args:
-            task (Task): Optimization task.
-            args (list): Additional list parameters.
-            kwargs (dict): Additional keyword parametes.
-
-        Returns:
-            list[Union[list, list[int]]]:
-        """
-        _, fpop = default_numpy_init(task, np.floor(self.k / 4).astype(int), self.rng)
-        epsilon = np.min(np.abs(fpop)) * self.alpha
-        seps, allgroups = [], []
-        sub1, sub2 = [0], [i + 1 for i in range(task.dimension - 1)]
-        p1 = np.copy(task.lower)
-        p1f = task.eval(p1)
-        # TODO implement the algorithm
         return allgroups

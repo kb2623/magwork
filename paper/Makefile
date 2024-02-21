@@ -1,6 +1,6 @@
 SOURCE_FILE := main
 
-all: latex
+all: luatex
 
 luatex:
 	lualatex $(SOURCE_FILE)
