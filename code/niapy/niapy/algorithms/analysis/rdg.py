@@ -144,8 +144,7 @@ class RecursiveDifferentialGrouping(AnalysisAlgorithm):
                 S = np.union1d(S1, S2).tolist()
             else:
                 k = int(np.floor(np.size(S2) / 2))
-                S2_1 = [e for e in S2[:k]]
-                S2_2 = [e for e in S2[k:]]
+                S2_1, S2_2 = S2[:k], S2[k:]
                 S1_1 = self.interact(task, a, af, epsilon, S1, S2_1, X_r)
                 S1_2 = self.interact(task, a, af, epsilon, S1, S2_2, X_r)
                 S = np.union1d(S1_1, S1_2).tolist()
