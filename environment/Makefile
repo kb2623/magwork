@@ -2,15 +2,16 @@ BUILD_DEFINITION_FILE:=env.def
 IMAGE_FILE:=env.sif
 CONTAINER_NAME:=env
 
-SINGULARITY_CACHEDIR=$(pwd)/build
+PYTHON_VERSION_MAJOR=3
+PYTHON_VERSION_MINOR_FIRST=12
+PYTHON_VERSION_MINOR_SECOND=2
 
-TEMP_FILE := $(shell mktemp)
+SINGULARITY_CACHEDIR=$(pwd)/build
 
 all: build start
 
 build: $(BUILD_DEFINITION_FILE)
-	singularity build --fakeroot $(IMAGE_FILE) $(BUILD_DEFINITION_FILE)
-	rm -f $(TEMP_FILE)
+	singularity build --build-arg python_version_major=$(PYTHON_VERSION_MAJOR) --build-arg python_version_minor_first=$(PYTHON_VERSION_MINOR_FIRST) --build-arg python_version_minor_second=$(PYTHON_VERSION_MINOR_SECOND) --fakeroot $(IMAGE_FILE) $(BUILD_DEFINITION_FILE)
 
 start: $(IMAGE_FILE)
 	singularity instance start $(IMAGE_FILE) $(CONTAINER_NAME)

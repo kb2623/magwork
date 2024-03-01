@@ -220,8 +220,23 @@ class RecursiveDifferentialGroupingV2(RecursiveDifferentialGrouping):
         * :class:`niapy.algorithms.Algorithm`
         * :class:`niapy.algorithms.AnalysisAlgorithm`
         * :class:`niapy.algorithms.analysis.RecursiveDifferentialGrouping`
+
+    Attributes:
+        alpha (float): Multiplier for epsilon.
     """
     Name = ['RecursiveDifferentialGroupingV2', 'RDGv2']
+
+    def set_parameters(self, alpha=None, k=None, *args, **kwargs):
+        r"""Set the algorithm parameters/arguments.
+
+        Args:
+            alpha (Optional[float]): TODO.
+            k (Optional[int]): Number of starting population.
+            args (list): Additional list parameters.
+            kwargs (dict): Additional keyword parametes.
+        """
+        super().set_parameters(k=0, **kwargs)
+        self.alpha = alpha if alpha else 1e-12
 
     @staticmethod
     def info():

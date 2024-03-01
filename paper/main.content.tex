@@ -85,7 +85,7 @@ Na koncu \ref{chap:end}. poglavju podajamo povzetek naših ugotovitev, zaključk
 
 % TODO
 
-\section{Ko-evolucija}
+\section{Koevolucija}
 
 % TODO
 
@@ -94,20 +94,20 @@ Na koncu \ref{chap:end}. poglavju podajamo povzetek naših ugotovitev, zaključk
 % TODO
 
 \begin{algorithm}
-    \KwIn{$f$, $\mathbf{ub}$, $\mathbf{lb}$, $\alpha$, $k$}
+    \DontPrintSemicolon
+    \KwIn{$f$, $\mathbf{b}_{\downdownarrows}$, $\mathbf{b}_{\upuparrows}$, $\alpha$, $k$}
     \SetKwFunction{Inter}{Interact}
     \SetKwFunction{app}{Append}
-    \SetKwFunction{del}{Delete}
 
-    $\mathbf{a}$, $\mathbf{b}$ \gets~ [], []\;
+    $\mathbf{x}_r$, $\mathbf{a}$, $\mathbf{G}$ \gets~ [1], [], []\;
     $\epsilon$ \gets~ $\alpha \cdot \min(|f(\mathbf{x}_1|, \cdots, f(\mathbf{x}_k|)$\;
-    $\mathbf{x}_{l,l}$, $y_{l,l}$ \gets~ $\mathbf{lb}$, $f(\mathbf{lb})$\;
-    $\mathbf{x}_r$, $\mathbf{s}_1$, $\mathbf{s}_2$ \gets~ [1], [1], [\lFor*{$i=2$ \KwTo \ell($\mathbf{lb}$)}{$i$}]\;
+    $\mathbf{x}_{l,l}$, $y_{l,l}$ \gets~ $\mathbf{b}_{\downdownarrows}$, $f(\mathbf{b}_{\downdownarrows})$\;
+    $\mathbf{s}_1$, $\mathbf{s}_2$ \gets~ [1], [\lFor*{$i=2$ \KwTo \ell($\mathbf{b}_{\downdownarrows}$)}{$i$}]\;
 
     \While{\ell($\mathbf{x}_r$) > 0}{
         $\mathbf{x}_r$ \gets~ []\;
-        $\mathbf{s}^*$ \gets~ \Inter{$f$, $\mathbf{x}_{l,l}$, $y_{l,l}$, $\epsilon$, $\mathbf{s}_1$, $\mathbf{s}_2$, $\mathbf{x}_r$}\;
-        \eIf{\ell($\mathbf{s}^*$) $==$ \ell($\mathbf{s}_1$)}{
+        $\mathbf{s}^*$ \gets~ \Inter{$f$, $\mathbf{b}_{\downdownarrows}$, $\mathbf{b}_{\upuparrows}$, $\mathbf{x}_{l,l}$, $y_{l,l}$, $\epsilon$, $\mathbf{s}_1$, $\mathbf{s}_2$, $\mathbf{x}_r$}\tcp*[f]{Algoritem~\ref{pcode:interact}}\;
+        \eIf{\ell($\mathbf{s}^*$) $=$ \ell($\mathbf{s}_1$)}{
             \leIf{\ell($\mathbf{s}_1$) $=$ $1$}{$\mathbf{a}$ \gets~ $\mathbf{a} \cup \mathbf{s}_1$}{\app{$\mathbf{b}$, $\mathbf{s}_1$}}
             \eIf{\ell(\app{$\mathbf{x}_r$} > $1$)}{
                 $\mathbf{s}_1$ \gets~ $\mathbf{x}_r$[:1]\;
@@ -115,54 +115,136 @@ Na koncu \ref{chap:end}. poglavju podajamo povzetek naših ugotovitev, zaključk
                 $\mathbf{s}_2$ = $\mathbf{x}_r$\;
             }{
                 $\mathbf{a}$ \gets~ $\mathbf{a} \cup \mathbf{s}_1$\;
-                break\;
+                \textbf{break}\;
             }
         }{
             $\mathbf{s}_1$ \gets~ $\mathbf{s}^*$\;
             $\mathbf{s}_2$ \gets~ $\mathbf{x}_r$\;
             \If{\ell($\mathbf{s}_r$) = $0$}{
-                \app{$\mathbf{b}$, $\mathbf{s}_1$}\;
-                break\;
+                \app{$\mathbf{G}$, $\mathbf{s}_1$}\;
+                \textbf{break}\;
             }
         }
     }
-
-    \lForEach{$e$ in $\mathbf{a}$}{\app{$\mathbf{b}$, $[e]$}}
-    \Return $\mathbf{b}$
+    \lForEach{$e$ in $\mathbf{a}$}{\app{$\mathbf{G}$, $[e]$}}
+    \Return $\mathbf{G}$
 
     \caption{\textbf{Algoritem RDG za dekompozicijo problema.}}
-    \label{pcode:rdg3}
+    \label{pcode:rdg}
 \end{algorithm}
 
-
 \begin{algorithm}
-    
-	\KwIn{$f$, $\mathbf{lb}$, $\mathbf{ub}$, $\mathbf{x}_{l,l}$, $y_{l,l}$, $\epsilon$, $\mathbf{s}_1$, $\mathbf{s}_2$, $\mathbf{x}_r$}
+    \DontPrintSemicolon
+	\KwIn{$f$, $\mathbf{b}_{\downdownarrows}$, $\mathbf{b}_{\upuparrows}$, $\mathbf{x}_{l,l}$, $y_{l,l}$, $\epsilon$, $\mathbf{s}_1$, $\mathbf{s}_2$, $\mathbf{x}_r$}
 	\SetKwFunction{Inter}{Interact}
     \SetKwFunction{floor}{floor}
 
     $\mathbf{x}_{u,l}$, $\mathbf{x}_{l,m}$ \gets~ $\mathbf{x}_{l,l}$, $\mathbf{x}_{l,l}$\;
     $\mathbf{x}_{u,m}$, $\mathbf{x}_n$ \gets~ $\mathbf{x}_{u,l}$, $\mathbf{s}_1$\;
-    $\mathbf{x}_{u,l}$, $\mathbf{x}_{l,m}$, $\mathbf{x}_{u,m}$ \gets~ $\mathbf{lb}$[$\mathbf{s}_1$], $(\mathbf{lb} + \mathbf{ub}) / 2)$[$\mathbf{s}_2$], $(\mathbf{lb} + \mathbf{ub}) / 2)$[$\mathbf{s}_2$]\;
+    $\mathbf{x}_{u,l}$, $\mathbf{x}_{l,m}$, $\mathbf{x}_{u,m}$ \gets~ $\mathbf{b}_{\downdownarrows}$[$\mathbf{s}_1$], $(\mathbf{b}_{\downdownarrows} + \mathbf{b}_{\upuparrows}) / 2)$[$\mathbf{s}_2$], $(\mathbf{b}_{\downdownarrows} + \mathbf{b}_{\upuparrows}) / 2)$[$\mathbf{s}_2$]\;
     $y_{u,l}$, $y_{l,m}$, $y_{u,m}$ \gets~ $f(\mathbf{x}_{u,l})$, $f(\mathbf{x}_{l,m})$, $f(\mathbf{x}_{u,m})$\;
     $\sigma_1$, $\sigma_2$ \gets~ $y_{l,l} - y_{u,l}$, $y_{l,m} - y_{u,m}$\;
 
-    \If{$|\sigma_1 - \sigma_2| > \epsilon$}{
+    \eIf{$|\sigma_1 - \sigma_2| > \epsilon$}{ \label{pcode:inter:test}
         \eIf{\ell($\mathbf{s}_2$) $=$ $1$}{
             $\mathbf{x}_n$ \gets~ $\mathbf{s}_1 \cup \mathbf{s}_2$\;
         }{
             $k$ \gets \floor{\ell($\mathbf{s}_2$) / 2}\;
             $\mathbf{g}_1$, $\mathbf{g}_2$ \gets~ $\mathbf{s}_2$[:$k$], $\mathbf{s}_2$[$k$:]\;
-            $\mathbf{x}_1$ \gets~ \Inter{$f$, $\mathbf{x}_{l,l}$, $y_{l,l}$, $\epsilon$, $\mathbf{s}_1$, $\mathbf{g}_1$, $\mathbf{x}_r$}\;
-            $\mathbf{x}_2$ \gets~ \Inter{$f$, $\mathbf{x}_{l,l}$, $y_{l,l}$, $\epsilon$, $\mathbf{s}_1$, $\mathbf{g}_2$, $\mathbf{x}_r$}\;
+            $\mathbf{x}_1$ \gets~ \Inter{$f$, $\mathbf{b}_{\downdownarrows}$, $\mathbf{b}_{\upuparrows}$, $\mathbf{x}_{l,l}$, $y_{l,l}$, $\epsilon$, $\mathbf{s}_1$, $\mathbf{g}_1$, $\mathbf{x}_r$}\;
+            $\mathbf{x}_2$ \gets~ \Inter{$f$, $\mathbf{b}_{\downdownarrows}$, $\mathbf{b}_{\upuparrows}$, $\mathbf{x}_{l,l}$, $y_{l,l}$, $\epsilon$, $\mathbf{s}_1$, $\mathbf{g}_2$, $\mathbf{x}_r$}\;
             $\mathbf{x}_n$ \gets~ $\mathbf{x}_1 \cup \mathbf{x}_2$\;
         }
+    }{
+        $\mathbf{x}_r$ \gets~ $\mathbf{x}_r \cup \mathbf{s}_2$
     }
-
     \Return $\mathbf{x}_n$
  
 	\caption{\textbf{Funkcija za detekcijo interakcije med komponentami.}}
-	\label{pcode:interact}
+	\label{pcode:interact:rdg}
+\end{algorithm}
+
+\begin{equation}\label{eq:rdg2:epsilon}
+    \epsilon = \frac{(y_{l,l} + y_{u,l} + y_{l,m} + y_{u,m}) \cdot (\sqrt{D} + 2) \cdot \frac{\alpha}{2}}{1 - (y_{l,l} + y_{u,l} + y_{l,m} + y_{u,m}) \cdot (\sqrt{D} + 2) \cdot \frac{\alpha}{2}}
+\end{equation}
+
+\begin{algorithm}
+    \DontPrintSemicolon
+    \KwIn{$f$, $\mathbf{b}_{\downdownarrows}$, $\mathbf{b}_{\upuparrows}$, $\alpha$, $\epsilon_n$, $\epsilon_s$}
+    \SetKwFunction{Inter}{Interact}
+    \SetKwFunction{app}{Append}
+
+    $\mathbf{x}_r$, $\mathbf{a}$, $\mathbf{G}$ \gets~ [1], [], []\;
+    $\mathbf{x}_{l,l}$, $y_{l,l}$ \gets~ $\mathbf{b}_{\downdownarrows}$, $f(\mathbf{b}_{\downdownarrows})$\;
+    $\mathbf{s}_1$, $\mathbf{s}_2$ \gets~ [1], [\lFor*{$i=2$ \KwTo \ell($\mathbf{b}_{\downdownarrows}$)}{$i$}]\;
+
+    \While{\ell($\mathbf{x}_r$) $>$ $0$}{
+        $\mathbf{x}_r$ \gets~ []\;
+        $\mathbf{s}^*$ \gets~ \Inter{$f$, $\mathbf{b}_{\downdownarrows}$, $\mathbf{b}_{\upuparrows}$, $\mathbf{x}_{l,l}$, $y_{l,l}$, $\mathbf{s}_1$, $\mathbf{s}_2$, $\mathbf{x}_r$}\tcp*[f]{Algoritem~\ref{pcode:interact:rdg}}\;
+        \eIf{\ell($\mathbf{s}^*$) $\neq$ \ell($\mathbf{s}_1$) $\land$ \ell($\mathbf{s}^*$) $<$ $\epsilon_n$}{
+            $\mathbf{s}_1$, $\mathbf{s}_2$ \gets $\mathbf{s}^*$, $\mathbf{x}_r$\;
+            \If{\ell($\mathbf{x}_r$) $=$ $0$}{
+                \app{$\mathbf{G}$, $\mathbf{s}_1$}\;
+                \textbf{break}\;
+            }
+        }{
+            \lIf{\ell($\mathbf{s}^*$) $\neq$ $1$}{
+                $\mathbf{a}$ \gets~ $\mathbf{a} \cup \mathbf{s}_1$
+            }
+            \lElse{
+                \app{$\mathbf{G}$, $\mathbf{s}^*$}
+            }
+            \uIf{\ell($\mathbf{x}_r$) $>$ $1$}{
+                $\mathbf{s}_1$ \gets~ $\mathbf{x}_r$[:$1$]\;
+                $\mathbf{x}_r$ \gets~ $\mathbf{x}_r$[$1$:]\;
+                $\mathbf{s}_2$ \gets~ $\mathbf{x}_r$\;
+            }
+            \ElseIf{\ell($\mathbf{x}_r$) $=$ $1$}{
+                $\mathbf{a}$ \gets~ $\mathbf{a} \cup \mathbf{x}_r$[:$1$]\;
+                \textbf{break}\;
+            }
+        }
+    }
+    \While{\ell($\mathbf{a}$) $>$ $\epsilon_s$}{
+        \app{$\mathbf{G}$, $\mathbf{a}$[:$\epsilon_s$]}\;
+        $\mathbf{a}$ \gets~ $\mathbf{a}$[$\epsilon_s$:]\;
+    }
+    \lIf{\ell($\mathbf{a}$) $>$ $0$}{
+        \app{$\mathbf{G}$, $\mathbf{a}$}
+    }
+    \Return $\mathbf{G}$\;
+
+    \caption{\textbf{Algoritem RDG3 za dekompozicijo problema.}}
+    \label{pcode:rdg3}
+\end{algorithm}
+
+\begin{algorithm}
+    \DontPrintSemicolon
+    \KwIn{$f$, $\mathbf{b}_{\downdownarrows}$, $\mathbf{b}_{\upuparrows}$, $\alpha$, $k$}
+    \SetKwFunction{Inter}{Interact}
+    \SetKwFunction{app}{Append}
+
+    $\mathbf{x}_r$, $\mathbf{a}$, $\mathbf{G}$ \gets~ [1], [], []\;
+    $\epsilon$ \gets~ $\alpha \cdot \min(|f(\mathbf{x}_1|, \cdots, f(\mathbf{x}_k|)$\;
+    $\mathbf{x}_{l,l}$, $y_{l,l}$ \gets~ $\mathbf{b}_{\downdownarrows}$, $f(\mathbf{b}_{\downdownarrows})$\;
+    $\mathbf{s}_1$, $\mathbf{s}_2$ \gets~ [1], [\lFor*{$i=2$ \KwTo \ell($\mathbf{b}_{\downdownarrows}$)}{$i$}]\;
+    
+    \Return $\mathbf{G}$
+
+    \caption{\textbf{Algoritem ERDG za dekompozicijo problema.}}
+    \label{pcode:erdg}
+\end{algorithm}
+
+\begin{algorithm}
+    \DontPrintSemicolon
+	\KwIn{$f$, $\mathbf{b}_{\downdownarrows}$, $\mathbf{b}_{\upuparrows}$, $\mathbf{x}_{l,l}$, $y_{l,l}$, $\epsilon$, $\mathbf{s}_1$, $\mathbf{s}_2$}
+	\SetKwFunction{Inter}{Interact}
+    \SetKwFunction{floor}{floor}
+
+    
+     
+	\caption{\textbf{Funkcija za detekcijo interakcije med komponentami.}}
+	\label{pcode:interact:erdg}
 \end{algorithm}
 
 \section{Omejitve sorodnih del}
@@ -174,6 +256,7 @@ Na koncu \ref{chap:end}. poglavju podajamo povzetek naših ugotovitev, zaključk
 % TODO
 
 \begin{algorithm}
+    \DontPrintSemicolon
 	\KwIn{$f$, $\mathbf{lb}$, $\mathbf{ub}$}
 	\SetKwFunction{run}{RunGeneration}
 	\SetKwFunction{Decom}{Decomposition}

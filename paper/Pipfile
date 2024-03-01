@@ -11,4 +11,3 @@ ipython = ">=8.21.0"
 jupyterlab = ">=4.1.1"
 ipympl = ">=0.9.3"
 PyLaTeX = ">=1.4.2"
-
