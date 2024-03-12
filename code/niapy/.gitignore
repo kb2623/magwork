@@ -1,3 +1,6 @@
 cdatafiles
 inputdata
+.virtual_documents
+
+# Data files
 *.csv

@@ -85,6 +85,7 @@ class CooperativeCoevolution(OptimizationAlgorithm):
             else: groups.append(e)
         # init task for algorithms
         tasks = [CCTask(task, g) for g in groups]
+        xb = task.get_best(), task.get_best_fitness()
         if len(seps) > 0: tasks.append(CCTask(task, seps))
         # init algorithms based on group sizes 
         pop, popf = [], []

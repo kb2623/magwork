@@ -529,7 +529,7 @@ class EfficientRecursiveDifferentialGrouping(RecursiveDifferentialGroupingV2):
                     seps.append(S1[0])
                 else:
                     allgroups.append(S1)
-                S1 = [S2[0]]
+                S1 = S2[:1]
                 S2 = S2[1:]
             else:
                 S1 = S1_a
@@ -672,7 +672,7 @@ class ThreeLevelRecursiveDifferentialGrouping(RecursiveDifferentialGrouping):
                     seps.append(S1[0])
                 else:
                     allgroups.append(S1)
-                S1 = [S2[0]]
+                S1 = S2[:1]
                 S2 = S2[1:]
             else:
                 S1 = S1_a
