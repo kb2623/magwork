@@ -617,7 +617,7 @@ class CenterParticleSwarmOptimization(ParticleSwarmAlgorithm):
             * :func:`niapy.algorithm.basic.WeightedVelocityClampingParticleSwarmAlgorithm.run_iteration`
 
         """
-        pop, fpop, xb, fxb, d = super().run_iteration(task, pop, fpop, xb, fxb, **params)
+        pop, fpop, xb, fxb, d = super().run_iteration(task, pop, fpop, xb, fxb, iters, *args, **params)
         c = np.sum(pop, axis=0) / len(pop)
         fc = task.eval(c)
         if fc <= fxb:
@@ -727,7 +727,7 @@ class MutatedParticleSwarmOptimization(ParticleSwarmAlgorithm):
             * :func:`niapy.algorithm.basic.WeightedVelocityClampingParticleSwarmAlgorithm.run_iteration`
 
         """
-        pop, fpop, xb, fxb, d = ParticleSwarmAlgorithm.run_iteration(self, task, pop, fpop, xb, fxb, **params)
+        pop, fpop, xb, fxb, d = ParticleSwarmAlgorithm.run_iteration(self, task, pop, fpop, xb, fxb, iters, *args, **params)
         v = d['v']
         v_a = (np.sum(v, axis=0) / len(v))
         v_a = v_a / np.max(np.abs(v_a))
@@ -840,7 +840,7 @@ class MutatedCenterParticleSwarmOptimization(CenterParticleSwarmOptimization):
             * :func:`niapy.algorithm.basic.WeightedVelocityClampingParticleSwarmAlgorithm.run_iteration`
 
         """
-        pop, fpop, xb, fxb, d = CenterParticleSwarmOptimization.run_iteration(self, task, pop, fpop, xb, fxb, **params)
+        pop, fpop, xb, fxb, d = CenterParticleSwarmOptimization.run_iteration(self, task, pop, fpop, xb, fxb, iters, *args, **params)
         v = d['v']
         v_a = (np.sum(v, axis=0) / len(v))
         v_a = v_a / np.max(np.abs(v_a))
