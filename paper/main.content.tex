@@ -1,10 +1,10 @@
 \chapter{Uvod}\label{cahp:uvod}
-S problemi velikih dimenzij sem med drugim srečujemo na različnih področjih, kot so telekomunikacije, logistika, strojništvo, itd.
+S problemi velikih dimenzij sem med drugim srečujemo na različnih področjih, kot so telekomunikacije, logistika, strojništvo itd.
 Ti problemi zahtevajo iskanje optimalnih rešitev v obsežnem iskalnem prostoru, kjer ima problem veliko število odločitvenih spremenljivk.
-Pri takih problemih tradicionalni optimizacijski algoritmi, kot so to metode, ki temeljijo na gradientu, kvadratno programiranje in linerano programiranje, se soočajo s težavami.
-Inteligenca rojev (ang. \textit{Swarm inteligence} (SI)) se je pojavila, kot obetaven pristop za reševanje problemov velikih dimenzij zaradi svoje zmožnosti učinkovitega raziskovanja prostora, obvladovanja šumnih in ne-konveksnih objektivnih funkcij, ter obvladovanja velikega števila parametrov objektivne funkcije.
+Pri takih problemih tradicionalni optimizacijski algoritmi, kot so to metode, ki temeljijo na gradientu, kvadratno programiranje in linearno programiranje, se soočajo s težavami.
+Inteligenca rojev (ang. \textit{Swarm inteligence} (SI)) se je pojavila, kot obetaven pristop za reševanje problemov velikih dimenzij zaradi svoje zmožnosti učinkovitega raziskovanja prostora, obvladovanja šumnih in ne-konveksnih cenitvenih funkcij, ter obvladovanja velikega števila parametrov objektivne funkcije.
 
-Inteligenca rojev se nanaša na kolektivno vedenje decentraliziranih, samoorganiziranjih sistemov, sestavljenih iz več agentov, ki sodelujejo med seboj in v okolju, da bi dosegli skupni clij.
+Inteligenca rojev se nanaša na kolektivno vedenje decentraliziranih, samoorganiziranjih sistemov, sestavljenih iz več agentov, ki sodelujejo med seboj in v okolju, da bi dosegli skupni cilj.
 Agenti v sistemih SI so lahko umetni ali naravni, komunicirajo in usklajujejo pa se po preprostih lokalnih pravilih.
 Vedenje teh agentov se zgleduje po vedenju družbenih žuželk, kot so mravlje, čebele in termiti, ki v svojih kolonijah kažejo izjemne sposobnosti reševanja problemov.
 
@@ -13,17 +13,17 @@ PSO algoritem sta prvič predlagala Ebarhart in Kennedy leta 1995 in je od takra
 PSO algoritem deluje tako, da simulira vedenje skupine delcev, ki se premikajo v iskalnem prostoru, da bi našli optimalno rešitev.
 Vsak delec predstavlja kandidatno rešitev problema, njegovo gibanje pa je odvisno od njegove lastne hitrosti in najboljše rešitve, ki jo je skupina delcev doslej našla.
 
-Druga SI algoritma, ki je sta lahko uporabljen za optimizacijo velikih dimenzij sta algoritem optimizacije kolonije mravelj (ang. \textit{Ant Colony Optimization} (ACO))~\cite{alg:aco} pri iskanju hrane in algoritem umetne čebelje kolonije (ang. \textit{Artificial Bee Colony} (ABC))~\cite{alg:abc}, ki posnema vedenje iskanja hrane čebel.
+Druga algoritma rojev delcev, ki je sta lahko uporabljen za optimizacijo velikih dimenzij sta algoritem optimizacije kolonije mravelj (ang. \textit{Ant Colony Optimization} (ACO))~\cite{alg:aco} pri iskanju hrane in algoritem umetne čebelje kolonije (ang. \textit{Artificial Bee Colony} (ABC))~\cite{alg:abc}, ki posnema vedenje iskanja hrane čebel.
 ACO algoritem deluje tako, da zgradi graf rešitve, ki predstavlja prostor iskanja, mravlje se premikajo po tem grafu, kjer preiskujejo prostor in iščejo nove boljše rešitve problema.
 ABC algoritem zaposluje skupino čebel, ki iščejo iskalni prostor za vire hrane, pri čemer vsaka čebela predstavlja kandidatno rešitev problema.
 
 Glavna prednost uporabe SI algoritmov za optimizacijo problemov velikih dimenzij je njihova sposobnost obvladovanja kompleksnosti in velike dimenzionalnosti iskalnega prostora.
 Tradicionalni optimizacijski algoritmi se soočajo s težavami pri reševanju takih problemov zaradi visokih računskih stroškov in prisotnosti večih lokalnih optimumov.
-Nasprotno pa SI algoritmi uporabljajo preporsta lokalna pravila za učinkovito raziskovanje iskalnega prostora in so odpornejši na lokalne optimume, v katerih lahko obtičijo mnogi tradicionalni algoritmi.
+Nasprotno pa SI algoritmi uporabljajo preprosta lokalna pravila za učinkovito raziskovanje iskalnega prostora in so odpornejši na lokalne optimume, v katerih lahko obtičijo mnogi tradicionalni algoritmi.
 
 Uporabo SI algoritmov za optimizacijo problemov velikih dimenzij, lahko opazimo na mnogih področjih, kot so strojništvo, finance in logistika.
 V strojništvu so bili SI algoritmi uporabljeni za optimizacijo kompleksnih sistemov, kot so letala, turbine in motorji.
-V finačništvu so bili SI algoritmi uporabljeni za optimizacijo portfelja in obvladovanje tvegan podjetji.
+V finančnem sektorju so bili SI algoritmi uporabljeni za optimizacijo portfelja in obvladovanje tvegan podjetji.
 V logistiki so bili SI algoritmi uporabljeni za optimizacijo usmerjanja vozil, upravljanja s skladiščem in optimizacije dobavne verige.
 SI algoritmi so se izkazali za zelo učinkovite in njihov uspeh je spodbudil nadaljnje raziskave razvoja novih in izboljšanih algoritmov.
 
@@ -44,7 +44,7 @@ Te strategije izkoriščajo prednosti obeh tehnik, kar omogoča učinkovito razi
 Z razčlenitvijo problema na manjše podprobleme in uporabo optimizacijskih algoritmov postane proces iskanja bolj osredotočen in učinkovit.
 
 Motivacija za to diplomsko delo izhaja iz potrebe po obravnavanju naraščajočega povpraševanja po učinkovitih in uspešnih rešitvah problemov velikih dimenzij.
-S pojavom vele podatkov (ang. \textit{Big Data}) in vse večjo kompleksnostjo sodobnih sistemov, tradicionalne optimizacijske tehnike ne zadoščajo za pravočasno zagoravljanje optimalnih rešitve.
+S pojavom vele podatkov (ang. \textit{Big Data}) in vse večjo kompleksnostjo sodobnih sistemov, tradicionalne optimizacijske tehnike ne zadoščajo za pravočasno zagotavljanje optimalnih rešitve.
 PSO algoritmi ponujajo obetavno alternativo za reševanje teh zahtevnih problemov, vendar so potrebne nadaljnje raziskav, da bi v celoti razumeli njihove zmogljivosti in omejitve.
 
 V tem diplomskem delu želimo raziskati učinkovitost kovelucijskega hibridnega PSO algoritma z rekurzivnimi diferencialnimi metodami grupiranja za reševanje problemov velikih dimenzij.
@@ -75,30 +75,64 @@ Na koncu \ref{chap:end}. poglavju podajamo povzetek naših ugotovitev, zaključk
 
 \chapter{Pregled obstoječih del}\label{chap:obsojeca.dela}
 
-V tem poglavju bomo opravili pregled pomembnih del za izbrano problematiko, ki obsega optimizacijo problemov velikih dimenzij, 
-% TODO
+Razširljivost optimizacijskih algoritmov je velik izziv pri spopadanju z vedno večjim obsegom optimizacijskih problemov na številnih področjih uporabe od visokodimenzionalnega strojnega učenja do kompleksnih obsežnih inženirskih problemov.
+Področje obsežne globalne optimizacije se ukvarja z izboljšanjem razširljivosti globalnih optimizacijskih algoritmov, zlasti metahevristik, ki temeljijo na populaciji.
+Takšna metahevristika je bila uspešno uporabljena za zvezne, diskretne ali kombinatorne probleme, ki segajo od več tisoč do milijarde odločitev spremenljivk.
+V tej raziskavi pregledujemo nedavne študije na področju obsežne globalne optimizacije (LSGO) črne skrinjice, da bi raziskovalcem in izvajalcem pomagali pridobiti pogled na to področje iz ptičje perspektive, se seznaniti z njegovimi glavnimi trendi in stanjem najsodobnejši algoritmi.
+Štirje glavni algoritemski pristopi za reševanje problemov LSGO so:
+\begin{enumerate}
+	\item razčlenitev problema,
+	\item populacijski algoritmi,
+	\item memetične algoritme in
+	\item metode lokalnega iskanja.
+\end{enumerate}
+V nadaljevanju sledijo opisi algoritemskih pristopov k obsežno globalno optimizacijo, opisuje širok spekter problemskih področij in se končno dotakne pasti in izzivov trenutnih raziskav ter identificira več potencialnih področij za prihodnje raziskave.
+
+Prekletstvo dimenzionalnosti od najzgodnejših časov je »dnevi prekletstva, ki je pestilo znanstvenike od najzgodnejših dni«, krotenje pa je bilo v središču številnih raziskovalnih prizadevanj v računalniških znanostih, od računalniške linearne algebre in strojnega učenja do numerične optimizacije.
+Motiv na vseh teh področjih je oblikovati nove načine za izgradnjo razširljivih računalniških sistemov, ki so sposobni "narediti več z manj".
+V kontekstu numerične optimizacije je prekletstvo dimenzionalnosti posledica eksponentne rasti velikosti iskalnega prostora glede na povečanje števila vhodnih spremenljivk.
+V zadnjih letih se to ohlapno imenuje "veliko- optimizacija obsega« ali »globalna optimizacija velikega obsega«.
+Izraz globalno poudarja vlogo hevristike in metahevristike, zlasti v kontekstu nenehne optimizacije.
+Treba je opozoriti, da se pojem "velikega obsega" spreminja skozi čas in se razlikuje od problema do problema.
+V tem članku je problem se šteje za velik, če povzroča težave z razširljivostjo na najsodobnejših algoritmih.
+Natančneje, posamezen problem ciljne optimizacije je mogoče definirati na naslednji način (ob predpostavki minimizacije):
+\begin{align}
+	\min&{f(\mathbf{x})} \label{eq:min_opt}\\
+	\mathbf{g}(\mathbf{x}) &\leq 0 \label{eq:min_opt_inequ}\\
+	\mathbf{h}(\mathbf{x}) &= 0 \label{eq:min_opt_equ}\\
+	\mathbf{x} &= (x_1, \cdots, x_n) \in \Omega \label{eq:min_opt_space},
+\end{align}
+kjer $\Omega$ predstavlja celotni iskalni prostor, ter $\mathbf{x}$ predstavlja točko znotraj $\Omega$ iskalnega prostora.
+Funkcija $f$ predstavlja cenitveno funkcijo, ki jo minimiziramo, kar predstavlja enačba~\ref{eq:min_opt}.
+Funkciji $\mathbf{g}$ in $\mathbf{h}$ predstavljata omejitve, ki jih lahko problem ima.
+Funkcija $\mathbf{g}$ predstavlja neenakosti, ki so predstavljene kot $\mathbf{g}(\mathbf{x}) = (g_1(\mathbf{x}), \cdots, g_p(\mathbf{x}))$, ter imamo $p$ neenakosti, ki jih moramo upoštevati.
+Funkcija $\mathbf{h}$ predstavlja enakosti, ki so predstavljene kot $\mathbf{h}(\mathbf{x}) = (h_1(\mathbf{x}), \cdots, h_q(\mathbf{x}))$, ter imamo $q$ enakosti, ki jih mora rešitev upoštevati.
+Neenakostim zadovoljimo tako da s podano rešitvijo izpolnimo pogoj podan v enačbi~\ref{eq:min_opt_inequ}.
+Enakosti pa zadovoljimo, ko izpolnimo pogoj iz enačbe~\ref{eq:min_opt_equ}.
+
+% TODO nekaj še tu dopiši
 
 \section{Optimizacijski algoritmi in inteligenca rojev}
 
-% TODO
+% TODO Napiši nekaj o Populacijskih algoritmih in inteligenci rojev
 
 \section{Roj delcev}
 
-% TODO
+% TODO Opiši uporabljene algoritme v svojem delu
 
 \section{Koevolucija}
 
-% TODO
+% TODO Opiši kaj je to Koevolucija
 
 \section{Diferencialne metode grupiranja}
 
-% TODO
+% TODO Opiši kaj je to metoda grupiranja
 
 \begin{algorithm}
     \DontPrintSemicolon
     \KwIn{$f$, $\mathbf{b}_{\downdownarrows}$, $\mathbf{b}_{\upuparrows}$, $\alpha$, $k$}
     \SetKwFunction{Inter}{Interact}
-    \SetKwFunction{app}{Append}
+    \SetKwFunction{app}{Pripni}
 
     $\mathbf{x}_r$, $\mathbf{a}$, $\mathbf{G}$ \gets~ [1], [], []\;
     $\epsilon$ \gets~ $\alpha \cdot \min(|f(\mathbf{x}_1)|, \cdots, |f(\mathbf{x}_k)|)$\;
@@ -130,7 +164,7 @@ V tem poglavju bomo opravili pregled pomembnih del za izbrano problematiko, ki o
     \lForEach{$e$ in $\mathbf{a}$}{\app{$\mathbf{G}$, $[e]$}}
     \Return $\mathbf{G}$
 
-    \caption{\textbf{Algoritem RDG za dekompozicijo problema.}}
+    \caption{Algoritem RDG~\cite{alg:rdg} za dekompozicijo problema.}
     \label{pcode:rdg}
 \end{algorithm}
 
@@ -162,19 +196,24 @@ V tem poglavju bomo opravili pregled pomembnih del za izbrano problematiko, ki o
     }
     \Return $\mathbf{x}_n$
  
-	\caption{\textbf{Funkcija za detekcijo interakcije med komponentami.}}
+	\caption{Funkcija \texttt{Interact} za detekcijo interakcije med komponentami pri algoritmu RDG.}
 	\label{pcode:rdg:interact}
 \end{algorithm}
+
+% TODO opiši algoritem RDG
 
 \begin{equation}\label{eq:rdg2:epsilon}
     \epsilon = \frac{(y_{l,l} + y_{u,l} + y_{l,m} + y_{u,m}) \cdot (\sqrt{D} + 2) \cdot \frac{\alpha}{2}}{1 - (y_{l,l} + y_{u,l} + y_{l,m} + y_{u,m}) \cdot (\sqrt{D} + 2) \cdot \frac{\alpha}{2}}
 \end{equation}
 
+% TODO opiši algoritem RDG2, tukja predvsem kaj se spremeni napram prejšnjem
+% TODO dodaj primerjavo med RDG--RDG2
+
 \begin{algorithm}
     \DontPrintSemicolon
     \KwIn{$f$, $\mathbf{b}_{\downdownarrows}$, $\mathbf{b}_{\upuparrows}$, $\alpha$, $\epsilon_n$, $\epsilon_s$}
     \SetKwFunction{Inter}{Interact}
-    \SetKwFunction{app}{Append}
+    \SetKwFunction{app}{Pripni}
 
     $\mathbf{x}_r$, $\mathbf{a}$, $\mathbf{G}$ \gets~ [1], [], []\;
     $\mathbf{x}_{l,l}$, $y_{l,l}$ \gets~ $\mathbf{b}_{\downdownarrows}$, $f(\mathbf{b}_{\downdownarrows})$\;
@@ -190,10 +229,9 @@ V tem poglavju bomo opravili pregled pomembnih del za izbrano problematiko, ki o
                 \textbf{break}\;
             }
         }{
-            \lIf{\ell($\mathbf{s}^*$) $\neq$ $1$}{
+            \eIf{\ell($\mathbf{s}^*$) $\neq$ $1$}{
                 $\mathbf{a}$ \gets~ $\mathbf{a} \cup \mathbf{s}_1$
-            }
-            \lElse{
+            }{
                 \app{$\mathbf{G}$, $\mathbf{s}^*$}
             }
             \uIf{\ell($\mathbf{x}_r$) $>$ $1$}{
@@ -216,15 +254,18 @@ V tem poglavju bomo opravili pregled pomembnih del za izbrano problematiko, ki o
     }
     \Return $\mathbf{G}$\;
 
-    \caption{\textbf{Algoritem RDG3 za dekompozicijo problema.}}
+    \caption{Algoritem RDG3~\cite{alg:rdg3} za dekompozicijo problema.}
     \label{pcode:rdg3}
 \end{algorithm}
+
+% TODO opiši algoritem RDG3
+% TODO dodaj primerjavo med RDG2--RDG3
 
 \begin{algorithm}
     \DontPrintSemicolon
     \KwIn{$f$, $\mathbf{b}_{\downdownarrows}$, $\mathbf{b}_{\upuparrows}$, $\alpha$, $k$}
-    \SetKwFunction{Inter}{Interact}
-    \SetKwFunction{app}{Append}
+    \SetKwFunction{Inter}{Interact2}
+    \SetKwFunction{app}{Pripni}
 
     $\mathbf{a}$, $\mathbf{G}$ \gets~ [], []\;
     $\mathbf{x}_{l,l}$, $y_{l,l}$ \gets~ $\mathbf{b}_{\downdownarrows}$, $f(\mathbf{b}_{\downdownarrows})$\;
@@ -260,14 +301,14 @@ V tem poglavju bomo opravili pregled pomembnih del za izbrano problematiko, ki o
     }
     \Return $\mathbf{G}$\;
 
-    \caption{\textbf{Algoritem ERDG za dekompozicijo problema.}}
+    \caption{Algoritem ERDG~\cite{alg:erdg} za dekompozicijo problema.}
     \label{pcode:erdg}
 \end{algorithm}
 
 \begin{algorithm}
     \DontPrintSemicolon
 	\KwIn{$f$, $\mathbf{b}_{\downdownarrows}$, $\mathbf{b}_{\upuparrows}$, $\mathbf{x}_{l,l}$, $\mathbf{x}_{u,l}$, $\mathbf{s}_1$, $\mathbf{s}_2$, $\mathbf{y}$}
-	\SetKwFunction{Inter}{Interact}
+	\SetKwFunction{Inter}{Interact2}
     \SetKwFunction{floor}{floor}
 
     $s$, $\mathbf{s}$ \gets~ \textbf{True}, $\mathbf{s}_1$\;
@@ -280,7 +321,7 @@ V tem poglavju bomo opravili pregled pomembnih del za izbrano problematiko, ki o
         }
     }
     \If{$s$}{
-        \eIf{\ell{$\mathbf{s}_2$} = $1$}{
+        \eIf{\ell($\mathbf{s}_2$) = $1$}{
             $\mathbf{s}$ \gets~ $\mathbf{s}_1 \cup \mathbf{s}_2$\;
         }{
             $k$ \gets~ \floor{\ell($\mathbf{s}_2$) / $2$}\;
@@ -300,15 +341,18 @@ V tem poglavju bomo opravili pregled pomembnih del za izbrano problematiko, ki o
     }
     \Return{$\mathbf{s}$, $\mathbf{y}$}\;
      
-	\caption{\textbf{Funkcija za detekcijo interakcije med komponentami.}}
+	\caption{Funkcija \texttt{Interact2} za detekcijo interakcije med komponentami pri algoritmu ERDG.}
 	\label{pcode:erdg:interact}
 \end{algorithm}
+
+% TODO opiši algoritem ERDG
+% TODO dodaj primerjavo med RDG3--ERDG
 
 \begin{algorithm}
     \DontPrintSemicolon
     \KwIn{$f$, $\mathbf{b}_{\downdownarrows}$, $\mathbf{b}_{\upuparrows}$, $\alpha$, $k$}
     \SetKwFunction{group}{Group}
-    \SetKwFunction{app}{Append}
+    \SetKwFunction{app}{Pripni}
 
     $\epsilon$ \gets~ $\alpha \cdot \min(|f(\mathbf{x}_1)|, \cdots, |f(\mathbf{x}_{\frac{k}{4}})|)$\;
     $\mathbf{a}$, $\mathbf{G}$ \gets~ [], []\;
@@ -345,7 +389,7 @@ V tem poglavju bomo opravili pregled pomembnih del za izbrano problematiko, ki o
     }
     \Return $\mathbf{G}$\;
 
-    \caption{\textbf{Algoritem TRDG za dekompozicijo problema.}}
+    \caption{Algoritem TRDG~\cite{alg:trdg} za dekompozicijo problema.}
     \label{pcode:trdg}
 \end{algorithm}
 
@@ -362,7 +406,7 @@ V tem poglavju bomo opravili pregled pomembnih del za izbrano problematiko, ki o
         \Return{\textbf{False}}\;
     }
 
-	\caption{\textbf{Funkcija za detekcijo interakcije med komponentami.}}
+	\caption{Funkcija \texttt{Interact3} za detekcijo interakcije med komponentami.}
 	\label{pcode:trdg:interact}
 \end{algorithm}
 
@@ -370,9 +414,9 @@ V tem poglavju bomo opravili pregled pomembnih del za izbrano problematiko, ki o
     \DontPrintSemicolon
 	\KwIn{$f$, $\mathbf{b}_{\downdownarrows}$, $\mathbf{b}_{\upuparrows}$, $\mathbf{x}_{l,l}$, $\mathbf{x}_{u,l}$, $\mathbf{s}_1$, $\mathbf{s}_2$, $\epsilon$, $\delta$}
     \SetKwFunction{group}{Group}
-    \SetKwFunction{Inter}{Interact}
+    \SetKwFunction{Inter}{Interact3}
     \SetKwFunction{floor}{floor}
-    \SetKwFunction{app}{Append}
+    \SetKwFunction{app}{Pripni}
 
 
     $\mathbf{s}^*$ \gets~ $\mathbf{s}_1$\;
@@ -397,9 +441,12 @@ V tem poglavju bomo opravili pregled pomembnih del za izbrano problematiko, ki o
     }
     \Return{$\mathbf{s}^*$}\;
 
-	\caption{\textbf{Funkcija za grupiranje komponent.}}
+	\caption{Funkcija \texttt{Group} za grupiranje komponent pri algoritmu TRDG.}
 	\label{pcode:trdg:group}
 \end{algorithm}
+
+% TODO opiši algoritem TRDG
+% TODO dodaj primerjavo med ERDG--TRDG
 
 \section{Omejitve sorodnih del}
 
@@ -411,32 +458,39 @@ V tem poglavju bomo opravili pregled pomembnih del za izbrano problematiko, ki o
 
 \begin{algorithm}
     \DontPrintSemicolon
-	\KwIn{$f$, $\mathbf{lb}$, $\mathbf{ub}$}
-	\SetKwFunction{run}{RunGeneration}
-	\SetKwFunction{Decom}{Decomposition}
-	\SetKwFunction{appbetter}{Update}
+	\KwIn{$f$, $\mathbf{b}_{\downdownarrows}$, $\mathbf{b}_{\upuparrows}$}
+	\SetKwFunction{run}{Generacija}
+	\SetKwFunction{Decom}{Dekompozicija}
+	\SetKwFunction{appbetter}{Posodobi}
 
-	$\mathbf{g}$ \gets~ \Decom{$f$, $\mathbf{ub}$, $\mathbf{lb}$}\;
-	$\mathbf{a}$ \gets~ [\lForEach*{$g$ in $\mathbf{g}$}{Initialize algorithm $a$ with starting population based on group $g$}]\;
-        $\mathbf{X^*}$, $\mathbf{y}^*$ \gets~ Get best individuals and fitness values from initialized populations for each algorithm\;\label{pcode:ccalgo:get_bests}
-	$\mathbf{x^*}$, $y^*$ \gets~ Get best individual and fitness value from $\mathbf{X^*}$\;
-	\While{$\neg$ stopping condition meet}{
+	$\mathbf{g}$ \gets~ \Decom{$f$, $\mathbf{b}_{\downdownarrows}$, $\mathbf{b}_{\upuparrows}$}\;
+	$\mathbf{a}$ \gets~ [\lForEach*{$g$ in $\mathbf{g}$}{Inicializirja začetno populacijo algoritma $a$ na podlagi grupe $g$}]\;
+    $\mathbf{X^*}$, $\mathbf{y}^*$ \gets~ Pridobi najboljše posameznike vsake grupe\;
+	%$\mathbf{x^*}$, $y^*$ \gets~ Get best individual and fitness value from $\mathbf{X^*}$\;
+	$\mathbf{x^*}$, $y^*$ \gets~ Najdi najboljšega posameznika iz $\mathbf{X^*}$\;
+	\While{$\neg$ zaustavitveni pogoj zadovoljen}{
 		\ForEach{$i$, $a$ in $\mathbf{a}$}{
-			$\mathbf{x_n^*}$, $y_n^*$ \gets~ \run{$a$}\;\label{pcode:ccalgo:run_gen}
-			\If{$y_n^* < \mathbf{y^*}[i]$}{\label{pcode:ccalgo:best_check}
-				$\mathbf{X^*}[i]$, $\mathbf{y^*}[i]$ \gets~ $\mathbf{x_n^*}$, $y_n^*$\;\label{pcode:ccalgo:construct_best}
-				\lIf{$y_n^* < y^*$}{$\mathbf{x^*}$, $y^*$ \gets~ $\mathbf{x_n^*}$, $y_n^*$}
+			$\mathbf{x_n^*}$, $y_n^*$ \gets~ \run{$a$}\;
+			\If{$y_n^* < \mathbf{y^*}[i]$}{
+				$\mathbf{X^*}[i]$, $\mathbf{y^*}[i]$ \gets~ $\mathbf{x_n^*}$, $y_n^*$\;
+				\If{$y_n^* < y^*$}{
+                    $\mathbf{x^*}$, $y^*$ \gets~ $\mathbf{x_n^*}$, $y_n^*$
+                }
 			}
 		}
-        \If{Any group found new best individual}{\label{pcode:ccalgo:new_best_fond_start}
-		      \lForEach{$g$ in $\mathbf{g}$}{$\mathbf{x_n}[g]$ \gets~ $\mathbf{X^*}[g]$}
-		      $y_n$ \gets~ $f(\mathbf{x_n})$\;
-		      \lIf{$y_n < y^*$}{$\mathbf{x^*}$, $y^*$ = $\mathbf{x_n}$, $y_n$}
-        }\label{pcode:ccalgo:new_best_fond_end}
+        \If{Katera od grup našla novo lokalno najboljšo rešitev}{
+		    \ForEach{$g$ in $\mathbf{g}$}{
+                $\mathbf{x_n}[g]$ \gets~ $\mathbf{X^*}[g]$
+            }
+		    $y_n$ \gets~ $f(\mathbf{x_n})$\;
+		    \If{$y_n < y^*$}{
+                $\mathbf{x^*}$, $y^*$ = $\mathbf{x_n}$, $y_n$
+            }
+        }
 	}
 	\Return{$\mathbf{x^*}$, $y^*$}\;
 
-	\caption{\textbf{Our implementation of CC algorithm.}}
+	\caption{Predlagan koevolucijski algoritem.}
 	\label{pcode:ccalgo}
 \end{algorithm}
 
@@ -447,6 +501,23 @@ V tem poglavju bomo opravili pregled pomembnih del za izbrano problematiko, ki o
 \section{Primerjava uporabe metod RDG}
 
 % TODO
+
+\begin{table}[t]
+    \centering
+    \caption{Vrednosti parametrov metod za grupiranje.} \label{tab:algs:group_params}
+    \begin{tabular}{|c|c|}
+        \hline
+        Algoritem & Vrednosti parametrov \\\hline
+        RDG & $\alpha = 10\mathrm{e}{-12}$, $k = 10$ \\\hline
+        RDG2 & $\alpha = 10\mathrm{e}{-12}$ \\\hline
+        RDG3 & $\alpha = 10\mathrm{e}{-12}$, $\epsilon_n = 50$, $\epsilon_s = 100$ \\\hline
+        ERDG & $\alpha = 10\mathrm{e}{-12}$ \\\hline
+        TRDG & $\alpha = 10\mathrm{e}{-12}$, $k = 10$ \\\hline
+    \end{tabular}
+\end{table}
+
+% TODO dodaj podatek zakaj si uporabil take vrednosti parametrov
+% Večina vrednosti parametrov sem pridobil iz literature o teh algorithmih, saj so pri vsaki raziskavi izvedli tudi analizo parametrov za naš izbrani problem CEC2013
 
 \subsection{Analiza rezultatov}
 

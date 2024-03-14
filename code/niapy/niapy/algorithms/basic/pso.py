@@ -183,7 +183,7 @@ class ParticleSwarmAlgorithm(OptimizationAlgorithm):
             w * v + self.c1 * self.random(task.dimension) * (pb - p) + self.c2 * self.random(task.dimension) * (gb - p),
             min_velocity, max_velocity)
 
-    def run_iteration(self, task, pop, fpop, xb, fxb, **params):
+    def run_iteration(self, task, pop, fpop, xb, fxb, iters, **params):
         r"""Core function of Particle Swarm Optimization algorithm.
 
         Args:
@@ -192,6 +192,7 @@ class ParticleSwarmAlgorithm(OptimizationAlgorithm):
             fpop (numpy.ndarray): Current population fitness/function values.
             xb (numpy.ndarray): Current best particle.
             fxb (float): Current best particle fitness/function value.
+            iters (int): Algorithm iteration number.
             params (dict): Additional function keyword arguments.
 
         Returns:
@@ -459,7 +460,7 @@ class OppositionVelocityClampingParticleSwarmOptimization(ParticleSwarmAlgorithm
         d.update({'s_l': s_l, 's_h': s_h})
         return pop, fpop, d
 
-    def run_iteration(self, task, pop, fpop, xb, fxb, **params):
+    def run_iteration(self, task, pop, fpop, xb, fxb, iters, **params):
         r"""Core function of Opposite-based Particle Swarm Optimization with velocity clamping algorithm.
 
         Args:
@@ -468,6 +469,7 @@ class OppositionVelocityClampingParticleSwarmOptimization(ParticleSwarmAlgorithm
             fpop (numpy.ndarray): Current populations function/fitness values.
             xb (numpy.ndarray): Current global best position.
             fxb (float): Current global best positions function/fitness value.
+            iters (int): Algorithm iteration number.
 
         Returns:
             Tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray, float, list, dict]:
@@ -501,7 +503,7 @@ class OppositionVelocityClampingParticleSwarmOptimization(ParticleSwarmAlgorithm
             if fnb < fxb:
                 xb, fxb = nb.copy(), fnb
         else:
-            w = self.w_max - ((self.w_max - self.w_min) / task.max_iters) * (task.iters + 1)
+            w = self.w_max - ((self.w_max - self.w_min) / task.max_iters) * (iters + 1)
             for i in range(len(pop)):
                 v[i] = self.update_velocity(v[i], pop[i], personal_best[i], xb, w, min_velocity, max_velocity, task)
                 pop[i] = task.repair(pop[i] + v[i], rng=self.rng)
@@ -1058,7 +1060,7 @@ class ComprehensiveLearningParticleSwarmOptimizer(ParticleSwarmAlgorithm):
         """
         return self.repair(w * v + self.c * self.random(task.dimension) * (pb - p), min_velocity, max_velocity)
 
-    def run_iteration(self, task, pop, fpop, xb, fxb, **params):
+    def run_iteration(self, task, pop, fpop, xb, fxb, iters, **params):
         r"""Core function of algorithm.
 
         Args:
@@ -1067,6 +1069,7 @@ class ComprehensiveLearningParticleSwarmOptimizer(ParticleSwarmAlgorithm):
             fpop (numpy.ndarray): Current population fitness/function values.
             xb (numpy.ndarray): Current best particle.
             fxb (float): Current best particle fitness/function value.
+            iters (int): Number of iteration of algorithm.
             params (dict): Additional function keyword arguments.
 
         Returns:
@@ -1097,7 +1100,7 @@ class ComprehensiveLearningParticleSwarmOptimizer(ParticleSwarmAlgorithm):
         flag = params.pop('flag')
         pc = params.pop('pc')
 
-        w = self.w0 * (self.w0 - self.w1) * (task.iters + 1) / task.max_iters
+        w = self.w0 * (self.w0 - self.w1) * (iters + 1) / task.max_iters
         for i in range(len(pop)):
             if flag[i] >= self.m:
                 v[i] = self.update_velocity(v[i], pop[i], personal_best[i], xb, 1, min_velocity, max_velocity, task)

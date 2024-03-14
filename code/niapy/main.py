@@ -11,14 +11,27 @@ from cec2013lsgo.cec2013 import Benchmark
 from niapy.task import Task
 from niapy.problems import Problem
 
+from niapy.algorithms.algorithm import (
+    AnalysisAlgorithm,
+    OptimizationAlgorithm
+)
 from niapy.algorithms.analysis import (
+    RecursiveDifferentialGrouping,
+    RecursiveDifferentialGroupingV2,
     RecursiveDifferentialGroupingV3,
-    ExtendedDifferentialGrouping
+    EfficientRecursiveDifferentialGrouping,
+    ThreeLevelRecursiveDifferentialGrouping
 )
 from niapy.algorithms.basic import (
-    ParticleSwarmAlgorithm
+    ParticleSwarmAlgorithm,
+    ParticleSwarmOptimization,
+    CenterParticleSwarmOptimization,
+    MutatedParticleSwarmOptimization,
+    MutatedCenterParticleSwarmOptimization,
+    ComprehensiveLearningParticleSwarmOptimizer,
+    MutatedCenterUnifiedParticleSwarmOptimization,
+    OppositionVelocityClampingParticleSwarmOptimization,
 )
-
 from ccalgorithm import CooperativeCoevolution
 
 
@@ -98,10 +111,8 @@ def run_rdg_cec2013(no_fun:int = 1, seed:int = 1, alpha:float = 1e-12, NP:int = 
         csvfile.write('%d, %d, %d, %d, %f\n' % (seed, no_groups(best), no_seps(best), task.evals, stop - start))
 
 
-def run_cc_cec2013(no_fun:int = 1, seed:int = 1) -> None:
-    # ParticleSwarmAlgorithm
-    algo = CooperativeCoevolution(RecursiveDifferentialGroupingV3(seed=seed), ParticleSwarmAlgorithm, seed=seed)
-    algo.set_decomposer_parameters(n=50, alpha=1e-12, tn=50)
+def run_cc_cec2013(decomp:AnalysisAlgorithm = RecursiveDifferentialGroupingV3, opt:OptimizationAlgorithm = ParticleSwarmAlgorithm, no_fun:int = 1, seed:int = 1) -> None:
+    algo = CooperativeCoevolution(RecursiveDifferentialGroupingV3(seed=seed), ComprehensiveLearningParticleSwarmOptimizer, seed=seed)
     # create a test cec2013lsgo
     task = CEC2013lsgoTask(no_fun=no_fun)
     # start optimization of the task
@@ -121,6 +132,13 @@ def run_cc_cec2013(no_fun:int = 1, seed:int = 1) -> None:
 if __name__ == "__main__":
     arg_no_fun = int(sys.argv[1]) if len(sys.argv) > 1 else 1
     arg_seed = int(sys.argv[2]) if len(sys.argv) > 2 else 1
-    np.set_printoptions(linewidth=np.inf)
-    run_cc_cec2013(no_fun=arg_no_fun, seed=arg_seed)
+    arg_opt_alg = int(sys.argv[3]) if len(sys.argv) > 3 else 1
+    decomp_alg, opt_alg = RecursiveDifferentialGroupingV3, ParticleSwarmAlgorithm
+    if arg_opt_alg == 2: deccomp_alg = ParticleSwarmOptimization
+    elif arg_opt_alg == 3: decomp_alg = CenterParticleSwarmOptimization
+    elif arg_opt_alg == 4: decomp_alg = MutatedParticleSwarmOptimization
+    elif arg_opt_alg == 5: decomp_alg = MutatedCenterParticleSwarmOptimization
+    elif arg_opt_alg == 6: decomp_alg = OppositionVelocityClampingParticleSwarmOptimization
+    elif arg_opt_alg == 7: decomp_alg = ComprehensiveLearningParticleSwarmOptimizer
+    run_cc_cec2013(decomp=decomp_alg, opt=opt_alg, no_fun=arg_no_fun, seed=arg_seed)
 

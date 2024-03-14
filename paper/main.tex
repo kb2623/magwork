@@ -18,7 +18,7 @@
 \usepackage[a4paper, inner=3.5cm, outer=2.5cm, top=3.0cm, bottom=3.0cm, pdftex]{geometry}
 \usepackage[slovene]{babel}
 \usepackage[language=slovene, backend=biber, style=ieee]{biblatex}
-\usepackage{fontspec, amsfonts, amssymb}
+\usepackage{fontspec, amsfonts, amssymb, amsmath}
 \usepackage[titletoc, title]{appendix}
 \usepackage[notlot, nottoc, notlof]{tocbibind}
 \usepackage{tocloft}
@@ -52,7 +52,7 @@
 \onehalfspacing
 \setlength\parindent{0pt} 
 \renewcommand\labelitemi{-} % "-" za alineje
-\renewcommand{\theequation}{Enačba \thechapter.\arabic{equation}} % "Enačba 1.1" za enačbe
+\renewcommand{\theequation}{\thechapter.\arabic{equation}} % "Enačba 1.1" za enačbe
 
 \makeatletter
 \renewcommand\footnotesize{%
@@ -67,6 +67,9 @@
    \belowdisplayskip \abovedisplayskip
 }
 \makeatother
+
+\setlength{\abovecaptionskip}{1em}
+\setlength{\belowcaptionskip}{1em}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% POMOŽNE FUNKCIJE
@@ -112,6 +115,8 @@
 \addto{\captionsslovene}{\renewcommand{\bibname}{Viri in literatura}}
 % Algoritmi
 \SetAlgorithmName{Algoritem}{algoritem}{Kazalo algoritmov}
+\SetAlCapSkip{1em}
+\SetAlCapSty{}
 
 \setlength{\cfttabindent}{0in}
 \setlength{\cftfigindent}{0in}
@@ -153,7 +158,7 @@
 \newcommand{\atype}{Magistrsko delo}
 \newcommand{\akljucne}{roj delcev, diferencialno grupiranje, optimizacija, koevolucija}
 \newcommand{\akeywords}{particle swarm, differential grouping, optimization, coevolution}
-\newcommand{\adate}{Maribor, mesec 2023}
+\newcommand{\adate}{Maribor, April 2024}
 \newcommand{\amentor}{red. prof. dr. Janez Brest}
 \newcommand{\asomentor}{doc. dr. Borko Bošković}
 \newcommand{\alektor}{Neko Nekdo}
@@ -176,10 +181,10 @@
 \vspace{3cm}
 
 {\LARGE \aauthor\\} % ime in priimek
-\vspace{10mm}
+\vspace{9.5mm}
 
 {\bf \huge \MakeUppercase \atitleslo}\\ % naslov zaključnega dela
-\vspace{10mm}
+\vspace{9mm}
 
 {\LARGE \atype}\\ % tip zaključnega dela
 \vspace{8.5cm}
@@ -213,13 +218,13 @@
 \newpage
 \pagestyle{frontpage}
 
-\vspace*{2.5cm}
+\vspace*{7.5cm}
 \begin{center}
 {\bf \LARGE \MakeUppercase \atitleslo}\\ % naslov zaključnega dela
 \vspace{5mm}
 {\Large \atype}\\ % tip zaključnega dela
 \end{center}
-\vspace{3cm}
+\vspace{6cm}
 \begin{table}[h]
     \renewcommand{\arraystretch}{1.5}
     \begin{tabular}{ll}
@@ -295,23 +300,6 @@
 
 Prevzame se iz \href{https://www.um.si/univerza/dokumentni-center/akti/GlavniDokumenti2013/Pravilnik\%20o\%20zaklj.\%20delih\%20na\%20\%C5\%A0P\%201.\%20in\%202.\%20st.\%20UM\%20(UPB\%201).pdf}{\ul{Pravilnika o postopku priprave in zagovora zaključnega dela na študijskih programih prve in druge stopnje Univerze v Mariboru}}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% IZJAVA O ISTOVETNOSTI
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\begin{center}
-    \textbf{IZJAVA O ISTOVETNOSTI TISKANE IN ELEKTRONSKE OBLIKE ZAKLJUČNEGA DELA\footnote{V kolikor študent odda zaključno delo tudi v tiskani obliki, mora biti v tiskani in elektronski izvod vezana tudi izjava o istovetnosti tiskane in elektronske oblike zaključnega dela.}}
-\end{center}
-
-Prevzame se iz \href{https://www.um.si/univerza/dokumentni-center/akti/GlavniDokumenti2013/Pravilnik\%20o\%20zaklj.\%20delih\%20na\%20\%C5\%A0P\%201.\%20in\%202.\%20st.\%20UM\%20(UPB\%201).pdf}{\ul{Pravilnika o postopku priprave in zagovora zaključnega dela na študijskih programih prve in druge stopnje Univerze v Mariboru}}.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% SKLEP O ZAČASNI NEDOSTOPNOSTI
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\begin{center}
-    \textbf{SKLEP O ZAČASNI NEDOSTOPNOSTI ZAKLJUČNEGA DELA\footnote{Ob takojšnji dostopnosti zaključnega dela sklep ni obvezen.}}
-\end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% KAZALO VSEBINE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

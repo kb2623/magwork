@@ -1,3 +1,69 @@
+@article{alg:rdg,
+  title={A recursive decomposition method for large scale continuous optimization},
+  author={Sun, Yuan and Kirley, Michael and Halgamuge, Saman K},
+  journal={IEEE Transactions on Evolutionary Computation},
+  volume={22},
+  number={5},
+  pages={647--661},
+  year={2018},
+  publisher={IEEE},
+  keywords={Optimization;Benchmark testing;Australia;Electronic mail;Iron;Particle swarm optimization;Continuous optimization problem;cooperative co-evolution (CC);decomposition method;large scale global optimization (LSGO)},
+  doi={10.1109/TEVC.2017.2778089}
+}
+
+@inproceedings{alg:rdg2,
+  author = {Sun, Yuan and Omidvar, Mohammad Nabi and Kirley, Michael and Li, Xiaodong},
+  title = {Adaptive threshold parameter estimation with recursive differential grouping for problem decomposition},
+  year = {2018},
+  isbn = {9781450356183},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3205455.3205483},
+  doi = {10.1145/3205455.3205483},
+  abstract = {Problem decomposition plays an essential role in the success of cooperative co-evolution (CC), when used for solving large-scale optimization problems. The recently proposed recursive differential grouping (RDG) method has been shown to be very efficient, especially in terms of time complexity. However, it requires an appropriate parameter setting to estimate a threshold value in order to determine if two subsets of decision variables interact or not. Furthermore, using one global threshold value may be insufficient to identify variable interactions in components with different contribution to the fitness value. Inspired by the different grouping 2 (DG2) method, in this paper, we adaptively estimates a threshold value based on computational round-off errors for RDG. We derive an upper bound of the round-off errors, which is shown to be sufficient when identifying variable interactions across a wide range of large-scale benchmark problems. Comprehensive numerical experimental results showed that the proposed RDG2 method achieved higher decomposition accuracy than RDG and DG2. When embedded into a CC framework, it achieved statistically equal or significantly better solution quality than RDG and DG2, when used to solve the benchmark problems.},
+  booktitle = {Proceedings of the Genetic and Evolutionary Computation Conference},
+  pages = {889–896},
+  numpages = {8},
+  keywords = {cooperative co-evolution, large-scale continuous optimization, parameter adaptation, problem decomposition, round-off error analysis},
+  location = {Kyoto, Japan},
+  series = {GECCO '18}
+}
+
+@inproceedings{alg:rdg3,
+  title={Decomposition for large-scale optimization problems with overlapping components},
+  author={Sun, Yuan and Li, Xiaodong and Ernst, Andreas and Omidvar, Mohammad Nabi},
+  booktitle={2019 IEEE congress on evolutionary computation (CEC)},
+  pages={326--333},
+  year={2019},
+  organization={IEEE},
+  keywords={Optimization;Couplings;Upper bound;Benchmark testing;Australia;Sun;Iron;Cooperative co-evolution;large-scale continuous optimization;overlapping problem;variable interaction;problem decomposition.},
+  doi={10.1109/CEC.2019.8790204}
+}
+  
+@article{alg:erdg,
+  author={Yang, Ming and Zhou, Aimin and Li, Changhe and Yao, Xin},
+  journal={IEEE Transactions on Evolutionary Computation},
+  title={An Efficient Recursive Differential Grouping for Large-Scale Continuous Problems},
+  year={2021},
+  volume={25},
+  number={1},
+  pages={159-171},
+  keywords={Optimization;Computational efficiency;Geology;Computer science;Electronic mail;Computational complexity;Automation;Cooperative co-evolution (CC);decomposition;large-scale global optimization},
+  doi={10.1109/TEVC.2020.3009390}
+}
+  
+@article{alg:trdg,
+  author={Xu, Hong-Bin and Li, Fei and Shen, Hao},
+  journal={IEEE Access}, 
+  title={A Three-Level Recursive Differential Grouping Method for Large-Scale Continuous Optimization}, 
+  year={2020},
+  volume={8},
+  number={},
+  pages={141946-141957},
+  keywords={Optimization;Iron;Sociology;Covariance matrices;Linear programming;Power electronics;Large-scale continuous optimization;cooperative co-evolution (CC);differential grouping;trichotomy method},
+  doi={10.1109/ACCESS.2020.3013661}
+}
+
 @article{alg:abc,
   title={A powerful and efficient algorithm for numerical function optimization: artificial bee colony (ABC) algorithm},
   author={Karaboga, Dervis and Basturk, Bahriye},
@@ -5,7 +71,8 @@
   volume={39},
   pages={459--471},
   year={2007},
-  publisher={Springer}
+  publisher={Springer},
+  doi={10.1007/s10898-007-9149-x}
 }
 
 @article{alg:aco,
@@ -17,34 +84,6 @@
   year={1999}
 }
 
-@article{alg:rdg,
-  title={A recursive decomposition method for large scale continuous optimization},
-  author={Sun, Yuan and Kirley, Michael and Halgamuge, Saman K},
-  journal={IEEE Transactions on Evolutionary Computation},
-  volume={22},
-  number={5},
-  pages={647--661},
-  year={2017},
-  publisher={IEEE}
-}
-
-@inproceedings{alg:rdg2,
-  title={Adaptive threshold parameter estimation with recursive differential grouping for problem decomposition},
-  author={Sun, Yuan and Omidvar, Mohammad Nabi and Kirley, Michael and Li, Xiaodong},
-  booktitle={Proceedings of the genetic and evolutionary computation conference},
-  pages={889--896},
-  year={2018}
-}
-
-@inproceedings{alg:rdg3,
-  title={Decomposition for large-scale optimization problems with overlapping components},
-  author={Sun, Yuan and Li, Xiaodong and Ernst, Andreas and Omidvar, Mohammad Nabi},
-  booktitle={2019 IEEE congress on evolutionary computation (CEC)},
-  pages={326--333},
-  year={2019},
-  organization={IEEE}
-}
-
 @article{alg:dg,
   title={Cooperative co-evolution with differential grouping for large scale optimization},
   author={Omidvar, Mohammad Nabi and Li, Xiaodong and Mei, Yi and Yao, Xin},
@@ -53,15 +92,22 @@
   number={3},
   pages={378--393},
   year={2013},
-  publisher={IEEE}
+  publisher={IEEE},
+  keywords={Optimization;Couplings;Linear programming;Evolutionary computation;Genetic algorithms;Context;Vectors;cooperative co-evolution;large-scale optimization;problem decomposition;non-separability;numerical optimization;Cooperative co-evolution;large-scale optimization;nonseparability;numerical optimization;problem decomposition},
+  doi={10.1109/TEVC.2013.2281543}
 }
 
 @article{alg:ddg,
   title={Dual differential grouping: A more general decomposition method for large-scale optimization},
   author={Li, Jian-Yu and Zhan, Zhi-Hui and Tan, Kay Chen and Zhang, Jun},
   journal={IEEE Transactions on Cybernetics},
-  year={2022},
-  publisher={IEEE}
+  year={2023},
+  publisher={IEEE},
+  volume={53},
+  number={6},
+  pages={3624-3638},
+  keywords={Optimization;Artificial neural networks;Time complexity;Research and development;Problem-solving;Minimization;Linear programming;Cooperative coevolution (CC);differential evolution;dual differential grouping (DDG);evolutionary computation (EC);large-scale optimization problem (LSOP);particle swarm optimization},
+  doi={10.1109/TCYB.2022.3158391}
 }
 
 @article{alg:dg2,
@@ -72,44 +118,166 @@
   number={6},
   pages={929--942},
   year={2017},
-  publisher={IEEE}
+  publisher={IEEE},
+  keywords={Optimization;Linear programming;Benchmark testing;Sensitivity;Roundoff errors;Computer science;Reliability;Cooperative co-evolution;differential grouping (DG);large-scale global optimization;problem decomposition},
+  doi={10.1109/TEVC.2017.2694221}
 }
 
 @article{alg:fii,
-  title={Cooperation coevolution with fast interdependency identification for large scale optimization},
-  author={Hu, Xiao-Min and He, Fei-Long and Chen, Wei-Neng and Zhang, Jun},
-  journal={Information Sciences},
-  volume={381},
-  pages={142--160},
-  year={2017},
-  publisher={Elsevier}
+  title = {Cooperation coevolution with fast interdependency identification for large scale optimization},
+  journal = {Information Sciences},
+  volume = {381},
+  pages = {142-160},
+  year = {2017},
+  issn = {0020-0255},
+  doi = {10.1016/j.ins.2016.11.013},
+  url = {https://www.sciencedirect.com/science/article/pii/S002002551631800X},
+  author = {Xiao-Min Hu and Fei-Long He and Wei-Neng Chen and Jun Zhang},
+  keywords = {Cooperative coevolution (CC), Large scale global optimization (LSGO), Problem decomposition, Differential evolution},
+  abstract = {Cooperative coevolution (CC) provides a powerful divide-and-conquer architecture for large scale global optimization (LSGO). However, its performance relies highly on decomposition. To make near-optimal decomposition, most developed decomposition strategies either cannot obtain the correct interdependency information or require a lot of fitness evaluations (FEs) in the identification. To alleviate the limitations in previous works, in this paper we propose a fast interdependency identification (FII) algorithm for CC in LSGO. The proposed algorithm firstly identifies separable and nonseparable variables efficiently. Then, the interdependency information of nonseparable variables is further investigated. To make near-optimal decomposition for CC, our algorithm avoids the necessity of obtaining the full interdependency information of nonseparable variables. Therefore, a significant number of FEs can be saved. Extensive experiments have been conducted on two suites of LSGO benchmark functions with up to 2000 variables. FII correctly identified the interdependency information on most benchmark functions with much fewer FEs in comparison with three state-of-the-art algorithms. Furthermore, combined with CC and coupled with a differential evolution variant serving as the optimizer, FII has shown its promising performance in LSGO.}
 }
 
 @article{alg:edg,
-  title={An Efficient Differential Grouping Algorithm for Large-Scale Global Optimization},
   author={Kumar, Abhishek and Das, Swagatam and Mallipeddi, Rammohan},
-  journal={IEEE Transactions on Evolutionary Computation},
-  year={2022},
-  publisher={IEEE}
+  journal={IEEE Transactions on Evolutionary Computation}, 
+  title={An Efficient Differential Grouping Algorithm for Large-Scale Global Optimization}, 
+  year={2024},
+  volume={28},
+  number={1},
+  pages={32-46},
+  keywords={Optimization;Iron;Matrix decomposition;Covariance matrices;Computational efficiency;Search problems;Time complexity;Cooperative co-evolution (CC);covariance matrix adaptation evolution strategy (CMA-ES);efficient differential grouping (DG);large-scale optimization problems;matrix decomposition},
+  doi={10.1109/TEVC.2022.3230070}
 }
 
 @inproceedings{alg:xdg,
-  title={Extended differential grouping for large scale global optimization with direct and indirect variable interactions},
-  author={Sun, Yuan and Kirley, Michael and Halgamuge, Saman Kumara},
-  booktitle={Proceedings of the 2015 annual conference on genetic and evolutionary computation},
-  pages={313--320},
-  year={2015}
+  author = {Sun, Yuan and Kirley, Michael and Halgamuge, Saman Kumara},
+  title = {Extended Differential Grouping for Large Scale Global Optimization with Direct and Indirect Variable Interactions},
+  year = {2015},
+  isbn = {9781450334723},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/2739480.2754666},
+  doi = {10.1145/2739480.2754666},
+  abstract = {Cooperative co-evolution is a framework that can be used to effectively solve large scale optimization problems. This approach employs a divide and conquer strategy, which decomposes the problem into sub-components that are optimized separately. However, solution quality relies heavily on the decomposition method used. Ideally, the interacting decision variables should be assigned to the same sub-component and the interdependency between sub-components should be kept to a minimum. Differential grouping, a recently proposed method, has high decomposition accuracy across a suite of benchmark functions. However, we show that differential grouping can only identify decision variables that interact directly. Subsequently, we propose an extension of differential grouping that is able to correctly identify decision variables that also interact indirectly. Empirical studies show that our extended differential grouping method achieves perfect decomposition on all of the benchmark functions investigated. Significantly, when our decomposition method is embedded in the cooperative co-evolution framework, it achieves comparable or better solution quality than the differential grouping method.},
+  booktitle = {Proceedings of the 2015 Annual Conference on Genetic and Evolutionary Computation},
+  pages = {313–320},
+  numpages = {8},
+  keywords = {variable interaction, problem decomposition, large scale global optimization, cooperative co-evolution},
+  location = {Madrid, Spain},
+  series = {GECCO '15}
 }
 
 @article{alg:gdg,
-  title={A competitive divide-and-conquer algorithm for unconstrained large-scale black-box optimization},
-  author={Mei, Yi and Omidvar, Mohammad Nabi and Li, Xiaodong and Yao, Xin},
-  journal={ACM Transactions on Mathematical Software (TOMS)},
-  volume={42},
-  number={2},
-  pages={1--24},
-  year={2016},
-  publisher={ACM New York, NY, USA}
+  author = {Mei, Yi and Omidvar, Mohammad Nabi and Li, Xiaodong and Yao, Xin},
+  title = {A Competitive Divide-and-Conquer Algorithm for Unconstrained Large-Scale Black-Box Optimization},
+  year = {2016},
+  issue_date = {June 2016},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {42},
+  number = {2},
+  issn = {0098-3500},
+  url = {https://doi.org/10.1145/2791291},
+  doi = {10.1145/2791291},
+  abstract = {This article proposes a competitive divide-and-conquer algorithm for solving large-scale black-box optimization problems for which there are thousands of decision variables and the algebraic models of the problems are unavailable. We focus on problems that are partially additively separable, since this type of problem can be further decomposed into a number of smaller independent subproblems. The proposed algorithm addresses two important issues in solving large-scale black-box optimization: (1) the identification of the independent subproblems without explicitly knowing the formula of the objective function and (2) the optimization of the identified black-box subproblems. First, a Global Differential Grouping (GDG) method is proposed to identify the independent subproblems. Then, a variant of the Covariance Matrix Adaptation Evolution Strategy (CMA-ES) is adopted to solve the subproblems resulting from its rotation invariance property. GDG and CMA-ES work together under the cooperative co-evolution framework. The resultant algorithm, named CC-GDG-CMAES, is then evaluated on the CEC’2010 large-scale global optimization (LSGO) benchmark functions, which have a thousand decision variables and black-box objective functions. The experimental results show that, on most test functions evaluated in this study, GDG manages to obtain an ideal partition of the index set of the decision variables, and CC-GDG-CMAES outperforms the state-of-the-art results. Moreover, the competitive performance of the well-known CMA-ES is extended from low-dimensional to high-dimensional black-box problems.},
+  journal = {ACM Trans. Math. Softw.},
+  month = {jun},
+  articleno = {13},
+  numpages = {24},
+  keywords = {Large-scale black-box optimization, cooperative co-evolution, covariance matrix adaptation evolutionary strategy (CMA-ES), decomposition, differential grouping}
+}
+  
+@inproceedings{alg:pso,
+  author = {Kennedy, James and Eberhart, Russell},
+  year = {1995},
+  month = {12},
+  pages = {1942 - 1948 vol.4},
+  title = {Particle swarm Optimization},
+  volume = {4},
+  isbn = {0-7803-2768-3},
+  journal = {Proceedings of IEEE International Conference on Neural Networks},
+  booktitle = {Proceedings of IEEE International Conference on Neural Networks},
+  doi = {10.1109/ICNN.1995.488968}
+}
+
+@article{alg:cpso,
+  title = {Center particle swarm optimization},
+  journal = {Neurocomputing},
+  volume = {70},
+  number = {4},
+  pages = {672-679},
+  year = {2007},
+  note = {Advanced Neurocomputing Theory and Methodology},
+  issn = {0925-2312},
+  doi = {10.1016/j.neucom.2006.10.002},
+  url = {https://www.sciencedirect.com/science/article/pii/S0925231206002700},
+  author = {Yu Liu and Zheng Qin and Zhewen Shi and Jiang Lu},
+  keywords = {Particle swarm optimization, Neural networks, Evolutionary computation},
+  abstract = {Center particle swarm optimization algorithm (CenterPSO) is proposed where a center particle is incorporated into linearly decreasing weight particle swarm optimization (LDWPSO). Unlike other ordinary particles in LDWPSO, the center particle has no explicit velocity, and is set to the center of the swarm at every iteration. Other aspects of the center particle are the same as that of the ordinary particle, such as fitness evaluation and competition for the best particle of the swarm. Because the center of the swarm is a promising position, the center particle generally gets good fitness value. More importantly, due to frequent appearance as the best particle of swarm, it often attracts other particles and guides the search direction of the whole swarm. CenterPSO and LDWPSO are extensively compared on three well-known benchmark functions with 10, 20, 30 dimensions. Experimental results show that CenterPSO achieves not only better solutions but also faster convergence. Furthermore, CenterPSO and LDWPSO are compared as neural network training algorithms. The results show that CenterPSO achieves better performance than LDWPSO.}
+}
+
+@article{alg:mcupso,
+  title = {Unified particle swarm delivers high efficiency to particle swarm optimization},
+  journal = {Applied Soft Computing},
+  volume = {55},
+  pages = {371 -- 383},
+  year = {2017},
+  issn = {1568-4946},
+  doi = {10.1016/j.asoc.2017.02.008},
+  url = {http://www.sciencedirect.com/science/article/pii/S1568494617300765},
+  author = {Hsing-Chih Tsai},
+  keywords = {Particle swarm optimization, Unified particle swarm, Parameter selection},
+  abstract = {This paper suggests integrating a unification factor into particle swarm optimization (PSO) to balance the effects of cognitive and social terms. The resultant unified particle swarm (UPS) moves particles toward the center of its personal best and the global best. This improves on PSO, which moves particles far beyond the center. Widely used benchmark functions and four types of experiments demonstrate that the proposed UPS uses slightly more computational time than PSO to attain significantly higher efficiency and, usually, better solution effectiveness and consistency than PSO. Robust performance was further demonstrated by the significantly higher efficiency and better solution effectiveness and stability achieved by the UPS, as compared to the PSO and its variants. Outstandingly, convergence speeds for the proposed UPS were very good on the 13 benchmark functions examined in experiment 1, demonstrating the correct movement of UPS particles toward convergence.}
+},
+
+@article{alg:clpso,
+  author={J. J. {Liang} and A. K. {Qin} and P. N. {Suganthan} and S. {Baskar}},
+  journal={IEEE Transactions on Evolutionary Computation},
+  title={Comprehensive learning particle swarm optimizer for global optimization of multimodal functions},
+  year={2006},
+  volume={10},
+  number={3},
+  pages={281-295},
+  keywords={learning (artificial intelligence);particle swarm optimisation;comprehensive learning particle swarm optimizer;global optimization;multimodal functions;particle historical best information;particle velocity;premature convergence;Rosenbrock multimodal test function;Griewank multimodal test function;Rastrigin multimodal test function;Ackley multimodal test function;Schwefel multimodal test function;composition functions;coordinate rotation;multimodal problems;Particle swarm optimization;Space technology;Acceleration;Convergence;Benchmark testing;Evolutionary computation;Genetic mutations;Insects;Animals;Birds;Composition benchmark functions;comprehensive learning particle swarm optimizer (CLPSO);global numerical optimization;particle swarm optimizer (PSO)},
+  doi={10.1109/TEVC.2005.857610},
+  ISSN={1089-778X}
+},
+
+@incollection{alg:ovcpso,
+  author={Shahzad, Farrukh and Baig, A. Rauf and Masood, Sohail and Kamran, Muhammad and Naveed, Nawazish},
+  editor={Yu, Wen and Sanchez, Edgar N.},
+  title={Opposition-Based Particle Swarm Optimization with Velocity Clamping (OVCPSO)},
+  booktitle={Advances in Computational Intelligence},
+  year={2009},
+  publisher={Springer Berlin Heidelberg},
+  address={Berlin, Heidelberg},
+  pages={339--348},
+  abstract={This paper presents an Opposition-based PSO(OVCPSO) which uses Velocity Clamping to accelerate its convergence speed and to avoid premature convergence of algorithm. Probabilistic opposition-based learning for particles has been used in the proposed method which uses velocity clamping to control the speed and direction of particles. Experiments have been performed upon various well known benchmark optimization problems and results have shown that OVCPSO can deal with difficult unimodal and multimodal optimization problems efficiently and effectively. The numbers of function calls (NFC) are significantly less than other PSO variants i.e. basic PSO with inertia weight, PSO with inertia weight and velocity clamping (VCPSO) and opposition based PSO with Cauchy Mutation (OPSOCM).},
+  doi={10.1007/978-3-642-03156-4_34},
+  isbn={978-3-642-03156-4}
+}
+
+@inproceedings{algo:ccpso,
+  author={Aote, Shailendra S. and Raghuwanshi, M. M. and Malik, L. G.}, 
+  editor={Satapathy, Suresh Chandra and Biswal, Bhabendra Narayan and Udgata, Siba K. and Mandal, J.K.},
+  title={A New Particle Swarm Optimizer with Cooperative Coevolution for Large Scale Optimization},
+  booktitle={Proceedings of the 3rd International Conference on Frontiers of Intelligent Computing: Theory and Applications (FICTA) 2014},
+  year={2015},
+  publisher={Springer International Publishing},
+  address={Cham},
+  pages={781--789},
+  abstract={With the increasing demands in solving larger dimensional problems, it is necessary to have efficient algorithm. Efforts were put towards increasing the efficiency of the algorithms. This paper presents a new approach of particle swarm optimization with cooperative coevolution. The proposed technique [NPSO-CC] is built on the success of an early CCPSO2 that employs an effective variable grouping technique random grouping. The technique of moving away out of the local minima is presented in the paper. Instead of using simple velocity update equation, the new velocity update equation is used from where the contribution of worst particle is subtracted. Experimental results show that our algorithm performs better as compared to other promising techniques on most of the functions.},
+  isbn={978-3-319-11933-5},
+  doi={10.1007/978-3-319-11933-5_88}
+}
+  
+@article{bech:cec2010lsgo,
+  title={Benchmark functions for the CEC’2010 special session and competition on large-scale global optimization},
+  author={Tang, Ke and Li, Xiaodong and Suganthan, Ponnuthurai Nagaratnam and Yang, Zhenyu and Weise, Thomas},
+  journal={Nature inspired computation and applications laboratory, USTC, China},
+  volume={24},
+  pages={1--18},
+  year={2007}
 }
 
 @article{bech:cec2013lsgo,
@@ -122,7 +290,7 @@
   year={2013}
 }
 
-@article{9627116,
+@article{rev:lsgo_bb_pop_alg_p1,
   author={Omidvar, Mohammad Nabi and Li, Xiaodong and Yao, Xin},
   journal={IEEE Transactions on Evolutionary Computation}, 
   title={A Review of Population-Based Metaheuristics for Large-Scale Black-Box Global Optimization—Part I}, 
@@ -130,134 +298,125 @@
   volume={26},
   number={5},
   pages={802-822},
+  keywords={Optimization;Statistics;Sociology;Convergence;Approximation algorithms;Particle swarm optimization;Maintenance engineering;Black-box optimization;evolutionary optimization;large-scale global optimization;metaheuristics},
   doi={10.1109/TEVC.2021.3130838}
 }
-
-@inproceedings{alg:pso,
-    author = {Kennedy, James and Eberhart, Russell},
-    year = {1995},
-    month = {12},
-    pages = {1942 - 1948 vol.4},
-    title = {Particle swarm Optimization},
-    volume = {4},
-    isbn = {0-7803-2768-3},
-    journal = {Proceedings of IEEE International Conference on Neural Networks},
-    booktitle = {Proceedings of IEEE International Conference on Neural Networks},
-    doi = {10.1109/ICNN.1995.488968}
+  
+@article{rev:lsgo_bb_pop_alg_p2,
+  author={Omidvar, Mohammad Nabi and Li, Xiaodong and Yao, Xin},
+  journal={IEEE Transactions on Evolutionary Computation}, 
+  title={A Review of Population-Based Metaheuristics for Large-Scale Black-Box Global Optimization—Part II}, 
+  year={2022},
+  volume={26},
+  number={5},
+  pages={823-843},
+  keywords={Optimization;Statistics;Sociology;Convergence;Approximation algorithms;Particle swarm optimization;Maintenance engineering;Black-box optimization;evolutionary optimization;large-scale global optimization;metaheuristics},
+  doi={10.1109/TEVC.2021.3130835}
 }
-
-@article{alg:cpso,
-    title={Center particle swarm optimization},
-    author={Liu, Yu and Qin, Zheng and Shi, Zhewen and Lu, Jiang},
-    journal={Neurocomputing},
-    volume={70},
-    number={4-6},
-    pages={672--679},
-    year={2007},
-    publisher={Elsevier}
-},
-
-@article{alg:mcupso,
-    title = {Unified particle swarm delivers high efficiency to particle swarm optimization},
-    journal = {Applied Soft Computing},
-    volume = {55},
-    pages = {371 -- 383},
-    year = {2017},
-    issn = {1568-4946},
-    doi = {https://doi.org/10.1016/j.asoc.2017.02.008},
-    url = {http://www.sciencedirect.com/science/article/pii/S1568494617300765},
-    author = {Hsing-Chih Tsai},
-    keywords = {Particle swarm optimization, Unified particle swarm, Parameter selection},
-    abstract = {This paper suggests integrating a unification factor into particle swarm optimization (PSO) to balance the effects of cognitive and social terms. The resultant unified particle swarm (UPS) moves particles toward the center of its personal best and the global best. This improves on PSO, which moves particles far beyond the center. Widely used benchmark functions and four types of experiments demonstrate that the proposed UPS uses slightly more computational time than PSO to attain significantly higher efficiency and, usually, better solution effectiveness and consistency than PSO. Robust performance was further demonstrated by the significantly higher efficiency and better solution effectiveness and stability achieved by the UPS, as compared to the PSO and its variants. Outstandingly, convergence speeds for the proposed UPS were very good on the 13 benchmark functions examined in experiment 1, demonstrating the correct movement of UPS particles toward convergence.}
-},
-
-@article{alg:clpso,
-    author={J. J. {Liang} and A. K. {Qin} and P. N. {Suganthan} and S. {Baskar}},
-    journal={IEEE Transactions on Evolutionary Computation},
-    title={Comprehensive learning particle swarm optimizer for global optimization of multimodal functions},
-    year={2006},
-    volume={10},
-    number={3},
-    pages={281-295},
-    keywords={learning (artificial intelligence);particle swarm optimisation;comprehensive learning particle swarm optimizer;global optimization;multimodal functions;particle historical best information;particle velocity;premature convergence;Rosenbrock multimodal test function;Griewank multimodal test function;Rastrigin multimodal test function;Ackley multimodal test function;Schwefel multimodal test function;composition functions;coordinate rotation;multimodal problems;Particle swarm optimization;Space technology;Acceleration;Convergence;Benchmark testing;Evolutionary computation;Genetic mutations;Insects;Animals;Birds;Composition benchmark functions;comprehensive learning particle swarm optimizer (CLPSO);global numerical optimization;particle swarm optimizer (PSO)},
-    doi={10.1109/TEVC.2005.857610},
-    ISSN={1089-778X}
-},
-
-@incollection{alg:ovcpso,
-    title={Opposition-based particle swarm optimization with velocity clamping (OVCPSO)},
-    author={Shahzad, Farrukh and Baig, A Rauf and Masood, Sohail and Kamran, Muhammad and Naveed, Nawazish},
-    booktitle={Advances in Computational Intelligence},
-    pages={339--348},
-    year={2009},
-    publisher={Springer}
-}
-
-@inproceedings{algo:ccpso,
-  title={A new particle swarm optimizer with cooperative coevolution for large scale optimization},
-  author={Aote, Shailendra S and Raghuwanshi, Mukesh M and Malik, Latesh G},
-  booktitle={Proceedings of the 3rd International Conference on Frontiers of Intelligent Computing: Theory and Applications (FICTA) 2014: Volume 1},
-  pages={781--789},
-  year={2015},
-  organization={Springer}
+  
+@article{rev:cc_alg,
+  author={Ma, Xiaoliang and Li, Xiaodong and Zhang, Qingfu and Tang, Ke and Liang, Zhengping and Xie, Weixin and Zhu, Zexuan},
+  journal={IEEE Transactions on Evolutionary Computation}, 
+  title={A Survey on Cooperative Co-Evolutionary Algorithms}, 
+  year={2019},
+  volume={23},
+  number={3},
+  pages={421-441},
+  keywords={Optimization;Genetic algorithms;Resource management;Benchmark testing;Computer science;Google;Perturbation methods;Cooperative co-evolutionary algorithm (CCEA);evolutionary algorithm (EA);genetic algorithm (GA)},
+  doi={10.1109/TEVC.2018.2868770}
 }
 
 @article{stat:art:demsar,
-    title={Statistical comparisons of classifiers over multiple data sets},
-    author={Dem{\v{s}}ar, Janez},
-    journal={Journal of Machine learning research},
-    volume={7},
-    number={Jan},
-    pages={1--30},
-    year={2006}
-}
+  author = {Dem\v{s}ar, Janez},
+  title = {Statistical Comparisons of Classifiers over Multiple Data Sets},
+  year = {2006},
+  issue_date = {12/1/2006},
+  publisher = {JMLR.org},
+  volume = {7},
+  issn = {1532-4435},
+  abstract = {While methods for comparing two learning algorithms on a single data set have been scrutinized for quite some time already, the issue of statistical tests for comparisons of more algorithms on multiple data sets, which is even more essential to typical machine learning studies, has been all but ignored. This article reviews the current practice and then theoretically and empirically examines several suitable tests. Based on that, we recommend a set of simple, yet safe and robust non-parametric tests for statistical comparisons of classifiers: the Wilcoxon signed ranks test for comparison of two classifiers and the Friedman test with the corresponding post-hoc tests for comparison of more classifiers over multiple data sets. Results of the latter can also be neatly presented with the newly introduced CD (critical difference) diagrams.},
+  journal = {J. Mach. Learn. Res.},
+  month = {dec},
+  pages = {1–30},
+  numpages = {30},
+  url = {https://dl.acm.org/doi/10.5555/1248547.1248548}
+ }
 
 @article{stat:art:derrac,
-    title={A practical tutorial on the use of nonparametric statistical tests as a methodology for comparing evolutionary and swarm intelligence algorithms},
-    author={Derrac, Joaqu{\'\i}n and Garc{\'\i}a, Salvador and Molina, Daniel and Herrera, Francisco},
-    journal={Swarm and Evolutionary Computation},
-    volume={1},
-    number={1},
-    pages={3--18},
-    year={2011},
-    publisher={Elsevier}
+  title = {A practical tutorial on the use of nonparametric statistical tests as a methodology for comparing evolutionary and swarm intelligence algorithms},
+  journal = {Swarm and Evolutionary Computation},
+  volume = {1},
+  number = {1},
+  pages = {3-18},
+  year = {2011},
+  issn = {2210-6502},
+  doi = {10.1016/j.swevo.2011.02.002},
+  url = {https://www.sciencedirect.com/science/article/pii/S2210650211000034},
+  author = {Joaquín Derrac and Salvador García and Daniel Molina and Francisco Herrera},
+  keywords = {Statistical analysis, Nonparametric statistics, Pairwise comparisons, Multiple comparisons, Evolutionary algorithms, Swarm intelligence algorithms},
+  abstract = {The interest in nonparametric statistical analysis has grown recently in the field of computational intelligence. In many experimental studies, the lack of the required properties for a proper application of parametric procedures–independence, normality, and homoscedasticity–yields to nonparametric ones the task of performing a rigorous comparison among algorithms. In this paper, we will discuss the basics and give a survey of a complete set of nonparametric procedures developed to perform both pairwise and multiple comparisons, for multi-problem analysis. The test problems of the CEC’2005 special session on real parameter optimization will help to illustrate the use of the tests throughout this tutorial, analyzing the results of a set of well-known evolutionary and swarm intelligence algorithms. This tutorial is concluded with a compilation of considerations and recommendations, which will guide practitioners when using these tests to contrast their experimental results.}
 }
 
 @article{stat:met:Friedman,
-	ISSN = {01621459},
-	URL = {http://www.jstor.org/stable/2279372},
-	author = {Milton Friedman},
-	journal = {Journal of the American Statistical Association},
-	number = {200},
-	pages = {675--701},
-	publisher = {[American Statistical Association, Taylor & Francis, Ltd.]},
-	title = {The Use of Ranks to Avoid the Assumption of Normality Implicit in the Analysis of Variance},
-	volume = {32},
-	year = {1937}
+  author = {Milton Friedman},
+  title = {The Use of Ranks to Avoid the Assumption of Normality Implicit in the Analysis of Variance},
+  journal = {Journal of the American Statistical Association},
+  volume = {32},
+  number = {200},
+  pages = {675-701},
+  year = {1937},
+  publisher = {Taylor & Francis},
+  doi = {10.1080/01621459.1937.10503522},
+  URL = {https://www.tandfonline.com/doi/abs/10.1080/01621459.1937.10503522},
+  eprint = {https://www.tandfonline.com/doi/pdf/10.1080/01621459.1937.10503522}
 }
 
-@article{stat:met:Nemenyi,
-	title={Distribution-free multiple comparisons (Doctoral Dissertation, Princeton University, 1963)},
-	author={Nemenyi, PB},
-	journal={Dissertation Abstracts International},
-	volume={25},
-	number={2},
-	pages={1233},
-	year={1963}
-},
+@phdthesis{stat:met:Nemenyi,
+  author={NEMENYI,PETER B.},
+  year={1963},
+  title={DISTRIBUTION-FREE MULTIPLE COMPARISONS},
+  journal={ProQuest Dissertations and Theses},
+  pages={127},
+  note={Copyright - Database copyright ProQuest LLC; ProQuest does not claim copyright in the individual underlying works; Last updated - 2023-02-17},
+  keywords={Pure sciences; Mathematics; 0405:Mathematics},
+  isbn={9781084733008},
+  language={English},
+  url={https://www.proquest.com/dissertations-theses/distribution-free-multiple-comparisons/docview/302256074/se-2}
+}
 
 @incollection{stat:met:Wilcoxon,
-	title={Individual comparisons by ranking methods},
-	author={Wilcoxon, Frank},
-	booktitle={Breakthroughs in statistics},
-	pages={196--202},
-	year={1992},
-	publisher={Springer}
+  author={Wilcoxon, Frank},
+  editor={Kotz, Samuel and Johnson, Norman L.},
+  title={Individual Comparisons by Ranking Methods},
+  bookTitle={Breakthroughs in Statistics: Methodology and Distribution},
+  year={1992},
+  publisher={Springer New York},
+  address={New York, NY},
+  pages={196--202},
+  abstract={The comparison of two treatments generally falls into one of the following two categories: (a) we may have a number of replications for each of the two treatments, which are unpaired, or (b) we may have a number of paired comparisons leading to a series of differences, some of which may be positive and some negative. The appropriate methods for testing the significance of the differences of the means in these two cases are described in most of the textbooks on statistical methods.},
+  isbn={978-1-4612-4380-9},
+  doi={10.1007/978-1-4612-4380-9_16},
+  url={https://doi.org/10.1007/978-1-4612-4380-9_16}
+}
+  
+@article{met:nonlinearity,
+  author = {Munetomo, Masaharu and Goldberg, David E.},
+  title = "{Linkage Identification by Non-monotonicity Detection for Overlapping Functions}",
+  journal = {Evolutionary Computation},
+  volume = {7},
+  number = {4},
+  pages = {377-398},
+  year = {1999},
+  month = {12},
+  abstract = "{This paper presents the linkage identification by non-monotonicity detection (LIMD) procedure and its extension for overlapping functions by introducing the tightness detection (TD) procedure. The LIMD identifies linkage groups directly by performing order-2 simultaneous perturbations on a pair of loci to detect monotonicity/non-monotonicity of fitness changes. The LIMD can identify linkage groups with at most order of k when it is applied to O(2k) strings. The TD procedure calculates tightness of linkage between a pair of loci based on the linkage groups obtained by the LIMD. By removing loci with weak tightness from linkage groups, correct linkage groups are obtained for overlapping functions, which were considered difficult for linkage identification procedures.}",
+  issn = {1063-6560},
+  doi = {10.1162/evco.1999.7.4.377},
+  url = {https://doi.org/10.1162/evco.1999.7.4.377},
+  eprint = {https://direct.mit.edu/evco/article-pdf/7/4/377/1493138/evco.1999.7.4.377.pdf},
 }
 
-@article{NiaPy,
-	author  = {Vrban{\v{c}}i{\v{c}}, Grega and Brezo{\v{c}}nik, Lucija
-	and Mlakar, Uro{\v{s}} and Fister, Du{\v{s}}an and {Fister Jr.}, Iztok},
+@article{api:NiaPy,
+	author  = {Vrban{\v{c}}i{\v{c}}, Grega and Brezo{\v{c}}nik, Lucija and Mlakar, Uro{\v{s}} and Fister, Du{\v{s}}an and {Fister Jr.}, Iztok},
 	title   = {{NiaPy: Python microframework for building nature-inspired algorithms}},
 	journal = {{Journal of Open Source Software}},
 	year    = {2018},
@@ -268,15 +427,18 @@
 	url     = {https://doi.org/10.21105/joss.00613}
 }
 
-@misc{scipy,
-	author = {Eric Jones and Travis Oliphant and Pearu Peterson and others},
-	title = {{SciPy}: Open source scientific tools for {Python}},
-	year = {2001},
-	url = {http://www.scipy.org/},
-	note = {[Online; accessed <today>]}
+@article{api:scipy,
+  author  = {Virtanen, Pauli and Gommers, Ralf and Oliphant, Travis E. and Haberland, Matt and Reddy, Tyler and Cournapeau, David and Burovski, Evgeni and Peterson, Pearu and Weckesser, Warren and Bright, Jonathan and {van der Walt}, St{\'e}fan J. and Brett, Matthew and Wilson, Joshua and Millman, K. Jarrod and Mayorov, Nikolay and Nelson, Andrew R. J. and Jones, Eric and Kern, Robert and Larson, Eric and Carey, C J and Polat, {\.I}lhan and Feng, Yu and Moore, Eric W. and {VanderPlas}, Jake and Laxalde, Denis and Perktold, Josef and Cimrman, Robert and Henriksen, Ian and Quintero, E. A. and Harris, Charles R. and Archibald, Anne M. and Ribeiro, Ant{\^o}nio H. and Pedregosa, Fabian and {van Mulbregt}, Paul and {SciPy 1.0 Contributors}},
+  title   = {{{SciPy} 1.0: Fundamental Algorithms for Scientific Computing in Python}},
+  journal = {Nature Methods},
+  year    = {2020},
+  volume  = {17},
+  pages   = {261--272},
+  adsurl  = {https://rdcu.be/b08Wh},
+  doi     = {10.1038/s41592-019-0686-2},
 }
 
-@article{scikit-learn,
+@article{api:scikit-learn,
 	title={Scikit-learn: Machine Learning in {P}ython},
 	author={Pedregosa, F. and Varoquaux, G. and Gramfort, A. and Michel, V. and Thirion, B. and Grisel, O. and Blondel, M. and Prettenhofer, P. and Weiss, R. and Dubourg, V. and Vanderplas, J. and Passos, A. and Cournapeau, D. and Brucher, M. and Perrot, M. and Duchesnay, E.},
 	journal={Journal of Machine Learning Research},
