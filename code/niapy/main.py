@@ -119,8 +119,8 @@ def run_cc_cec2013(decomp:AnalysisAlgorithm = RecursiveDifferentialGroupingV3, o
     start = timeit.default_timer()
     res = algo.run(task)
     stop = timeit.default_timer()
-    print('res: ', res)
-    print('test: %s -> %f' % (task.x, task.x_f))
+    #print('res: ', res)
+    #print('test: %s -> %f' % (task.x, task.x_f))
     if not os.path.exists('%s.%s.cec2013lso.%d.csv' % (algo.decompozer.Name[1], algo.toptimizer.Name[1], no_fun)):
         with open('%s.%s.cec2013lso.%d.csv' % (algo.decompozer.Name[1], algo.toptimizer.Name[1], no_fun), 'w') as csvfile:
             csvfile.write('seed, f1, f2, f3, time\n')
