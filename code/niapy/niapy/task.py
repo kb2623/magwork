@@ -56,7 +56,7 @@ class Task:
 
     """
 
-    def __init__(self, problem=None, optimization_type=OptimizationType.MINIMIZATION, repair_function=limit, max_evals=np.inf, cutoff_value=None, *args, **kwargs):
+    def __init__(self, problem=None, optimization_type=OptimizationType.MINIMIZATION, repair_function=limit, max_evals=np.inf, max_iters=np.inf, cutoff_value=None, *args, **kwargs):
         r"""Initialize task class for optimization.
 
         Args:
@@ -67,6 +67,7 @@ class Task:
             optimization_type (Optional[OptimizationType]): Set the type of optimization. Default is minimization.
             repair_function (Optional[Callable[[numpy.ndarray, numpy.ndarray, numpy.ndarray, Dict[str, Any]], numpy.ndarray]]): Function for repairing individuals components to desired limits.
             max_evals (Optional[int]): Number of function evaluations.
+            max_iters (Optional[int]): Number of maximum iterations.
             cutoff_value (Optional[float]): Reference value of function/fitness function.
             args (list): Additional args.
             kwargs (dict): Additional args.
@@ -86,6 +87,7 @@ class Task:
         self.x_f = np.inf * optimization_type.value
         self.x = self.lower
         self.max_evals = max_evals
+        self.max_iters = max_iters
         self.fitness_evals = []  # fitness improvements at self.n_evals evaluations
 
     def repair(self, x, rng=None):

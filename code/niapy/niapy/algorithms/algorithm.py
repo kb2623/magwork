@@ -338,7 +338,7 @@ class OptimizationAlgorithm(Algorithm):
         pop, fpop = self.initialization_function(task=task, population_size=self.population_size, rng=self.rng, individual_type=self.individual_type)
         return pop, fpop, {}
 
-    def run_iteration(self, task, population, population_fitness, best_x, best_fitness, iters, *args, **params):
+    def run_iteration(self, task, pop, fpop, xb, fxb, iters, *args, **params):
         r"""Core functionality of algorithm.
 
         This function is called on every algorithm iteration.
@@ -365,7 +365,7 @@ class OptimizationAlgorithm(Algorithm):
             * :func:`niapy.algorithms.OptimizationAlgorithm.iteration_generator`
 
         """
-        return population, population_fitness, best_x, best_fitness, params
+        return pop, fpop, xb, fxb, params
 
     def iteration_generator(self, task):
         r"""Run the algorithm for a single iteration and return the best solution.
@@ -392,7 +392,7 @@ class OptimizationAlgorithm(Algorithm):
         if task.stopping_condition():
             yield xb, fxb
         while True:
-            pop, fpop, xb, fxb, params = self.run_iteration(task=task, population=pop, population_fitness=fpop, best_x=xb, best_fitness=fxb, iters=iters, **params)
+            pop, fpop, xb, fxb, params = self.run_iteration(task=task, pop=pop, fpop=fpop, xb=xb, fxb=fxb, iters=iters, **params)
             iters += 1
             yield xb, fxb
 
@@ -461,7 +461,7 @@ class CoEvolutionOptimizationAlgorithm(OptimizationAlgorithm):
 
     """
 
-    def run_iteration(self, task, groups, population, population_fitness, best_x, best_fitness, iters, *args, **params):
+    def run_iteration(self, task, groups, pop, fpop, xb, fxb, iters, *args, **params):
         r"""Core functionality of algorithm.
 
         This function is called on every algorithm iteration.
@@ -469,13 +469,13 @@ class CoEvolutionOptimizationAlgorithm(OptimizationAlgorithm):
         Args:
             task (Task): Optimization task.
             groups (Union[list[int], set[int], numpy.ndarray])
-            population (numpy.ndarray): Current population coordinates.
-            population_fitness (numpy.ndarray): Current population fitness value.
-            best_x (numpy.ndarray): Current generation best individuals coordinates.
-            best_fitness (float): current generation best individuals fitness value.
+            pop (numpy.ndarray): Current population coordinates.
+            fpop (numpy.ndarray): Current population fitness value.
+            xb (numpy.ndarray): Current generation best individuals coordinates.
+            fxb (float): current generation best individuals fitness value.
             iters (int): Algorithm iteration number.
-            *args (list): Additional arguments.
-            **params (dict[str, any]): Additional arguments for algorithms.
+            args (list): Additional arguments.
+            params (dict[str, any]): Additional arguments for algorithms.
 
         Returns:
             Tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray, float, Dict[str, Any]]:
@@ -489,7 +489,7 @@ class CoEvolutionOptimizationAlgorithm(OptimizationAlgorithm):
             * :func:`niapy.algorithms.OptimizationAlgorithm.iteration_generator`
 
         """
-        return population, population_fitness, best_x, best_fitness, params
+        return pop, fpop, xb, fxb, params
 
     def iteration_generator(self, task, groups):
         r"""Run the algorithm for a single iteration and return the best solution.
@@ -517,7 +517,7 @@ class CoEvolutionOptimizationAlgorithm(OptimizationAlgorithm):
         if task.stopping_condition():
             yield xb, fxb
         while True:
-            pop, fpop, xb, fxb, params = self.run_iteration(task=task, groups=groups, population=pop, population_fitness=fpop, best_x=xb, best_fitness=fxb, iters=iters, **params)
+            pop, fpop, xb, fxb, params = self.run_iteration(task=task, pop=pop, fpop=fpop, xb=xb, fxb=fxb, iters=iters, groups=groups, **params)
             iters += 1
             yield xb, fxb
 

@@ -124,25 +124,25 @@ class CooperativeCoevolution(OptimizationAlgorithm):
         fxb = task.eval(xb)
         if task.stopping_condition(): yield xb, fxb
         while True:
-            pop, fpop, xb, fxb, xbs, fxbs, params = self.run_iteration(task, pop, fpop, xb, fxb, xbs, fxbs, iters, **params)
+            pop, fpop, xb, fxb, xbs, fxbs, params = self.run_iteration(task, pop, fpop, xb, fxb, iters, xbs, fxbs, **params)
             iters += 1
             yield xb, fxb
 
-    def run_iteration(self:Self, task:Task, population:np.ndarray, population_fitness:np.ndarray, best_x:np.ndarray, best_fitness:np.ndarray, bests_x:list[np.ndarray], bests_fitness:list[float], iters:int, tasks:list[Task], algs:list[OptimizationAlgorithm], algs_params:list[dict[str, any]], groups:list[list[int]], seps:list[int], *args, **params:dict[str, any]) -> Tuple[np.ndarray, np.ndarray, np.ndarray, float, dict[str, any]]:
+    def run_iteration(self:Self, task:Task, pop:np.ndarray, fpop:np.ndarray, xb:np.ndarray, fxb:np.ndarray, iters:int, xbs:list[np.ndarray], fxbs:list[float], tasks:list[Task], algs:list[OptimizationAlgorithm], algs_params:list[dict[str, any]], groups:list[list[int]], seps:list[int], *args, **params:dict[str, any]) -> Tuple[np.ndarray, np.ndarray, np.ndarray, float, dict[str, any]]:
         update = False
         for i, t in enumerate(tasks):
-            obest_x = np.copy(bests_x[i])
-            population[i], population_fitness[i], bests_x[i], bests_fitness[i], algs_params[i] = algs[i].run_iteration(t, population[i], population_fitness[i], bests_x[i], bests_fitness[i], iters=iters, **algs_params[i])
-            if np.sum(obest_x - bests_x[i]) > 0: update = True
-            if bests_fitness[i] < best_fitness:
-                best_x = np.copy(task.lower)
-                best_x[t.inds] = bests_x[i]
-                best_fitness = bests_fitness[i]
+            oxb = np.copy(xbs[i])
+            pop[i], fpop[i], xbs[i], fxbs[i], algs_params[i] = algs[i].run_iteration(t, pop[i], fpop[i], xbs[i], fxbs[i], iters=iters, **algs_params[i])
+            if np.sum(oxb - xbs[i]) > 0: update = True
+            if fxbs[i] < fxb:
+                xb = np.copy(task.lower)
+                xb[t.inds] = xbs[i]
+                fxb = fxbs[i]
         if update:
-            x = self._get_x_best(tasks, bests_x)
+            x = self._get_x_best(tasks, xbs)
             fx = task.eval(x)
-            if fx < best_fitness:
-                best_fitness = fx
-                best_x = np.copy(x)
-        return population, population_fitness, best_x, best_fitness, bests_x, bests_fitness, {'groups': groups, 'seps': seps, 'tasks': tasks, 'algs': algs, 'algs_params': algs_params}
+            if fx < fxb:
+                fxb = fx
+                xb = np.copy(x)
+        return pop, fpop, xb, fxb, xbs, fxbs, {'groups': groups, 'seps': seps, 'tasks': tasks, 'algs': algs, 'algs_params': algs_params}
 

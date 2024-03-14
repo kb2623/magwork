@@ -111,8 +111,8 @@ def run_rdg_cec2013(no_fun:int = 1, seed:int = 1, alpha:float = 1e-12, NP:int = 
         csvfile.write('%d, %d, %d, %d, %f\n' % (seed, no_groups(best), no_seps(best), task.evals, stop - start))
 
 
-def run_cc_cec2013(decomp:AnalysisAlgorithm = RecursiveDifferentialGroupingV3, opt:OptimizationAlgorithm = ParticleSwarmAlgorithm, no_fun:int = 1, seed:int = 1) -> None:
-    algo = CooperativeCoevolution(RecursiveDifferentialGroupingV3(seed=seed), ComprehensiveLearningParticleSwarmOptimizer, seed=seed)
+def run_cc_cec2013(decomp:type[AnalysisAlgorithm] = RecursiveDifferentialGroupingV3, opt:type[OptimizationAlgorithm] = ParticleSwarmAlgorithm, no_fun:int = 1, seed:int = 1) -> None:
+    algo = CooperativeCoevolution(decomp(seed=seed), opt, seed=seed)
     # create a test cec2013lsgo
     task = CEC2013lsgoTask(no_fun=no_fun)
     # start optimization of the task

@@ -183,7 +183,7 @@ class ParticleSwarmAlgorithm(OptimizationAlgorithm):
             w * v + self.c1 * self.random(task.dimension) * (pb - p) + self.c2 * self.random(task.dimension) * (gb - p),
             min_velocity, max_velocity)
 
-    def run_iteration(self, task, pop, fpop, xb, fxb, iters, **params):
+    def run_iteration(self, task, pop, fpop, xb, fxb, iters, *args, **params):
         r"""Core function of Particle Swarm Optimization algorithm.
 
         Args:
@@ -193,6 +193,7 @@ class ParticleSwarmAlgorithm(OptimizationAlgorithm):
             xb (numpy.ndarray): Current best particle.
             fxb (float): Current best particle fitness/function value.
             iters (int): Algorithm iteration number.
+            args (list): Additional arguments.
             params (dict): Additional function keyword arguments.
 
         Returns:
@@ -460,7 +461,7 @@ class OppositionVelocityClampingParticleSwarmOptimization(ParticleSwarmAlgorithm
         d.update({'s_l': s_l, 's_h': s_h})
         return pop, fpop, d
 
-    def run_iteration(self, task, pop, fpop, xb, fxb, iters, **params):
+    def run_iteration(self, task, pop, fpop, xb, fxb, iters, *args, **params):
         r"""Core function of Opposite-based Particle Swarm Optimization with velocity clamping algorithm.
 
         Args:
@@ -470,6 +471,8 @@ class OppositionVelocityClampingParticleSwarmOptimization(ParticleSwarmAlgorithm
             xb (numpy.ndarray): Current global best position.
             fxb (float): Current global best positions function/fitness value.
             iters (int): Algorithm iteration number.
+            args (list): Additional arguments.
+            params (dict[str, any]): Additional arguments for algorithms.
 
         Returns:
             Tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray, float, list, dict]:
@@ -588,7 +591,7 @@ class CenterParticleSwarmOptimization(ParticleSwarmAlgorithm):
         d.pop('min_velocity', None), d.pop('max_velocity', None)
         return d
 
-    def run_iteration(self, task, pop, fpop, xb, fxb, **params):
+    def run_iteration(self, task, pop, fpop, xb, fxb, iters, *args, **params):
         r"""Core function of algorithm.
 
         Args:
@@ -597,6 +600,9 @@ class CenterParticleSwarmOptimization(ParticleSwarmAlgorithm):
             fpop (numpy.ndarray): Current particles function/fitness values.
             xb (numpy.ndarray): Current global best particle.
             fxb (numpy.float): Current global best particles function/fitness value.
+            iters (int): Algorithm iteration number.
+            args (list): Additional arguments.
+            params (dict[str, any]): Additional arguments for algorithms.
 
         Returns:
             Tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray, float, dict]:
@@ -695,7 +701,7 @@ class MutatedParticleSwarmOptimization(ParticleSwarmAlgorithm):
         d.update({'num_mutations': self.num_mutations})
         return d
 
-    def run_iteration(self, task, pop, fpop, xb, fxb, **params):
+    def run_iteration(self, task, pop, fpop, xb, fxb, iters, *args, **params):
         r"""Core function of algorithm.
 
         Args:
@@ -704,6 +710,9 @@ class MutatedParticleSwarmOptimization(ParticleSwarmAlgorithm):
             fpop (numpy.ndarray): Current particles function/fitness values.
             xb (numpy.ndarray): Current global best particle.
             fxb (float): Current global best particles function/fitness value.
+            iters (int): Algorithm iteration number.
+            args (list): Additional arguments.
+            params (dict[str, any]): Additional arguments for algorithms.
 
         Returns:
             Tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray, float, list, dict]:
@@ -805,7 +814,7 @@ class MutatedCenterParticleSwarmOptimization(CenterParticleSwarmOptimization):
         d.update({'num_mutations': self.num_mutations})
         return d
 
-    def run_iteration(self, task, pop, fpop, xb, fxb, **params):
+    def run_iteration(self, task, pop, fpop, xb, fxb, iters, *args, **params):
         r"""Core function of algorithm.
 
         Args:
@@ -814,6 +823,9 @@ class MutatedCenterParticleSwarmOptimization(CenterParticleSwarmOptimization):
             fpop (numpy.ndarray): Current particles function/fitness values.
             xb (numpy.ndarray): Current global best particle.
             fxb (float: Current global best particles function/fitness value.
+            iters (int): Algorithm iteration number.
+            args (list): Additional arguments.
+            params (dict[str, any]): Additional arguments for algorithms.
 
         Returns:
             Tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray, float, list, dict]:
@@ -1060,7 +1072,7 @@ class ComprehensiveLearningParticleSwarmOptimizer(ParticleSwarmAlgorithm):
         """
         return self.repair(w * v + self.c * self.random(task.dimension) * (pb - p), min_velocity, max_velocity)
 
-    def run_iteration(self, task, pop, fpop, xb, fxb, iters, **params):
+    def run_iteration(self, task, pop, fpop, xb, fxb, iters, *args, **params):
         r"""Core function of algorithm.
 
         Args:
@@ -1070,6 +1082,7 @@ class ComprehensiveLearningParticleSwarmOptimizer(ParticleSwarmAlgorithm):
             xb (numpy.ndarray): Current best particle.
             fxb (float): Current best particle fitness/function value.
             iters (int): Number of iteration of algorithm.
+            args (list): Additional arguments.
             params (dict): Additional function keyword arguments.
 
         Returns:
