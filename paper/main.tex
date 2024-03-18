@@ -115,6 +115,7 @@
 \addto{\captionsslovene}{\renewcommand{\bibname}{Viri in literatura}}
 % Algoritmi
 \SetAlgorithmName{Algoritem}{algoritem}{Kazalo algoritmov}
+\SetKwProg{Fn}{Funkcija}{:}{end}
 \SetAlCapSkip{1em}
 \SetAlCapSty{}
 
@@ -181,13 +182,18 @@
 \vspace{3cm}
 
 {\LARGE \aauthor\\} % ime in priimek
-\vspace{9.5mm}
-
-{\bf \huge \MakeUppercase \atitleslo}\\ % naslov zaključnega dela
 \vspace{9mm}
 
+{\bf \huge \MakeUppercase {
+    \begin{spacing}{0.8}
+        \atitleslo
+    \end{spacing}
+}} % naslov zaključnega dela
+\vspace{22mm}
+
 {\LARGE \atype}\\ % tip zaključnega dela
-\vspace{8.5cm}
+\vfill
+
 {\LARGE \adate}\\ % kraj, mesec in leto
 \end{center}
 
@@ -200,13 +206,17 @@
 \vspace{3cm}
 
 {\LARGE \aauthor\\} % ime in priimek
-\vspace{10mm}
+\vspace{9mm}
 
-{\bf \huge \MakeUppercase \atitleslo}\\ % naslov zaključnega dela
-\vspace{10mm}
+{\bf \huge \MakeUppercase {
+    \begin{spacing}{0.8}
+        \atitleslo
+    \end{spacing}
+}} % naslov zaključnega dela
+\vspace{22mm}
 
 {\LARGE \atype}\\ % tip zaključnega dela
-\vspace{8.5cm}
+\vfill
 
 {\LARGE \adate}\\ % kraj, mesec in leto
 \end{center}
@@ -220,11 +230,17 @@
 
 \vspace*{7.5cm}
 \begin{center}
-{\bf \LARGE \MakeUppercase \atitleslo}\\ % naslov zaključnega dela
-\vspace{5mm}
+{\bf \LARGE \MakeUppercase {
+    \begin{spacing}{0.8}
+        \atitleslo
+    \end{spacing}
+}} % naslov zaključnega dela
+\vspace{22mm}
+
 {\Large \atype}\\ % tip zaključnega dela
 \end{center}
-\vspace{6cm}
+\vfill
+
 \begin{table}[h]
     \renewcommand{\arraystretch}{1.5}
     \begin{tabular}{ll}

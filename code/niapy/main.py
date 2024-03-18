@@ -111,16 +111,26 @@ def run_rdg_cec2013(no_fun:int = 1, seed:int = 1, alpha:float = 1e-12, NP:int = 
         csvfile.write('%d, %d, %d, %d, %f\n' % (seed, no_groups(best), no_seps(best), task.evals, stop - start))
 
 
-def run_cc_cec2013(decomp:type[AnalysisAlgorithm] = RecursiveDifferentialGroupingV3, opt:type[OptimizationAlgorithm] = ParticleSwarmAlgorithm, no_fun:int = 1, seed:int = 1) -> None:
-    algo = CooperativeCoevolution(decomp(seed=seed), opt, seed=seed)
-    # create a test cec2013lsgo
+def run_cec2013(opt:type[OptimizationAlgorithm] = ParticleSwarmAlgorithm, no_fun:int = 1, seed:int = 1) -> None:
+    algo = opt(seed=seed)
     task = CEC2013lsgoTask(no_fun=no_fun)
-    # start optimization of the task
     start = timeit.default_timer()
     res = algo.run(task)
     stop = timeit.default_timer()
-    #print('res: ', res)
-    #print('test: %s -> %f' % (task.x, task.x_f))
+    if not os.path.exists('%s.cec2013lso.%d.csv' % (algo.Name[1], no_fun)):
+        with open('%s.cec2013lso.%d.csv' % (algo.Name[1], no_fun), 'w') as csvfile:
+            csvfile.write('seed, f1, f2, f3, time\n')
+    with open('%s.cec2013lso.%d.csv' % (algo.Name[1], no_fun), 'a') as csvfile:
+        f1, f2, f3 = task.get_mesures()
+        csvfile.write('%d, %f, %f, %f, %f\n' % (seed, f1, f2, f3, stop - start))
+
+
+def run_cc_cec2013(decomp:type[AnalysisAlgorithm] = RecursiveDifferentialGroupingV3, opt:type[OptimizationAlgorithm] = ParticleSwarmAlgorithm, no_fun:int = 1, seed:int = 1) -> None:
+    algo = CooperativeCoevolution(decomp(seed=seed), opt, seed=seed)
+    task = CEC2013lsgoTask(no_fun=no_fun)
+    start = timeit.default_timer()
+    res = algo.run(task)
+    stop = timeit.default_timer()
     if not os.path.exists('%s.%s.cec2013lso.%d.csv' % (algo.decompozer.Name[1], algo.toptimizer.Name[1], no_fun)):
         with open('%s.%s.cec2013lso.%d.csv' % (algo.decompozer.Name[1], algo.toptimizer.Name[1], no_fun), 'w') as csvfile:
             csvfile.write('seed, f1, f2, f3, time\n')
@@ -133,12 +143,20 @@ if __name__ == "__main__":
     arg_no_fun = int(sys.argv[1]) if len(sys.argv) > 1 else 1
     arg_seed = int(sys.argv[2]) if len(sys.argv) > 2 else 1
     arg_opt_alg = int(sys.argv[3]) if len(sys.argv) > 3 else 1
-    decomp_alg, opt_alg = RecursiveDifferentialGroupingV3, ParticleSwarmAlgorithm
-    if arg_opt_alg == 2: deccomp_alg = ParticleSwarmOptimization
-    elif arg_opt_alg == 3: decomp_alg = CenterParticleSwarmOptimization
-    elif arg_opt_alg == 4: decomp_alg = MutatedParticleSwarmOptimization
-    elif arg_opt_alg == 5: decomp_alg = MutatedCenterParticleSwarmOptimization
-    elif arg_opt_alg == 6: decomp_alg = OppositionVelocityClampingParticleSwarmOptimization
-    elif arg_opt_alg == 7: decomp_alg = ComprehensiveLearningParticleSwarmOptimizer
-    run_cc_cec2013(decomp=decomp_alg, opt=opt_alg, no_fun=arg_no_fun, seed=arg_seed)
+    arg_decomp_alg = int(sys.argv[4]) if len(sys.argv) > 4 else 1
+    opt_alg = ParticleSwarmAlgorithm
+    if arg_opt_alg == 2: opt_alg = ParticleSwarmOptimization
+    elif arg_opt_alg == 3: opt_alg = CenterParticleSwarmOptimization
+    elif arg_opt_alg == 4: opt_alg = MutatedParticleSwarmOptimization
+    elif arg_opt_alg == 5: opt_alg = MutatedCenterParticleSwarmOptimization
+    elif arg_opt_alg == 6: opt_alg = OppositionVelocityClampingParticleSwarmOptimization
+    elif arg_opt_alg == 7: opt_alg = ComprehensiveLearningParticleSwarmOptimizer
+    decomp_alg = RecursiveDifferentialGroupingV3
+    if arg_decomp_alg == 1: RecursiveDifferentialGrouping
+    elif arg_decomp_alg == 2: RecursiveDifferentialGroupingV2
+    elif arg_decomp_alg == 3: RecursiveDifferentialGroupingV3
+    elif arg_decomp_alg == 4: EfficientRecursiveDifferentialGrouping
+    elif arg_decomp_alg == 5: ThreeLevelRecursiveDifferentialGrouping
+    if len(sys.argv) == 3: run_cec2013(opt=opt_alg, no_fun=arg_no_fun, seed=arg_seed)
+    elif len(sys.argv) == 4: run_cc_cec2013(decomp=decomp_alg, opt=opt_alg, no_fun=arg_no_fun, seed=arg_seed)
 
