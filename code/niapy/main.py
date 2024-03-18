@@ -146,6 +146,6 @@ if __name__ == "__main__":
     elif arg_decomp_alg == 3: RecursiveDifferentialGroupingV3
     elif arg_decomp_alg == 4: EfficientRecursiveDifferentialGrouping
     elif arg_decomp_alg == 5: ThreeLevelRecursiveDifferentialGrouping
-    if len(sys.argv) == 3: run_cec2013(opt=opt_alg, no_fun=arg_no_fun, seed=arg_seed)
-    elif len(sys.argv) >= 4: run_cc_cec2013(decomp=decomp_alg, opt=opt_alg, no_fun=arg_no_fun, seed=arg_seed)
+    if len(sys.argv) == 4: run_cec2013(opt=opt_alg, no_fun=arg_no_fun, seed=arg_seed)
+    elif len(sys.argv) >= 5: run_cc_cec2013(decomp=decomp_alg, opt=opt_alg, no_fun=arg_no_fun, seed=arg_seed)
 
