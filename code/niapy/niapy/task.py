@@ -40,6 +40,7 @@ class Task:
         Klemen Berkovič and others
 
     Attributes:
+        Name (list[str]): List of names of the problem.
         problem (Problem): Optimization problem.
         dimension (int): Dimension of the problem.
         lower (numpy.ndarray): Lower bounds of the problem.
@@ -55,6 +56,7 @@ class Task:
         x (numpy.ndarray): Best individual found.
 
     """
+    Name = ['T', 'Task']
 
     def __init__(self, problem=None, optimization_type=OptimizationType.MINIMIZATION, repair_function=limit, max_evals=np.inf, max_iters=np.inf, cutoff_value=None, *args, **kwargs):
         r"""Initialize task class for optimization.

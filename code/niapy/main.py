@@ -36,6 +36,8 @@ from ccalgorithm import CooperativeCoevolution
 
 
 class CEC2013lsgoTask(Task):
+    Name:list[str] = ['CEC2013lsgo']
+    
     def __init__(self, no_fun:int, *args:list, **kwargs:dict) -> None:
         if 1 < no_fun > 15: raise Exception('Function between 1 and 15!!!')
         bench = Benchmark()
@@ -67,19 +69,6 @@ class CEC2013lsgoTask(Task):
             else: r[2] = e[1]
         return r
 
-
-def run_algo(id:int, talgo:type, no_fun:int, *args:list, **kwargs:dict) -> None:
-    algo = talgo(seed=id, **kwargs)
-    task = CEC2013lsgoTask(no_fun=no_fun)
-    start = timeit.default_timer()
-    best = algo.run(task)
-    stop = timeit.default_timer()
-    if not os.path.exists('./%s.cec2013lso.%d.csv' % (algo.Name[1], no_fun)):
-        with open('%s.cec2013lso.%d.csv' % (algo.Name[1], no_fun), 'w') as csvfile:
-            csvfile.write('seed, f1, f2, f3, time\n')
-    with open('%s.cec2013lso.%d.csv' % (algo.Name[1], no_fun), 'a') as csvfile:
-        f1, f2, f3 = task.get_mesures()
-        csvfile.write('%d, %f, %f, %f, %f\n' % (id, f1, f2, f3, stop - start))
 
 def no_seps(a:list) -> int:
     s = 0
@@ -117,10 +106,10 @@ def run_cec2013(opt:type[OptimizationAlgorithm] = ParticleSwarmAlgorithm, no_fun
     start = timeit.default_timer()
     res = algo.run(task)
     stop = timeit.default_timer()
-    if not os.path.exists('%s.cec2013lso.%d.csv' % (algo.Name[1], no_fun)):
-        with open('%s.cec2013lso.%d.csv' % (algo.Name[1], no_fun), 'w') as csvfile:
+    if not os.path.exists('%s.%s.%d.csv' % (algo.Name[1], task.Name[0], no_fun)):
+        with open('%s.%s.%d.csv' % (algo.Name[1], task.Name[0], no_fun), 'w') as csvfile:
             csvfile.write('seed, f1, f2, f3, time\n')
-    with open('%s.cec2013lso.%d.csv' % (algo.Name[1], no_fun), 'a') as csvfile:
+    with open('%s.%s.%d.csv' % (algo.Name[1], task.Name[0], no_fun), 'a') as csvfile:
         f1, f2, f3 = task.get_mesures()
         csvfile.write('%d, %f, %f, %f, %f\n' % (seed, f1, f2, f3, stop - start))
 
@@ -131,10 +120,10 @@ def run_cc_cec2013(decomp:type[AnalysisAlgorithm] = RecursiveDifferentialGroupin
     start = timeit.default_timer()
     res = algo.run(task)
     stop = timeit.default_timer()
-    if not os.path.exists('%s.%s.cec2013lso.%d.csv' % (algo.decompozer.Name[1], algo.toptimizer.Name[1], no_fun)):
-        with open('%s.%s.cec2013lso.%d.csv' % (algo.decompozer.Name[1], algo.toptimizer.Name[1], no_fun), 'w') as csvfile:
+    if not os.path.exists('%s.%s.%s.%d.csv' % (algo.decompozer.Name[1], algo.toptimizer.Name[1], task.Name[0], no_fun)):
+        with open('%s.%s.%s.%d.csv' % (algo.decompozer.Name[1], algo.toptimizer.Name[1], task.Name[0], no_fun), 'w') as csvfile:
             csvfile.write('seed, f1, f2, f3, time\n')
-    with open('%s.%s.cec2013lso.%d.csv' % (algo.decompozer.Name[1], algo.toptimizer.Name[1], no_fun), 'a') as csvfile:
+    with open('%s.%s.%s.%d.csv' % (algo.decompozer.Name[1], algo.toptimizer.Name[1], task.Name[0], no_fun), 'a') as csvfile:
         f1, f2, f3 = task.get_mesures()
         csvfile.write('%d, %f, %f, %f, %f\n' % (seed, f1, f2, f3, stop - start))
 
@@ -158,5 +147,5 @@ if __name__ == "__main__":
     elif arg_decomp_alg == 4: EfficientRecursiveDifferentialGrouping
     elif arg_decomp_alg == 5: ThreeLevelRecursiveDifferentialGrouping
     if len(sys.argv) == 3: run_cec2013(opt=opt_alg, no_fun=arg_no_fun, seed=arg_seed)
-    elif len(sys.argv) == 4: run_cc_cec2013(decomp=decomp_alg, opt=opt_alg, no_fun=arg_no_fun, seed=arg_seed)
+    elif len(sys.argv) >= 4: run_cc_cec2013(decomp=decomp_alg, opt=opt_alg, no_fun=arg_no_fun, seed=arg_seed)
 
