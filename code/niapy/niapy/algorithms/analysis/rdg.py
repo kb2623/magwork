@@ -28,7 +28,7 @@ class RecursiveDifferentialGrouping(AnalysisAlgorithm):
     r"""Implementation of recursive differential grouping.
 
     Algorithm:
-        RecursiveDifferentialGrouping
+        Recursive Differential Grouping
 
     Date:
         2022
@@ -199,7 +199,7 @@ class RecursiveDifferentialGroupingV2(RecursiveDifferentialGrouping):
     r"""Implementation of recursive differential grouping version 2.
 
     Algorithm:
-        RecursiveDifferentialGroupingV2
+        Recursive Differential Grouping V2
 
     Date:
         2022
@@ -269,7 +269,7 @@ class RecursiveDifferentialGroupingV3(RecursiveDifferentialGroupingV2):
     r"""Implementation of recursive differential grouping version 3.
 
     Algorithm:
-        RecursiveDifferentialGroupingV3
+        Recursive Differential Grouping V3
 
     Date:
         2022
@@ -395,7 +395,7 @@ class EfficientRecursiveDifferentialGrouping(RecursiveDifferentialGroupingV2):
     r"""Implementation of efficient recursive differential grouping.
 
     Algorithm:
-        EfficientRecursiveDifferentialGrouping
+        Efficient Recursive Differential Grouping
 
     Date:
         2024
@@ -548,7 +548,7 @@ class ThreeLevelRecursiveDifferentialGrouping(RecursiveDifferentialGrouping):
     r"""Implementation of three-level recursive differential grouping.
 
     Algorithm:
-        ThreeLevelRecursiveDifferentialGrouping
+        Three Level Recursive Differential Grouping
 
     Date:
         2024

@@ -1,5 +1,5 @@
 \chapter{Uvod}\label{cahp:uvod}
-S problemi velikih dimenzij sem med drugim srečujemo na različnih področjih, kot so telekomunikacije, logistika, strojništvo itd.
+S problemi velikih dimenzij se med drugim srečujemo na različnih področjih, kot so telekomunikacije~\cite{bib:lsgo:telecommunication}, logistika~\cite{bib:lsog:logistics}, strojništvo~\cite{bib:lsgo:engineering} itd.
 Ti problemi zahtevajo iskanje optimalnih rešitev v obsežnem iskalnem prostoru, kjer ima problem veliko število odločitvenih spremenljivk.
 Pri takih problemih tradicionalni optimizacijski algoritmi, kot so to metode, ki temeljijo na gradientu, kvadratno programiranje in linearno programiranje, se soočajo s težavami.
 Inteligenca rojev (ang. \textit{Swarm inteligence} (SI)) se je pojavila, kot obetaven pristop za reševanje problemov velikih dimenzij zaradi svoje zmožnosti učinkovitega raziskovanja prostora, obvladovanja šumnih in ne-konveksnih cenitvenih funkcij, ter obvladovanja velikega števila parametrov objektivne funkcije.
@@ -58,7 +58,7 @@ Preiskava teh tehnik v kontekstu problemov veliki dimenzij je ključnega pomena 
 Prispevki tega diplomskega dela naj bi vključevali:
 \begin{enumerate}
     \item Obsežen pregled literature o PSO algoritmih, vključno zz analizo prednosti in omejitev različnih PSO algoritmov.
-    \item Vrednotenje delovanja različnih PSO algoritmov na problemih velikih dimenzij, ki vključujejo multimudalne funkcije, popolnoma odvedljive funkcije, delno aditivno odvedljive funkcije, funkcije s prekrivajočimi komponentami in ne-odvedljive funkcije.
+    \item Vrednotenje delovanja različnih PSO algoritmov na problemih velikih dimenzij, ki vključujejo multimodalne funkcije, popolnoma odvedljive funkcije, delno aditivno odvedljive funkcije, funkcije s prekrivajočimi komponentami in ne-odvedljive funkcije.
     \item Raziskovanje vpliva različnih uporabljenih metod hibridizacije PSO algoritma na problemih velikih dimenzij.
     \item Priporočila za izbiro in nastavitve hibridiziranih PSO algoritmov za probleme velikih dimenzij, ki temeljijo na rezultatih naših poskusov.
 \end{enumerate}
@@ -75,10 +75,37 @@ Na koncu \ref{chap:end}. poglavju podajamo povzetek naših ugotovitev, zaključk
 
 \chapter{Pregled obstoječih del}\label{chap:obsojeca.dela}
 
+Prekletstvo dimenzionalnosti je od najzgodnejših časov prekletstva, ki je pestilo znanstvenike od najzgodnejših dni~\cite{bib:curse_of_dim}, krotenje pa je bilo v središču številnih raziskovalnih prizadevanj v računalniških znanostih, od računalniške linearne algebre~\cite{bib:COD:linear_algebra}, strojnega učenja~\cite{bib:COD:machine_learning} do numerične optimizacije~\cite{bib:COD:numerical_methods}.
+Motiv na vseh teh področjih je oblikovati nove načine za izgradnjo razširljivih računalniških sistemov, ki so sposobni narediti več z manj.
+V kontekstu numerične optimizacije je prekletstvo dimenzionalnosti posledica eksponentne rasti velikosti iskalnega prostora glede na povečanje števila vhodnih spremenljivk.
+V zadnjih letih se to ohlapno imenuje globalna optimizacija velikega obsega ali globalna optimizacija problemov z velikim številom dimenzij (ang. \textit{Large Scale Global Optimization} (LSGO)).
+Izraz globalna poudarja vlogo hevristike in metahevristike, zlasti v kontekstu nenehne optimizacije.
+Treba je opozoriti, da se pojem velikega obsega spreminja skozi čas in se razlikuje od problema do problema.
+V tem delu se za velik problem šteje problem, ki povzroča težave z razširljivostjo na najsodobnejših algoritmih.
+Natančneje, posamezen problem ciljne optimizacije je mogoče definirati na naslednji način (ob predpostavki minimizacije):
+\begin{align}
+	&\min_{\mathbf{x}^*}{f(\mathbf{x})} \label{eq:min_opt}\\
+	&\mathbf{x} = (x_1, \cdots, x_D) \in \Omega \label{eq:min_opt_space},
+\end{align}
+kjer $\Omega$ predstavlja celotni iskalni prostor, ter $\mathbf{x}$ predstavlja točko znotraj $\Omega$ iskalnega prostora, kar je razvidno iz enačbe (\ref{eq:min_opt_space}).
+Funkcija $f$ predstavlja ocenitveno funkcijo, ki jo minimiziramo, kar predstavlja enačba~(\ref{eq:min_opt}).
+Optimizacija velikega obsega se ukvarja z razširljivostjo optimizacijskih algoritmov, ko $D$ raste v velikosti oziroma presega vrednost $100$.
+Problem ima lahko dodatne omejitve, ki nam še dodatno otežijo reševanje podanega problema.
+V tem delu se bomo osredotočili na probleme, ki so omejeni le z zgornjo in spodnjo mejo iskalnega prostora.
+
+Hiter tehnološki napredek povzroča nastanek vedno večjih problemov optimizacije na različnih področjih.
+Za na primer v gradbeništvu vstopamo v tako imenovano dobo megavisokih stavb s konstrukcijo gradnja prvega kilometra visoke stavbe že poteka~\cite{bib:tallest_20}.
+To je povzročilo optimizacijske probleme v gradbenem inženirstvu~\cite{bib:lsgo_engineering}.
+Fenomen eksplozije podatkov je povzročil nastanek zahtevne obsežne optimizacije v središču mnogih podatkovnih analiz in strojnega učenja~\cite{bib:lsgo_machine_learning}.
+Napredek v strojnem učenju in vzpon globokih umetnih nevronskih mrež je povzročil tudi optimizacijske težave z več kot milijardo spremenljivkami~\cite{bib:lsgo_deep_learning}.
+Te težave z optimizacijo ne rastejo samo z velikostjo linearno, ampak tudi rastejo na eksponenten način, tj. število odločitvenih spremenljivk povzročajo tudi eksponentno rast~\cite{bib:lsgo_exponential_grouth}.
+Ta hitra rast je spodbudil znanstvene raziskave na različnih področjih za izgradnjo sposobni optimizacijski algoritmi.
+Dominanca računalništva in matematike je pokazatelj pomena algoritemskih vidikov oblikovanja učinkovite metode optimizacije.
+
 Razširljivost optimizacijskih algoritmov je velik izziv pri spopadanju z vedno večjim obsegom optimizacijskih problemov na številnih področjih uporabe od visokodimenzionalnega strojnega učenja do kompleksnih obsežnih inženirskih problemov.
 Področje obsežne globalne optimizacije se ukvarja z izboljšanjem razširljivosti globalnih optimizacijskih algoritmov, zlasti metahevristik, ki temeljijo na populaciji.
-Takšna metahevristika je bila uspešno uporabljena za zvezne, diskretne ali kombinatorne probleme, ki segajo od več tisoč do milijarde odločitev spremenljivk.
-V tej raziskavi pregledujemo nedavne študije na področju obsežne globalne optimizacije (LSGO) črne skrinjice, da bi raziskovalcem in izvajalcem pomagali pridobiti pogled na to področje iz ptičje perspektive, se seznaniti z njegovimi glavnimi trendi in stanjem najsodobnejši algoritmi.
+Takšne metahevristike so bile uspešno uporabljene za zvezne, diskretne ali kombinatorne probleme, ki segajo od več tisoč do milijarde odločitvenih spremenljivk.
+V tem delu pregledujemo nedavne študije na področju globalne optimizacije problemov velikih dimenzij obravnavanih kot črne škatle, da bi raziskovalcem in izvajalcem pomagali pridobiti pogled na to področje iz ptičje perspektive, se seznaniti z njegovimi glavnimi trendi in stanjem najsodobnejših algoritmih.
 Štirje glavni algoritemski pristopi za reševanje problemov LSGO so:
 \begin{enumerate}
 	\item razčlenitev problema,
@@ -88,49 +115,73 @@ V tej raziskavi pregledujemo nedavne študije na področju obsežne globalne opt
 \end{enumerate}
 V nadaljevanju sledijo opisi algoritemskih pristopov k obsežno globalno optimizacijo, opisuje širok spekter problemskih področij in se končno dotakne pasti in izzivov trenutnih raziskav ter identificira več potencialnih področij za prihodnje raziskave.
 
-Prekletstvo dimenzionalnosti od najzgodnejših časov je »dnevi prekletstva, ki je pestilo znanstvenike od najzgodnejših dni«, krotenje pa je bilo v središču številnih raziskovalnih prizadevanj v računalniških znanostih, od računalniške linearne algebre in strojnega učenja do numerične optimizacije.
-Motiv na vseh teh področjih je oblikovati nove načine za izgradnjo razširljivih računalniških sistemov, ki so sposobni "narediti več z manj".
-V kontekstu numerične optimizacije je prekletstvo dimenzionalnosti posledica eksponentne rasti velikosti iskalnega prostora glede na povečanje števila vhodnih spremenljivk.
-V zadnjih letih se to ohlapno imenuje "veliko- optimizacija obsega« ali »globalna optimizacija velikega obsega«.
-Izraz globalno poudarja vlogo hevristike in metahevristike, zlasti v kontekstu nenehne optimizacije.
-Treba je opozoriti, da se pojem "velikega obsega" spreminja skozi čas in se razlikuje od problema do problema.
-V tem članku je problem se šteje za velik, če povzroča težave z razširljivostjo na najsodobnejših algoritmih.
-Natančneje, posamezen problem ciljne optimizacije je mogoče definirati na naslednji način (ob predpostavki minimizacije):
-\begin{align}
-	\min_{\mathbf{x}}&{f(\mathbf{x})} \label{eq:min_opt}\\
-	\mathbf{g}(\mathbf{x}) &\leq 0 \label{eq:min_opt_inequ}\\
-	\mathbf{h}(\mathbf{x}) &= 0 \label{eq:min_opt_equ}\\
-	\mathbf{x} &= (x_1, \cdots, x_n) \in \Omega \label{eq:min_opt_space},
-\end{align}
-kjer $\Omega$ predstavlja celotni iskalni prostor, ter $\mathbf{x}$ predstavlja točko znotraj $\Omega$ iskalnega prostora.
-Funkcija $f$ predstavlja cenitveno funkcijo, ki jo minimiziramo, kar predstavlja enačba~(\ref{eq:min_opt}).
-Funkciji $\mathbf{g}$ in $\mathbf{h}$ predstavljata omejitve, ki jih lahko problem ima.
-Funkcija $\mathbf{g}$ predstavlja neenakosti, ki so predstavljene kot $\mathbf{g}(\mathbf{x}) = (g_1(\mathbf{x}), \cdots, g_p(\mathbf{x}))$, ter imamo $p$ neenakosti, ki jih moramo upoštevati.
-Funkcija $\mathbf{h}$ predstavlja enakosti, ki so predstavljene kot $\mathbf{h}(\mathbf{x}) = (h_1(\mathbf{x}), \cdots, h_q(\mathbf{x}))$, ter imamo $q$ enakosti, ki jih mora rešitev upoštevati.
-Neenakostim zadovoljimo tako da s podano rešitvijo izpolnimo pogoj podan v enačbi~(\ref{eq:min_opt_inequ}).
-Enakosti pa zadovoljimo, ko izpolnimo pogoj iz enačbe~(\ref{eq:min_opt_equ}).
-
-% TODO nekaj še tu dopiši
-
-\section{Optimizacijski algoritmi in inteligenca rojev}
-
-% TODO Napiši nekaj o Populacijskih algoritmih in inteligenci rojev
-
 \section{Roj delcev}
 
-% TODO Opiši uporabljene algoritme v svojem delu
+Inteligenca rojev (ang. \textit{Swarm Intelligence} (SI)) je bila predstavljena v knjigi~\cite{bib:swarm_intelligence}, kjer je bila uporabljana za reševanje različnih tipov problemov.
+Ko govorimo o SI, mora biti izpolnjenih načela paradigme SI.
+Omenjena načela je opredelil Milonas~\cite{bib:si_principles} že leta 1994 in obsegajo načelo bližine, načelo kakovosti, načelo raznolikega odziva, načelo stabilnosti in načelo prilagodljivosti.
+Stalna rast znanstvenih člankov na temo SI kaže, da je SI ena najbolj obetavnih oblik računske inteligence (ang. \textit{Computational Intelligence} (CI))~\cite{bib:computational_intelligence}.
+K temu nedvomno prispevajo prednosti SI.
+Ena najbolj očitnih prednosti je avtonomija.
+Roj nima zunanjega upravljanja, vendar ima agente.
+Agenti v roju avtonomno nadzoruje svoje vedenje.
+Agent v tem primeru predstavlja možno rešitev danega problema.
+Druga prednost je samoorganizacija.
+Inteligenca se izpostavlja v obnašanju vseh agentov oziroma roja, ampak ne samo v vedenju enega agenta.
+Rešitve problema niso vnaprej znane, ampak se spreminjajo v času razvoja roja oziroma izvajanja programa.
+Samoorganizacija igra pomembno vlogo pri prilagodljivosti.
+Opazna je v spreminjajočih se okoljih.
+Agenti se dobro odzovejo na spremembe, prilagodijo svoje vedenje.
+To agentom omogoča avtonomno prilagajajo.
+Roj ni odvisen od centralne koordinacije, zato je roj robusten, ter ni ene same točke odpovedi.
+Roj omogoča tudi redundanco, kar omogoča še dve dodatni prednosti.
+Prva je razširljivost.
+Roj je lahko sestavljen iz nekaj do največ tisoč agentov, ter še vedno lahko ostaja arhitektura nadzora enaka.
+Druga je pogrešljivost.
+Ker ni samo enega samega agenta, bistvenega za roj, je prilagodljivost prednosti SI v celoti izpolnjena.
 
-\section{Koevolucija}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=1]{img/si_algo_dp.pdf}
+    \caption{Diagram poteka za osnovi algoritem SI~\cite{bib:swarm_intelligence}.}\label{fig:si_algo_dp}
+\end{figure}
 
-\begin{equation}
-    \min_{\mathbf{x}}{f(\mathbf{x})} = \left( \min_{\mathbf{x_1}}{f(x_1,\cdots)}, \cdots , \min_{\mathbf{x_m}}{f(\cdots, x_m)} \right)
-\end{equation}
-
-% TODO Opiši kaj je to Koevolucija
+Vsak algoritem SI upošteva nekatere temeljne faze.
+Slika~\ref{fig:si_algo_dp} prikazuje možno definicijo algoritmov SI, 
+Opazimo lahko naslednje pomembne korake algoritmov SI:
+\begin{enumerate}
+    \item inicializacija agentov,
+    \item ocenitev agentov,
+    \item posodobitev agentov,
+    \item preverjanje zaustavitvenega pogoja in
+    \item vračanje najboljšega posameznika.
+\end{enumerate}
+V tem delu bomo bomo uporabili sedem različnih algoritmov, ki pripadajo skupini algoritmov SI.
+Konkretno bomo uporabili sedem različnih algoritmov roja delcev.
+Uporabljeni bodo algoritmi:
+\begin{enumerate}
+    \item algoritem roja delcev (ang. \textit{Particle Swarm Optimization} (PSO))~\cite{alg:pso},
+    \item algoritem roja delcev s centralnim iskanjem (ang. \textit{Center Particle Swarm Optimization} (CPSO))~\cite{alg:cpso},
+    \item algoritem roja delcev z dodano mutacijo delcev (ang. \textit{Mutated Particle Swarm Optimization} (MPSO))~\cite{alg:mpso},
+    \item algoritem roja delcev z dodano mutacijo delcev in centralnim iskanjem (ang. \textit{Mutated Center Particle Swarm Optimization} (MCPSO)),
+    \item algoritem roja delcev s celovitim učenjem (ang. \textit{Comprehensive Learning Particle Swarm Optimizer} (CLPSO))~\cite{alg:clpso},
+    \item ?? (ang. \textit{Mutated Center Unified Particle Swarm Optimization} (MCUPSO))~\cite{alg:mcupso} in
+    \item algoritem roja delcev z uporabo nasprotji in omejevanjem hitrosti (ang. \textit{Opposition-Based Particle Swarm Optimization with Velocity Clamping} (OVCPSO))~\cite{alg:ovcpso}.
+\end{enumerate}
+V nadaljevanju sledijo podrobnejši opisi vsakega od uporabljenih algoritmov 
 
 \section{Diferencialne metode grupiranja}
 
 % TODO Opiši kaj je to metoda grupiranja
+
+Uporabljeni bodo naslednji algoritmi:
+\begin{enumerate}
+    \item rekurzivno diferencialno grupiranje (ang. \textit{RecursiveDifferentialGrouping} (RDG))~\cite{alg:rdg},
+    \item rekurzivno diferencialno grupiranje verzije 2 (ang. \textit{Recursive Differential Grouping V2} (RDGV2))~\cite{alg:rdg2},
+    \item rekurzivno diferencialno grupiranje verzije 3 (ang. \textit{Recursive Differential Grouping V3} (RDGV3))~\cite{alg:rdg3},
+    \item efektivno rekurzivno diferencialno grupiranje (ang. \textit{Efficient Recursive Differential Grouping} (ERDG))~\cite{alg:erdg} in
+    \item tri nivojsko rekurzivno diferencialno grupiranje (ang. \textit{Three Level Recursive Differential Grouping} (TRDG))~\cite{alg:trdg}.
+\end{enumerate}
 
 \begin{algorithm}
     \DontPrintSemicolon
@@ -472,6 +523,16 @@ Enakosti pa zadovoljimo, ko izpolnimo pogoj iz enačbe~(\ref{eq:min_opt_equ}).
 
 \chapter{Koevolucijski algoritem rojev delcev}\label{chap:algo}
 
+V trenutnem teku razvoja raziskav na področju strojnega učenja in podobnih domen, je opaziti različne tehnike zmanjševanja težavnosti kompleksnosti problema.
+Uporabljena sta dva glavna pristopa.
+Prva tehnika je ekstrakcija ključnih podatkov iz velike količine podatkov.
+Druga tehnika je redukcija dimenzionalnosti vhodnih podatkov oziroma iskanje pomembnih pomembnih značilnic v podatkih, ki je ena izmed bolj uporabljenih tehnik redukcije kompleksnosti učenja napovedovalnega modela. 
+Učni modeli z veliko dimenzionalnostjo rabijo veliko časa za učenje, zaradi velikega iskalnega prostora optimalnih parametrov napovedovalnega modela, ter v mnogih primerih ne vsebujejo najbolj kvalitetnega znanja o problemu, za katerega so bili učeni~\cite{bib:si_machine_learning_bad_model}.
+
+\begin{equation}
+    \min_{\mathbf{x}}{f(\mathbf{x})} = \left( \min_{\mathbf{x_1}}{f(x_1,\cdots)}, \cdots , \min_{\mathbf{x_m}}{f(\cdots, x_m)} \right)
+\end{equation}
+
 % TODO
 
 \begin{algorithm}
@@ -519,32 +580,34 @@ Enakosti pa zadovoljimo, ko izpolnimo pogoj iz enačbe~(\ref{eq:min_opt_equ}).
 % TODO
 
 \begin{table}[t]
+    \renewcommand{\arraystretch}{1.3}
     \centering
     \caption{Število grup in čas izvajanja za testne funkcije CEC2013lsgo.} \label{tab:bech:func_basic_stats}
     \begin{tabular}{|c|c|c|c|}
         \hline
         Funkcija & Število grup & Število neodvisnih spremenljivk & Čas izvajanja ($s$) \\\hline
-        $f_1$    & $0$  & $1000$ & $262{,}588458$ \\\hline
-        $f_2$    & $0$  & $1000$ & $331{,}273203$ \\\hline
-        $f_3$    & $0$  & $1000$ & $547{,}029603$ \\\hline
-        $f_4$    & $8$  & $0$    & $466{,}366468$ \\\hline
-        $f_5$    & $8$  & $0$    & $634{,}510452$ \\\hline
-        $f_6$    & $8$  & $0$    & $739{,}836920$ \\\hline
-        $f_7$    & $8$  & $0$    & $186{,}057469$ \\\hline
-        $f_8$    & $20$ & $0$    & $620{,}498084$ \\\hline
-        $f_9$    & $20$ & $0$    & $802{,}833272$ \\\hline
-        $f_{10}$ & $20$ & $0$    & $786{,}904194$ \\\hline
-        $f_{11}$ & $20$ & $0$    & $602{,}630111$ \\\hline
-        $f_{12}$ & $0$  & $1000$ & $73{,}145579$  \\\hline
-        $f_{13}$ & $20$ & $0$    & $546{,}250735$ \\\hline
-        $f_{14}$ & $20$ & $0$    & $622{,}586918$ \\\hline
-        $f_{15}$ & $0$  & $1000$ & $386{,}074948$ \\\hline
+        $f_1$    & $0$  & $1000$ & $262{,}588$ \\\hline
+        $f_2$    & $0$  & $1000$ & $331{,}273$ \\\hline
+        $f_3$    & $0$  & $1000$ & $547{,}029$ \\\hline
+        $f_4$    & $8$  & $0$    & $466{,}366$ \\\hline
+        $f_5$    & $8$  & $0$    & $634{,}510$ \\\hline
+        $f_6$    & $8$  & $0$    & $739{,}836$ \\\hline
+        $f_7$    & $8$  & $0$    & $186{,}057$ \\\hline
+        $f_8$    & $20$ & $0$    & $620{,}498$ \\\hline
+        $f_9$    & $20$ & $0$    & $802{,}833$ \\\hline
+        $f_{10}$ & $20$ & $0$    & $786{,}904$ \\\hline
+        $f_{11}$ & $20$ & $0$    & $602{,}630$ \\\hline
+        $f_{12}$ & $0$  & $1000$ & $73{,}145$  \\\hline
+        $f_{13}$ & $20$ & $0$    & $546{,}250$ \\\hline
+        $f_{14}$ & $20$ & $0$    & $622{,}586$ \\\hline
+        $f_{15}$ & $0$  & $1000$ & $386{,}074$ \\\hline
     \end{tabular}
 \end{table}
 
 \begin{table}[t]
+    \renewcommand{\arraystretch}{1.3}
     \centering
-    \caption{Velikosti grup za testne funkcije CEC2013lsgo, ki imajo več skupin.} \label{tab:bech:func_basic_stats}
+    \caption{Velikosti grup za testne funkcije CEC2013lsgo, ki imajo več skupin.} \label{tab:bech:func_basic_stats_groups_no}
     \begin{tabular}{|c|c|c|c|}
         \hline
         Funkcija & Velikosti grup \\\hline
@@ -569,6 +632,7 @@ Enakosti pa zadovoljimo, ko izpolnimo pogoj iz enačbe~(\ref{eq:min_opt_equ}).
 % TODO
 
 \begin{table}[t]
+    \renewcommand{\arraystretch}{1.3}
     \centering
     \caption{Vrednosti parametrov metod za grupiranje.} \label{tab:algs:group_params}
     \begin{tabular}{|c|c|}
