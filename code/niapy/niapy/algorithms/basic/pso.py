@@ -399,7 +399,10 @@ class OppositionVelocityClampingParticleSwarmOptimization(ParticleSwarmAlgorithm
         d = ParticleSwarmAlgorithm.get_parameters(self)
         d.pop('min_velocity', None), d.pop('max_velocity', None)
         d.update({
-            'p0': self.p0, 'w_min': self.w_min, 'w_max': self.w_max, 'sigma': self.sigma
+            'p0': self.p0,
+            'w_min': self.w_min,
+            'w_max': self.w_max,
+            'sigma': self.sigma
         })
         return d
 
@@ -427,8 +430,7 @@ class OppositionVelocityClampingParticleSwarmOptimization(ParticleSwarmAlgorithm
         s_f = np.asarray([task.eval(e) for e in s])
         s, s_f = np.concatenate([pop, s]), np.concatenate([fpop, s_f])
         sorted_indices = np.argsort(s_f)
-        return s[sorted_indices[:len(pop)]], s_f[sorted_indices[:len(pop)]], s[sorted_indices[0]], s_f[
-            sorted_indices[0]]
+        return s[sorted_indices[:len(pop)]], s_f[sorted_indices[:len(pop)]], s[sorted_indices[0]], s_f[sorted_indices[0]]
 
     def init_population(self, task):
         r"""Init starting population and dynamic parameters.
@@ -456,8 +458,7 @@ class OppositionVelocityClampingParticleSwarmOptimization(ParticleSwarmAlgorithm
         pop, fpop, _, _ = self.opposite_learning(s_l, s_h, pop, fpop, task)
         pb_indices = np.where(fpop < d['personal_best_fitness'])
         d['personal_best'][pb_indices], d['personal_best_fitness'][pb_indices] = pop[pb_indices], fpop[pb_indices]
-        d['min_velocity'], d['max_velocity'] = self.sigma * (task.upper - task.lower), self.sigma * (
-                task.lower - task.upper)
+        d['min_velocity'], d['max_velocity'] = self.sigma * (task.upper - task.lower), self.sigma * (task.lower - task.upper)
         d.update({'s_l': s_l, 's_h': s_h})
         return pop, fpop, d
 
@@ -516,9 +517,7 @@ class OppositionVelocityClampingParticleSwarmOptimization(ParticleSwarmAlgorithm
                     if fpop[i] < fxb:
                         xb, fxb = pop[i].copy(), fpop[i]
             min_velocity, max_velocity = self.sigma * np.min(pop, axis=0), self.sigma * np.max(pop, axis=0)
-        return pop, fpop, xb, fxb, {'personal_best': personal_best, 'personal_best_fitness': personal_best_fitness,
-                                    'min_velocity': min_velocity,
-                                    'max_velocity': max_velocity, 'v': v, 's_l': s_l, 's_h': s_h}
+        return pop, fpop, xb, fxb, {'personal_best': personal_best, 'personal_best_fitness': personal_best_fitness, 'min_velocity': min_velocity, 'max_velocity': max_velocity, 'v': v, 's_l': s_l, 's_h': s_h}
 
 
 class CenterParticleSwarmOptimization(ParticleSwarmAlgorithm):
@@ -755,7 +754,7 @@ class MutatedCenterParticleSwarmOptimization(CenterParticleSwarmOptimization):
         MIT
 
     Reference paper:
-        TODO find one
+        Tsai, Hsing-Chih. "Unified particle swarm delivers high efficiency to particle swarm optimization." Applied Soft Computing 55 (2017): 371-383.
 
     Attributes:
         num_mutations (int): Number of mutations of global best particle.
@@ -778,7 +777,7 @@ class MutatedCenterParticleSwarmOptimization(CenterParticleSwarmOptimization):
             * :func:`niapy.algorithms.Algorithm.info`
 
         """
-        return r"""TODO find one"""
+        return r"""Tsai, Hsing-Chih. "Unified particle swarm delivers high efficiency to particle swarm optimization." Applied Soft Computing 55 (2017): 371-383."""
 
     def __init__(self, num_mutations=10, *args, **kwargs):
         """Initialize MCPSO."""

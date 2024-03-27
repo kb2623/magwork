@@ -15,7 +15,7 @@ backup:
 	cp main.pdf $(old_main)
 
 clean:
-	rm -f *.aux *.bbl *.bcf *.blg *.loa *.log *.lot *.lof *.out *.toc *.idx *.run.xml
+	rm -f *.aux *.bbl *.bcf *.blg *.loa *.log *.lot *.lof *.out *.toc *.idx *.run.xml *.fls *.fdb_latexmk
 ifneq (,$(wildcard ./main.pdf))
 	make backup
 endif

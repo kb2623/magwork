@@ -1,31 +1,61 @@
+$\otimes$ -- Množenje vektorjev po istoležnih komponentah \\
 \ell$(\cdot)$ -- Funkcija vrne število elementov vektorja oziroma seznama \\
 $f(\cdot)$ -- Ocenitvena funkcija, ki predstavlja problem za reševanje \\
+$\mathcal{U}(p_1, p_2)$ -- Funkcija enakomerne naključne porazdelitve, ki vrača naključne realne vrednosti v intervalu od $p_1$ do $p_2$ \\
 $\mathit{D}$ -- Dimenzija problema \\
+$\mathit{M}$ -- Parameter algoritma, ki predstavlja število mutacij delca \\
 $\mathit{NP}$ -- Konstanta, ki predstavlja velikost populacije \\
+$t$ -- Številka trenutne generacije \\
+$t_{max}$ -- Maksimalno število generacij algoritma \\
+$w$ -- Vztrajnostna utež pri algoritmih, ki bazirajo na algoritmu PSO \\
+$w_l$ -- Realna vrednost minimalne vrednosti vztrajnostne uteži \\
+$w_u$ -- Realna vrednost maksimalne vrednosti vztrajnostne uteži \\
+$p_0$ -- Realna vrednost, ki predstavlja verjetnost, kdaj se algoritem OVCPSO odloči za fazo učenja z nasprotnimi delci \\
 $\mathbf{b}_{l}$ -- Vektor z vrednostmi, ki predstavljajo spodnjo mejo iskalnega prostora \\
 $\mathbf{b}_{u}$ -- Vektor z vrednostmi, ki predstavljajo zgornjo mejo iskalnega prostora \\
+$\mathbf{o}_l$ -- Vektor z vrednostmi, ki definirajo spodnjo mejo trenutnega delca \\
+$\mathbf{o}_u$ -- Vektor z vrednostmi, ki definirajo zgornjo mejo trenutnega delca \\
+$\mathbf{x}_i$ -- Vektor dimenzije $\mathit{D}$, ki predstavlja položaj trenutnega delca v iskalnem prostoru \\
+$\mathbf{x}_i'$ -- Nasprotni delec delca $\mathbf{x}_i$ \\
+$\mathbf{X}$ -- Matrika, ki predstavlja populacijo optimizacijskega algoritma, ki je dimenzije $\mathit{NP} \times \mathit{D}$ \\
+$\mathbf{x}^*$ -- Vektor, ki hrani optimalne vrednosti parametrov funkcije $f$ \\
+$y^*$ -- Realna rednost, ki predstavlja ocenitveno vrednost vektorja $\mathbf{x}^*$ na podlagi funkcije $f$ \\
+$\mathbf{p}_i$ -- Vektor, ki hrani najboljšo najdeno pozicijo agenta $i$ \\
+$\mathbf{P}$ -- Matrika, ki predstavlja najboljše znane pozicije delcev roja, ter je dimenzije $\mathit{NP} \times \mathit{D}$ \\
+$r_1$ -- Naključno število v intervalu od $0$ do $1$ \\
+$r_2$ -- Naključno število v intervalu od $0$ do $1$ \\
+$\mathbf{r}_1$ -- Vektor naključnih števil dimenzionalnosti $\mathit{D}$, ki vsebuje naključna števila iz intervala od $0$ do $1$, ki so pridobljena na podlagi enakomerne naključne porazdelitve \\
+$\mathbf{r}_2$ -- Vektor naključnih števil dimenzionalnosti $\mathit{D}$, ki vsebuje naključna števila iz intervala od $0$ do $1$, ki so pridobljena na podlagi enakomerne naključne porazdelitve \\
+$\mathbf{r}_3$ -- Vektor naključnih števil dimenzionalnosti $\mathit{D}$, ki vsebuje naključna števila iz intervala od $0$ do $1$, ki so pridobljena na podlagi enakomerne naključne porazdelitve \\
+$c_1$ -- Parameter, ki upravlja moč kognitivne komponente pri izračunu hitrosti delca \\
+$c_2$ -- Parameter, ki upravlja moč socialne komponente pri izračunu hitrosti delca \\
 $\alpha$ -- Parameter algoritmov, ki izvirajo iz algoritma RDG, za nadzor parametra $\epsilon$  \\
 $\epsilon$ -- Mejna vrednost za detekcijo interakcije skupine komponente skupini s skupino komponent \\
 $\Omega$ -- Dopustni iskalni prostor \\
 $k$ -- Parameter algoritmov RDG in TRDG, za kontrolo vrednosti $\epsilon$ \\
 $\epsilon_e$ -- Parameter algoritma RDG3 za nadzor velikosti skupin komponent \\
 $\epsilon_n$ -- Parameter algoritma RDG3 za nadzor velikosti skupin komponent \\
-$C_1$ -- Parameter algoritma PSO, za kontrolo hitrosti \\
-$C_2$ -- Parameter algoritma PSO, za kontrolo hitrosti \\
-SI -- Inteligenca rojev (ang. \textit{Swarm Inteligence}) \\
-CI -- Računska inteligenca (ang. \textit{Computational Intelligence}) \\
-PSO -- Algoritem roja delcev (ang. \textit{Particle Swarm Optimization}) \\
-CPSO -- Algoritem roja delcev s centralnim iskanjem (ang. \textit{Center Particle Swarm Optimization}) \\
-MPSO -- Algoritem roja delcev z dodano mutacijo delcev (ang. \textit{Mutated Particle Swarm Optimization}) \\
-MCPSO -- Algoritem roja delcev z dodano mutacijo delcev in centralnim iskanjem (ang. \textit{Mutated Center Particle Swarm Optimization}) \\
-CLPSO -- Algoritem roja delcev s celovitim učenjem (ang. \textit{Comprehensive Learning Particle Swarm Optimizer}) \\
-MCUPSO -- ?? (ang. \textit{Mutated Center Unified Particle Swarm Optimization}) \\
-OVCPSO -- Algoritem roja delcev z uporabo nasprotji in omejevanjem hitrosti (ang. \textit{Opposition-Based Particle Swarm Optimization with Velocity Clamping}) \\
-LSGO -- Globalna optimizacija problemov z velikim številom dimenzij (ang. \textit{Large Scale Global Optimization}) \\
-RDG -- Rekurzivno diferencialno grupiranje (ang. \textit{RecursiveDifferentialGrouping}) \\
-RDGV2 -- Rekurzivno diferencialno grupiranje verzije 2 (ang. \textit{Recursive Differential Grouping V2}) \\
-RDGV3 -- Rekurzivno diferencialno grupiranje verzije 3 (ang. \textit{Recursive Differential Grouping V3}) \\
-ERDG -- Efektivno rekurzivno diferencialno grupiranje (ang. \textit{Efficient Recursive Differential Grouping}) \\
-TRDG -- tri nivojsko rekurzivno diferencialno grupiranje (ang. \textit{Three Level Recursive Differential Grouping}) \\
-BD -- Vele podatki (ang. \textit{Big Data}) \\
-BB -- Črna škatla (ang. \textit{Black Box}) \\
+SI -- Inteligenca rojev (angl. \textit{Swarm Inteligence}) \\
+CI -- Računska inteligenca (angl. \textit{Computational Intelligence}) \\
+PSO -- Algoritem roja delcev (angl. \textit{Particle Swarm Optimization}) \\
+ACO -- Algoritem optimizacije kolonije mravelj (angl. \textit{Ant Colony Optimization}) \\
+ABC -- Algoritem umetne čebelje kolonije (angl. \textit{Artificial Bee Colony}) \\
+LDWPSO -- Algoritem roja delcev z utežjo za linearno zmanjševanje hitrosti delca (angl. \textit{Linearly Decreasing Weight Particle Swarm Optimization}) \\
+CPSO -- Algoritem roja delcev s centralnim delcem (angl. \textit{Center Particle Swarm Optimization}) \\
+HPSO -- Hibridni algoritem roja delcev (angl. \textit{Hybrid Particle Swarm Optimization}) \\
+MCPSO -- Algoritem roja delcev z dodano mutacijo delcev in centralnim iskanjem (angl. \textit{Mutated Center Particle Swarm Optimization}) \\
+CLPSO -- Algoritem roja delcev s celovitim učenjem (angl. \textit{Comprehensive Learning Particle Swarm Optimizer}) \\
+UPS -- Algoritem enotnega roja delcev (angl. \textit{Unified Particle Swarm}) \\
+OVCPSO -- Algoritem roja delcev z uporabo nasprotij in omejevanjem hitrosti (angl. \textit{Opposition-Based Particle Swarm Optimization with Velocity Clamping}) \\
+LSGO -- Globalna optimizacija problemov z velikim številom dimenzij (angl. \textit{Large Scale Global Optimization}) \\
+RDG -- Rekurzivno diferencialno grupiranje (angl. \textit{RecursiveDifferentialGrouping}) \\
+RDGV2 -- Rekurzivno diferencialno grupiranje verzije 2 (angl. \textit{Recursive Differential Grouping V2}) \\
+RDGV3 -- Rekurzivno diferencialno grupiranje verzije 3 (angl. \textit{Recursive Differential Grouping V3}) \\
+ERDG -- Efektivno rekurzivno diferencialno grupiranje (angl. \textit{Efficient Recursive Differential Grouping}) \\
+TRDG -- tri nivojsko rekurzivno diferencialno grupiranje (angl. \textit{Three Level Recursive Differential Grouping}) \\
+BD -- Vele podatki (angl. \textit{Big Data}) \\
+BB -- Črna škatla (angl. \textit{Black Box}) \\
+CC -- Kooperativna koevolucija (angl. \textit{Cooperative Coevolution}) \\
+CCGA -- Kooperativni koevolucijski genetski algoritem (angl. \textit{Cooperative Co-evolutionary Genetic Algorithm}) \\
+GA -- Genetski algoritem (angl. \textit{Genetic Algorithm}) \\
+NPSO-CC -- Nov roj delcev s kooperativno koevolucijo (angl. (New Particle Swarm Optimizer with Cooperative Coevolution))\\

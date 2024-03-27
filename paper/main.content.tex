@@ -1,34 +1,34 @@
 \chapter{Uvod}\label{cahp:uvod}
 S problemi velikih dimenzij se med drugim srečujemo na različnih področjih, kot so telekomunikacije~\cite{bib:lsgo:telecommunication}, logistika~\cite{bib:lsog:logistics}, strojništvo~\cite{bib:lsgo:engineering} itd.
 Ti problemi zahtevajo iskanje optimalnih rešitev v obsežnem iskalnem prostoru, kjer ima problem veliko število odločitvenih spremenljivk.
-Pri takih problemih tradicionalni optimizacijski algoritmi, kot so to metode, ki temeljijo na gradientu, kvadratno programiranje in linearno programiranje, se soočajo s težavami.
-Inteligenca rojev (ang. \textit{Swarm inteligence} (SI)) se je pojavila, kot obetaven pristop za reševanje problemov velikih dimenzij zaradi svoje zmožnosti učinkovitega raziskovanja prostora, obvladovanja šumnih in ne-konveksnih cenitvenih funkcij, ter obvladovanja velikega števila parametrov objektivne funkcije.
+Pri takih problemih tradicionalni optimizacijski algoritmi, ki temeljijo na gradientu, kvadratično programiranje in linearno programiranje, se lahko soočajo s težavami.
+Inteligenca rojev (angl. \textit{Swarm inteligence} (SI)) se je pojavila, kot obetaven pristop za reševanje problemov velikih dimenzij zaradi svoje zmožnosti učinkovitega preiskovanja prostora, obvladovanja šumnih in ne-konveksnih optimizacijskih funkcij, ter obvladovanja velikega števila parametrov ocenitvene funkcije.
 
-Inteligenca rojev se nanaša na kolektivno vedenje decentraliziranih, samoorganiziranjih sistemov, sestavljenih iz več agentov, ki sodelujejo med seboj in v okolju, da bi dosegli skupni cilj.
-Agenti v sistemih SI so lahko umetni ali naravni, komunicirajo in usklajujejo pa se po preprostih lokalnih pravilih.
-Vedenje teh agentov se zgleduje po vedenju družbenih žuželk, kot so mravlje, čebele in termiti, ki v svojih kolonijah kažejo izjemne sposobnosti reševanja problemov.
+Inteligenca rojev se nanaša na kolektivno vedenje decentraliziranih, samoorganiziranjih sistemov, sestavljenih iz več posameznikov, ki sodelujejo med seboj in v okolju, da bi dosegli skupni cilj.
+Posamezniki v sistemih SI so lahko umetni ali naravni, komunicirajo in usklajujejo pa se po preprostih lokalnih pravilih.
+Vedenje teh posameznikov se zgleduje po vedenju družbenih žuželk, kot so mravlje, čebele in termiti, ki v svojih kolonijah kažejo izjemne sposobnosti reševanja problemov.
 
-Eden najbolj priljubljenih SI algoritmov za reševanje problemov velikih dimenzij je algoritem roja delcev (ang. \textit{Particle Swarm Optimization} (PSO))~\cite{alg:pso}.
-PSO algoritem sta prvič predlagala Ebarhart in Kennedy leta 1995 in je od takrat pridobil široko pozornost zaradi svoje preprostosti, robustnosti in učinkovitosti.
-PSO algoritem deluje tako, da simulira vedenje skupine delcev, ki se premikajo v iskalnem prostoru, da bi našli optimalno rešitev.
+Eden najbolj priljubljenih algoritmov SI za reševanje problemov velikih dimenzij je algoritem roja delcev (angl. \textit{Particle Swarm Optimization} (PSO))~\cite{alg:pso}.
+Algorithm PSO sta prvič predlagala Ebarhart in Kennedy leta 1995 in je od takrat pridobil široko pozornost zaradi svoje preprostosti, robustnosti in učinkovitosti.
+Algoritem PSO deluje tako, da simulira vedenje skupine delcev, ki se premikajo v iskalnem prostoru, da bi našli optimalno rešitev.
 Vsak delec predstavlja kandidatno rešitev problema, njegovo gibanje pa je odvisno od njegove lastne hitrosti in najboljše rešitve, ki jo je skupina delcev doslej našla.
 
-Druga algoritma rojev delcev, ki je sta lahko uporabljen za optimizacijo velikih dimenzij sta algoritem optimizacije kolonije mravelj (ang. \textit{Ant Colony Optimization} (ACO))~\cite{alg:aco} pri iskanju hrane in algoritem umetne čebelje kolonije (ang. \textit{Artificial Bee Colony} (ABC))~\cite{alg:abc}, ki posnema vedenje iskanja hrane čebel.
-ACO algoritem deluje tako, da zgradi graf rešitve, ki predstavlja prostor iskanja, mravlje se premikajo po tem grafu, kjer preiskujejo prostor in iščejo nove boljše rešitve problema.
-ABC algoritem zaposluje skupino čebel, ki iščejo iskalni prostor za vire hrane, pri čemer vsaka čebela predstavlja kandidatno rešitev problema.
+Druga algoritma rojev delcev, ki sta lahko uporabljena za optimizacijo velikih dimenzij sta algoritem optimizacije kolonije mravelj (angl. \textit{Ant Colony Optimization} (ACO))~\cite{alg:aco} pri vodenju mravelj s pomočjo feromona in algoritem umetne čebelje kolonije (angl. \textit{Artificial Bee Colony} (ABC))~\cite{alg:abc}, ki posnema vedenje iskanja hrane čebel.
+Algoritem ACO deluje tako, da zgradi graf rešitve, ki predstavlja prostor iskanja, mravlje se premikajo po tem grafu, kjer preiskujejo prostor in iščejo nove boljše rešitve problema.
+Algoritem ABC zaposluje skupino čebel, ki v iskalnem prostoru iščejo vire hrane, pri čemer vsaka čebela predstavlja kandidatno rešitev optimizacijskega problema.
 
-Glavna prednost uporabe SI algoritmov za optimizacijo problemov velikih dimenzij je njihova sposobnost obvladovanja kompleksnosti in velike dimenzionalnosti iskalnega prostora.
+Glavna prednost uporaba algoritmov SI za optimizacijo problemov velikih dimenzij je njihova sposobnost obvladovanja kompleksnosti in velike dimenzionalnosti iskalnega prostora.
 Tradicionalni optimizacijski algoritmi se soočajo s težavami pri reševanju takih problemov zaradi visokih računskih stroškov in prisotnosti večih lokalnih optimumov.
 Nasprotno pa SI algoritmi uporabljajo preprosta lokalna pravila za učinkovito raziskovanje iskalnega prostora in so odpornejši na lokalne optimume, v katerih lahko obtičijo mnogi tradicionalni algoritmi.
 
-Uporabo SI algoritmov za optimizacijo problemov velikih dimenzij, lahko opazimo na mnogih področjih, kot so strojništvo, finance in logistika.
-V strojništvu so bili SI algoritmi uporabljeni za optimizacijo kompleksnih sistemov, kot so letala, turbine in motorji.
-V finančnem sektorju so bili SI algoritmi uporabljeni za optimizacijo portfelja in obvladovanje tvegan podjetji.
-V logistiki so bili SI algoritmi uporabljeni za optimizacijo usmerjanja vozil, upravljanja s skladiščem in optimizacije dobavne verige.
-SI algoritmi so se izkazali za zelo učinkovite in njihov uspeh je spodbudil nadaljnje raziskave razvoja novih in izboljšanih algoritmov.
+Uporabo algoritmov SI za optimizacijo problemov velikih dimenzij, lahko opazimo na mnogih področjih, kot so strojništvo, finance in logistika.
+V strojništvu so bili algoritmi SI uporabljeni za optimizacijo kompleksnih sistemov, kot so letala, turbine in motorji.
+V finančnem sektorju so bili algoritmi SI uporabljeni za optimizacijo portfelja in obvladovanje tvegan podjetji.
+V logistiki so bili algoritmi SI uporabljeni za optimizacijo usmerjanja vozil, upravljanja s skladiščem in optimizacije dobavne verige.
+Algoritmi SI so se izkazali za zelo učinkovite in njihov uspeh je spodbudil nadaljnje raziskave razvoja novih in izboljšanih algoritmov.
 
-Kljub prednostim SI algoritmov imajo tudi ti algoritmi nekatere omejitve, kot so počasna stopnja konvergence, potreba po velikem številu ovrednotenj cenitvene funkcije in občutljivosti na nastavitve parametrov algoritma.
-Za premagovanje teh omejitev so raziskovali predlagali več modifikacij in hibridizacij SI algoritmov, kot je hibridizacija z lokalnimi iskalnimi metodami, operatorji mutacije in hibridizacija z drugimi optimizacijskimi algoritmi.
+Kljub prednostim algoritmov SI imajo tudi ti algoritmi nekatere omejitve, kot so počasna stopnja konvergence, potreba po velikem številu ovrednotenj cenitvene funkcije in občutljivosti na nastavitve parametrov algoritma.
+Za premagovanje teh omejitev so raziskovalci predlagali več modifikacij in hibridizacij algoritmov SI, kot je hibridizacija z lokalnimi iskalnimi metodami, operatorji mutacije in hibridizacija z drugimi optimizacijskimi algoritmi.
 
 V zadnjih letih so raziskovalci uvedli koncept diferencialnega združevanja in koevolucije kot nove strategije za izboljšanje učinkovitosti optimizacijskih algoritmov za reševanje problemov velikih dimenzij.
 Cilj teh strategij je izboljšati proces iskanja z razdelitvijo optimizacijskega problema na manjše podprobleme in sočasno uporabo optimizacijskih algoritmov za optimizacijo vsakega podproblema.
@@ -44,20 +44,20 @@ Te strategije izkoriščajo prednosti obeh tehnik, kar omogoča učinkovito razi
 Z razčlenitvijo problema na manjše podprobleme in uporabo optimizacijskih algoritmov postane proces iskanja bolj osredotočen in učinkovit.
 
 Motivacija za to diplomsko delo izhaja iz potrebe po obravnavanju naraščajočega povpraševanja po učinkovitih in uspešnih rešitvah problemov velikih dimenzij.
-S pojavom vele podatkov (ang. \textit{Big Data}) in vse večjo kompleksnostjo sodobnih sistemov, tradicionalne optimizacijske tehnike ne zadoščajo za pravočasno zagotavljanje optimalnih rešitve.
-PSO algoritmi ponujajo obetavno alternativo za reševanje teh zahtevnih problemov, vendar so potrebne nadaljnje raziskav, da bi v celoti razumeli njihove zmogljivosti in omejitve.
+S pojavom vele podatkov (angl. \textit{Big Data} (BD)) in vse večjo kompleksnostjo sodobnih sistemov, tradicionalne optimizacijske tehnike ne zadoščajo za pravočasno zagotavljanje optimalnih rešitve.
+Algoritmi PSO ponujajo obetavno alternativo za reševanje teh zahtevnih problemov, vendar so potrebne nadaljnje raziskave, da bi v celoti razumeli njihove zmogljivosti in omejitve.
 
-V tem diplomskem delu želimo raziskati učinkovitost kovelucijskega hibridnega PSO algoritma z rekurzivnimi diferencialnimi metodami grupiranja za reševanje problemov velikih dimenzij.
-Raziskali bomo, kako lahko te strategije izboljšajo delovanje PSO algoritmov.
-Z obsežnim eksperimentiranjem in primerjalno analizo bomo ovrednotili delovanje predlaganega algoritma v primerjavi z obstoječimi hibridnimi PSO algoritmi.
+V tem diplomskem delu želimo raziskati učinkovitost kovelucijskega hibridnega algoritma PSO z rekurzivnimi diferencialnimi metodami grupiranja za reševanje problemov velikih dimenzij.
+Raziskali bomo, kako lahko te strategije izboljšajo delovanje algoritmov PSO.
+Z obsežnim eksperimentiranjem in primerjalno analizo bomo ovrednotili delovanje predlaganega algoritma v primerjavi z obstoječimi hibridnimi algoritmi PSO.
 S preučevanjem njegove hitrosti konvergence, kakovosti rešitev in robustnosti želimo zagotoviti vpogled v potencialne prednosti in omejitve novega hibridnega algoritma v kontekstu problemov velikih dimenzij.
-Z vključitvijo konceptov diferencialnega grupiranja in koevolucije v hibridne PSO algoritme pričakujemo, da bomo premagali nekatere omejitve in izzive, ki jih predstavljajo optimizacijski problemi velikih dimenzij.
+Z vključitvijo konceptov diferencialnega grupiranja in koevolucije v hibridne algoritme PSO pričakujemo, da bomo premagali nekatere izzive, ki jih predstavljajo optimizacijski problemi velikih dimenzij.
 Te strategije imajo potencial za izboljšanje zmožnosti raziskovanja in izkoriščanja optimizacijskih algoritmov,  kar vodi do učinkovitejših in uspešnejših rešitev.
 Preiskava teh tehnik v kontekstu problemov veliki dimenzij je ključnega pomena za napredek na področju optimizacijskih algoritmov iz zagotavljanja praktičnih rešitev za aplikacije v resničnem svetu.
 
 Prispevki tega diplomskega dela naj bi vključevali:
 \begin{enumerate}
-    \item Obsežen pregled literature o PSO algoritmih, vključno zz analizo prednosti in omejitev različnih PSO algoritmov.
+    \item Obsežen pregled literature o PSO algoritmih, vključno z analizo prednosti in omejitev različnih algoritmov PSO.
     \item Vrednotenje delovanja različnih PSO algoritmov na problemih velikih dimenzij, ki vključujejo multimodalne funkcije, popolnoma odvedljive funkcije, delno aditivno odvedljive funkcije, funkcije s prekrivajočimi komponentami in ne-odvedljive funkcije.
     \item Raziskovanje vpliva različnih uporabljenih metod hibridizacije PSO algoritma na problemih velikih dimenzij.
     \item Priporočila za izbiro in nastavitve hibridiziranih PSO algoritmov za probleme velikih dimenzij, ki temeljijo na rezultatih naših poskusov.
@@ -66,25 +66,25 @@ Prispevki tega diplomskega dela naj bi vključevali:
 Preostanek tega diplomskega dela je organiziran na naslednji način.
 V \ref{chap:obsojeca.dela}. poglavju ponujamo pregled literature o optimizacijskih algoritmih inteligence rojev za optimizacijo problemov velikih dimenzij.
 To poglavje vključuje podrobno razpravo o prednostih in omejitvah različnih optimizacijskih algoritmov inteligence rojev, algoritmov grupiranja komponent, ki bazirajo na razlikah vpliva komponent, ter koevolucijskih algoritmih za reševanje problemov velikih dimenzij.
-V \ref{chap:algo}. poglavju opisujemo novo hibidizacijo PSO algoritma, ki uporablja koevolucijo in grupiranje komponent za probleme velikih dimenzij.
-To poglavje vključuje razpravo o uporabljenih metodah za modifikacijo hibridnega PSO algoritma, ter omejitvah novega hibridnega algoritma.
-Poglavje vsebuje tudi priporočila za izbiro, nastavitev parametrov in omejitve hibridnih PSO algoritmov za probleme velikih dimenzij.
-V \ref{chap:exp}. poglavju posredujemo rezultate naših poskusov in razpravljamo o uspešnosti različnih hibridnih PSO algoritmih na problemih velikih dimenzij.
+V \ref{chap:algo}. poglavju opisujemo novo hibidizacijo algoritma PSO, ki uporablja koevolucijo in grupiranje komponent za probleme velikih dimenzij.
+To poglavje vključuje razpravo o uporabljenih metodah za modifikacijo hibridnega algoritma PSO, ter omejitvah novega hibridnega algoritma.
+Poglavje vsebuje tudi priporočila za izbiro, nastavitev parametrov in omejitve hibridnih algoritmov PSO za probleme velikih dimenzij.
+V \ref{chap:exp}. poglavju posredujemo rezultate naših poskusov in razpravljamo o uspešnosti različnih hibridnih algoritmih PSO na problemih velikih dimenzij.
 To poglavje vključuje podrobno analizo vpliva različnih parametrov hibridnih PSO algoritmov.
-Na koncu \ref{chap:end}. poglavju podajamo povzetek naših ugotovitev, zaključkom in predlogi za prihodnje raziskave na tem področju. Verjamemo, da bo ta diplomska naloga zagotovila dragocen vpogled v uporabo SI algoritmov za optimizacijo problemov velikih dimenzij in prispevala k razvoju učinkovitejših in uspešnejših optimizacijskih tehnik.
+Na koncu \ref{chap:end}. poglavju podajamo povzetek naših ugotovitev, zaključkom in predlogi za prihodnje raziskave na tem področju. Verjamemo, da bo ta diplomska naloga zagotovila dragocen vpogled v uporabo algoritmov SI za optimizacijo problemov velikih dimenzij in prispevala k razvoju učinkovitejših in uspešnejših optimizacijskih tehnik.
 
 \chapter{Pregled obstoječih del}\label{chap:obsojeca.dela}
 
 Prekletstvo dimenzionalnosti je od najzgodnejših časov prekletstva, ki je pestilo znanstvenike od najzgodnejših dni~\cite{bib:curse_of_dim}, krotenje pa je bilo v središču številnih raziskovalnih prizadevanj v računalniških znanostih, od računalniške linearne algebre~\cite{bib:COD:linear_algebra}, strojnega učenja~\cite{bib:COD:machine_learning} do numerične optimizacije~\cite{bib:COD:numerical_methods}.
 Motiv na vseh teh področjih je oblikovati nove načine za izgradnjo razširljivih računalniških sistemov, ki so sposobni narediti več z manj.
 V kontekstu numerične optimizacije je prekletstvo dimenzionalnosti posledica eksponentne rasti velikosti iskalnega prostora glede na povečanje števila vhodnih spremenljivk.
-V zadnjih letih se to ohlapno imenuje globalna optimizacija velikega obsega ali globalna optimizacija problemov z velikim številom dimenzij (ang. \textit{Large Scale Global Optimization} (LSGO)).
+V zadnjih letih se to ohlapno imenuje globalna optimizacija velikega obsega ali globalna optimizacija problemov z velikim številom dimenzij (angl. \textit{Large Scale Global Optimization} (LSGO)).
 Izraz globalna poudarja vlogo hevristike in metahevristike, zlasti v kontekstu nenehne optimizacije.
 Treba je opozoriti, da se pojem velikega obsega spreminja skozi čas in se razlikuje od problema do problema.
 V tem delu se za velik problem šteje problem, ki povzroča težave z razširljivostjo na najsodobnejših algoritmih.
 Natančneje, posamezen problem ciljne optimizacije je mogoče definirati na naslednji način (ob predpostavki minimizacije):
 \begin{align}
-	&\min_{\mathbf{x}^*}{f(\mathbf{x})} \label{eq:min_opt}\\
+	&\min_{\mathbf{x}^*}{f(\mathbf{x})}, \label{eq:min_opt}\\
 	&\mathbf{x} = (x_1, \cdots, x_D) \in \Omega \label{eq:min_opt_space},
 \end{align}
 kjer $\Omega$ predstavlja celotni iskalni prostor, ter $\mathbf{x}$ predstavlja točko znotraj $\Omega$ iskalnega prostora, kar je razvidno iz enačbe (\ref{eq:min_opt_space}).
@@ -104,84 +104,397 @@ Dominanca računalništva in matematike je pokazatelj pomena algoritemskih vidik
 
 Razširljivost optimizacijskih algoritmov je velik izziv pri spopadanju z vedno večjim obsegom optimizacijskih problemov na številnih področjih uporabe od visokodimenzionalnega strojnega učenja do kompleksnih obsežnih inženirskih problemov.
 Področje obsežne globalne optimizacije se ukvarja z izboljšanjem razširljivosti globalnih optimizacijskih algoritmov, zlasti metahevristik, ki temeljijo na populaciji.
-Takšne metahevristike so bile uspešno uporabljene za zvezne, diskretne ali kombinatorne probleme, ki segajo od več tisoč do milijarde odločitvenih spremenljivk.
-V tem delu pregledujemo nedavne študije na področju globalne optimizacije problemov velikih dimenzij obravnavanih kot črne škatle, da bi raziskovalcem in izvajalcem pomagali pridobiti pogled na to področje iz ptičje perspektive, se seznaniti z njegovimi glavnimi trendi in stanjem najsodobnejših algoritmih.
+Takšne metahevristike so bile uspešno uporabljene za zvezne, diskretne ali kombinatorične probleme, ki segajo od več tisoč do milijarde odločitvenih spremenljivk.
+V tem delu pregledujemo nedavne študije na področju problemov LSGO obravnavanih kot črne škatle (angl. \textit{Black Box} (BB)), da bi raziskovalcem in izvajalcem pomagali pridobiti pogled na to področje iz ptičje perspektive, se seznaniti z njegovimi glavnimi trendi in stanjem najsodobnejših algoritmih.
 Štirje glavni algoritemski pristopi za reševanje problemov LSGO so:
 \begin{enumerate}
-	\item razčlenitev problema,
 	\item populacijski algoritmi,
-	\item memetične algoritme in
-	\item metode lokalnega iskanja.
+	\item metoda deli in vladaj,
+	\item memetski algoritmi (angl. \textit{Memetic algorithms}) in
+	\item algoritmi lokalnega iskanja.
 \end{enumerate}
-V nadaljevanju sledijo opisi algoritemskih pristopov k obsežno globalno optimizacijo, opisuje širok spekter problemskih področij in se končno dotakne pasti in izzivov trenutnih raziskav ter identificira več potencialnih področij za prihodnje raziskave.
+V nadaljevanju sledijo opisi najpomembnejših prispevkov za naše delo.
+Najprej sledijo dela o populacijskih algoritmih, kjer so izpostavljena prispevki različnih hibridnih algoritmov PSO.
+Večina uporabljenih hibridnih algoritmov PSO v tem delu uporablja tudi različne metode lokalnega iskanja, zato združujemo ta pristop s populacijskimi algoritmi.
+V našem delu se ne bomo uporabili memetičnih algoritmov, zato tega pristopa ne bomo opisovali.
+To poglavje bomo zaključili z opisom del o koevoluciji in algoritmih za razčlenjevanje problema, ki sta pomembnejši metodi za naše delo.
+Zaradi pomembnosti teh dveh metod, so sorodna dala opisana v dveh različnih sledečih podpoglavjih.
 
 \section{Roj delcev}
 
-Inteligenca rojev (ang. \textit{Swarm Intelligence} (SI)) je bila predstavljena v knjigi~\cite{bib:swarm_intelligence}, kjer je bila uporabljana za reševanje različnih tipov problemov.
+Inteligenca rojev (angl. \textit{Swarm Intelligence} (SI)) je bila predstavljena v knjigi~\cite{bib:swarm_intelligence}, kjer je bila uporabljana za reševanje različnih tipov problemov.
 Ko govorimo o SI, mora biti izpolnjenih načela paradigme SI.
 Omenjena načela je opredelil Milonas~\cite{bib:si_principles} že leta 1994 in obsegajo načelo bližine, načelo kakovosti, načelo raznolikega odziva, načelo stabilnosti in načelo prilagodljivosti.
-Stalna rast znanstvenih člankov na temo SI kaže, da je SI ena najbolj obetavnih oblik računske inteligence (ang. \textit{Computational Intelligence} (CI))~\cite{bib:computational_intelligence}.
+Stalna rast znanstvenih člankov na temo SI kaže, da je SI ena najbolj obetavnih oblik računske inteligence (angl. \textit{Computational Intelligence} (CI))~\cite{bib:computational_intelligence}.
 K temu nedvomno prispevajo prednosti SI.
 Ena najbolj očitnih prednosti je avtonomija.
-Roj nima zunanjega upravljanja, vendar ima agente.
-Agenti v roju avtonomno nadzoruje svoje vedenje.
-Agent v tem primeru predstavlja možno rešitev danega problema.
+Roj nima zunanjega upravljanja, vendar ima posameznike.
+Posamezniki v roju avtonomno nadzoruje svoje vedenje.
+Posameznik v tem primeru predstavlja možno rešitev danega problema.
 Druga prednost je samoorganizacija.
-Inteligenca se izpostavlja v obnašanju vseh agentov oziroma roja, ampak ne samo v vedenju enega agenta.
+Inteligenca se izpostavlja v obnašanju vseh posameznikov oziroma roja, ampak ne samo v vedenju enega posameznika.
 Rešitve problema niso vnaprej znane, ampak se spreminjajo v času razvoja roja oziroma izvajanja programa.
 Samoorganizacija igra pomembno vlogo pri prilagodljivosti.
 Opazna je v spreminjajočih se okoljih.
-Agenti se dobro odzovejo na spremembe, prilagodijo svoje vedenje.
-To agentom omogoča avtonomno prilagajajo.
+Posamezniki se dobro odzovejo na spremembe, prilagodijo svoje vedenje.
+To posameznikom omogoča avtonomno prilagajajo.
 Roj ni odvisen od centralne koordinacije, zato je roj robusten, ter ni ene same točke odpovedi.
 Roj omogoča tudi redundanco, kar omogoča še dve dodatni prednosti.
 Prva je razširljivost.
-Roj je lahko sestavljen iz nekaj do največ tisoč agentov, ter še vedno lahko ostaja arhitektura nadzora enaka.
+Roj je lahko sestavljen iz nekaj do največ tisoč posameznikov, ter še vedno lahko ostaja arhitektura nadzora enaka.
 Druga je pogrešljivost.
-Ker ni samo enega samega agenta, bistvenega za roj, je prilagodljivost prednosti SI v celoti izpolnjena.
+Ker ni samo enega samega posameznika, bistvenega za roj, je prilagodljivost prednosti SI v celoti izpolnjena.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[scale=1]{img/si_algo_dp.pdf}
+    \includegraphics[scale=.85]{img/si_algo_dp.pdf}
     \caption{Diagram poteka za osnovi algoritem SI~\cite{bib:swarm_intelligence}.}\label{fig:si_algo_dp}
 \end{figure}
+
+\begin{algorithm}
+    \DontPrintSemicolon
+    \SetKwFunction{isalg}{InteligencaRojev}
+    \SetKwFunction{init}{Inicializacija}
+    \SetKwFunction{update}{PosodobiPosamznike}
+
+    \Fn{\isalg{$f$, $\mathit{D}$, $\mathit{NP}$}}{
+        $\mathbf{X}$ \gets~ \init{$f$, $\mathit{D}$, $\mathit{NP}$}\;
+        $\mathbf{x}^*$, $y^*$ \gets~ Najdi najboljšega v populaciji $\mathbf{X}$\;
+        \While{$\lnot$ dosežen zaustavitveni pogoj}{
+            $\mathbf{X}$ \gets~ \update{$f$, $\mathit{D}$, $\mathit{NP}$, $\mathbf{X}$}\label{pcode:si_base:update}\;
+            $\mathbf{x}^*$, $y^*$ \gets~ Najdi najboljšega v populaciji $\mathbf{X}$\;
+        }
+        \Return $\mathbf{x}^*$, $y^*$\;
+    }
+
+    \caption{Osnovni algoritem SI.}\label{pcode:si_base}
+\end{algorithm}
 
 Vsak algoritem SI upošteva nekatere temeljne faze.
 Slika~\ref{fig:si_algo_dp} prikazuje možno definicijo algoritmov SI, 
 Opazimo lahko naslednje pomembne korake algoritmov SI:
 \begin{enumerate}
-    \item inicializacija agentov,
-    \item ocenitev agentov,
-    \item posodobitev agentov,
+    \item inicializacija posameznikov,
+    \item ocenitev posameznikov,
+    \item posodobitev posameznikov,
     \item preverjanje zaustavitvenega pogoja in
     \item vračanje najboljšega posameznika.
 \end{enumerate}
-V tem delu bomo bomo uporabili sedem različnih algoritmov, ki pripadajo skupini algoritmov SI.
-Konkretno bomo uporabili sedem različnih algoritmov roja delcev.
-Uporabljeni bodo algoritmi:
-\begin{enumerate}
-    \item algoritem roja delcev (ang. \textit{Particle Swarm Optimization} (PSO))~\cite{alg:pso},
-    \item algoritem roja delcev s centralnim iskanjem (ang. \textit{Center Particle Swarm Optimization} (CPSO))~\cite{alg:cpso},
-    \item algoritem roja delcev z dodano mutacijo delcev (ang. \textit{Mutated Particle Swarm Optimization} (MPSO))~\cite{alg:mpso},
-    \item algoritem roja delcev z dodano mutacijo delcev in centralnim iskanjem (ang. \textit{Mutated Center Particle Swarm Optimization} (MCPSO)),
-    \item algoritem roja delcev s celovitim učenjem (ang. \textit{Comprehensive Learning Particle Swarm Optimizer} (CLPSO))~\cite{alg:clpso},
-    \item ?? (ang. \textit{Mutated Center Unified Particle Swarm Optimization} (MCUPSO))~\cite{alg:mcupso} in
-    \item algoritem roja delcev z uporabo nasprotji in omejevanjem hitrosti (ang. \textit{Opposition-Based Particle Swarm Optimization with Velocity Clamping} (OVCPSO))~\cite{alg:ovcpso}.
-\end{enumerate}
-V nadaljevanju sledijo podrobnejši opisi vsakega od uporabljenih algoritmov 
+Te korake lahko strnemo z algoritmom~\ref{pcode:si_base}, ki bo osnova za uporabljene optimizacijske algoritme v tem delu.
+Algoritem~\ref{pcode:si_base} ima v osnovi tri parametre, ki so $f$, ki predstavlja optimizacijski problem, ki ga rešujemo, $\mathit{D}$, ki predstavlja dimenzionalnost problema $f$ in $\mathit{NP}$, ki predstavlja število posameznikov v roju $\mathbf{X}$.
+Algoritem~\ref{pcode:si_base} tekom svojega delovanja hrani podatke o posameznikih in vrednost najboljšega najdenega posameznika.
+Podatke o posameznikih hrani v spremenljivki $\mathbf{X}$, ki predstavlja matriko dimenzije $\mathit{NP} \times \mathit{D}$.
+Vrednost najboljšega posameznika se hrani v spremenljivki $\mathbf{x}^*$, ki hrani pozicijo in spremenljivki $y^*$, ki hrani vrednost ocenitvene funkcije $f$ za pozicijo $\mathbf{x}^*$.
+Vsi algoritmi, ki jih bomo uporabili v tem delu, se bodo v glavnem razlikovali v vrstici~\ref{pcode:si_base:update}, kjer bo vsak od algoritmov implementiral svojo specifično funkcijo posodabljanja posameznikov v roju.
 
-\section{Diferencialne metode grupiranja}
+Prejšnje osnovne korake uporablja tudi osnovi algoritem PSO, ki je bil razvit že leta 1995.
+V raziskavi~\cite{alg:pso} so ga avtorji uporabili za optimizacijo nelinearnih funkcij in učenje nevronske mreže, kjer so s pomočjo optimizacije iskali najboljše vrednosti uteži nevronske mreže.
+Osnova za razvoj algoritma PSO je bil socialni model, ki so ga avtorji preko simulacije pripeljali do optimizacijskega algoritma.
+Socialno obnašanje, ki je pripomoglo do optimizacijskega algoritma je bilo obnašanje ptic v jati.
+Avtorji so preko simulacij prepoznali zahtevnosti, ki so jih uporabljeni problemi predstavljali socialnem obnašanju ptic v jati, zato so se raje osredotočili na roj delcev z posamezniki, ki se bolje vklopi v optimizacijske probleme.
+Tako je algoritem PSO doživel poenostavitev, ter ga je možno implementirati le v nekaj programskih vrsticah poljubnega programskega jezika.
+Algoritem PSO uporablja koncept hitrosti, ki premakne posameznika iz ene pozicije iskalnega prostora v drugo pozicijo iskanega prostora.
+Kot smo v prejšnjem odstavku omenili vrstico~\ref{pcode:si_base:update} iz algoritma~\ref{pcode:si_base}, lahko za algoritem PSO zapišemo naslednji enačbi:
+\begin{align}
+    \mathbf{v}_i(t + 1) &= \mathbf{v}_i(t) + c_1 \cdot r_1 \cdot (\mathbf{p}_i - \mathbf{x}_i(t)) + c_2 \cdot r_2 \cdot (\mathbf{x}^* - \mathbf{x}_i(t)),\label{eq:pso:velocity_update} \\
+	\mathbf{x}_i(t + 1) &= \mathbf{x}_i(t) + \mathbf{v}_i(t + 1). \label{eq:pso:update_agent}
+\end{align}
+Kot lahko vidimo iz enačbe (\ref{eq:pso:velocity_update}), ima algoritem PSO za vsakega posameznika dve dodatni spremenljivki, ki predstavljata hitrost posameznika ($\mathbf{v}_i$) in najboljšo znano pozicijo posameznika ($\mathbf{p}_i$).
+Vrednosti $r_1$ in $r_2$ predstavljata naključno vrednost v intervalu od $0$ do $1$.
+Naključna vrednost se izbere iz enakomerne naključne porazdelitve.
+Vrednosti $c_1$ in $c_2$ sta dve realni vrednosti in sta parametra algoritmu PSO.
+Predstavljata faktor učenja, kjer je $c_1$ faktor učenja za kognitivno komponento in $c_2$ faktor učenja za socialno komponento.
+V enačbi (\ref{eq:pso:update_agent}) lahko vidimo kako se premakne posameznik v novo pozicijo.
 
-% TODO Opiši kaj je to metoda grupiranja
+Leta 1998 sta Shii in Eberhar v delu~\cite{alg:ldwpso} posodobila osnovni algoritem PSO, tako da sta mu dodala dodaten parameter, ki je omogočal prehod algoritma iz globalnega iskanja v lokalno iskanje.
+Algoritem sta poimenovala modificiran algoritem roja delcev, vendar je kasnejšem času doživel preimenovanje v algoritem roja delcev z utežjo za linearno zmanjševanje hitrosti (angl. \textit{Linearly Decreasing Weight Particle Swarm Optimization} (LDWPSO)).
+Avtorja sta osnovnem algoritmu dodala parameter poimenovan vztrajnostna utež ($w$).
+Algoritem LDWPSO ima posodobljeno enačbo (\ref{eq:pso:velocity_update}), ki jo zapišemo kot:
+\begin{equation}
+    \mathbf{v}_i(t + 1) = w \cdot \mathbf{v}_i(t) + c_1 \cdot r_1 \cdot (\mathbf{p}_i - \mathbf{x}_i(t)) + c_2 \cdot r_2 \cdot (\mathbf{x}^* - \mathbf{x}_i(t)).\label{eq:ldwpso:velocity_update} \\
+\end{equation}
+V članku sta avtorja testirala nov algoritem na testni funkciji Schaffer F6.
+Ugotovila sta da je predlagan algoritem najbolje deloval, ko je bila vrednost novega parametra v mejah med $0{,}9$ in $1{,}2$.
 
-Uporabljeni bodo naslednji algoritmi:
-\begin{enumerate}
-    \item rekurzivno diferencialno grupiranje (ang. \textit{RecursiveDifferentialGrouping} (RDG))~\cite{alg:rdg},
-    \item rekurzivno diferencialno grupiranje verzije 2 (ang. \textit{Recursive Differential Grouping V2} (RDGV2))~\cite{alg:rdg2},
-    \item rekurzivno diferencialno grupiranje verzije 3 (ang. \textit{Recursive Differential Grouping V3} (RDGV3))~\cite{alg:rdg3},
-    \item efektivno rekurzivno diferencialno grupiranje (ang. \textit{Efficient Recursive Differential Grouping} (ERDG))~\cite{alg:erdg} in
-    \item tri nivojsko rekurzivno diferencialno grupiranje (ang. \textit{Three Level Recursive Differential Grouping} (TRDG))~\cite{alg:trdg}.
-\end{enumerate}
+Po slabih devetih letih so avtorji Yu Liu in ostali v delu~\cite{alg:cpso} so posodobili algoritem LDWPSO s centralnim delcem oziroma posameznikom.
+Algoritem so poimenovali algoritem roja delcev s centralnim delcem (angl. \textit{Center Particle Swam Optimization algoritem} (CPSO)).
+Centralni delec lahko izračunamo na podlagi naslednje enačbe:
+\begin{equation}
+    \mathbf{x}_c = \frac{1}{\mathit{NP}} \sum_{i=1}^{\mathit{NP}} \mathbf{x}_i.
+\end{equation}
+Predlagan algoritem predvideva, da se v središču vseh delcev nahaja področje, ki se ga izplača preiskati.
+Osnovi algoritem PSO in algoritem LDWPSO nimata možnosti preiskovanja prostora med delci, kar je pri uniformni porazdelitvi delcev po iskanem prostoru ključnega pomena.
+Velikokrat sta oba prejšnja algoritma delovala slabše, saj do določenega dela iskalnega prostora sploh nista prišla.
+Avtorji so zaznali da je algoritem CPSO robustnejši od algoritma LDWPSO.
+To so zaznali na treh znanih testnih optimizacijskih funkcijah pri dimenzijah $10$, $20$ in $30$.  
+Avtorji so algoritma LDWPSO in CPSO testirali tudi na učenju nevronske mreže s $87$ utežmi, kjer so tudi potrdili robustnost predlaganega algoritma.
+
+\begin{algorithm}
+    \DontPrintSemicolon
+
+    \For{$i$ \gets $1$ \KwTo $\mathit{NP}$}{
+        $z_i$ \gets~ $\frac{1}{\mathit{NP}} \sum_{j=1}^{\mathit{NP}} v_{i, j}$\;
+    }
+    \For{$i$ \gets $1$ \KwTo $\mathit{M}$}{
+        $\mathbf{x}$ \gets~ $\mathbf{x}^* + z_i \cdot \mathcal{U}(b_{l, i}, b_{u, i})$\;
+        $y$ \gets~ $f(\mathbf{x})$\;
+        \If{$y < y^*$}{
+            $\mathbf{x}^*$, $y^*$ \gets~ $\mathbf{x}$, $y$\;
+        }
+    }
+
+    \caption{Cauchy mutacija pri algoritmu HPSO~\cite{alg:mpso}.}\label{pcode:hpso:addition}
+\end{algorithm}
+
+Zaradi hitrega napredka na področju evolucijskega programiranja in vedno večje zahtevnosti optimizacijskih problemov, avtorji v delu~\cite{alg:mpso} predstavili hibridni algoritem PSO, ki uporablja ugotovitve pridobljene na področju evolucijskega programiranja.
+Avtorji so algoritem so poimenovali hibridni algoritem roja delcev (angl. \textit{Hybrid Particle Swarm Optimization} (HPSO)).
+Avtorji so v osnovi algoritem PSO dodali dodaten korak mutacije, ki uporablja distribucijo Cauchy.
+Dodatni koraki sledijo takoj po posodabljanju delcev, ter so prikazani v algoritmu~\ref{pcode:hpso:addition}, kjer $\mathcal{U}$ predstavlja enakomerno naključno porazdelitev, $\mathbf{z}$ predstavlja vektor uteži naključne porazdelitve in $\mathit{M}$ število mutacij delca.
+S tem dodatnim korakom so hoteli izboljšati algoritem LDWPSO, saj naj bi se ta velikokrat ujel v lokalen optimum.
+To zmanjša robustnost algoritma, saj je ta ostal ujet v eni točki, ki ne predstavlja globalno najboljše rešitve.
+To je bil predvsem problem pri multimodalnih testnih problemih.
+Za testiranje predlaganega algoritma so avtorji uporabili dest znanih testnih funkcij dimenzionalnosti $20$ in $30$.
+Avtorji so ugotovili, da predlagan algoritem deluje bolje od algoritma PSO na multimodalnih problemih, vendar izboljša tudi hitrost iskanja globalno najboljše rešitve pri unimodalnih problemih.
+
+\begin{algorithm}
+    \DontPrintSemicolon
+    \SetKwFunction{cl}{CelovitoUčenje}
+
+    \Fn{\cl{$f$, $j$, $\mathbf{P}$, $\mathit{D}$}}{
+        \For{$i$ \gets $1$ \KwTo $\mathit{D}$}{
+            \If{$\mathcal{U}(0, 1)$ $<$ $\mathit{Pc}_i$}{
+                $k$, $l$ \gets~ $\mathcal{U}(0, 1) \cdot \mathit{NP}$, $\mathcal{U}(0, 1) \cdot \mathit{NP}$\;
+                \If{$f(\mathbf{p}_k) < f(\mathbf{p}_l)$}{
+                    $p_{j, i}$ \gets~ $p_{k, i}$\;
+                }
+            }
+        }
+    }
+
+    \caption{Celovita učna strategija algoritma CLPSO~\cite{alg:clpso}.}\label{pcode:clpso:learning}
+\end{algorithm}
+
+V delu~\cite{alg:clpso} so avtorji predstavili novo različico algoritma PSO, ki uporablja inovativno metodo učenja za posodabljanje hitrosti delca v roju.
+Za posodabljanje hitrosti enega delca se uporabljajo informacije o najboljšem položaju vseh delcev v roju.
+S tem zagotovimo raznolikost delcev v roju oziroma zagotovimo da so delci razpršeni po celotnem dopustnem iskalnem prostoru, kar zagotavlja da predlagan algoritem ne konvergira prehitro v eno točko, ki je lahko le lokalni optimum.
+Predlagan algoritem so avtorji poimenovali algoritem roja delcev s celovitim učenjem (angl. \textit{Comprehensive Learning Particle Swarm Optimizer} (CLPSO)).
+Algoritem CLPSO je uvedel tri glavne posodobitve algoritmom PSO.
+Prva sprememba je posodabljanje vztrajnostne uteži, kar lahko vidimo v enačbi:
+\begin{equation}
+    w(t + 1) = w_u - \left( \frac{w_u - w_l}{t_{max}} \right) t, \label{eq:clpso:w_update}
+\end{equation}
+kjer $w_u$ predstavlja maksimalno vrednost vztrajnostne uteži, $w_l$ minimalno vrednost vztrajnostne uteži, $t$ številko trenutne generacije algoritma in $t_{max}$ maksimalno število generacij algoritma.
+Druga sprememba je posodabljanje hitrosti delca, kar je razvidno iz enačb:
+\begin{align}
+    \mathbf{v}_i(t + 1)' &= w(t) \cdot \mathbf{v}_i(t) + c_1 \cdot \mathbf{r}_1 \otimes (\mathbf{p}_i - \mathbf{x}_i(t))\label{eq:clpso:update_velocity}, \\
+    \mathbf{v}_i(t + 1) &= \min(\mathbf{v}_u, \max(\mathbf{v}_u, \mathbf{v}_i(t + 1)')) \label{eq:clpso:update_velocity_after},
+\end{align}
+kjer je $\mathbf{r}_1$ vektor dimenzije $\mathit{D}$ z vrednostmi naključno enakomerno porazdeljenih vrednosti med $0$ in $1$.
+V enačbi (\ref{eq:clpso:update_velocity}) lahko opazimo, da smo morali uvesti novo operacijo množenja med vektorji, ki zmnoži dva vektorja po istoležnih komponentah.
+Enačba (\ref{eq:clpso:update_velocity}) ima sedaj samo eno komponento, ki sedaj predstavlja socialno komponento, saj je najboljši položaj delca sestavljen iz različnih najboljših položajev delcev v roju $\mathbf{S}$.
+Tretja sprememba je uporaba algoritma~\ref{pcode:clpso:learning}, ki posodobi osebno najboljšo pozicijo delca.
+V algoritmu~\ref{pcode:clpso:learning}, $j$ predstavlja indeks delca, katermu posodabljamo osebno najboljšo vrednost in $\mathbf{P}$ je matrika z vsemi najboljšimi položaji delcev.
+Algoritem CLPSO so testirali na $16$ različnih testnih funkcijah za optimizacijo, kjer so uporabili dimenzionalnosti $10$ in $30$.
+Rezultate predlaganega algoritma so primerjali z osmimi optimizacijskimi algoritmi, ki so bili predelave algoritma PSO.
+Ugotovili so da ima algoritem CLPSO boljšo robustnost pri multimodalnih problemih. 
+
+Avtorji so v delu~\cite{alg:ovcpso} predstavili nov hibridni algoritem PSO, ki izboljša oziroma pohitri hitrost konvergence algoritma, ter preprečuje da bi se lahko algoritem med iskanje ujel v lokalni optimum, ter tako prehitro konvertiral v rešitev, ki ni globalno najboljša rešitev problema.
+Predlagan algoritem so poimenovali algoritem roja delcev z uporabo nasprotji in omejevanjem hitrosti (angl. \textit{Opposition-Based Particle Swarm Optimization with Velocity Clamping} (OVCPSO)).
+Avtorji dela so to dosegli tako, da so osnovnem algoritmu PSO dodali tri nove korake.
+Prvi dodatni korak je omejevanja hitrosti, ki jo lahko ima delec, kar prikazuje enačba:
+\begin{equation}
+    v_{i,j}(t + 1) = \begin{cases}
+        \delta (b_{u, j} - b_{l, j}) &\text{če } v_{i,j}(t + 1) > b_{u, j}\\
+        \delta (b_{l, j} - b_{u, j}) &\text{če } v_{i,j}(t + 1) < b_{l, j}\\
+        v_{i,j}(t + 1) &\text{drugače},
+    \end{cases}
+\end{equation}
+kjer $\delta$ predstavlja konstantni faktor, ki je tudi parameter algoritma.
+Ta korak se izvede vsakokrat, ko se posodobi hitrost delcev.
+Drugi dodatni korak je verjetnostno učenje na osnovi nasprotnih delcev.
+Pozicije nasprotnih delcev lahko izračunamo s pomočjo enačbe:
+\begin{equation}
+    \mathbf{x}_i' = \mathbf{o}_l + \mathbf{o}_u - \mathbf{x}_i, \label{eq:ovcpso:opposite_particle}
+\end{equation} 
+kjer je $\mathbf{x}_i'$ nasprotni delec delca $\mathbf{x}_i$, $\mathbf{o}_l$ predstavlja vektor minimalnih vrednosti v iskalnem prostoru kjer se nahaja trenutni roj $\mathbf{X}$ in $\mathbf{o}_u$ predstavlja vektor maksimalnih vrednosti v iskalnem prostoru kjer se nahaja trenutni roj $\mathbf{X}$.
+Algorithm OVCPSO začne novo generacijo s preverjanjem pogoja $\mathcal{U}(0, 1) < p_0$.
+V kolikor je ta pogoj izpolnjen se izvede korak učenja s pomočjo nasprotnih delcev, ter zaključi generacijo algoritma.
+V nasprotnem primeru pa se izvede osnovno posodabljanje delcev, kot v algoritmu LDWPSO.
+Pri učenju s pomočjo nasprotnih delcev, se najprej izdelajo nasprotni delci, ter algoritem vključi nasprotne delce v populacijo v kolikor so boljši od trenutno znanih delcev.
+Tretji korak je posodabljanje vztrajnostne uteži preko enačbe (\ref{eq:clpso:w_update}).
+Algoritem OVCPSO so testirali na osmih znanih testnih optimizacijskih problemih, kjer so bile dimenzionalnosti problemov enake $30$.
+Predlagan algoritem so primerjali z dvema drugima algoritmoma, ki tudi bazirata na osnovi algoritma PSO.
+Glede na rezultate uporabljenih algoritmov so ugotovili, da predlagan algoritem daje boljše globalne rešitve problema, kot pa druga dva uporabljena algoritma.
+
+Dva novejša algoritma, ki bazirata na algoritmu PSO opisana v delu~\cite{alg:mcupso}, sta algoritem roja delcev z dodano mutacijo delcev in centralnim iskanjem (angl. \textit{Mutated Center Particle Swarm Optimization} (MCPSO)) in algoritem enotnega roja delcev (angl. \textit{Unified Particle Swarm} (UPS)).
+Avtorji so v tem delu posodobili osnovni algoritem PSO nadgradili s tremi metodami, kjer sta bile dve že uporabljeni v osnovnem algoritmu PSO.
+Prva uporabljena metoda je uporaba centralnega delca.
+Druga uporabljena metoda je uporaba dodatne mutacije delcev z uporabo Cauchy distribucije
+Tretja uporabljena metoda, ki je noviteta, je uporaba dodatnega faktorja, poimenovanega faktor združevanja, ki ga lahko opazimo v enačbi:
+\begin{equation}
+    \mathbf{v}_i(t + 1) = w \cdot \mathbf{v}_i(t) + c_1 \cdot \mathbf{r}_1 \otimes (\mathbf{p}_i - \mathbf{x}_i(t)) \otimes \mathbf{r}_3 + c_2 \cdot \mathbf{r}_2 \otimes (\mathbf{x}^* - \mathbf{x}_i(t)) \otimes (1 - \mathbf{r}_3), \label{eq:ups:unified_factor} \\
+\end{equation}
+preko vektorja $\mathbf{r}_3$, ki predstavlja vektor dimenzije $\mathit{D}$ in vsebuje vrednosti enakomerne naključne porazdelitve od $0$ do $1$.
+V enačbi (\ref{eq:ups:unified_factor}) lahko opazimo da sta sedaj parametra $\mathbf{r}_1$ in $\mathbf{r}_2$ sedaj vektorja dimenzije $\mathit{D}$, a še vedno velja da so vrednosti vektorjev iz enakomerne naključne porazdelitve od $0$ do $1$.
+Algoritem MCPSO uporablja le prvi dve metodi, v primerjavi z algoritmom UPS, ki uporablja vse tri metode.
+Predlagan algoritem so testirali na $13$ znanih testnih optimizacijskih funkcijah, kjer je sedem unimodalnih funkcij in šest multimodalnih funkcij.
+Za primerjavo so avtorji uporabili osem različnih optimizacijskih algoritmov, med katerimi je osem algoritmov, ki izhajajo iz osnovnega algoritma PSO.
+Na osnovi rezultatov, avtorji niso izdelali novega najboljšega algoritma, ampak so izdelali algoritem, ki ima boljše ravnovesje med socialnim in osebnim vedenjem delca v roju.
+
+\section{Kooperativna koevolucija}
+
+Kooperativna koevolucija (angl. \textit{Cooperative Coevolution} (CC)) je ena od najuspešnejših ogrodji za razvoj algoritmov, ki sposobni efektivno nasloviti probleme LSGO~\cite{bib:metaheuristic_lsgo}.
+Ogrodje CC v osnovi vsebuje korak dekompozicije problema, kjer visoko dimenzionalni prostor razdelimo v več skupin, ki so lažje rešljivi, kot pa celoten problem.
+Skupinam so dodeljene spremenljivke oziroma komponente problema, ki jih optimizira.
+Vsaka skupina optimizira manjši delček problema, ki ga predstavljajo komponente.
+Za optimizacijo podproblemov se uporabljajo različni tipi optimizacijskih algoritmov, vendar je za ogrodje CC značilno da uporabljajo stohastične algoritme.
+Tekom procesa optimizacije, skupine lahko med seboj komunicirajo, ter si s tem pomagajo pri preiskovanju prostora.
+Ključna je komunikacija pri izmenjavi informacije o najboljšem posamezniku, kjer se med skupinami prenesejo informacije o manjkajočih komponentah.
+V enačbi:
+\begin{equation}
+    \min_{\mathbf{x}}{f(\mathbf{x})} = \left( \min_{\mathbf{x_1}}{f(x_1,\cdots)}, \cdots , \min_{\mathbf{x_m}}{f(\cdots, x_m)} \right), \label{eq:devide_opt_func}
+\end{equation}
+lahko opazimo da z optimizacijo manjših problemov in združevanja informaciji dosežemo globalno najboljšo rešitev problema $f$.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.7]{img/non-separable_vig.pdf}
+    \caption{Graf interakcij med komponentami za problem z neločljivimi komponentami.}\label{fig:non_separable}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.7]{img/par-separable_vig.pdf}
+    \caption{Graf interakcij med komponentami za problem z delno ločljivimi komponentami.}\label{fig:par_separable}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.7]{img/full-separable_vig.pdf}
+    \caption{Graf interakcij med komponentami za problem s popolno ločljivimi komponentami.}\label{fig:full_separable}
+\end{figure}
+
+Pri uporabi ogrodja CC je rešljivost optimizacijskega problema povezana z deljivostjo oziroma ločljivostjo (angl. \textit{separable}) komponent problema.
+Problemi so lahko popolno ločljivi, popolno neločljivi, delno ločljivi in aditivno ločljivi.
+Slika~\ref{fig:full_separable} prikazuje graf interakcij med komponentami, kjer lahko vidimo da ni interakcije med komponentami, kar lahko opazimo pri polno ločljivih problemih.
+Slika~\ref{fig:par_separable} prikazuje primer problema, kjer ena komponenta vpliva na delovanje druge komponente.
+Opazimo lahko tudi da ima problem več skupin komponent, ki vplivajo ena na drugo.
+Zato tak problem sodi v delno ločljive probleme.
+Na sliki~\ref{fig:non_separable} je prikazan primer problema, kjer vsaka izmed komponent vpliva na druge komponente.
+Zato komponent ne moremo deliti v manjše podskupine, kot smo to lahko naredili pri delno ločljivih problemih.
+Takim problemom pravimo neločljivi problemi.
+Aditivne ločljive probleme lahko formuliramo z naslednjo enačbo:
+\begin{equation}
+    f (\mathbf{x}) = \sum_{i=1}^{\mathit{m}} f_i(\mathbf{x}_i) \label{eq:additivly_separable},
+\end{equation}
+kjer je optimizacijski problem $f$ sestavljen iz $m$ različnih podproblemov, ki jih združimo s seštevanjem.
+Aditivno ločljiv problem je lahko v celoti deljiv, v kolikor vsi $\mathbf{x}_i$ vsebujejo le eno komponento.
+Popolno ločljivi aditivni problemi so za optimizacijska ogrodja CC preprosto rešljivi~\cite{alg:dg}.
+
+Začetki kooperativne koevolucije segajo že v leto 1994, kadra sta Potter in De Jong v delu~\cite{alg:ccga} predstavila prvi algoritem CC, ki bazira na genetskem algoritmu (angl. \textit{Genetic Algorithm} (GA)).
+Razvit algoritem sta poimenovala kooperativni koevolucijski genetski algoritem (angl. \textit{Cooperative Coevolutionary Genetic Algorithms} (CCGA)).
+V algoritmu CCGA, se problem dimenzionalnosti $\mathit{D}$ razdeli v podprobleme dimenzionalnosti enake ena.
+Vsak podproblem se optimizira z algoritmom GA, ki ima za vsak podproblem ločeno populacijo.
+Celovito rešitev izvirnega problema dobimo s kombiniranjem reprezentativnih rešitev iz vsakega podproblema.
+Ocenitveno vrednost posameznika v določenem podproblemu se ocenjuje s kakovostjo celovite rešitve, pri katerih posameznik sodeluje.
+Algoritem CCGA rešuje podprobleme na krožni način, kar pomeni, da podprobleme ne omejuje pri uporabi računskih virov.
+Predlagan algoritem so avtorji v delu testirali na štirih znanih testnih funkcijah.
+Ugotovili so, da se algoritem CCGA zelo dobro obnese na problemih, ki so v popolnosti deljivi.
+Ugotovili so tudi, da predlagan algoritem CCGA izboljša delovanje osnovnega algoritma GA na uporabljenih testnih funkcijah.
+
+Številni stohastični algoritmi se soočajo s problemom prekletstva dimenzionalnosti.
+Dobro delujejo pri problemih z manjšimi številom dimenzij, vendar se zmogljivost slabša z večanjem števila dimenzij.
+Iskanje globalnih optimumov za preprosto unimodalno funkcijo je preprosto napram reševanju rotiranih in zamaknjenih multimodalnih funkcij.
+Zato se Shailendra in ostali v delu~\cite{alg:npscc} razvili nov algoritem poimenovan nov roj delcev s kooperativno koevolucijo (angl. (New Particle Swarm Optimizer with Cooperative Coevolution) (NPSO-CC)).
+Algoritem NPSO-CC uporablja naključno deljenje komponent podproblemom, ki se izvede na začetku vsake generacije algoritma.
+To pripomore k zmanjšanju računske zahtevnosti algoritma, saj z naključnim deljenjem odstranimo kompleksnost dekompozicije, ki je lahko računsko zelo zahtevna.
+Po delitvi problema, v algoritmu NPSO-CC sledi korak osnovnega algoritma PSO nad vsakim podproblemom.
+Tem koraku sledi korak deljenja populacij podproblemov na dva dela, kjer se eden izmed delov naključno premakne po iskalnem prostoru.
+V kolikor se v $50$ generacijah katera izmed pod-populacij neuspešno posodablja, potem algoritem NPSO-CC premakne to populacijo naključno po iskalnem prostor, ki ne zajema trenutno zasedenega iskalnega prostora.
+Avtorji so predlagan algoritem testirali na problemu CEC2010lsgo~\cite{bech:cec2010lsgo}, ki vsebuje $20$ testnih funkcij dimenzionalnosti $1000$.
+Rezultate algoritma NPSO-CC so primerjali s tremi različnimi algoritmi.
+Na podlagi statistične analize so avtorji ugotovili, da algoritem NPSO-CC deluje veliko bolje od ostalih uporabljenih algoritmov.
+
+\section{Dekompozicija problema}
+
+Ogrodje CC je evolucijsko računsko ogrodje, ki se lahko uporablja za reševanje problemov LSGO s pristopom BB preko optimizacije, kjer ogrodje CC deluje prek mehanizma »deli in vladaj«.
+Vendar pa je glavni izziv pri uporabi tega okvira razčlenitev problema.
+To je odločanje o tem, kako dodeliti odločitvene spremenljivke določenemu podproblemu, zlasti medsebojno vplivajoče odločitvene spremenljivke.
+Če medsebojno vplivajoče spremenljivke niso združene v isti podproblem, se ogrodje CC ponavadi ujame v psevdo-minimum~\cite{bib:psudo_min_cc}, ki ni lokalni minimum prvotnega problema, temveč lokalni minimum, uveden z nepravilno razčlenitvijo oziroma dekompozicijo problema.
+Za reševanje tega problema je bilo predlaganih veliko strategij združevanja komponente, ki so:
+\begin{itemize}
+    \item statično deljenje komponent v podprobleme,
+    \item naključno deljenje komponent v podprobleme,
+    \item deljenje komponent problema v podprobleme na podlagi učenja odvisnosti med komponentami,
+    \item deljenje komponent problema v podprobleme na podlagi detekcije odvisnosti med komponentami,
+    \item deljenje komponent problema v podprobleme na podlagi prekrivanja in hierarhije,
+    \item deljenje komponent problema v podprobleme na podlagi domenskega znanja in
+    \item ostale hibridne metode deljenja komponent problema v podprobleme.
+\end{itemize}
+Sama strategija združevanja komponent definira tudi stil ogrodja CC.
+Prva dva pristopa smo spoznali v prejšnjem podpoglavju, ki sta za probleme, na katerih sta sta bila testirana, dajala zelo dobre rezultate.
+Vendar so se problemi spremenili, tako da so morali raziskovali razviti boljše pristope, ki bi dajali boljše rezultate.
+Zato bomo v našem delu uporabili strategijo, ki deluje na podlagi učenja odvisnosti med komponentami.
+
+Prva takšna strategija je bila razvita v delu~\cite{alg:rdg}, ki temelji na detekciji odvisnosti med komponentami.
+Strategijo deljena komponent so avtorji poimenovali rekurzivno diferencialno grupiranje (angl. \textit{Recursive Differential Grouping} (RDG)).
+Eden od glavnih razlogov za razvoj te strategije je bil v problemu, da so strategije, ki so takrat obstajale, porabile veliko časa in računskih resursov za kvalitetno deljenje komponent v podprobleme.
+Strategija je časovno in računsko efektivna, saj algoritem strategije uporablja rekurzijo, ki v svojem delovanju ne preverja interakcije ene komponente z vsemi komponentami, temveč uporablja pristop, ki uporabi več komponent na enkrat.
+V primeru, da imajo izbranih komponent $\mathbf{g}_1$ interakcijo z drugim manjšim delom komponent $\mathbf{g}_2$ za preverjanje, kjer velja da $\mathbf{g}_1 \cap \mathbf{g}_2 = \emptyset$, algoritem izdela skupino komponent za podproblem.
+Sledi odstranjevanje komponent $\mathbf{g}_1 \cup \mathbf{g}_2$ iz komponent za preverjanje, kjer se tudi rekurzija zaustavi.
+Potem sledi nov rekurzivni klic, kjer se uporabljajo samo komponente, ki še niso bile uporabljene za testiranje.
+Efektivnost strategije RDG so avtorji preverili na problemu CEC2010lsgo in problemu CEC2013lsgo~\cite{bech:cec2013lsgo}.
+Avtorji so predlagano strategijo primerjali s sedmimi različnimi metodami dekompozicije, ter ugotovili, da za uporabljena testna problema predlagana strategija RDG daje bolje rezultate skupin spremenljiv za podprobleme, kot pa ostale dekompozicijske strategije.
+Predlagano dekompozicijo so uporabili tudi v optimizacijskem algoritmu, ki se je zelo dobro obnesel proti takratnim najboljšim algoritmom za reševanje problemov LSGO.
+
+Kmalu po izidu strategije RDG, ki se je izkazala za zelo učinkovito, zlasti v smislu časovne kompleksnosti, je imela strategija pomanjkljivosti.
+Strategija je zahtevala ustrezno nastavitev parametra za oceno vrednosti praga oziroma parametra $\epsilon$, ki determinira ali dve podmnožici odločitvenih spremenljivk sodelujeta ali ne.
+Poleg tega je lahko uporaba ene globalne pragovne vrednosti nezadostna za identifikacijo interakcij komponent, saj komponente neuravnoteženo prispevajo k ocenitveni vrednosti.
+Avtorji so v delu~\cite{alg:rdg2}, po vzoru dela~\cite{alg:dg2}, inkorporirali adaptivno ocenitev praga $\epsilon$ na podlagi računske zaokrožitvene napake.
+Avtorji so izpeljali zgornjo mejo zaokrožitvene napake, za katero se je izkazalo, da je ustrezna za identifikacijo interakcij med komponentami v problemih LSGO.
+Strategijo so avtorji poimenovali rekurzivno diferencialno grupiranje 2 (angl. \textit{Recursive Differential Grouping 2} (RDG2)), saj izhaja iz strategije RDG.
+Avtorji so novo strategijo testirali na problemu CEC2010lsgo in problemu CEC2013lsgo, kjer so ugotovili da predlagana strategija deluje enako ali celo bolje od osnovne strategije RDG.
+
+Z razvojem strategij za dekompozicijo in optimizacijskih algoritmov, so se razvijali tudi testni problemi.
+Eden večjih problem, ki se je pojavil pri dekompoziciji problemov je bio prepletanje med različnimi skupinami komponent, kjer se je ustvarila šibka povezanost med takima skupinama.
+Takrat znane strategije dekompzicije so običajno dodelijo vse odločitvene spremenljivke, ki neposredno in posredno medsebojno interaktirajo, v eno skupino.
+Zato take strategije ne morejo zmanjšati velikosti prvotnega velikega problema.
+Da bi rešili ta problme so avtorji v delu~\cite{alg:rdg3} predstavili novo strategijo dekompozicije problema, poimenovano rekurzivno diferencialno grupiranje 3 (angl. \textit{Recursive Differential Grouping 3} (RDG3)).
+Strategija RDG3 je bila zmožna ignorirati neposredno interakcijo med komponentami, ter tako bolje razdeliti problem v manjše podproblme.
+Osnova za strategijo RDG3 je bila njena predhonica strategija RDG2.
+Strategijo so avtorji testirali na problemu CEC2013lsgo, kjer so izboljšali rezulate strategije RDG2, ter v kombinaciji z optimizacijskim algoritmov premagali tudi takrat najboljše algoritme za reševanje uporabljenega problema.
+
+Strategije združevanja spremenljivk običajno porabijo veliko računalniških virov za pridobitev natančne delitve komponent med podprobleme.
+Zato so avtorji v delu~\cite{alg:erdg} predlagali novo strategijo poimenovano efektivno rekurzivno diferencialno grupiranje (angl. \textit{Efficient Recursive Differential Grouping} (ERDG))
+Z izkoriščanjem zgodovinskih informacij o preučevanju medsebojnega razmerja med komponentami optimizacijskega problema se lahko strategija ERDG izogne preučevanju nekaterih medsebojnih interakcij med komponentami in porabi veliko manj računanja kot strategiji RDG in RDG2.
+Predlagano strategijo so avorji testirali na problemu CEC2010lsgo in problemu CEC2013lsgo.
+Strategijo ERDG so avtorji primerjali s štirimi različnimi strategija dekompozicije, kjer so dokazali, da predlagana strategija uporabi ne le naj računskih resursov, temveč dosega tudi zelo kvalitetne rezultate.
+Dekompozijsko strategijo so uporabili tudi v algoritmu CC, kjer pa je izboljšal nekatere rezulate, ne pa vseh.
+
+Ena novejših strategij za dekompozicijo problema je opisana v delu~\cite{alg:trdg}, kjer so avtorji izdelani novo strategijo dekompozicije poimenovano tri nivojsko rekurzivno diferencialno grupiranje (angl. \textit{Three Level Recursive Differential Grouping} (TRDG)).
+Ko strategija TRDG zaznana interakcijo med dvema množicama komponent, strategija razdeli komponente ene množice v tri podmnožice na podlagi podlagi trihotomije.
+Nato se izvede detekcija interakcij med vsako podmnožico in drugo množico.
+V primerjavi s strategijo RDG lahko strategija TRDG zmanjša globino rekurzije in tako prihrani računske resurse.
+V delu poleg nove strategije predlagajo tudo novo strategijo za prilagodljivo posodobitev praga $\epsilon$ za prepoznavanje interakcij med komponentami.
+Rezultati simulacijskega eksperimenta na referenčnih funkcijah CEC2010lsgo in CEC2013laso kažejo, da je zmogljivost strategije TRDG boljša od več obstoječih metod dekompozicije v smislu natančnosti in prihrambe računskih sredstev.
+
+\section{Omejitve sorodnih del}
+
+Kot lahko opazimo je v preteklih dveh desetletjih na področju optimizacije prišlo do velikaga števila sprememb.
+Tekom tega časo so bile ugotovljene tudi nekatere pomanjkljivosti starih oziroma obstoječih metod/algoritmov/strategij, ki so bile lahko dokazane šele z nastakom novih tehnologij, ki poleg rešitve enega problema, pridonesejo tudi nove probleme.
+To lahko opazimo pri razvoji različnih algoritmov roja delcev, ki v osnovi ostaja podoben osnovni verziji razviti leta 1995.
+Vsi opisani algoritmi roja delcev imajo glavno slabosti, ki se kaže v prekletstvu dimenzionalnosti.
+Algoritmi roja delcev delujeo zelo dobro pri majhni dimenzionalnosti problema, vendar ko želimo rešiti problem tipa LSGO, pa lahko kaj kmalu obupamo z upoorabo takih algoritmov.
+Zato se bomo v nameš delu osredotočili ko to izboljšati.
+Nekaj namigov smo lahko že videli z uporabo ogrodji CC, ki na papirju prikazujejo efektivnost, a se lahko tudi njim zalomi.
+Zalomi se jim predvsem zradi načela splošnosti, ki ga imajo že algoritmi roja delcev.
+Kot smo lahko opazili preko analize sorodnih o ogrodjih CC je lahko njihova največja šibka točka dekompozicija problema, ki je ključnega problema pri reševanje LSGO problemov, ki so predstavljeni kot problemi BB.
+S pomočjo dobre dekompozicije problema lahko pretvorimo črno škatlo v sivo škatlo, kjer imamo dodatno informacijo kako komponente interaktirajo med seboj.
+Ker je algoritem roja delcev preprost za razumevanje in implementacijo, bi radi videli ali je še vedn uporaben, v kolikor ga vključimo v ogrocje CC, ter mu pripomoremo z dobro delitvijo problema LSGO na manjše kose.
+
+\chapter{Koevolucijski algoritem rojev delcev}\label{chap:algo}
+
+% TODO
 
 \begin{algorithm}
     \DontPrintSemicolon
@@ -193,14 +506,14 @@ Uporabljeni bodo naslednji algoritmi:
     $\mathbf{x}_r$, $\mathbf{a}$, $\mathbf{G}$ \gets~ [1], [], []\;
     $\epsilon$ \gets~ $\alpha \cdot \min \left(|f(\mathbf{x}_1)|, \cdots, \left|f(\mathbf{x}_k) \right| \right)$\;
     $\mathbf{x}_{l,l}$, $y_{l,l}$ \gets~ $\mathbf{b}_{l}$, $f(\mathbf{b}_{u})$\;
-    $\mathbf{s}_1$, $\mathbf{s}_2$ \gets~ [1], [\lFor*{$i=2$ \KwTo \ell($\mathbf{b}_{l}$)}{$i$}]\;
+    $\mathbf{s}_1$, $\mathbf{s}_2$ \gets~ [1], [\lFor*{$i$ \gets $2$ \KwTo \ell($\mathbf{b}_{l}$)}{$i$}]\;
 
-    \While{\ell($\mathbf{x}_r$) > 0}{
+    \While{\ell($\mathbf{x}_r$) $>$ $0$}{
         $\mathbf{x}_r$ \gets~ []\;
         $\mathbf{s}^*$ \gets~ \Inter{$f$, $\mathbf{b}_{l}$, $\mathbf{b}_{u}$, $\mathbf{x}_{l,l}$, $y_{l,l}$, $\epsilon$, $\mathbf{s}_1$, $\mathbf{s}_2$, $\mathbf{x}_r$}\tcp*[f]{Algoritem~\ref{pcode:rdg:interact}}\;
         \eIf{\ell($\mathbf{s}^*$) $=$ \ell($\mathbf{s}_1$)}{
             \leIf{\ell($\mathbf{s}_1$) $=$ $1$}{$\mathbf{a}$ \gets~ $\mathbf{a} \cup \mathbf{s}_1$}{\app{$\mathbf{G}$, $\mathbf{s}_1$}}
-            \eIf{\ell(\app{$\mathbf{x}_r$} > $1$)}{
+            \eIf{\ell(\app{$\mathbf{x}_r$}) $>$ $1$}{
                 $\mathbf{s}_1$ \gets~ $\mathbf{x}_r$[:1]\;
                 $\mathbf{x}_r$ \gets~ $\mathbf{x}_r$[1:]\;
                 $\mathbf{s}_2$ = $\mathbf{x}_r$\;
@@ -211,7 +524,7 @@ Uporabljeni bodo naslednji algoritmi:
         }{
             $\mathbf{s}_1$ \gets~ $\mathbf{s}^*$\;
             $\mathbf{s}_2$ \gets~ $\mathbf{x}_r$\;
-            \If{\ell($\mathbf{s}_r$) = $0$}{
+            \If{\ell($\mathbf{s}_r$) $=$ $0$}{
                 \app{$\mathbf{G}$, $\mathbf{s}_1$}\;
                 \textbf{break}\;
             }
@@ -238,7 +551,7 @@ Uporabljeni bodo naslednji algoritmi:
     $y_{u,l}$, $y_{l,m}$, $y_{u,m}$ \gets~ $f(\mathbf{x}_{u,l})$, $f(\mathbf{x}_{l,m})$, $f(\mathbf{x}_{u,m})$\;
     $\sigma_1$, $\sigma_2$ \gets~ $y_{l,l} - y_{u,l}$, $y_{l,m} - y_{u,m}$\;
 
-    \eIf{$|\sigma_1 - \sigma_2| > \epsilon$}{ \label{pcode:inter:test}
+    \eIf{$|\sigma_1 - \sigma_2|$ $>$ $\epsilon$}{ \label{pcode:inter:test}
         \eIf{\ell($\mathbf{s}_2$) $=$ $1$}{
             $\mathbf{x}_n$ \gets~ $\mathbf{s}_1 \cup \mathbf{s}_2$\;
         }{
@@ -277,7 +590,7 @@ Uporabljeni bodo naslednji algoritmi:
     \Fn{\rdg{$f$, $\mathbf{b}_{l}$, $\mathbf{b}_{u}$, $\alpha$, $\epsilon_n$, $\epsilon_s$}}{
     $\mathbf{x}_r$, $\mathbf{a}$, $\mathbf{G}$ \gets~ [1], [], []\;
     $\mathbf{x}_{l,l}$, $y_{l,l}$ \gets~ $\mathbf{b}_{l}$, $f(\mathbf{b}_{l})$\;
-    $\mathbf{s}_1$, $\mathbf{s}_2$ \gets~ [1], [\lFor*{$i=2$ \KwTo \ell($\mathbf{b}_{l}$)}{$i$}]\;
+    $\mathbf{s}_1$, $\mathbf{s}_2$ \gets~ [1], [\lFor*{$i$ \gets $2$ \KwTo \ell($\mathbf{b}_{l}$)}{$i$}]\;
 
     \While{\ell($\mathbf{x}_r$) $>$ $0$}{
         $\mathbf{x}_r$ \gets~ []\;
@@ -331,14 +644,14 @@ Uporabljeni bodo naslednji algoritmi:
     \Fn{\erdg{$f$, $\mathbf{b}_{l}$, $\mathbf{b}_{u}$, $\alpha$, $k$}}{
     $\mathbf{a}$, $\mathbf{G}$ \gets~ [], []\;
     $\mathbf{x}_{l,l}$, $y_{l,l}$ \gets~ $\mathbf{b}_{l}$, $f(\mathbf{b}_{l})$\;
-    $\mathbf{s}_1$, $\mathbf{s}_2$ \gets~ [1], [\lFor*{$i=2$ \KwTo \ell($\mathbf{b}_{l}$)}{$i$}]\;
+    $\mathbf{s}_1$, $\mathbf{s}_2$ \gets~ [1], [\lFor*{$i$ \gets $2$ \KwTo \ell($\mathbf{b}_{l}$)}{$i$}]\;
     \While{\ell($\mathbf{s}_2$) > $0$}{
         $\mathbf{x}_{u,l}$ \gets~ $\mathbf{x}_{l,l}$\;
         $\mathbf{x}_{u,l}$[$\mathbf{s}_1$] \gets~ $\mathbf{b}_{l}$[$\mathbf{s}_1$]\;
         $y_{u,l}$ \gets~ $f(\mathbf{x}_{u,l})$\;
         $\mathbf{s}^*$ \gets~ \Inter{$f$, $\mathbf{x}_{l, l}$, $\mathbf{x}_{u,l}$, $\mathbf{s}_1$, $\mathbf{x}_2$, [$y_{l,l}$, $-y_{u,l}$, $\infty$, $\infty$]}\tcp*[f]{Algoritem~\ref{pcode:erdg:interact}}\;
-        \eIf{\ell($\mathbf{s}^*$) = \ell($\mathbf{s}_1$)}{
-            \eIf{\ell($\mathbf{s}_1$) = $1$}{
+        \eIf{\ell($\mathbf{s}^*$) $=$ \ell($\mathbf{s}_1$)}{
+            \eIf{\ell($\mathbf{s}_1$) $=$ $1$}{
                 $\mathbf{a}$ \gets~ $\mathbf{a} \cup \mathbf{s}_1$[:$1$]\;
             }{
                 \app{$\mathbf{G}$, $\mathbf{s}_1$}\;
@@ -349,11 +662,11 @@ Uporabljeni bodo naslednji algoritmi:
             $\mathbf{s}_1$ \gets~ $\mathbf{s}^*$\;
             $\mathbf{s}_2$ \gets~ [\lForEach*{$e$ in $\mathbf{s}_2$}{\lIf*{$e$ not in $\mathbf{s}_1$}{$e$}}]\;
         }
-        \If{\ell($\mathbf{s}_2$) = $0$}{
-            \uIf{\ell($\mathbf{s}_1$) > $1$}{
+        \If{\ell($\mathbf{s}_2$) $=$ $0$}{
+            \uIf{\ell($\mathbf{s}_1$) $>$ $1$}{
                 \app{$\mathbf{G}$, $\mathbf{s}_1$}\;
             }
-            \ElseIf{\ell($\mathbf{s}_1$) = $1$}{
+            \ElseIf{\ell($\mathbf{s}_1$) $=$ $1$}{
                 $\mathbf{a}$ \gets~ $\mathbf{a} \cup \mathbf{s}_1$\;
             }
         }
@@ -384,14 +697,14 @@ Uporabljeni bodo naslednji algoritmi:
         }
     }
     \If{$s$}{
-        \eIf{\ell($\mathbf{s}_2$) = $1$}{
+        \eIf{\ell($\mathbf{s}_2$) $=$ $1$}{
             $\mathbf{s}$ \gets~ $\mathbf{s}_1 \cup \mathbf{s}_2$\;
         }{
             $k$ \gets~ \floor{\ell($\mathbf{s}_2$) / $2$}\;
             $\mathbf{g}_1$, $\mathbf{g}_2$ \gets~ $\mathbf{s}_2$[:$k$], $\mathbf{s}_2$[$k$:]\;
             $\mathbf{x}_1$, $\mathbf{y}_n$ \gets~ \Inter{$f$, $\mathbf{b}_{l}$, $\mathbf{b}_{u}$, $\mathbf{x}_{l,l}$, $\mathbf{x}_{u,l}$, $\mathbf{s}_1$, $\mathbf{g}_1$, [$\mathbf{y}$[1], $\mathbf{y}$[2], $\infty$, $\infty$]}\tcp*[f]{Algoritem~\ref{pcode:erdg:interact}}\;
             \eIf{$\sum{\mathbf{y}} - \sum{\mathbf{y}_n}$ $\neq$ $0$}{
-                \eIf{\ell($\mathbf{x}_1$) = \ell($\mathbf{s}_1$)}{
+                \eIf{\ell($\mathbf{x}_1$) $=$ \ell($\mathbf{s}_1$)}{
                     $\mathbf{x}_2$, \_ \gets~ \Inter{$f$, $\mathbf{b}_{l}$, $\mathbf{b}_{u}$, $\mathbf{x}_{l,l}$, $\mathbf{x}_{u,l}$, $\mathbf{s}_1$, $\mathbf{g}_2$, $\mathbf{y}$}\tcp*[f]{Algoritem~\ref{pcode:erdg:interact}}\;
                 }{
                     $\mathbf{x}_2$, \_ \gets~ \Inter{$f$, $\mathbf{b}_{l}$, $\mathbf{b}_{u}$, $\mathbf{x}_{l,l}$, $\mathbf{x}_{u,l}$, $\mathbf{s}_1$, $\mathbf{g}_2$, [$\mathbf{y}$[1], $\mathbf{y}$[2], $\infty$, $\infty$]}\tcp*[f]{Algoritem~\ref{pcode:erdg:interact}}\;
@@ -422,14 +735,14 @@ Uporabljeni bodo naslednji algoritmi:
     $\epsilon$ \gets~ $\alpha \cdot \min \left( |f(\mathbf{x}_1)|, \cdots, \left|f \left(\mathbf{x}_{\frac{k}{4}} \right) \right| \right)$\;
     $\mathbf{a}$, $\mathbf{G}$ \gets~ [], []\;
     $\mathbf{x}_{l,l}$, $y_{l,l}$ \gets~ $\mathbf{b}_{l}$, $f(\mathbf{b}_{u})$\;
-    $\mathbf{s}_1$, $\mathbf{s}_2$ \gets~ [1], [\lFor*{$i=2$ \KwTo \ell($\mathbf{b}_{l}$)}{$i$}]\;
-    \While{\ell($\mathbf{s}_2$) > 0}{
+    $\mathbf{s}_1$, $\mathbf{s}_2$ \gets~ [1], [\lFor*{$i$ \gets $2$ \KwTo \ell($\mathbf{b}_{l}$)}{$i$}]\;
+    \While{\ell($\mathbf{s}_2$) $>$ $0$}{
         $\mathbf{x}_{u,l}$ \gets~ $\mathbf{x}_{l,l}$\;
         $\mathbf{x}_{u,l}$[$\mathbf{s}_1$] \gets~ $\mathbf{b}_{u}$[$\mathbf{s}_1$]\;
         $y_{u,l}$ \gets~ $f(\mathbf{x}_{u,l})$\;
         $\mathbf{s}^*$ \gets~ \group{$f$, $\mathbf{x}_{l, l}$, $\mathbf{x}_{u,l}$, $\mathbf{s}_1$, $\mathbf{s}_2$, $\epsilon$, $y_{l,l} - y_{u,l}$}\tcp*[f]{Algoritem~\ref{pcode:trdg:group}}\;
-        \eIf{\ell($\mathbf{s}^*$) = \ell($\mathbf{s}_1$)}{
-            \eIf{\ell($\mathbf{s}_1$) = $1$}{
+        \eIf{\ell($\mathbf{s}^*$) $=$ \ell($\mathbf{s}_1$)}{
+            \eIf{\ell($\mathbf{s}_1$) $=$ $1$}{
                 $\mathbf{a}$ \gets~ $\mathbf{a} \cup \mathbf{s}_1$[:$1$]\;
             }{
                 \app{$\mathbf{G}$, $\mathbf{s}_1$}\;
@@ -441,10 +754,10 @@ Uporabljeni bodo naslednji algoritmi:
             $\mathbf{s}_2$ \gets~ [\lForEach*{$e$ in $\mathbf{s}_2$}{\lIf*{$e$ not in $\mathbf{s}_1$}{$e$}}]\;
         }
         \If{\ell($\mathbf{s}_2$) = $0$}{
-            \uIf{\ell($\mathbf{s}_1$) > 1}{
+            \uIf{\ell($\mathbf{s}_1$) $>$ $1$}{
                 \app{$\mathbf{G}$, $\mathbf{s}_1$}\;
             }
-            \ElseIf{\ell($\mathbf{s}_1$) = $1$}{
+            \ElseIf{\ell($\mathbf{s}_1$) $=$ $1$}{
                 $\mathbf{a}$ \gets~ $\mathbf{a} \cup \mathbf{s}_1$\;
             }
         }
@@ -464,19 +777,19 @@ Uporabljeni bodo naslednji algoritmi:
     \SetKwFunction{Inter}{Interact3}
 
 
-	\Fn{\Inter{$f$, $\mathbf{b}_{l}$, $\mathbf{b}_{u}$, $\mathbf{x}_{l,l}$, $\mathbf{x}_{u,l}$, $\mathbf{s}_2$, $\epsilon$, $\delta$}}{
-    $\mathbf{x}_{l,m}$, $\mathbf{x}_{u,m}$ \gets~ $\mathbf{x}_{l,l}$, $\mathbf{x}_{u,l}$\;
-    $\mathbf{x}_{l,m}$, $\mathbf{x}_{u,m}$ \gets~ $\frac{\mathbf{b}_{l} + \mathbf{b}_{u}}{2}$[$\mathbf{s}_2$], $\frac{\mathbf{b}_{l} + \mathbf{b}_{u}}{2}$[$\mathbf{s}_2$]\;
-    $y_{l,m}$, $y_{u,m}$ \gets~ $f(\mathbf{x}_{l,m})$, $f(\mathbf{x}_{u,m})$\;
-    \eIf{$|\delta - (y_{l,m} - y_{u,m})|$ > $\epsilon$}{
-        \Return{\textbf{True}}\;
-    }{
-        \Return{\textbf{False}}\;
-    }
+    \Fn{\Inter{$f$, $\mathbf{b}_{l}$, $\mathbf{b}_{u}$, $\mathbf{x}_{l,l}$, $\mathbf{x}_{u,l}$, $\mathbf{s}_2$, $\epsilon$, $\delta$}}{
+        $\mathbf{x}_{l,m}$, $\mathbf{x}_{u,m}$ \gets~ $\mathbf{x}_{l,l}$, $\mathbf{x}_{u,l}$\;
+        $\mathbf{x}_{l,m}$, $\mathbf{x}_{u,m}$ \gets~ $\frac{\mathbf{b}_{l} + \mathbf{b}_{u}}{2}$[$\mathbf{s}_2$], $\frac{\mathbf{b}_{l} + \mathbf{b}_{u}}{2}$[$\mathbf{s}_2$]\;
+        $y_{l,m}$, $y_{u,m}$ \gets~ $f(\mathbf{x}_{l,m})$, $f(\mathbf{x}_{u,m})$\;
+        \eIf{$|\delta - (y_{l,m} - y_{u,m})|$ $>$ $\epsilon$}{
+            \Return{\textbf{True}}\;
+        }{
+            \Return{\textbf{False}}\;
+        }
     }
 
-	\caption{Funkcija \texttt{Interact3} za detekcijo interakcije med komponentami.}
-	\label{pcode:trdg:interact}
+    \caption{Funkcija \texttt{Interact3} za detekcijo interakcije med komponentami.}
+    \label{pcode:trdg:interact}
 \end{algorithm}
 
 \begin{algorithm}
@@ -488,11 +801,11 @@ Uporabljeni bodo naslednji algoritmi:
 
 	\Fn{\group{$f$, $\mathbf{b}_{l}$, $\mathbf{b}_{u}$, $\mathbf{x}_{l,l}$, $\mathbf{x}_{u,l}$, $\mathbf{s}_1$, $\mathbf{s}_2$, $\epsilon$, $\delta$}}{
     $\mathbf{s}^*$ \gets~ $\mathbf{s}_1$\;
-    \If(\tcc*[f]{Algoritem~\ref{pcode:trdg:interact}}){\Inter{$f$, $\mathbf{b}_{l}$, $\mathbf{b}_{u}$, $\mathbf{x}_{l,l}$, $\mathbf{x}_{u,l}$, $\mathbf{s}_2$, $\epsilon$, $\delta$}}{
-        \uIf{\ell($\mathbf{s}_2$) = $1$}{
+    \If(\tcp*[f]{Algoritem~\ref{pcode:trdg:interact}}){\Inter{$f$, $\mathbf{b}_{l}$, $\mathbf{b}_{u}$, $\mathbf{x}_{l,l}$, $\mathbf{x}_{u,l}$, $\mathbf{s}_2$, $\epsilon$, $\delta$}}{
+        \uIf{\ell($\mathbf{s}_2$) $=$ $1$}{
             $\mathbf{s}^*$ \gets~ $\mathbf{s}_1 \cup \mathbf{s}_2$\;
         }
-        \uElseIf{\ell($\mathbf{s}_2$) = $2$}{
+        \uElseIf{\ell($\mathbf{s}_2$) $=$ $2$}{
             $\mathbf{g}_1$, $\mathbf{g}_2$ \gets~ $\mathbf{s}_2$[:$1$], $\mathbf{s}_2$[$1$:]\;
             $\mathbf{x}_1$ \gets~ \group{$f$, $\mathbf{b}_{l}$, $\mathbf{b}_{u}$, $\mathbf{x}_{l,l}$, $\mathbf{x}_{u,l}$, $\mathbf{s}_1$, $\mathbf{g}_1$, $\epsilon$, $\delta$}\tcp*[f]{Algoritem~\ref{pcode:trdg:group}}\;
             $\mathbf{x}_2$ \gets~ \group{$f$, $\mathbf{b}_{l}$, $\mathbf{b}_{u}$, $\mathbf{x}_{l,l}$, $\mathbf{x}_{u,l}$, $\mathbf{s}_1$, $\mathbf{g}_2$, $\epsilon$, $\delta$}\tcp*[f]{Algoritem~\ref{pcode:trdg:group}}\;
@@ -517,67 +830,51 @@ Uporabljeni bodo naslednji algoritmi:
 % TODO opiši algoritem TRDG
 % TODO dodaj primerjavo med ERDG--TRDG
 
-\section{Omejitve sorodnih del}
-
-% TODO
-
-\chapter{Koevolucijski algoritem rojev delcev}\label{chap:algo}
-
-V trenutnem teku razvoja raziskav na področju strojnega učenja in podobnih domen, je opaziti različne tehnike zmanjševanja težavnosti kompleksnosti problema.
-Uporabljena sta dva glavna pristopa.
-Prva tehnika je ekstrakcija ključnih podatkov iz velike količine podatkov.
-Druga tehnika je redukcija dimenzionalnosti vhodnih podatkov oziroma iskanje pomembnih pomembnih značilnic v podatkih, ki je ena izmed bolj uporabljenih tehnik redukcije kompleksnosti učenja napovedovalnega modela. 
-Učni modeli z veliko dimenzionalnostjo rabijo veliko časa za učenje, zaradi velikega iskalnega prostora optimalnih parametrov napovedovalnega modela, ter v mnogih primerih ne vsebujejo najbolj kvalitetnega znanja o problemu, za katerega so bili učeni~\cite{bib:si_machine_learning_bad_model}.
-
-\begin{equation}
-    \min_{\mathbf{x}}{f(\mathbf{x})} = \left( \min_{\mathbf{x_1}}{f(x_1,\cdots)}, \cdots , \min_{\mathbf{x_m}}{f(\cdots, x_m)} \right)
-\end{equation}
-
-% TODO
 
 \begin{algorithm}
     \DontPrintSemicolon
-	\SetKwFunction{ccalgo}{CCPSO}
-	\SetKwFunction{run}{Generacija}
-	\SetKwFunction{Decom}{Dekompozicija}
-	\SetKwFunction{appbetter}{Posodobi}
+    \SetKwFunction{ccalgo}{CCPSO}
+    \SetKwFunction{run}{Generacija}
+    \SetKwFunction{Decom}{Dekompozicija}
+    \SetKwFunction{appbetter}{Posodobi}
 
     \Fn{\ccalgo{$f$, $\mathbf{b}_{l}$, $\mathbf{b}_{u}$}}{
-	$\mathbf{g}$ \gets~ \Decom{$f$, $\mathbf{b}_{l}$, $\mathbf{b}_{u}$}\;
-	$\mathbf{a}$ \gets~ [\lForEach*{$g$ in $\mathbf{g}$}{Inicializirja začetno populacijo algoritma $a$ na podlagi grupe $g$}]\;
+    $\mathbf{g}$ \gets~ \Decom{$f$, $\mathbf{b}_{l}$, $\mathbf{b}_{u}$}\;
+    $\mathbf{a}$ \gets~ [\lForEach*{$g$ in $\mathbf{g}$}{Inicializirja začetno populacijo algoritma $a$ na podlagi grupe $g$}]\;
     $\mathbf{X^*}$, $\mathbf{y}^*$ \gets~ Pridobi najboljše posameznike vsake grupe\;
-	%$\mathbf{x^*}$, $y^*$ \gets~ Get best individual and fitness value from $\mathbf{X^*}$\;
-	$\mathbf{x^*}$, $y^*$ \gets~ Najdi najboljšega posameznika iz $\mathbf{X^*}$\;
-	\While{$\neg$ zaustavitveni pogoj zadovoljen}{
-		\ForEach{$i$, $a$ in $\mathbf{a}$}{
-			$\mathbf{x_n^*}$, $y_n^*$ \gets~ \run{$a$}\;
-			\If{$y_n^* < \mathbf{y^*}[i]$}{
-				$\mathbf{X^*}[i]$, $\mathbf{y^*}[i]$ \gets~ $\mathbf{x_n^*}$, $y_n^*$\;
-				\If{$y_n^* < y^*$}{
+    $\mathbf{x^*}$, $y^*$ \gets~ Najdi najboljšega posameznika iz $\mathbf{X^*}$\;
+    \While{$\neg$ zaustavitveni pogoj zadovoljen}{
+        \ForEach{$i$, $a$ in $\mathbf{a}$}{
+            $\mathbf{x_n^*}$, $y_n^*$ \gets~ \run{$a$}\;
+            \If{$y_n^* < \mathbf{y^*}[i]$}{
+                $\mathbf{X^*}[i]$, $\mathbf{y^*}[i]$ \gets~ $\mathbf{x_n^*}$, $y_n^*$\;
+                \If{$y_n^* < y^*$}{
                     $\mathbf{x^*}$, $y^*$ \gets~ $\mathbf{x_n^*}$, $y_n^*$
                 }
-			}
-		}
-        \If{Katera od grup našla novo lokalno najboljšo rešitev}{
-		    \ForEach{$g$ in $\mathbf{g}$}{
-                $\mathbf{x_n}[g]$ \gets~ $\mathbf{X^*}[g]$
-            }
-		    $y_n$ \gets~ $f(\mathbf{x_n})$\;
-		    \If{$y_n < y^*$}{
-                $\mathbf{x^*}$, $y^*$ = $\mathbf{x_n}$, $y_n$
             }
         }
-	}
-	\Return{$\mathbf{x^*}$, $y^*$}\;
+        \If{Katera od grup našla novo lokalno najboljšo rešitev}{
+            \ForEach{$g$ in $\mathbf{g}$}{
+                $\mathbf{x_n}[g]$ \gets~ $\mathbf{X^*}[g]$
+            }
+            $y_n$ \gets~ $f(\mathbf{x_n})$\;
+            \If{$y_n < y^*$}{
+                $\mathbf{x^*}$, $y^*$ \gets~ $\mathbf{x_n}$, $y_n$
+            }
+        }
+    }
+    \Return{$\mathbf{x^*}$, $y^*$}\;
     }
 
-	\caption{Predlagan koevolucijski algoritem.}
-	\label{pcode:ccalgo}
+    \caption{Predlagan koevolucijski algoritem.}
+    \label{pcode:ccalgo}
 \end{algorithm}
 
 \chapter{Eksperiment}\label{chap:exp}
 
 % TODO
+
+\section{Primerjava uporabe metod RDG}
 
 \begin{table}[t]
     \renewcommand{\arraystretch}{1.3}
@@ -624,11 +921,6 @@ Učni modeli z veliko dimenzionalnostjo rabijo veliko časa za učenje, zaradi v
     \end{tabular}
 \end{table}
 
-
-% TODO
-
-\section{Primerjava uporabe metod RDG}
-
 % TODO
 
 \begin{table}[t]
@@ -638,26 +930,22 @@ Učni modeli z veliko dimenzionalnostjo rabijo veliko časa za učenje, zaradi v
     \begin{tabular}{|c|c|}
         \hline
         Algoritem & Vrednosti parametrov \\\hline
-        RDG & $\alpha = 1\mathrm{e}{-12}$, $k = 10$ \\\hline
-        RDG2 & $\alpha = 1\mathrm{e}{-12}$ \\\hline
-        RDG3 & $\alpha = 1\mathrm{e}{-12}$, $\epsilon_n = 50$, $\epsilon_s = 100$ \\\hline
-        ERDG & $\alpha = 1\mathrm{e}{-12}$ \\\hline
-        TRDG & $\alpha = 1\mathrm{e}{-12}$, $k = 10$ \\\hline
+        RDG  & $\alpha = 1 \times 10^{-12}$, $k = 10$ \\\hline
+        RDG2 & $\alpha = 1 \times 10^{-12}$ \\\hline
+        RDG3 & $\alpha = 1 \times 10^{-12}$, $\epsilon_n = 50$, $\epsilon_s = 100$ \\\hline
+        ERDG & $\alpha = 1 \times 10^{-12}$ \\\hline
+        TRDG & $\alpha = 1 \times 10^{-12}$, $k = 10$ \\\hline
     \end{tabular}
 \end{table}
 
 % TODO dodaj podatek zakaj si uporabil take vrednosti parametrov
 % Večina vrednosti parametrov sem pridobil iz literature o teh algorithmih, saj so pri vsaki raziskavi izvedli tudi analizo parametrov za naš izbrani problem CEC2013
 
-\subsection{Analiza rezultatov}
+\section{Primerjava PSO algoritmov}
 
 % TODO
 
-\section{Primerjava PSO algoritmov z metodami RDG}
-
-% TODO
-
-\subsection{Analiza rezultatov}
+\section{Kooperativni koevolucijski algoritem roja delcev}
 
 % TODO
 
