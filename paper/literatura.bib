@@ -18,7 +18,6 @@
   isbn      = {9781450356183},
   publisher = {Association for Computing Machinery},
   address   = {New York, NY, USA},
-  url       = {https://doi.org/10.1145/3205455.3205483},
   doi       = {10.1145/3205455.3205483},
   abstract  = {Problem decomposition plays an essential role in the success of cooperative co-evolution (CC), when used for solving large-scale optimization problems. The recently proposed recursive differential grouping (RDG) method has been shown to be very efficient, especially in terms of time complexity. However, it requires an appropriate parameter setting to estimate a threshold value in order to determine if two subsets of decision variables interact or not. Furthermore, using one global threshold value may be insufficient to identify variable interactions in components with different contribution to the fitness value. Inspired by the different grouping 2 (DG2) method, in this paper, we adaptively estimates a threshold value based on computational round-off errors for RDG. We derive an upper bound of the round-off errors, which is shown to be sufficient when identifying variable interactions across a wide range of large-scale benchmark problems. Comprehensive numerical experimental results showed that the proposed RDG2 method achieved higher decomposition accuracy than RDG and DG2. When embedded into a CC framework, it achieved statistically equal or significantly better solution quality than RDG and DG2, when used to solve the benchmark problems.},
   booktitle = {Proceedings of the Genetic and Evolutionary Computation Conference},
@@ -156,7 +155,6 @@
   isbn      = {9781450334723},
   publisher = {Association for Computing Machinery},
   address   = {New York, NY, USA},
-  url       = {https://doi.org/10.1145/2739480.2754666},
   doi       = {10.1145/2739480.2754666},
   abstract  = {Cooperative co-evolution is a framework that can be used to effectively solve large scale optimization problems. This approach employs a divide and conquer strategy, which decomposes the problem into sub-components that are optimized separately. However, solution quality relies heavily on the decomposition method used. Ideally, the interacting decision variables should be assigned to the same sub-component and the interdependency between sub-components should be kept to a minimum. Differential grouping, a recently proposed method, has high decomposition accuracy across a suite of benchmark functions. However, we show that differential grouping can only identify decision variables that interact directly. Subsequently, we propose an extension of differential grouping that is able to correctly identify decision variables that also interact indirectly. Empirical studies show that our extended differential grouping method achieves perfect decomposition on all of the benchmark functions investigated. Significantly, when our decomposition method is embedded in the cooperative co-evolution framework, it achieves comparable or better solution quality than the differential grouping method.},
   booktitle = {Proceedings of the 2015 Annual Conference on Genetic and Evolutionary Computation},
@@ -177,7 +175,6 @@
   volume     = {42},
   number     = {2},
   issn       = {0098-3500},
-  url        = {https://doi.org/10.1145/2791291},
   doi        = {10.1145/2791291},
   abstract   = {This article proposes a competitive divide-and-conquer algorithm for solving large-scale black-box optimization problems for which there are thousands of decision variables and the algebraic models of the problems are unavailable. We focus on problems that are partially additively separable, since this type of problem can be further decomposed into a number of smaller independent subproblems. The proposed algorithm addresses two important issues in solving large-scale black-box optimization: (1) the identification of the independent subproblems without explicitly knowing the formula of the objective function and (2) the optimization of the identified black-box subproblems. First, a Global Differential Grouping (GDG) method is proposed to identify the independent subproblems. Then, a variant of the Covariance Matrix Adaptation Evolution Strategy (CMA-ES) is adopted to solve the subproblems resulting from its rotation invariance property. GDG and CMA-ES work together under the cooperative co-evolution framework. The resultant algorithm, named CC-GDG-CMAES, is then evaluated on the CEC’2010 large-scale global optimization (LSGO) benchmark functions, which have a thousand decision variables and black-box objective functions. The experimental results show that, on most test functions evaluated in this study, GDG manages to obtain an ideal partition of the index set of the decision variables, and CC-GDG-CMAES outperforms the state-of-the-art results. Moreover, the competitive performance of the well-known CMA-ES is extended from low-dimensional to high-dimensional black-box problems.},
   journal    = {ACM Trans. Math. Softw.},
@@ -248,7 +245,6 @@
   year     = {2017},
   issn     = {1568-4946},
   doi      = {10.1016/j.asoc.2017.02.008},
-  url      = {http://www.sciencedirect.com/science/article/pii/S1568494617300765},
   author   = {Hsing-Chih Tsai},
   keywords = {Particle swarm optimization, Unified particle swarm, Parameter selection},
   abstract = {This paper suggests integrating a unification factor into particle swarm optimization (PSO) to balance the effects of cognitive and social terms. The resultant unified particle swarm (UPS) moves particles toward the center of its personal best and the global best. This improves on PSO, which moves particles far beyond the center. Widely used benchmark functions and four types of experiments demonstrate that the proposed UPS uses slightly more computational time than PSO to attain significantly higher efficiency and, usually, better solution effectiveness and consistency than PSO. Robust performance was further demonstrated by the significantly higher efficiency and better solution effectiveness and stability achieved by the UPS, as compared to the PSO and its variants. Outstandingly, convergence speeds for the proposed UPS were very good on the 13 benchmark functions examined in experiment 1, demonstrating the correct movement of UPS particles toward convergence.}
@@ -379,7 +375,7 @@
   month      = {dec},
   pages      = {1–30},
   numpages   = {30},
-  url        = {https://dl.acm.org/doi/10.5555/1248547.1248548}
+  doi        = {10.5555/1248547.1248548}
 }
 
 @article{stat:art:derrac,
@@ -407,8 +403,6 @@
   year      = {1937},
   publisher = {Taylor & Francis},
   doi       = {10.1080/01621459.1937.10503522},
-  url       = {https://www.tandfonline.com/doi/abs/10.1080/01621459.1937.10503522},
-  eprint    = {https://www.tandfonline.com/doi/pdf/10.1080/01621459.1937.10503522}
 }
 
 @phdthesis{stat:met:Nemenyi,
@@ -436,7 +430,6 @@
   abstract  = {The comparison of two treatments generally falls into one of the following two categories: (a) we may have a number of replications for each of the two treatments, which are unpaired, or (b) we may have a number of paired comparisons leading to a series of differences, some of which may be positive and some negative. The appropriate methods for testing the significance of the differences of the means in these two cases are described in most of the textbooks on statistical methods.},
   isbn      = {978-1-4612-4380-9},
   doi       = {10.1007/978-1-4612-4380-9_16},
-  url       = {https://doi.org/10.1007/978-1-4612-4380-9_16}
 }
   
 @article{met:nonlinearity,
@@ -451,8 +444,6 @@
   abstract = {{This paper presents the linkage identification by non-monotonicity detection (LIMD) procedure and its extension for overlapping functions by introducing the tightness detection (TD) procedure. The LIMD identifies linkage groups directly by performing order-2 simultaneous perturbations on a pair of loci to detect monotonicity/non-monotonicity of fitness changes. The LIMD can identify linkage groups with at most order of k when it is applied to O(2k) strings. The TD procedure calculates tightness of linkage between a pair of loci based on the linkage groups obtained by the LIMD. By removing loci with weak tightness from linkage groups, correct linkage groups are obtained for overlapping functions, which were considered difficult for linkage identification procedures.}},
   issn     = {1063-6560},
   doi      = {10.1162/evco.1999.7.4.377},
-  url      = {https://doi.org/10.1162/evco.1999.7.4.377},
-  eprint   = {https://direct.mit.edu/evco/article-pdf/7/4/377/1493138/evco.1999.7.4.377.pdf}
 }
 
 @article{api:NiaPy,
@@ -464,7 +455,6 @@
   issue   = {23},
   issn    = {2475-9066},
   doi     = {10.21105/joss.00613},
-  url     = {https://doi.org/10.21105/joss.00613}
 }
 
 @article{api:scipy,
@@ -497,8 +487,6 @@
   year      = {2008},
   publisher = {Taylor & Francis},
   doi       = {10.1080/03052150802294581},
-  url       = {https://doi.org/10.1080/03052150802294581},
-  eprint    = {https://doi.org/10.1080/03052150802294581}
 }
 
 @article{bib:lsgo:engineering,
@@ -541,8 +529,6 @@
   pages    = {1239-1276},
   year     = {2007},
   doi      = {10.1137/040610830},
-  url      = {https://doi.org/10.1137/040610830},
-  eprint   = {https://doi.org/10.1137/040610830},
   abstract = { In previous works of the author and others, max-plus methods have been explored for the solution of first-order, nonlinear Hamilton–Jacobi–Bellman partial differential equations (HJB PDEs) and corresponding nonlinear control problems. These methods exploit the max-plus linearity of the associated semigroups. In particular, although the problems are nonlinear, the semigroups are linear in the max-plus sense. These methods have been used successfully to compute solutions. Although they provide certain computational-speed advantages, they still generally suffer from the curse of dimensionality. Here we consider HJB PDEs in which the Hamiltonian takes the form of a (pointwise) maximum of linear/quadratic forms. The approach to the solution will be rather general, but in order to ground the work, we consider only constituent Hamiltonians corresponding to long-run average-cost-per-unit-time optimal control problems for the development. We obtain a numerical method not subject to the curse of dimensionality. The method is based on construction of the dual-space semigroup corresponding to the HJB PDE. This dual-space semigroup is constructed from the dual-space semigroups corresponding to the constituent linear/quadratic Hamiltonians. The dual-space semigroup is particularly useful due to its form as a max-plus integral operator with a kernel obtained from the originating semigroup. One considers repeated application of the dual-space semigroup to obtain the solution. }
 }
 
@@ -570,7 +556,6 @@
   volume     = {59},
   number     = {6},
   issn       = {0001-0782},
-  url        = {https://doi.org/10.1145/2842602},
   doi        = {10.1145/2842602},
   abstract   = {Randomization offers new benefits for large-scale linear algebra computations.},
   journal    = {Commun. ACM},
@@ -629,8 +614,6 @@
   pages    = {223-311},
   year     = {2018},
   doi      = {10.1137/16M1080173},
-  url      = {https://doi.org/10.1137/16M1080173},
-  eprint   = {https://doi.org/10.1137/16M1080173},
   abstract = { This paper provides a review and commentary on the past, present, and future of numerical optimization algorithms in the context of machine learning applications. Through case studies on text classification and the training of deep neural networks, we discuss how optimization problems arise in machine learning and what makes them challenging. A major theme of our study is that large-scale machine learning represents a distinctive setting in which the stochastic gradient (SG) method has traditionally played a central role while conventional gradient-based nonlinear optimization techniques typically falter. Based on this viewpoint, we present a comprehensive theory of a straightforward, yet versatile SG algorithm, discuss its practical behavior, and highlight opportunities for designing algorithms with improved performance. This leads to a discussion about the next generation of optimization methods for large-scale machine learning, including an investigation of two main streams of research on techniques that diminish noise in the stochastic directions and methods that make use of second-order derivative approximations.}
 }
 
@@ -684,7 +667,6 @@
   pages     = {187--219},
   isbn      = {978-0-387-27705-9},
   doi       = {10.1007/0-387-27705-6_6},
-  url       = {https://doi.org/10.1007/0-387-27705-6_6}
 }
 
 @misc{bib:si_principles,
@@ -694,7 +676,6 @@
   eprint        = {adap-org/9306002},
   archiveprefix = {arXiv},
   primaryclass  = {adap-org},
-  url           = {https://arxiv.org/pdf/adap-org/9306002}
 }
 
 @book{bib:computational_intelligence,
@@ -703,7 +684,6 @@
   year      = {2011},
   publisher = {Springer},
   doi       = {10.1007/978-3-030-42227-1},
-  url       = {https://doi.org/10.1007/978-3-030-42227-1},
   isbn      = {978-3-030-42226-4}
 }
 
@@ -714,7 +694,7 @@
   pages    = {407-428},
   year     = {2015},
   issn     = {0020-0255},
-  doi      = {https://doi.org/10.1016/j.ins.2014.10.042},
+  doi      = {10.1016/j.ins.2014.10.042},
   url      = {https://www.sciencedirect.com/science/article/pii/S0020025514010251},
   author   = {Sedigheh Mahdavi and Mohammad Ebrahim Shiri and Shahryar Rahnamayan},
   keywords = {Large-Scale Global Optimization (LSGO), Evolutionary Algorithms (EAs), Cooperative Coevolution (CC), Problem decomposition, High-dimension, Metaheuristic},

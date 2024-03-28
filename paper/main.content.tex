@@ -71,7 +71,7 @@ To poglavje vključuje razpravo o uporabljenih metodah za modifikacijo hibridneg
 Poglavje vsebuje tudi priporočila za izbiro, nastavitev parametrov in omejitve hibridnih algoritmov PSO za probleme velikih dimenzij.
 V \ref{chap:exp}. poglavju posredujemo rezultate naših poskusov in razpravljamo o uspešnosti različnih hibridnih algoritmih PSO na problemih velikih dimenzij.
 To poglavje vključuje podrobno analizo vpliva različnih parametrov hibridnih PSO algoritmov.
-Na koncu \ref{chap:end}. poglavju podajamo povzetek naših ugotovitev, zaključkom in predlogi za prihodnje raziskave na tem področju. Verjamemo, da bo ta diplomska naloga zagotovila dragocen vpogled v uporabo algoritmov SI za optimizacijo problemov velikih dimenzij in prispevala k razvoju učinkovitejših in uspešnejših optimizacijskih tehnik.
+Na koncu v \ref{chap:end}. poglavju podajamo povzetek naših ugotovitev, z zaključkom in predlogi za prihodnje raziskave na tem področju. Verjamemo, da bo ta diplomska naloga zagotovila dragocen vpogled v uporabo algoritmov SI za optimizacijo problemov velikih dimenzij in prispevala k razvoju učinkovitejših in uspešnejših optimizacijskih tehnik.
 
 \chapter{Pregled obstoječih del}\label{chap:obsojeca.dela}
 
@@ -85,7 +85,7 @@ V tem delu se za velik problem šteje problem, ki povzroča težave z razširlji
 Natančneje, posamezen problem ciljne optimizacije je mogoče definirati na naslednji način (ob predpostavki minimizacije):
 \begin{align}
 	&\min_{\mathbf{x}^*}{f(\mathbf{x})}, \label{eq:min_opt}\\
-	&\mathbf{x} = (x_1, \cdots, x_D) \in \Omega \label{eq:min_opt_space},
+	&\mathbf{x} = (x_1, x_2, \cdots, x_D) \in \Omega \label{eq:min_opt_space},
 \end{align}
 kjer $\Omega$ predstavlja celotni iskalni prostor, ter $\mathbf{x}$ predstavlja točko znotraj $\Omega$ iskalnega prostora, kar je razvidno iz enačbe (\ref{eq:min_opt_space}).
 Funkcija $f$ predstavlja ocenitveno funkcijo, ki jo minimiziramo, kar predstavlja enačba~(\ref{eq:min_opt}).
@@ -99,13 +99,13 @@ To je povzročilo optimizacijske probleme v gradbenem inženirstvu~\cite{bib:lsg
 Fenomen eksplozije podatkov je povzročil nastanek zahtevne obsežne optimizacije v središču mnogih podatkovnih analiz in strojnega učenja~\cite{bib:lsgo_machine_learning}.
 Napredek v strojnem učenju in vzpon globokih umetnih nevronskih mrež je povzročil tudi optimizacijske težave z več kot milijardo spremenljivkami~\cite{bib:lsgo_deep_learning}.
 Te težave z optimizacijo ne rastejo samo z velikostjo linearno, ampak tudi rastejo na eksponenten način, tj. število odločitvenih spremenljivk povzročajo tudi eksponentno rast~\cite{bib:lsgo_exponential_grouth}.
-Ta hitra rast je spodbudil znanstvene raziskave na različnih področjih za izgradnjo sposobni optimizacijski algoritmi.
-Dominanca računalništva in matematike je pokazatelj pomena algoritemskih vidikov oblikovanja učinkovite metode optimizacije.
+Ta hitra rast je spodbudila znanstvene raziskave na različnih področjih za izgradnjo sposobnih optimizacijski algoritmi.
+Dominanca računalništva in matematike je pokazatelj pomena algoritemskih vidikov oblikovanja učinkovite optimizacijske metode.
 
 Razširljivost optimizacijskih algoritmov je velik izziv pri spopadanju z vedno večjim obsegom optimizacijskih problemov na številnih področjih uporabe od visokodimenzionalnega strojnega učenja do kompleksnih obsežnih inženirskih problemov.
 Področje obsežne globalne optimizacije se ukvarja z izboljšanjem razširljivosti globalnih optimizacijskih algoritmov, zlasti metahevristik, ki temeljijo na populaciji.
 Takšne metahevristike so bile uspešno uporabljene za zvezne, diskretne ali kombinatorične probleme, ki segajo od več tisoč do milijarde odločitvenih spremenljivk.
-V tem delu pregledujemo nedavne študije na področju problemov LSGO obravnavanih kot črne škatle (angl. \textit{Black Box} (BB)), da bi raziskovalcem in izvajalcem pomagali pridobiti pogled na to področje iz ptičje perspektive, se seznaniti z njegovimi glavnimi trendi in stanjem najsodobnejših algoritmih.
+V tem delu pregledujemo nedavne študije na področju problemov LSGO obravnavanih kot črne škatle (angl. \textit{Black Box} (BB)), da bi raziskovalcem in izvajalcem pomagali pridobiti pogled na to področje iz ptičje perspektive, se seznaniti z njegovimi glavnimi trendi in stanjem najsodobnejših algoritmov.
 Štirje glavni algoritemski pristopi za reševanje problemov LSGO so:
 \begin{enumerate}
 	\item populacijski algoritmi,
@@ -116,7 +116,7 @@ V tem delu pregledujemo nedavne študije na področju problemov LSGO obravnavani
 V nadaljevanju sledijo opisi najpomembnejših prispevkov za naše delo.
 Najprej sledijo dela o populacijskih algoritmih, kjer so izpostavljena prispevki različnih hibridnih algoritmov PSO.
 Večina uporabljenih hibridnih algoritmov PSO v tem delu uporablja tudi različne metode lokalnega iskanja, zato združujemo ta pristop s populacijskimi algoritmi.
-V našem delu se ne bomo uporabili memetičnih algoritmov, zato tega pristopa ne bomo opisovali.
+V našem delu se ne bomo uporabili memetskih algoritmov, zato tega pristopa ne bomo opisovali.
 To poglavje bomo zaključili z opisom del o koevoluciji in algoritmih za razčlenjevanje problema, ki sta pomembnejši metodi za naše delo.
 Zaradi pomembnosti teh dveh metod, so sorodna dala opisana v dveh različnih sledečih podpoglavjih.
 
@@ -133,7 +133,7 @@ Posamezniki v roju avtonomno nadzoruje svoje vedenje.
 Posameznik v tem primeru predstavlja možno rešitev danega problema.
 Druga prednost je samoorganizacija.
 Inteligenca se izpostavlja v obnašanju vseh posameznikov oziroma roja, ampak ne samo v vedenju enega posameznika.
-Rešitve problema niso vnaprej znane, ampak se spreminjajo v času razvoja roja oziroma izvajanja programa.
+Rešitve problema niso vnaprej znane, ampak se posodabljajo v času razvoja roja oziroma izvajanja programa.
 Samoorganizacija igra pomembno vlogo pri prilagodljivosti.
 Opazna je v spreminjajočih se okoljih.
 Posamezniki se dobro odzovejo na spremembe, prilagodijo svoje vedenje.
@@ -171,7 +171,7 @@ Ker ni samo enega samega posameznika, bistvenega za roj, je prilagodljivost pred
 \end{algorithm}
 
 Vsak algoritem SI upošteva nekatere temeljne faze.
-Slika~\ref{fig:si_algo_dp} prikazuje možno definicijo algoritmov SI, 
+Slika~\ref{fig:si_algo_dp} prikazuje definicijo algoritmov SI.
 Opazimo lahko naslednje pomembne korake algoritmov SI:
 \begin{enumerate}
     \item inicializacija posameznikov,
@@ -181,13 +181,13 @@ Opazimo lahko naslednje pomembne korake algoritmov SI:
     \item vračanje najboljšega posameznika.
 \end{enumerate}
 Te korake lahko strnemo z algoritmom~\ref{pcode:si_base}, ki bo osnova za uporabljene optimizacijske algoritme v tem delu.
-Algoritem~\ref{pcode:si_base} ima v osnovi tri parametre, ki so $f$, ki predstavlja optimizacijski problem, ki ga rešujemo, $\mathit{D}$, ki predstavlja dimenzionalnost problema $f$ in $\mathit{NP}$, ki predstavlja število posameznikov v roju $\mathbf{X}$.
+Algoritem~\ref{pcode:si_base} ima v tri parametre, ki so $f$, ki predstavlja optimizacijski problem, ki ga rešujemo, $\mathit{D}$, ki predstavlja dimenzionalnost problema $f$, in $\mathit{NP}$, ki predstavlja število posameznikov v roju $\mathbf{X}$.
 Algoritem~\ref{pcode:si_base} tekom svojega delovanja hrani podatke o posameznikih in vrednost najboljšega najdenega posameznika.
 Podatke o posameznikih hrani v spremenljivki $\mathbf{X}$, ki predstavlja matriko dimenzije $\mathit{NP} \times \mathit{D}$.
-Vrednost najboljšega posameznika se hrani v spremenljivki $\mathbf{x}^*$, ki hrani pozicijo in spremenljivki $y^*$, ki hrani vrednost ocenitvene funkcije $f$ za pozicijo $\mathbf{x}^*$.
+Vrednost najboljšega posameznika se hrani v spremenljivki $\mathbf{x}^*$, ki hrani pozicijo, in spremenljivki $y^*$, ki hrani vrednost ocenitvene funkcije $f$ za pozicijo $\mathbf{x}^*$.
 Vsi algoritmi, ki jih bomo uporabili v tem delu, se bodo v glavnem razlikovali v vrstici~\ref{pcode:si_base:update}, kjer bo vsak od algoritmov implementiral svojo specifično funkcijo posodabljanja posameznikov v roju.
 
-Prejšnje osnovne korake uporablja tudi osnovi algoritem PSO, ki je bil razvit že leta 1995.
+Prejšnje osnovne korake uporablja tudi algoritem PSO, ki je bil razvit že leta 1995.
 V raziskavi~\cite{alg:pso} so ga avtorji uporabili za optimizacijo nelinearnih funkcij in učenje nevronske mreže, kjer so s pomočjo optimizacije iskali najboljše vrednosti uteži nevronske mreže.
 Osnova za razvoj algoritma PSO je bil socialni model, ki so ga avtorji preko simulacije pripeljali do optimizacijskega algoritma.
 Socialno obnašanje, ki je pripomoglo do optimizacijskega algoritma je bilo obnašanje ptic v jati.
@@ -204,19 +204,19 @@ Vrednosti $r_1$ in $r_2$ predstavljata naključno vrednost v intervalu od $0$ do
 Naključna vrednost se izbere iz enakomerne naključne porazdelitve.
 Vrednosti $c_1$ in $c_2$ sta dve realni vrednosti in sta parametra algoritmu PSO.
 Predstavljata faktor učenja, kjer je $c_1$ faktor učenja za kognitivno komponento in $c_2$ faktor učenja za socialno komponento.
-V enačbi (\ref{eq:pso:update_agent}) lahko vidimo kako se premakne posameznik v novo pozicijo.
+V enačbi (\ref{eq:pso:update_agent}) lahko vidimo, kako se premakne posameznik v novo pozicijo.
 
-Leta 1998 sta Shii in Eberhar v delu~\cite{alg:ldwpso} posodobila osnovni algoritem PSO, tako da sta mu dodala dodaten parameter, ki je omogočal prehod algoritma iz globalnega iskanja v lokalno iskanje.
+Leta 1998 sta Shi in Eberhart v delu~\cite{alg:ldwpso} posodobila osnovni algoritem PSO, tako da sta mu dodala dodaten parameter, ki je omogočal prehod algoritma iz globalnega iskanja v lokalno iskanje.
 Algoritem sta poimenovala modificiran algoritem roja delcev, vendar je kasnejšem času doživel preimenovanje v algoritem roja delcev z utežjo za linearno zmanjševanje hitrosti (angl. \textit{Linearly Decreasing Weight Particle Swarm Optimization} (LDWPSO)).
-Avtorja sta osnovnem algoritmu dodala parameter poimenovan vztrajnostna utež ($w$).
+Avtorja sta algoritmu PSO dodala parameter, poimenovan vztrajnostna utež ($w$).
 Algoritem LDWPSO ima posodobljeno enačbo (\ref{eq:pso:velocity_update}), ki jo zapišemo kot:
 \begin{equation}
     \mathbf{v}_i(t + 1) = w \cdot \mathbf{v}_i(t) + c_1 \cdot r_1 \cdot (\mathbf{p}_i - \mathbf{x}_i(t)) + c_2 \cdot r_2 \cdot (\mathbf{x}^* - \mathbf{x}_i(t)).\label{eq:ldwpso:velocity_update} \\
 \end{equation}
 V članku sta avtorja testirala nov algoritem na testni funkciji Schaffer F6.
-Ugotovila sta da je predlagan algoritem najbolje deloval, ko je bila vrednost novega parametra v mejah med $0{,}9$ in $1{,}2$.
+Ugotovila sta, da je predlagan algoritem najbolje deloval, ko je bila vrednost novega parametra v mejah med $0{,}9$ in $1{,}2$.
 
-Po slabih devetih letih so avtorji Yu Liu in ostali v delu~\cite{alg:cpso} so posodobili algoritem LDWPSO s centralnim delcem oziroma posameznikom.
+Po slabih devetih letih so avtorji Yu Liu in ostali v delu~\cite{alg:cpso} posodobili algoritem LDWPSO s centralnim delcem.
 Algoritem so poimenovali algoritem roja delcev s centralnim delcem (angl. \textit{Center Particle Swam Optimization algoritem} (CPSO)).
 Centralni delec lahko izračunamo na podlagi naslednje enačbe:
 \begin{equation}
@@ -225,7 +225,7 @@ Centralni delec lahko izračunamo na podlagi naslednje enačbe:
 Predlagan algoritem predvideva, da se v središču vseh delcev nahaja področje, ki se ga izplača preiskati.
 Osnovi algoritem PSO in algoritem LDWPSO nimata možnosti preiskovanja prostora med delci, kar je pri uniformni porazdelitvi delcev po iskanem prostoru ključnega pomena.
 Velikokrat sta oba prejšnja algoritma delovala slabše, saj do določenega dela iskalnega prostora sploh nista prišla.
-Avtorji so zaznali da je algoritem CPSO robustnejši od algoritma LDWPSO.
+Avtorji so ugotovili, da je algoritem CPSO robustnejši od algoritma LDWPSO.
 To so zaznali na treh znanih testnih optimizacijskih funkcijah pri dimenzijah $10$, $20$ in $30$.  
 Avtorji so algoritma LDWPSO in CPSO testirali tudi na učenju nevronske mreže s $87$ utežmi, kjer so tudi potrdili robustnost predlaganega algoritma.
 
@@ -243,18 +243,18 @@ Avtorji so algoritma LDWPSO in CPSO testirali tudi na učenju nevronske mreže s
         }
     }
 
-    \caption{Cauchy mutacija pri algoritmu HPSO~\cite{alg:mpso}.}\label{pcode:hpso:addition}
+    \caption{Cauchy-eva mutacija pri algoritmu HPSO~\cite{alg:mpso}.}\label{pcode:hpso:addition}
 \end{algorithm}
 
-Zaradi hitrega napredka na področju evolucijskega programiranja in vedno večje zahtevnosti optimizacijskih problemov, avtorji v delu~\cite{alg:mpso} predstavili hibridni algoritem PSO, ki uporablja ugotovitve pridobljene na področju evolucijskega programiranja.
-Avtorji so algoritem so poimenovali hibridni algoritem roja delcev (angl. \textit{Hybrid Particle Swarm Optimization} (HPSO)).
-Avtorji so v osnovi algoritem PSO dodali dodaten korak mutacije, ki uporablja distribucijo Cauchy.
-Dodatni koraki sledijo takoj po posodabljanju delcev, ter so prikazani v algoritmu~\ref{pcode:hpso:addition}, kjer $\mathcal{U}$ predstavlja enakomerno naključno porazdelitev, $\mathbf{z}$ predstavlja vektor uteži naključne porazdelitve in $\mathit{M}$ število mutacij delca.
-S tem dodatnim korakom so hoteli izboljšati algoritem LDWPSO, saj naj bi se ta velikokrat ujel v lokalen optimum.
+Zaradi hitrega napredka na področju evolucijskega programiranja in vedno večje zahtevnosti optimizacijskih problemov, so avtorji v delu~\cite{alg:mpso} predstavili hibridni algoritem PSO, ki uporablja ugotovitve pridobljene na področju evolucijskega programiranja.
+Avtorji so algoritem poimenovali hibridni algoritem roja delcev (angl. \textit{Hybrid Particle Swarm Optimization} (HPSO)).
+Avtorji so v osnovi algoritem PSO dodali dodaten korak mutacije, ki v mutaciji uporablja Cauchy-evo naključno porazdelitev.
+Dodatni koraki sledijo takoj po posodabljanju posameznikov, ter so prikazani v algoritmu~\ref{pcode:hpso:addition}, kjer $\mathcal{U}$ predstavlja enakomerno naključno porazdelitev, $\mathbf{z}$ predstavlja vektor uteži naključne porazdelitve in $\mathit{M}$ število mutacij delca.
+S tem dodatnim korakom so hoteli izboljšati algoritem LDWPSO, saj naj bi se ta velikokrat ujel v lokalni optimum.
 To zmanjša robustnost algoritma, saj je ta ostal ujet v eni točki, ki ne predstavlja globalno najboljše rešitve.
 To je bil predvsem problem pri multimodalnih testnih problemih.
 Za testiranje predlaganega algoritma so avtorji uporabili dest znanih testnih funkcij dimenzionalnosti $20$ in $30$.
-Avtorji so ugotovili, da predlagan algoritem deluje bolje od algoritma PSO na multimodalnih problemih, vendar izboljša tudi hitrost iskanja globalno najboljše rešitve pri unimodalnih problemih.
+Avtorji so ugotovili, da predlagan algoritem deluje bolje od algoritma PSO na multimodalnih problemih, ter izboljša hitrost iskanja globalno najboljše rešitve pri unimodalnih problemih.
 
 \begin{algorithm}
     \DontPrintSemicolon
@@ -276,7 +276,7 @@ Avtorji so ugotovili, da predlagan algoritem deluje bolje od algoritma PSO na mu
 
 V delu~\cite{alg:clpso} so avtorji predstavili novo različico algoritma PSO, ki uporablja inovativno metodo učenja za posodabljanje hitrosti delca v roju.
 Za posodabljanje hitrosti enega delca se uporabljajo informacije o najboljšem položaju vseh delcev v roju.
-S tem zagotovimo raznolikost delcev v roju oziroma zagotovimo da so delci razpršeni po celotnem dopustnem iskalnem prostoru, kar zagotavlja da predlagan algoritem ne konvergira prehitro v eno točko, ki je lahko le lokalni optimum.
+S tem zagotovimo raznolikost delcev v roju oziroma zagotovimo, da so delci razpršeni po celotnem dopustnem iskalnem prostoru, kar zagotavlja da predlagan algoritem ne konvergira prehitro v eno točko, ki je lahko le lokalni optimum.
 Predlagan algoritem so avtorji poimenovali algoritem roja delcev s celovitim učenjem (angl. \textit{Comprehensive Learning Particle Swarm Optimizer} (CLPSO)).
 Algoritem CLPSO je uvedel tri glavne posodobitve algoritmom PSO.
 Prva sprememba je posodabljanje vztrajnostne uteži, kar lahko vidimo v enačbi:
@@ -289,24 +289,24 @@ Druga sprememba je posodabljanje hitrosti delca, kar je razvidno iz enačb:
     \mathbf{v}_i(t + 1)' &= w(t) \cdot \mathbf{v}_i(t) + c_1 \cdot \mathbf{r}_1 \otimes (\mathbf{p}_i - \mathbf{x}_i(t))\label{eq:clpso:update_velocity}, \\
     \mathbf{v}_i(t + 1) &= \min(\mathbf{v}_u, \max(\mathbf{v}_u, \mathbf{v}_i(t + 1)')) \label{eq:clpso:update_velocity_after},
 \end{align}
-kjer je $\mathbf{r}_1$ vektor dimenzije $\mathit{D}$ z vrednostmi naključno enakomerno porazdeljenih vrednosti med $0$ in $1$.
+kjer je $\mathbf{r}_1$ vektor dimenzije $\mathit{D}$ z naključno enakomerno porazdeljenih vrednosti med $0$ in $1$.
 V enačbi (\ref{eq:clpso:update_velocity}) lahko opazimo, da smo morali uvesti novo operacijo množenja med vektorji, ki zmnoži dva vektorja po istoležnih komponentah.
 Enačba (\ref{eq:clpso:update_velocity}) ima sedaj samo eno komponento, ki sedaj predstavlja socialno komponento, saj je najboljši položaj delca sestavljen iz različnih najboljših položajev delcev v roju $\mathbf{S}$.
 Tretja sprememba je uporaba algoritma~\ref{pcode:clpso:learning}, ki posodobi osebno najboljšo pozicijo delca.
-V algoritmu~\ref{pcode:clpso:learning}, $j$ predstavlja indeks delca, katermu posodabljamo osebno najboljšo vrednost in $\mathbf{P}$ je matrika z vsemi najboljšimi položaji delcev.
+V algoritmu~\ref{pcode:clpso:learning}, $j$ predstavlja indeks delca, kateremu posodabljamo osebno najboljšo vrednost in $\mathbf{P}$ je matrika z vsemi najboljšimi položaji delcev.
 Algoritem CLPSO so testirali na $16$ različnih testnih funkcijah za optimizacijo, kjer so uporabili dimenzionalnosti $10$ in $30$.
 Rezultate predlaganega algoritma so primerjali z osmimi optimizacijskimi algoritmi, ki so bili predelave algoritma PSO.
-Ugotovili so da ima algoritem CLPSO boljšo robustnost pri multimodalnih problemih. 
+Ugotovili so, da ima algoritem CLPSO boljšo robustnost pri multimodalnih problemih. 
 
-Avtorji so v delu~\cite{alg:ovcpso} predstavili nov hibridni algoritem PSO, ki izboljša oziroma pohitri hitrost konvergence algoritma, ter preprečuje da bi se lahko algoritem med iskanje ujel v lokalni optimum, ter tako prehitro konvertiral v rešitev, ki ni globalno najboljša rešitev problema.
-Predlagan algoritem so poimenovali algoritem roja delcev z uporabo nasprotji in omejevanjem hitrosti (angl. \textit{Opposition-Based Particle Swarm Optimization with Velocity Clamping} (OVCPSO)).
+Avtorji so v delu~\cite{alg:ovcpso} predstavili nov hibridni algoritem PSO, ki izboljša oziroma pohitri hitrost konvergence algoritma, ter preprečuje, da bi se lahko algoritem med iskanjem ujel v lokalnem optimum, ter tako prehitro konvergiral v rešitev, ki ni globalno najboljša rešitev problema.
+Predlagan algoritem so poimenovali algoritem roja delcev z uporabo nasprotnih delcev in omejevanjem hitrosti (angl. \textit{Opposition-Based Particle Swarm Optimization with Velocity Clamping} (OVCPSO)).
 Avtorji dela so to dosegli tako, da so osnovnem algoritmu PSO dodali tri nove korake.
 Prvi dodatni korak je omejevanja hitrosti, ki jo lahko ima delec, kar prikazuje enačba:
 \begin{equation}
     v_{i,j}(t + 1) = \begin{cases}
         \delta (b_{u, j} - b_{l, j}) &\text{če } v_{i,j}(t + 1) > b_{u, j}\\
         \delta (b_{l, j} - b_{u, j}) &\text{če } v_{i,j}(t + 1) < b_{l, j}\\
-        v_{i,j}(t + 1) &\text{drugače},
+        v_{i,j}(t + 1) &\text{sicer},
     \end{cases}
 \end{equation}
 kjer $\delta$ predstavlja konstantni faktor, ki je tudi parameter algoritma.
@@ -316,26 +316,26 @@ Pozicije nasprotnih delcev lahko izračunamo s pomočjo enačbe:
 \begin{equation}
     \mathbf{x}_i' = \mathbf{o}_l + \mathbf{o}_u - \mathbf{x}_i, \label{eq:ovcpso:opposite_particle}
 \end{equation} 
-kjer je $\mathbf{x}_i'$ nasprotni delec delca $\mathbf{x}_i$, $\mathbf{o}_l$ predstavlja vektor minimalnih vrednosti v iskalnem prostoru kjer se nahaja trenutni roj $\mathbf{X}$ in $\mathbf{o}_u$ predstavlja vektor maksimalnih vrednosti v iskalnem prostoru kjer se nahaja trenutni roj $\mathbf{X}$.
-Algorithm OVCPSO začne novo generacijo s preverjanjem pogoja $\mathcal{U}(0, 1) < p_0$.
-V kolikor je ta pogoj izpolnjen se izvede korak učenja s pomočjo nasprotnih delcev, ter zaključi generacijo algoritma.
+kjer je $\mathbf{x}_i'$ nasprotni delec delca $\mathbf{x}_i$, $\mathbf{o}_l$ predstavlja vektor minimalnih vrednosti v iskalnem prostoru, kjer se nahaja trenutni roj $\mathbf{X}$, in $\mathbf{o}_u$ predstavlja vektor maksimalnih vrednosti v iskalnem prostoru, kjer se nahaja trenutni roj $\mathbf{X}$.
+Algoritem OVCPSO začne novo generacijo s preverjanjem pogoja $\mathcal{U}(0, 1) < p_0$.
+V kolikor je ta pogoj izpolnjen, se izvede korak učenja s pomočjo nasprotnih delcev, ter zaključi generacijo algoritma.
 V nasprotnem primeru pa se izvede osnovno posodabljanje delcev, kot v algoritmu LDWPSO.
-Pri učenju s pomočjo nasprotnih delcev, se najprej izdelajo nasprotni delci, ter algoritem vključi nasprotne delce v populacijo v kolikor so boljši od trenutno znanih delcev.
+Pri učenju s pomočjo nasprotnih delcev, se najprej izdelajo nasprotni delci, ter algoritem vključi nasprotne delce v populacijo, v kolikor so boljši od trenutno znanih delcev.
 Tretji korak je posodabljanje vztrajnostne uteži preko enačbe (\ref{eq:clpso:w_update}).
 Algoritem OVCPSO so testirali na osmih znanih testnih optimizacijskih problemih, kjer so bile dimenzionalnosti problemov enake $30$.
 Predlagan algoritem so primerjali z dvema drugima algoritmoma, ki tudi bazirata na osnovi algoritma PSO.
 Glede na rezultate uporabljenih algoritmov so ugotovili, da predlagan algoritem daje boljše globalne rešitve problema, kot pa druga dva uporabljena algoritma.
 
-Dva novejša algoritma, ki bazirata na algoritmu PSO opisana v delu~\cite{alg:mcupso}, sta algoritem roja delcev z dodano mutacijo delcev in centralnim iskanjem (angl. \textit{Mutated Center Particle Swarm Optimization} (MCPSO)) in algoritem enotnega roja delcev (angl. \textit{Unified Particle Swarm} (UPS)).
-Avtorji so v tem delu posodobili osnovni algoritem PSO nadgradili s tremi metodami, kjer sta bile dve že uporabljeni v osnovnem algoritmu PSO.
-Prva uporabljena metoda je uporaba centralnega delca.
-Druga uporabljena metoda je uporaba dodatne mutacije delcev z uporabo Cauchy distribucije
-Tretja uporabljena metoda, ki je noviteta, je uporaba dodatnega faktorja, poimenovanega faktor združevanja, ki ga lahko opazimo v enačbi:
+Dva novejša algoritma, ki bazirata na algoritmu PSO, opisana v delu~\cite{alg:mcupso}, sta algoritem roja delcev z dodano mutacijo delcev in centralnim iskanjem (angl. \textit{Mutated Center Particle Swarm Optimization} (MCPSO)) in algoritem enotnega roja delcev (angl. \textit{Unified Particle Swarm} (UPS)).
+Avtorji so v tem delu posodobili osnovni algoritem PSO s tremi metodami, kjer sta bile dve metodi, že uporabljeni v osnovnem algoritmu PSO.
+Prva metoda je uporaba centralnega delca.
+Druga metoda je uporaba dodatne mutacije delcev z uporabo Cauchy-eve naključne distribucije.
+Tretja metoda, ki je noviteta, je uporaba dodatnega faktorja, poimenovanega faktor združevanja, ki ga lahko opazimo v enačbi:
 \begin{equation}
     \mathbf{v}_i(t + 1) = w \cdot \mathbf{v}_i(t) + c_1 \cdot \mathbf{r}_1 \otimes (\mathbf{p}_i - \mathbf{x}_i(t)) \otimes \mathbf{r}_3 + c_2 \cdot \mathbf{r}_2 \otimes (\mathbf{x}^* - \mathbf{x}_i(t)) \otimes (1 - \mathbf{r}_3), \label{eq:ups:unified_factor} \\
 \end{equation}
-preko vektorja $\mathbf{r}_3$, ki predstavlja vektor dimenzije $\mathit{D}$ in vsebuje vrednosti enakomerne naključne porazdelitve od $0$ do $1$.
-V enačbi (\ref{eq:ups:unified_factor}) lahko opazimo da sta sedaj parametra $\mathbf{r}_1$ in $\mathbf{r}_2$ sedaj vektorja dimenzije $\mathit{D}$, a še vedno velja da so vrednosti vektorjev iz enakomerne naključne porazdelitve od $0$ do $1$.
+kjer preko vektorja $\mathbf{r}_3$, ki predstavlja vektor dimenzije $\mathit{D}$ in vsebuje vrednosti enakomerne naključne porazdelitve od $0$ do $1$.
+V enačbi (\ref{eq:ups:unified_factor}) lahko opazimo, da sta sedaj parametra $\mathbf{r}_1$ in $\mathbf{r}_2$ vektorja dimenzije $\mathit{D}$, a še vedno velja, da so vrednosti vektorjev iz enakomerne naključne porazdelitve od $0$ do $1$.
 Algoritem MCPSO uporablja le prvi dve metodi, v primerjavi z algoritmom UPS, ki uporablja vse tri metode.
 Predlagan algoritem so testirali na $13$ znanih testnih optimizacijskih funkcijah, kjer je sedem unimodalnih funkcij in šest multimodalnih funkcij.
 Za primerjavo so avtorji uporabili osem različnih optimizacijskih algoritmov, med katerimi je osem algoritmov, ki izhajajo iz osnovnega algoritma PSO.
@@ -343,18 +343,18 @@ Na osnovi rezultatov, avtorji niso izdelali novega najboljšega algoritma, ampak
 
 \section{Kooperativna koevolucija}
 
-Kooperativna koevolucija (angl. \textit{Cooperative Coevolution} (CC)) je ena od najuspešnejših ogrodji za razvoj algoritmov, ki sposobni efektivno nasloviti probleme LSGO~\cite{bib:metaheuristic_lsgo}.
+Kooperativna koevolucija (angl. \textit{Cooperative Coevolution} (CC)) je ena od najuspešnejših metod za razvoj algoritmov, ki so sposobni efektivno nasloviti probleme LSGO~\cite{bib:metaheuristic_lsgo}.
 Ogrodje CC v osnovi vsebuje korak dekompozicije problema, kjer visoko dimenzionalni prostor razdelimo v več skupin, ki so lažje rešljivi, kot pa celoten problem.
 Skupinam so dodeljene spremenljivke oziroma komponente problema, ki jih optimizira.
 Vsaka skupina optimizira manjši delček problema, ki ga predstavljajo komponente.
-Za optimizacijo podproblemov se uporabljajo različni tipi optimizacijskih algoritmov, vendar je za ogrodje CC značilno da uporabljajo stohastične algoritme.
+Za optimizacijo podproblemov se uporabljajo različni tipi optimizacijskih algoritmov, vendar je za ogrodje CC značilno, da uporabljajo stohastične algoritme.
 Tekom procesa optimizacije, skupine lahko med seboj komunicirajo, ter si s tem pomagajo pri preiskovanju prostora.
 Ključna je komunikacija pri izmenjavi informacije o najboljšem posamezniku, kjer se med skupinami prenesejo informacije o manjkajočih komponentah.
 V enačbi:
 \begin{equation}
     \min_{\mathbf{x}}{f(\mathbf{x})} = \left( \min_{\mathbf{x_1}}{f(x_1,\cdots)}, \cdots , \min_{\mathbf{x_m}}{f(\cdots, x_m)} \right), \label{eq:devide_opt_func}
 \end{equation}
-lahko opazimo da z optimizacijo manjših problemov in združevanja informaciji dosežemo globalno najboljšo rešitev problema $f$.
+lahko opazimo, da z optimizacijo manjših problemov in združevanja informaciji dosežemo globalno najboljšo rešitev problema $f$.
 
 \begin{figure}[ht]
     \centering
@@ -376,9 +376,9 @@ lahko opazimo da z optimizacijo manjših problemov in združevanja informaciji d
 
 Pri uporabi ogrodja CC je rešljivost optimizacijskega problema povezana z deljivostjo oziroma ločljivostjo (angl. \textit{separable}) komponent problema.
 Problemi so lahko popolno ločljivi, popolno neločljivi, delno ločljivi in aditivno ločljivi.
-Slika~\ref{fig:full_separable} prikazuje graf interakcij med komponentami, kjer lahko vidimo da ni interakcije med komponentami, kar lahko opazimo pri polno ločljivih problemih.
+Slika~\ref{fig:full_separable} prikazuje graf interakcij med komponentami, kjer lahko vidimo, da ni interakcije med komponentami, kar lahko opazimo pri polno ločljivih problemih.
 Slika~\ref{fig:par_separable} prikazuje primer problema, kjer ena komponenta vpliva na delovanje druge komponente.
-Opazimo lahko tudi da ima problem več skupin komponent, ki vplivajo ena na drugo.
+Opazimo lahko tudi, da ima problem več skupin komponent, ki vplivajo ena na drugo.
 Zato tak problem sodi v delno ločljive probleme.
 Na sliki~\ref{fig:non_separable} je prikazan primer problema, kjer vsaka izmed komponent vpliva na druge komponente.
 Zato komponent ne moremo deliti v manjše podskupine, kot smo to lahko naredili pri delno ločljivih problemih.
@@ -393,7 +393,7 @@ Popolno ločljivi aditivni problemi so za optimizacijska ogrodja CC preprosto re
 
 Začetki kooperativne koevolucije segajo že v leto 1994, kadra sta Potter in De Jong v delu~\cite{alg:ccga} predstavila prvi algoritem CC, ki bazira na genetskem algoritmu (angl. \textit{Genetic Algorithm} (GA)).
 Razvit algoritem sta poimenovala kooperativni koevolucijski genetski algoritem (angl. \textit{Cooperative Coevolutionary Genetic Algorithms} (CCGA)).
-V algoritmu CCGA, se problem dimenzionalnosti $\mathit{D}$ razdeli v podprobleme dimenzionalnosti enake ena.
+V algoritmu CCGA se problem dimenzionalnosti $\mathit{D}$ razdeli v podprobleme dimenzionalnosti velikosti ena.
 Vsak podproblem se optimizira z algoritmom GA, ki ima za vsak podproblem ločeno populacijo.
 Celovito rešitev izvirnega problema dobimo s kombiniranjem reprezentativnih rešitev iz vsakega podproblema.
 Ocenitveno vrednost posameznika v določenem podproblemu se ocenjuje s kakovostjo celovite rešitve, pri katerih posameznik sodeluje.
@@ -405,12 +405,12 @@ Ugotovili so tudi, da predlagan algoritem CCGA izboljša delovanje osnovnega alg
 Številni stohastični algoritmi se soočajo s problemom prekletstva dimenzionalnosti.
 Dobro delujejo pri problemih z manjšimi številom dimenzij, vendar se zmogljivost slabša z večanjem števila dimenzij.
 Iskanje globalnih optimumov za preprosto unimodalno funkcijo je preprosto napram reševanju rotiranih in zamaknjenih multimodalnih funkcij.
-Zato se Shailendra in ostali v delu~\cite{alg:npscc} razvili nov algoritem poimenovan nov roj delcev s kooperativno koevolucijo (angl. (New Particle Swarm Optimizer with Cooperative Coevolution) (NPSO-CC)).
+Zato so Shailendra in ostali v delu~\cite{alg:npscc} razvili nov algoritem, poimenovan nov roj delcev s kooperativno koevolucijo (angl. (New Particle Swarm Optimizer with Cooperative Coevolution) (NPSO-CC)).
 Algoritem NPSO-CC uporablja naključno deljenje komponent podproblemom, ki se izvede na začetku vsake generacije algoritma.
 To pripomore k zmanjšanju računske zahtevnosti algoritma, saj z naključnim deljenjem odstranimo kompleksnost dekompozicije, ki je lahko računsko zelo zahtevna.
 Po delitvi problema, v algoritmu NPSO-CC sledi korak osnovnega algoritma PSO nad vsakim podproblemom.
-Tem koraku sledi korak deljenja populacij podproblemov na dva dela, kjer se eden izmed delov naključno premakne po iskalnem prostoru.
-V kolikor se v $50$ generacijah katera izmed pod-populacij neuspešno posodablja, potem algoritem NPSO-CC premakne to populacijo naključno po iskalnem prostor, ki ne zajema trenutno zasedenega iskalnega prostora.
+Sledi korak deljenja populacij podproblemov na dva dela, kjer se eden izmed delov naključno premakne po iskalnem prostoru.
+V kolikor se v $50$ generacijah katera izmed pod-populacij ni posodobila, potem algoritem NPSO-CC premakne to populacijo naključno po iskalnem prostoru, ki ne zajema trenutno zasedenega iskalnega prostora.
 Avtorji so predlagan algoritem testirali na problemu CEC2010lsgo~\cite{bech:cec2010lsgo}, ki vsebuje $20$ testnih funkcij dimenzionalnosti $1000$.
 Rezultate algoritma NPSO-CC so primerjali s tremi različnimi algoritmi.
 Na podlagi statistične analize so avtorji ugotovili, da algoritem NPSO-CC deluje veliko bolje od ostalih uporabljenih algoritmov.
@@ -421,7 +421,7 @@ Ogrodje CC je evolucijsko računsko ogrodje, ki se lahko uporablja za reševanje
 Vendar pa je glavni izziv pri uporabi tega okvira razčlenitev problema.
 To je odločanje o tem, kako dodeliti odločitvene spremenljivke določenemu podproblemu, zlasti medsebojno vplivajoče odločitvene spremenljivke.
 Če medsebojno vplivajoče spremenljivke niso združene v isti podproblem, se ogrodje CC ponavadi ujame v psevdo-minimum~\cite{bib:psudo_min_cc}, ki ni lokalni minimum prvotnega problema, temveč lokalni minimum, uveden z nepravilno razčlenitvijo oziroma dekompozicijo problema.
-Za reševanje tega problema je bilo predlaganih veliko strategij združevanja komponente, ki so:
+Za reševanje tega problema je bilo predlaganih veliko strategij deljenja komponent, ki so:
 \begin{itemize}
     \item statično deljenje komponent v podprobleme,
     \item naključno deljenje komponent v podprobleme,
@@ -438,9 +438,9 @@ Zato bomo v našem delu uporabili strategijo, ki deluje na podlagi učenja odvis
 
 Prva takšna strategija je bila razvita v delu~\cite{alg:rdg}, ki temelji na detekciji odvisnosti med komponentami.
 Strategijo deljena komponent so avtorji poimenovali rekurzivno diferencialno grupiranje (angl. \textit{Recursive Differential Grouping} (RDG)).
-Eden od glavnih razlogov za razvoj te strategije je bil v problemu, da so strategije, ki so takrat obstajale, porabile veliko časa in računskih resursov za kvalitetno deljenje komponent v podprobleme.
+Eden od glavnih razlogov za razvoj te strategije je bil v problemu, da so strategije, ki so takrat obstajale, porabile veliko časa in računskih virov za kvalitetno deljenje komponent v podprobleme.
 Strategija je časovno in računsko efektivna, saj algoritem strategije uporablja rekurzijo, ki v svojem delovanju ne preverja interakcije ene komponente z vsemi komponentami, temveč uporablja pristop, ki uporabi več komponent na enkrat.
-V primeru, da imajo izbranih komponent $\mathbf{g}_1$ interakcijo z drugim manjšim delom komponent $\mathbf{g}_2$ za preverjanje, kjer velja da $\mathbf{g}_1 \cap \mathbf{g}_2 = \emptyset$, algoritem izdela skupino komponent za podproblem.
+V primeru, da imajo izbranih komponent $\mathbf{g}_1$ interakcijo z drugim manjšim delom komponent $\mathbf{g}_2$ za preverjanje, kjer velja, da $\mathbf{g}_1 \cap \mathbf{g}_2 = \emptyset$, algoritem izdela skupino komponent za podproblem.
 Sledi odstranjevanje komponent $\mathbf{g}_1 \cup \mathbf{g}_2$ iz komponent za preverjanje, kjer se tudi rekurzija zaustavi.
 Potem sledi nov rekurzivni klic, kjer se uporabljajo samo komponente, ki še niso bile uporabljene za testiranje.
 Efektivnost strategije RDG so avtorji preverili na problemu CEC2010lsgo in problemu CEC2013lsgo~\cite{bech:cec2013lsgo}.
@@ -448,15 +448,17 @@ Avtorji so predlagano strategijo primerjali s sedmimi različnimi metodami dekom
 Predlagano dekompozicijo so uporabili tudi v optimizacijskem algoritmu, ki se je zelo dobro obnesel proti takratnim najboljšim algoritmom za reševanje problemov LSGO.
 
 Kmalu po izidu strategije RDG, ki se je izkazala za zelo učinkovito, zlasti v smislu časovne kompleksnosti, je imela strategija pomanjkljivosti.
-Strategija je zahtevala ustrezno nastavitev parametra za oceno vrednosti praga oziroma parametra $\epsilon$, ki determinira ali dve podmnožici odločitvenih spremenljivk sodelujeta ali ne.
+Strategija je zahtevala ustrezno nastavitev parametra za oceno vrednosti praga oziroma parametra $\epsilon$, ki določi ali dve podmnožici odločitvenih spremenljivk sodelujeta ali ne.
 Poleg tega je lahko uporaba ene globalne pragovne vrednosti nezadostna za identifikacijo interakcij komponent, saj komponente neuravnoteženo prispevajo k ocenitveni vrednosti.
-Avtorji so v delu~\cite{alg:rdg2}, po vzoru dela~\cite{alg:dg2}, inkorporirali adaptivno ocenitev praga $\epsilon$ na podlagi računske zaokrožitvene napake.
+Avtorji so v delu~\cite{alg:rdg2}, po vzoru dela~\cite{alg:dg2}, vključi adaptivno ocenitev praga $\epsilon$ na podlagi računske zaokrožitvene napake.
 Avtorji so izpeljali zgornjo mejo zaokrožitvene napake, za katero se je izkazalo, da je ustrezna za identifikacijo interakcij med komponentami v problemih LSGO.
 Strategijo so avtorji poimenovali rekurzivno diferencialno grupiranje 2 (angl. \textit{Recursive Differential Grouping 2} (RDG2)), saj izhaja iz strategije RDG.
-Avtorji so novo strategijo testirali na problemu CEC2010lsgo in problemu CEC2013lsgo, kjer so ugotovili da predlagana strategija deluje enako ali celo bolje od osnovne strategije RDG.
+Avtorji so novo strategijo testirali na dveh testnih problemih.
+Prvi uporabljen testni problem je CEC2010lsgo in drugi testni problemu je CEC2013lsgo.
+Ugotovili da predlagana strategija deluje enako ali celo bolje od osnovne strategije RDG.
 
 Z razvojem strategij za dekompozicijo in optimizacijskih algoritmov, so se razvijali tudi testni problemi.
-Eden večjih problem, ki se je pojavil pri dekompoziciji problemov je bio prepletanje med različnimi skupinami komponent, kjer se je ustvarila šibka povezanost med takima skupinama.
+Eden večjih problemov, ki se je pojavil pri dekompoziciji problemov je bilo prepletanje med različnimi skupinami komponent, kjer se je ustvarila šibka povezanost med takima skupinama.
 Takrat znane strategije dekompzicije so običajno dodelijo vse odločitvene spremenljivke, ki neposredno in posredno medsebojno interaktirajo, v eno skupino.
 Zato take strategije ne morejo zmanjšati velikosti prvotnega velikega problema.
 Da bi rešili ta problme so avtorji v delu~\cite{alg:rdg3} predstavili novo strategijo dekompozicije problema, poimenovano rekurzivno diferencialno grupiranje 3 (angl. \textit{Recursive Differential Grouping 3} (RDG3)).
@@ -465,10 +467,10 @@ Osnova za strategijo RDG3 je bila njena predhonica strategija RDG2.
 Strategijo so avtorji testirali na problemu CEC2013lsgo, kjer so izboljšali rezulate strategije RDG2, ter v kombinaciji z optimizacijskim algoritmov premagali tudi takrat najboljše algoritme za reševanje uporabljenega problema.
 
 Strategije združevanja spremenljivk običajno porabijo veliko računalniških virov za pridobitev natančne delitve komponent med podprobleme.
-Zato so avtorji v delu~\cite{alg:erdg} predlagali novo strategijo poimenovano efektivno rekurzivno diferencialno grupiranje (angl. \textit{Efficient Recursive Differential Grouping} (ERDG))
+Zato so avtorji v delu~\cite{alg:erdg} predlagali novo strategijo poimenovano efektivno rekurzivno diferencialno grupiranje (angl. \textit{Efficient Recursive Differential Grouping} (ERDG)).
 Z izkoriščanjem zgodovinskih informacij o preučevanju medsebojnega razmerja med komponentami optimizacijskega problema se lahko strategija ERDG izogne preučevanju nekaterih medsebojnih interakcij med komponentami in porabi veliko manj računanja kot strategiji RDG in RDG2.
-Predlagano strategijo so avorji testirali na problemu CEC2010lsgo in problemu CEC2013lsgo.
-Strategijo ERDG so avtorji primerjali s štirimi različnimi strategija dekompozicije, kjer so dokazali, da predlagana strategija uporabi ne le naj računskih resursov, temveč dosega tudi zelo kvalitetne rezultate.
+Predlagano strategijo so avorji testirali na dveh testnih problemih, ki sta problem CEC2010lsgo in problem CEC2013lsgo.
+Strategijo ERDG so avtorji primerjali s štirimi različnimi strategija dekompozicije, kjer so dokazali, da predlagana strategija uporabi ne le naj računskih virov, temveč dosega tudi zelo kvalitetne rezultate.
 Dekompozijsko strategijo so uporabili tudi v algoritmu CC, kjer pa je izboljšal nekatere rezulate, ne pa vseh.
 
 Ena novejših strategij za dekompozicijo problema je opisana v delu~\cite{alg:trdg}, kjer so avtorji izdelani novo strategijo dekompozicije poimenovano tri nivojsko rekurzivno diferencialno grupiranje (angl. \textit{Three Level Recursive Differential Grouping} (TRDG)).
@@ -476,21 +478,21 @@ Ko strategija TRDG zaznana interakcijo med dvema množicama komponent, strategij
 Nato se izvede detekcija interakcij med vsako podmnožico in drugo množico.
 V primerjavi s strategijo RDG lahko strategija TRDG zmanjša globino rekurzije in tako prihrani računske resurse.
 V delu poleg nove strategije predlagajo tudo novo strategijo za prilagodljivo posodobitev praga $\epsilon$ za prepoznavanje interakcij med komponentami.
-Rezultati simulacijskega eksperimenta na referenčnih funkcijah CEC2010lsgo in CEC2013laso kažejo, da je zmogljivost strategije TRDG boljša od več obstoječih metod dekompozicije v smislu natančnosti in prihrambe računskih sredstev.
+Rezultati simulacijskega eksperimenta na testnih funkcijah CEC2010lsgo in CEC2013lsgo kažejo, da je zmogljivost strategije TRDG boljša od več obstoječih metod dekompozicije v smislu natančnosti in prihrambe računskih sredstev.
 
 \section{Omejitve sorodnih del}
 
-Kot lahko opazimo je v preteklih dveh desetletjih na področju optimizacije prišlo do velikaga števila sprememb.
+Kot lahko opazimo, je v preteklih dveh desetletjih na področju optimizacije prišlo do velikaga števila sprememb.
 Tekom tega časo so bile ugotovljene tudi nekatere pomanjkljivosti starih oziroma obstoječih metod/algoritmov/strategij, ki so bile lahko dokazane šele z nastakom novih tehnologij, ki poleg rešitve enega problema, pridonesejo tudi nove probleme.
 To lahko opazimo pri razvoji različnih algoritmov roja delcev, ki v osnovi ostaja podoben osnovni verziji razviti leta 1995.
 Vsi opisani algoritmi roja delcev imajo glavno slabosti, ki se kaže v prekletstvu dimenzionalnosti.
-Algoritmi roja delcev delujeo zelo dobro pri majhni dimenzionalnosti problema, vendar ko želimo rešiti problem tipa LSGO, pa lahko kaj kmalu obupamo z upoorabo takih algoritmov.
-Zato se bomo v nameš delu osredotočili ko to izboljšati.
-Nekaj namigov smo lahko že videli z uporabo ogrodji CC, ki na papirju prikazujejo efektivnost, a se lahko tudi njim zalomi.
-Zalomi se jim predvsem zradi načela splošnosti, ki ga imajo že algoritmi roja delcev.
-Kot smo lahko opazili preko analize sorodnih o ogrodjih CC je lahko njihova največja šibka točka dekompozicija problema, ki je ključnega problema pri reševanje LSGO problemov, ki so predstavljeni kot problemi BB.
-S pomočjo dobre dekompozicije problema lahko pretvorimo črno škatlo v sivo škatlo, kjer imamo dodatno informacijo kako komponente interaktirajo med seboj.
-Ker je algoritem roja delcev preprost za razumevanje in implementacijo, bi radi videli ali je še vedn uporaben, v kolikor ga vključimo v ogrocje CC, ter mu pripomoremo z dobro delitvijo problema LSGO na manjše kose.
+Algoritmi roja delcev delujejo zelo dobro pri majhni dimenzionalnosti problema, vendar ko želimo rešiti problem tipa LSGO, pa lahko kaj kmalu obupamo z uporabo takih algoritmov.
+Zato se bomo v nameš delu osredotočili na to kako izboljšati optimizacijske algoritme PSO.
+Nekaj namigov smo lahko že videli pri uporabi ogrodji CC, ki na papirju prikazujejo efektivnost, a se lahko tudi njim zalomi.
+Zalomi se jim predvsem zaradi načela splošnosti, ki ga imajo že algoritmi roja delcev.
+Kot smo lahko opazili preko analize sorodnih o ogrodjih CC, je lahko njihova največja šibka točka dekompozicija problema, ki je ključnega problema pri reševanju problemov LSGO, ki so predstavljeni kot problemi BB.
+S pomočjo dobre dekompozicije problema lahko pretvorimo črno škatlo v sivo škatlo, kjer imamo dodatno informacije, kako komponente interaktirajo med seboj.
+Ker je algoritem roja delcev preprost za razumevanje in implementacijo, bi radi preizkusli ali je še vedno uporaben, v kolikor ga vključimo v ogrocje CC, ter mu pripomoremo z dobro delitvijo problema LSGO na manjše kose.
 
 \chapter{Koevolucijski algoritem rojev delcev}\label{chap:algo}
 
@@ -516,7 +518,7 @@ Ker je algoritem roja delcev preprost za razumevanje in implementacijo, bi radi 
             \eIf{\ell(\app{$\mathbf{x}_r$}) $>$ $1$}{
                 $\mathbf{s}_1$ \gets~ $\mathbf{x}_r$[:1]\;
                 $\mathbf{x}_r$ \gets~ $\mathbf{x}_r$[1:]\;
-                $\mathbf{s}_2$ = $\mathbf{x}_r$\;
+                $\mathbf{s}_2$ \gets~ $\mathbf{x}_r$\;
             }{
                 $\mathbf{a}$ \gets~ $\mathbf{a} \cup \mathbf{s}_1$\;
                 \textbf{break}\;
@@ -934,7 +936,7 @@ Ker je algoritem roja delcev preprost za razumevanje in implementacijo, bi radi 
         RDG2 & $\alpha$ = 1e-12 \\\hline
         RDG3 & $\alpha$ = 1e-12, $\epsilon_n$ = 50, $\epsilon_s$ = 100 \\\hline
         ERDG & $\alpha$ = 1e-12 \\\hline
-        TRDG & $\alpha$ = 1e+12, $k$ = 10 \\\hline
+        TRDG & $\alpha$ = 1e-12, $k$ = 10 \\\hline
     \end{tabular}
 \end{table}
 
@@ -958,14 +960,14 @@ Ker je algoritem roja delcev preprost za razumevanje in implementacijo, bi radi 
         $f_5$    & \makecell{3,186e+07 \\ 4,111e+07 \\ 4,862e+06} & \makecell{1,06e+07 \\ 1,46e+07 \\ 2,098e+06}   & \makecell{\textbf{9,729e+06} \\ \textbf{1,188e+07} \\ 1,192e+06} & \makecell{4,313e+07 \\ 5,864e+07 \\ 6,441e+06} & \makecell{1,485e+07 \\ 1,673e+07 \\ 1,059e+06} & \makecell{1,298e+07 \\ 1,602e+07 \\ 1,533e+06} & \makecell{1,007e+07 \\ 1,21e+07 \\ 1,205e+06}  \\\hline
         $f_6$    & \makecell{1,057e+06 \\ 1,063e+06 \\ 1584}      & \makecell{1,056e+06 \\ 1,062e+06 \\ 1912}      & \makecell{1,056e+06 \\ 1,062e+06 \\ 2040}      & \makecell{1,059e+06 \\ 1,064e+06 \\ 1810}      & \makecell{\textbf{1,055e+06} \\ \textbf{1,06e+06} \\ 1499}       & \makecell{1,056e+06 \\ 1,061e+06 \\ 2192}      & \makecell{1,056e+06 \\ 1,061e+06 \\ 2286}      \\\hline
         $f_7$    & \makecell{1,537e+13 \\ 2,114e+14 \\ 2,439e+14} & \makecell{9,595e+14 \\ 5,492e+15 \\ 2,891e+15} & \makecell{1,221e+10 \\ 1,778e+10 \\ 3,978e+09} & \makecell{1,958e+14 \\ 9,807e+14 \\ 8,657e+14} & \makecell{1,021e+12 \\ 3,173e+12 \\ 1,312e+12} & \makecell{1,099e+10 \\ 2,189e+10 \\ 5,368e+09} & \makecell{\textbf{8,002e+09} \\ \textbf{1,613e+10} \\ 4,278e+09} \\\hline
-        $f_8$    & \makecell{7,99e+16 \\ 2,118e+17 \\ 1,172e+17}  & \makecell{7,017e+17 \\ 1,373e+18 \\ 4,644e+17} & \makecell{2,646e+15 \\ 1,886e+16 \\ 1,343e+16} & \makecell{4,321e+17 \\ 9,142e+17 \\ 3,033e+17} & \makecell{3,7e+15 \\ 9,879e+15 \\ 3,92e+15}    & & \makecell{4,329e+15 \\ 1,367e+16 \\ 5,28e+15} \\\hline
-        $f_9$    & \makecell{2,518e+09 \\ 3,467e+09 \\ 4,825e+08} & \makecell{8,072e+08 \\ 1,143e+09 \\ 1,529e+08} & \makecell{9,053e+08 \\ 1,127e+09 \\ 2,143e+08} & \makecell{3,851e+09 \\ 5,082e+09 \\ 5,978e+08} & \makecell{1,024e+09 \\ 1,289e+09 \\ 9,931e+07} & & \makecell{8,857e+08 \\ 1,043e+09 \\ 8,592e+07} \\\hline
-        $f_{10}$ & \makecell{9,391e+07 \\ 9,472e+07 \\ 2,59e+05}  & \makecell{9,344e+07 \\ 9,424e+07 \\ 3,768e+05} & \makecell{9,341e+07 \\ 9,437e+07 \\ 3,893e+05} & \makecell{9,379e+07 \\ 9,476e+07 \\ 3,619e+05} & \makecell{9,226e+07 \\ 9,299e+07 \\ 3,042e+05} & & \makecell{9,319e+07 \\ 9,429e+07 \\ 4,265e+05} \\\hline
-        $f_{11}$ & \makecell{2,768e+15 \\ 1,917e+16 \\ 1,331e+16} & \makecell{6,336e+16 \\ 2,859e+17 \\ 1,476e+17} & \makecell{1,759e+12 \\ 5,458e+12 \\ 2,423e+12} & \makecell{1,611e+16 \\ 6,416e+16 \\ 3,731e+16} & \makecell{1,161e+14 \\ 4,695e+14 \\ 2,07e+14}  & & \makecell{2,683e+12 \\ 6,671e+12 \\ 2,746e+12} \\\hline
+        $f_8$    & \makecell{7,99e+16 \\ 2,118e+17 \\ 1,172e+17}  & \makecell{7,017e+17 \\ 1,373e+18 \\ 4,644e+17} & \makecell{2,646e+15 \\ 1,886e+16 \\ 1,343e+16} & \makecell{4,321e+17 \\ 9,142e+17 \\ 3,033e+17} & \makecell{\textbf{3,7e+15} \\ \textbf{9,879e+15} \\ 3,92e+15}    & \makecell{4,653e+15 \\ 1,554e+16 \\ 8,801e+15} & \makecell{4,329e+15 \\ 1,367e+16 \\ 5,28e+15} \\\hline
+        $f_9$    & \makecell{2,518e+09 \\ 3,467e+09 \\ 4,825e+08} & \makecell{\textbf{8,072e+08} \\ 1,143e+09 \\ 1,529e+08} & \makecell{9,053e+08 \\ 1,127e+09 \\ 2,143e+08} & \makecell{3,851e+09 \\ 5,082e+09 \\ 5,978e+08} & \makecell{1,024e+09 \\ 1,289e+09 \\ 9,931e+07} & \makecell{1,202e+09 \\ 1,477e+09 \\ 1,596e+08} & \makecell{8,857e+08 \\ \textbf{1,043e+09} \\ 8,592e+07} \\\hline
+        $f_{10}$ & \makecell{9,391e+07 \\ 9,472e+07 \\ 2,59e+05}  & \makecell{9,344e+07 \\ 9,424e+07 \\ 3,768e+05} & \makecell{9,341e+07 \\ 9,437e+07 \\ 3,893e+05} & \makecell{9,379e+07 \\ 9,476e+07 \\ 3,619e+05} & \makecell{\textbf{9,226e+07} \\ \textbf{9,299e+07} \\ 3,042e+05} & \makecell{9,319e+07 \\ 9,43e+07 \\ 4,204e+05} & \makecell{9,319e+07 \\ 9,429e+07 \\ 4,265e+05} \\\hline
+        $f_{11}$ & \makecell{2,768e+15 \\ 1,917e+16 \\ 1,331e+16} & \makecell{6,336e+16 \\ 2,859e+17 \\ 1,476e+17} & \makecell{\textbf{1,759e+12} \\ \textbf{5,458e+12} \\ 2,423e+12} & \makecell{1,611e+16 \\ 6,416e+16 \\ 3,731e+16} & \makecell{1,161e+14 \\ 4,695e+14 \\ 2,07e+14}  & \makecell{1,944e+12 \\ 6,761e+12 \\ 2,666e+12} & \makecell{2,683e+12 \\ 6,671e+12 \\ 2,746e+12} \\\hline
         $f_{12}$ & \makecell{8,006e+12 \\ 8,6e+12 \\ 2,58e+11}    & \makecell{6,623e+12 \\ 7,5e+12 \\ 2,984e+11}   & \makecell{1,759e+12 \\ 2,104e+12 \\ 2,074e+11} & \makecell{1,714e+12 \\ 3,463e+12 \\ 1,746e+12} & \makecell{3,278e+12 \\ 3,794e+12 \\ 2,543e+11} & \makecell{\textbf{1,421e+12} \\ \textbf{1,807e+12} \\ 2,205e+11} & \makecell{1,807e+12 \\ 2,16e+12 \\ 2,694e+11} \\\hline
-        $f_{13}$ & \makecell{3,569e+15 \\ 2,429e+16 \\ 1,807e+16} & \makecell{5,556e+16 \\ 3,443e+17 \\ 2,333e+17} & \makecell{7,723e+11 \\ 1,813e+12 \\ 7,996e+11} & \makecell{1,541e+16 \\ 7,749e+16 \\ 6,255e+16} & \makecell{8,917e+13 \\ 3,44e+14 \\ 1,548e+14}  & & \\\hline
-        $f_{14}$ & \makecell{6,171e+15 \\ 3,852e+16 \\ 3,148e+16} & \makecell{9,315e+16 \\ 5,283e+17 \\ 3,101e+17} & \makecell{5,522e+12 \\ 1,062e+13 \\ 3,925e+12} & \makecell{3,18e+16 \\ 2,644e+17 \\ 1,52e+17}  & \makecell{1,064e+14 \\ 5,919e+14 \\ 2,741e+14} & & \\\hline
-        $f_{15}$ & \makecell{8,128e+16 \\ 2,867e+17 \\ 2,313e+17} & \makecell{1,17e+17 \\ 3,124e+17 \\ 1,172e+17}  & \makecell{1,232e+13 \\ 3,777e+13 \\ 1,48e+13}  & \makecell{3,077e+15 \\ 8,083e+16 \\ 5,476e+16} & \makecell{7,774e+14 \\ 1,431e+15 \\ 3,371e+14} & \makecell{7,153e+09 \\ 3,705e+12 \\ 1,104e+13} & \\\hline
+        $f_{13}$ & \makecell{3,569e+15 \\ 2,429e+16 \\ 1,807e+16} & \makecell{5,556e+16 \\ 3,443e+17 \\ 2,333e+17} & \makecell{\textbf{7,723e+11} \\ 1,813e+12 \\ 7,996e+11} & \makecell{1,541e+16 \\ 7,749e+16 \\ 6,255e+16} & \makecell{8,917e+13 \\ 3,44e+14 \\ 1,548e+14}  & \makecell{7,768e+11 \\ \textbf{1,54e+12} \\ 5,002e+11} & \makecell{7,917e+11 \\ 2,11e+12 \\ 9,249e+11} \\\hline
+        $f_{14}$ & \makecell{6,171e+15 \\ 3,852e+16 \\ 3,148e+16} & \makecell{9,315e+16 \\ 5,283e+17 \\ 3,101e+17} & \makecell{\textbf{5,522e+12} \\ \textbf{1,062e+13} \\ 3,925e+12} & \makecell{3,18e+16 \\ 2,644e+17 \\ 1,52e+17}  & \makecell{1,064e+14 \\ 5,919e+14 \\ 2,741e+14} & \makecell{7,403e+12 \\ 1,437e+13 \\ 4,44e+12} & \makecell{6,761e+12 \\ 1,386e+13 \\ 4,778e+12} \\\hline
+        $f_{15}$ & \makecell{8,128e+16 \\ 2,867e+17 \\ 2,313e+17} & \makecell{1,17e+17 \\ 3,124e+17 \\ 1,172e+17}  & \makecell{1,232e+13 \\ 3,777e+13 \\ 1,48e+13}  & \makecell{3,077e+15 \\ 8,083e+16 \\ 5,476e+16} & \makecell{7,774e+14 \\ 1,431e+15 \\ 3,371e+14} & \makecell{\textbf{7,153e+09} \\ \textbf{3,705e+12} \\ 1,104e+13} & \makecell{2,329e+13 \\ 5,28e+13 \\ 1,854e+13} \\\hline
     \end{tabular}
 \end{small}
 \end{table}
@@ -985,14 +987,14 @@ Ker je algoritem roja delcev preprost za razumevanje in implementacijo, bi radi 
         $f_5$    & \makecell{3,1e+07 \\ 4,007e+07 \\ 4,754e+06}   & \makecell{\textbf{6,864e+06} \\ 1,171e+07 \\ 2,564e+06} & \makecell{8,295e+06 \\ \textbf{1,046e+07} \\ 1,02e+06}  & \makecell{4,313e+07 \\ 5,864e+07 \\ 6,441e+06} & \makecell{1,283e+07 \\ 1,436e+07 \\ 9,003e+05} & \makecell{1,177e+07 \\ 1,43e+07 \\ 1,432e+06}  & \makecell{8,816e+06 \\ 1,053e+07 \\ 1,1e+06}   \\\hline
         $f_6$    & \makecell{1,057e+06 \\ 1,062e+06 \\ 1334}      & \makecell{1,055e+06 \\ 1,06e+06 \\ 2046}       & \makecell{1,054e+06 \\ 1,06e+06 \\ 2385}       & \makecell{1,059e+06 \\ 1,064e+06 \\ 2059}      & \makecell{\textbf{1,049e+06} \\ \textbf{1,056e+06} \\ 1984}      & \makecell{1,056e+06 \\ 1,06e+06 \\ 2029}       & \makecell{1,056e+06 \\ 1,06e+06 \\ 1864}       \\\hline
         $f_7$    & \makecell{1,534e+13 \\ 2,106e+14 \\ 2,424e+14} & \makecell{4,578e+14 \\ 1,519e+15 \\ 8,33e+14}  & \makecell{7,443e+09 \\ 1,15e+10 \\ 2,584e+09}  & \makecell{1,958e+14 \\ 9,807e+14 \\ 8,657e+14} & \makecell{\textbf{4,053e+08} \\ \textbf{6,532e+08} \\ 1,381e+08} & \makecell{7,225e+09 \\ 1,435e+10 \\ 4,063e+09} & \makecell{5,2e+09 \\ 1,066e+10 \\ 3,229e+09}   \\\hline
-        $f_8$    & \makecell{6,104e+16 \\ 2,017e+17 \\ 1,213e+17} & \makecell{3,393e+17 \\ 6,623e+17 \\ 2,009e+17} & \makecell{1,462e+15 \\ 7,555e+15 \\ 5,525e+15} & \makecell{4,321e+17 \\ 9,142e+17 \\ 3,033e+17} & \makecell{2,763e+14 \\ 7,199e+14 \\ 2,14e+14}  & & \makecell{8,698e+14 \\ 5,908e+15 \\ 3,128e+15} \\\hline
-        $f_9$    & \makecell{2,518e+09 \\ 3,375e+09 \\ 4,801e+08} & \makecell{6,538e+08 \\ 9,265e+08 \\ 1,55e+08}  & \makecell{7,143e+08 \\ 9,959e+08 \\ 1,974e+08} & \makecell{3,851e+09 \\ 5,082e+09 \\ 5,978e+08} & \makecell{8,735e+08 \\ 1,087e+09 \\ 9,004e+07} & & \makecell{7,575e+08 \\ 9,164e+08 \\ 7,28e+07} \\\hline
-        $f_{10}$ & \makecell{9,358e+07 \\ 9,433e+07 \\ 2,701e+05} & \makecell{9,291e+07 \\ 9,4e+07 \\ 3,745e+05}   & \makecell{9,308e+07 \\ 9,397e+07 \\ 3,821e+05} & \makecell{9,379e+07 \\ 9,467e+07 \\ 3,757e+05} & \makecell{9,179e+07 \\ 9,25e+07 \\ 2,654e+05}  & & \makecell{9,296e+07 \\ 9,4e+07 \\ 3,905e+05}   \\\hline
-        $f_{11}$ & \makecell{2,767e+15 \\ 1,913e+16 \\ 1,327e+16} & \makecell{2,377e+16 \\ 8,516e+16 \\ 4,358e+16} & \makecell{3,827e+11 \\ 1,289e+12 \\ 5,169e+11} & \makecell{1,611e+16 \\ 6,416e+16 \\ 3,731e+16} & \makecell{2,5e+10 \\ 6,584e+10 \\ 1,766e+10}   & & \makecell{7,807e+11 \\ 1,643e+12 \\ 5,503e+11} \\\hline
+        $f_8$    & \makecell{6,104e+16 \\ 2,017e+17 \\ 1,213e+17} & \makecell{3,393e+17 \\ 6,623e+17 \\ 2,009e+17} & \makecell{1,462e+15 \\ 7,555e+15 \\ 5,525e+15} & \makecell{4,321e+17 \\ 9,142e+17 \\ 3,033e+17} & \makecell{\textbf{2,763e+14} \\ \textbf{7,199e+14} \\ 2,14e+14}  & \makecell{2,167e+15 \\ 7,194e+15 \\ 5,128e+15} & \makecell{8,698e+14 \\ 5,908e+15 \\ 3,128e+15} \\\hline
+        $f_9$    & \makecell{2,518e+09 \\ 3,375e+09 \\ 4,801e+08} & \makecell{6,538e+08 \\ 9,265e+08 \\ 1,55e+08}  & \makecell{\textbf{7,143e+08} \\ 9,959e+08 \\ 1,974e+08} & \makecell{3,851e+09 \\ 5,082e+09 \\ 5,978e+08} & \makecell{8,735e+08 \\ 1,087e+09 \\ 9,004e+07} & \makecell{1,15e+09 \\ 1,367e+09 \\ 1,134e+08} & \makecell{7,575e+08 \\ \textbf{9,164e+08} \\ 7,28e+07} \\\hline
+        $f_{10}$ & \makecell{9,358e+07 \\ 9,433e+07 \\ 2,701e+05} & \makecell{9,291e+07 \\ 9,4e+07 \\ 3,745e+05}   & \makecell{9,308e+07 \\ 9,397e+07 \\ 3,821e+05} & \makecell{9,379e+07 \\ 9,467e+07 \\ 3,757e+05} & \makecell{\textbf{9,179e+07} \\ \textbf{9,25e+07} \\ 2,654e+05}  & \makecell{9,319e+07 \\ 9,405e+07 \\ 3,842e+05} & \makecell{9,296e+07 \\ 9,4e+07 \\ 3,905e+05}   \\\hline
+        $f_{11}$ & \makecell{2,767e+15 \\ 1,913e+16 \\ 1,327e+16} & \makecell{2,377e+16 \\ 8,516e+16 \\ 4,358e+16} & \makecell{3,827e+11 \\ 1,289e+12 \\ 5,169e+11} & \makecell{1,611e+16 \\ 6,416e+16 \\ 3,731e+16} & \makecell{\textbf{2,5e+10} \\ \textbf{6,584e+10} \\ 1,766e+10}   & \makecell{6,684e+11 \\ 2,453e+12 \\ 9,959e+11} & \makecell{7,807e+11 \\ 1,643e+12 \\ 5,503e+11} \\\hline
         $f_{12}$ & \makecell{8,006e+12 \\ 8,6e+12 \\ 2,58e+11}    & \makecell{6,065e+12 \\ 6,753e+12 \\ 2,784e+11} & \makecell{1,431e+12 \\ 1,669e+12 \\ 1,048e+11} & \makecell{1,714e+12 \\ 3,463e+12 \\ 1,746e+12} & \makecell{\textbf{5,818e+10} \\ \textbf{7e+10} \\ 5,321e+09}     & \makecell{7,487e+11 \\ 9,421e+11 \\ 8,868e+10} & \makecell{1,561e+12 \\ 1,785e+12 \\ 1,151e+11}  \\\hline
-        $f_{13}$ & \makecell{3,569e+15 \\ 2,423e+16 \\ 1,805e+16} & \makecell{1,215e+16 \\ 1,029e+17 \\ 4,68e+16}  & \makecell{3,205e+11 \\ 6,093e+11 \\ 1,568e+11} & \makecell{1,541e+16 \\ 7,749e+16 \\ 6,255e+16} & \makecell{1,808e+10 \\ 2,372e+10 \\ 2,735e+09} & & \\\hline
-        $f_{14}$ & \makecell{6,165e+15 \\ 3,842e+16 \\ 3,143e+16} & \makecell{3,698e+16 \\ 1,558e+17 \\ 1,014e+17} & \makecell{2,21e+12 \\ 3,829e+12 \\ 1,093e+12}  & \makecell{3,18e+16 \\ 2,644e+17 \\ 1,52e+17}  & \makecell{1,636e+11 \\ 2,482e+11 \\ 4,093e+10} & & \\\hline
-        $f_{15}$ & \makecell{8,128e+16 \\ 2,271e+17 \\ 1,617e+17} & \makecell{5,397e+16 \\ 1,347e+17 \\ 4,207e+16} & \makecell{4,777e+11 \\ 4,262e+12 \\ 2,272e+12} & \makecell{3,077e+15 \\ 8,083e+16 \\ 5,476e+16} & \makecell{3,629e+07 \\ 7,977e+07 \\ 5,831e+07} & \makecell{4,859e+08 \\ 9,277e+11 \\ 6,617e+12} & \\\hline
+        $f_{13}$ & \makecell{3,569e+15 \\ 2,423e+16 \\ 1,805e+16} & \makecell{1,215e+16 \\ 1,029e+17 \\ 4,68e+16}  & \makecell{3,205e+11 \\ 6,093e+11 \\ 1,568e+11} & \makecell{1,541e+16 \\ 7,749e+16 \\ 6,255e+16} & \makecell{\textbf{1,808e+10} \\ \textbf{2,372e+10} \\ 2,735e+09} & \makecell{3,764e+11 \\ 5,875e+11 \\ 1,254e+11} & \makecell{3,427e+11 \\ 6,921e+11 \\ 1,788e+11} \\\hline
+        $f_{14}$ & \makecell{6,165e+15 \\ 3,842e+16 \\ 3,143e+16} & \makecell{3,698e+16 \\ 1,558e+17 \\ 1,014e+17} & \makecell{2,21e+12 \\ 3,829e+12 \\ 1,093e+12}  & \makecell{3,18e+16 \\ 2,644e+17 \\ 1,52e+17}  & \makecell{\textbf{1,636e+11} \\ \textbf{2,482e+11} \\ 4,093e+10} & \makecell{3,1e+12 \\ 6,669e+12 \\ 1,801e+12} & \makecell{2,891e+12 \\ 5,166e+12 \\ 1,571e+12} \\\hline
+        $f_{15}$ & \makecell{8,128e+16 \\ 2,271e+17 \\ 1,617e+17} & \makecell{5,397e+16 \\ 1,347e+17 \\ 4,207e+16} & \makecell{4,777e+11 \\ 4,262e+12 \\ 2,272e+12} & \makecell{3,077e+15 \\ 8,083e+16 \\ 5,476e+16} & \makecell{\textbf{3,629e+07} \\ \textbf{7,977e+07} \\ 5,831e+07} & \makecell{4,859e+08 \\ 9,277e+11 \\ 6,617e+12} & \makecell{1,516e+12 \\ 6,533e+12 \\ 3,288e+12} \\\hline
     \end{tabular}
 \end{small}
 \end{table}
@@ -1012,14 +1014,14 @@ Ker je algoritem roja delcev preprost za razumevanje in implementacijo, bi radi 
         $f_5$    & \makecell{2,987e+07 \\ 3,945e+07 \\ 4,865e+06} & \makecell{5,274e+06 \\ 9,498e+06 \\ 2,333e+06} & \makecell{\textbf{4,81e+06} \\ \textbf{9,273e+06} \\ 1,115e+06}  & \makecell{4,313e+07 \\ 5,864e+07 \\ 6,441e+06} & \makecell{1,048e+07 \\ 1,291e+07 \\ 1,011e+06} & \makecell{8,58e+06 \\ 1,272e+07 \\ 1,52e+06}   & \makecell{5,684e+06 \\ 9,513e+06 \\ 1,114e+06} \\\hline
         $f_6$    & \makecell{1,057e+06 \\ 1,061e+06 \\ 1027}      & \makecell{1,054e+06 \\ 1,059e+06 \\ 2026}      & \makecell{1,052e+06 \\ 1,058e+06 \\ 2223}      & \makecell{1,059e+06 \\ 1,064e+06 \\ 2059}      & \makecell{\textbf{1,049e+06} \\ \textbf{1,052e+06} \\ 1778}      & \makecell{1,055e+06 \\ 1,059e+06 \\ 1814}      & \makecell{1,056e+06 \\ 1,059e+06 \\ 1464}      \\\hline
         $f_7$    & \makecell{1,534e+13 \\ 2,1e+14 \\ 2,412e+14}   & \makecell{4,781e+13 \\ 4,439e+14 \\ 2,456e+14} & \makecell{4,878e+09 \\ 8,115e+09 \\ 1,75e+09}  & \makecell{1,958e+14 \\ 9,807e+14 \\ 8,657e+14} & \makecell{\textbf{2,524e+07} \\ \textbf{5,555e+07} \\ 9,876e+06} & \makecell{4,488e+09 \\ 1,038e+10 \\ 3,362e+09} & \makecell{4,028e+09 \\ 7,163e+09 \\ 1,781e+09} \\\hline
-        $f_8$    & \makecell{4,422e+16 \\ 1,949e+17 \\ 1,221e+17} & \makecell{6,926e+16 \\ 2,797e+17 \\ 1,066e+17} & \makecell{4,484e+14 \\ 4,657e+15 \\ 4,581e+15} & \makecell{4,321e+17 \\ 9,142e+17 \\ 3,033e+17} & \makecell{1,037e+14 \\ 3,17e+14 \\ 8,827e+13}  & & \makecell{5,398e+14 \\ 2,582e+15 \\ 1,521e+15} \\\hline
-        $f_9$    & \makecell{2,489e+09 \\ 3,324e+09 \\ 4,875e+08} & \makecell{5,833e+08 \\ 8,261e+08 \\ 1,452e+08} & \makecell{4,874e+08 \\ 8,75e+08 \\ 2,07e+08}   & \makecell{3,851e+09 \\ 5,082e+09 \\ 5,978e+08} & \makecell{7,552e+08 \\ 9,474e+08 \\ 8,91e+07}  & & \makecell{5,858e+08 \\ 8,21e+08 \\ 8,107e+07} \\\hline
-        $f_{10}$ & \makecell{9,316e+07 \\ 9,398e+07 \\ 2,44e+05}  & \makecell{9,248e+07 \\ 9,371e+07 \\ 4,268e+05} & \makecell{9,308e+07 \\ 9,367e+07 \\ 3,223e+05} & \makecell{9,379e+07 \\ 9,467e+07 \\ 3,758e+05} & \makecell{9,148e+07 \\ 9,208e+07 \\ 2,834e+05} & & \makecell{9,234e+07 \\ 9,374e+07 \\ 3,836e+05} \\\hline
-        $f_{11}$ & \makecell{2,757e+15 \\ 1,909e+16 \\ 1,325e+16} & \makecell{7,194e+15 \\ 3,162e+16 \\ 1,769e+16} & \makecell{2,12e+11 \\ 4,587e+11 \\ 1,438e+11}  & \makecell{1,611e+16 \\ 6,416e+16 \\ 3,731e+16} & \makecell{7,04e+08 \\ 9,563e+08 \\ 1,023e+08}  & & \makecell{3,004e+11 \\ 6,045e+11 \\ 2,365e+11} \\\hline
+        $f_8$    & \makecell{4,422e+16 \\ 1,949e+17 \\ 1,221e+17} & \makecell{6,926e+16 \\ 2,797e+17 \\ 1,066e+17} & \makecell{4,484e+14 \\ 4,657e+15 \\ 4,581e+15} & \makecell{4,321e+17 \\ 9,142e+17 \\ 3,033e+17} & \makecell{\textbf{1,037e+14} \\ \textbf{3,17e+14} \\ 8,827e+13}  & \makecell{7,497e+14 \\ 3,434e+15 \\ 3,032e+15} & \makecell{5,398e+14 \\ 2,582e+15 \\ 1,521e+15} \\\hline
+        $f_9$    & \makecell{2,489e+09 \\ 3,324e+09 \\ 4,875e+08} & \makecell{5,833e+08 \\ 8,261e+08 \\ 1,452e+08} & \makecell{\textbf{4,874e+08} \\ 8,75e+08 \\ 2,07e+08}   & \makecell{3,851e+09 \\ 5,082e+09 \\ 5,978e+08} & \makecell{7,552e+08 \\ 9,474e+08 \\ 8,91e+07}  & \makecell{8,205e+08 \\ 1,262e+09 \\ 1,418e+08} & \makecell{5,858e+08 \\ \textbf{8,21e+08} \\ 8,107e+07} \\\hline
+        $f_{10}$ & \makecell{9,316e+07 \\ 9,398e+07 \\ 2,44e+05}  & \makecell{9,248e+07 \\ 9,371e+07 \\ 4,268e+05} & \makecell{9,308e+07 \\ 9,367e+07 \\ 3,223e+05} & \makecell{9,379e+07 \\ 9,467e+07 \\ 3,758e+05} & \makecell{\textbf{9,148e+07} \\ \textbf{9,208e+07} \\ 2,834e+05} & \makecell{9,223e+07 \\ 9,369e+07 \\ 4,185e+05} & \makecell{9,234e+07 \\ 9,374e+07 \\ 3,836e+05} \\\hline
+        $f_{11}$ & \makecell{2,757e+15 \\ 1,909e+16 \\ 1,325e+16} & \makecell{7,194e+15 \\ 3,162e+16 \\ 1,769e+16} & \makecell{2,12e+11 \\ 4,587e+11 \\ 1,438e+11}  & \makecell{1,611e+16 \\ 6,416e+16 \\ 3,731e+16} & \makecell{\textbf{7,04e+08} \\ \textbf{9,563e+08} \\ 1,023e+08}  & \makecell{3,492e+11 \\ 1,126e+12 \\ 4,822e+11} & \makecell{3,004e+11 \\ 6,045e+11 \\ 2,365e+11} \\\hline
         $f_{12}$ & \makecell{8,006e+12 \\ 8,6e+12 \\ 2,58e+11}    & \makecell{5,046e+12 \\ 5,876e+12 \\ 3,533e+11} & \makecell{8,161e+11 \\ 1,125e+12 \\ 1,2e+11}   & \makecell{1,714e+12 \\ 3,463e+12 \\ 1,746e+12} & \makecell{\textbf{3397} \\ \textbf{6,686e+09} \\ 3,168e+09}      & \makecell{4,581e+11 \\ 6,138e+11 \\ 6,904e+10} & \makecell{1,019e+12 \\ 1,261e+12 \\ 1,256e+11} \\\hline
-        $f_{13}$ & \makecell{3,569e+15 \\ 2,421e+16 \\ 1,803e+16} & \makecell{5,222e+15 \\ 3,516e+16 \\ 1,877e+16} & \makecell{1,635e+11 \\ 2,998e+11 \\ 7,696e+10} & \makecell{1,541e+16 \\ 7,749e+16 \\ 6,255e+16} & \makecell{1,637e+09 \\ 2,563e+09 \\ 4,529e+08} & & \\\hline
-        $f_{14}$ & \makecell{6,165e+15 \\ 3,839e+16 \\ 3,143e+16} & \makecell{8,949e+15 \\ 4,817e+16 \\ 2,594e+16} & \makecell{9,697e+11 \\ 1,82e+12 \\ 5,157e+11}  & \makecell{3,18e+16 \\ 2,644e+17 \\ 1,52e+17}  & \makecell{6,994e+08 \\ 1,628e+09 \\ 5,74e+08}  & & \\\hline
-        $f_{15}$ & \makecell{4,679e+16 \\ 2,014e+17 \\ 9,378e+16} & \makecell{3,448e+16 \\ 6,647e+16 \\ 2,086e+16} & \makecell{3,554e+08 \\ 3,413e+11 \\ 4,111e+11} & \makecell{3,077e+15 \\ 8,083e+16 \\ 5,476e+16} & \makecell{8,203e+06 \\ 1,171e+07 \\ 5,826e+06} & \makecell{3,308e+08 \\ 9,272e+11 \\ 6,617e+12} & \\\hline
+        $f_{13}$ & \makecell{3,569e+15 \\ 2,421e+16 \\ 1,803e+16} & \makecell{5,222e+15 \\ 3,516e+16 \\ 1,877e+16} & \makecell{1,635e+11 \\ 2,998e+11 \\ 7,696e+10} & \makecell{1,541e+16 \\ 7,749e+16 \\ 6,255e+16} & \makecell{\textbf{1,637e+09} \\ \textbf{2,563e+09} \\ 4,529e+08} & \makecell{2,097e+11 \\ 3,497e+11 \\ 9,385e+10} & \makecell{2,073e+11 \\ 3,433e+11 \\ 7,884e+10} \\\hline
+        $f_{14}$ & \makecell{6,165e+15 \\ 3,839e+16 \\ 3,143e+16} & \makecell{8,949e+15 \\ 4,817e+16 \\ 2,594e+16} & \makecell{9,697e+11 \\ 1,82e+12 \\ 5,157e+11}  & \makecell{3,18e+16 \\ 2,644e+17 \\ 1,52e+17}  & \makecell{\textbf{6,994e+08} \\ \textbf{1,628e+09} \\ 5,74e+08}  & \makecell{1,943e+12 \\ 3,557e+12 \\ 9,246e+11} & \makecell{1,277e+12 \\ 2,316e+12 \\ 5,627e+11} \\\hline
+        $f_{15}$ & \makecell{4,679e+16 \\ 2,014e+17 \\ 9,378e+16} & \makecell{3,448e+16 \\ 6,647e+16 \\ 2,086e+16} & \makecell{3,554e+08 \\ 3,413e+11 \\ 4,111e+11} & \makecell{3,077e+15 \\ 8,083e+16 \\ 5,476e+16} & \makecell{\textbf{8,203e+06} \\ \textbf{1,171e+07} \\ 5,826e+06} & \makecell{3,308e+08 \\ 9,272e+11 \\ 6,617e+12} & \makecell{2,043e+08 \\ 4,198e+11 \\ 5,072e+11} \\\hline
     \end{tabular}
 \end{small}
 \end{table}
