@@ -141,11 +141,11 @@ if __name__ == "__main__":
     elif arg_opt_alg == 6: opt_alg = OppositionVelocityClampingParticleSwarmOptimization
     elif arg_opt_alg == 7: opt_alg = ComprehensiveLearningParticleSwarmOptimizer
     decomp_alg = RecursiveDifferentialGroupingV3
-    if arg_decomp_alg == 1: RecursiveDifferentialGrouping
-    elif arg_decomp_alg == 2: RecursiveDifferentialGroupingV2
-    elif arg_decomp_alg == 3: RecursiveDifferentialGroupingV3
-    elif arg_decomp_alg == 4: EfficientRecursiveDifferentialGrouping
-    elif arg_decomp_alg == 5: ThreeLevelRecursiveDifferentialGrouping
+    if arg_decomp_alg == 1: decomp_alg = RecursiveDifferentialGrouping
+    elif arg_decomp_alg == 2: decomp_alg = RecursiveDifferentialGroupingV2
+    elif arg_decomp_alg == 3: decomp_alg = RecursiveDifferentialGroupingV3
+    elif arg_decomp_alg == 4: decomp_alg = EfficientRecursiveDifferentialGrouping
+    elif arg_decomp_alg == 5: decomp_alg = ThreeLevelRecursiveDifferentialGrouping
     if len(sys.argv) == 4: run_cec2013(opt=opt_alg, no_fun=arg_no_fun, seed=arg_seed)
     elif len(sys.argv) >= 5: run_cc_cec2013(decomp=decomp_alg, opt=opt_alg, no_fun=arg_no_fun, seed=arg_seed)
 
